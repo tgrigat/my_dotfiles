@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use {
     "lervag/vimtex"
   } -- Vimtex for tex editing
+  use {"ellisonleao/glow.nvim", branch = 'main'}
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter

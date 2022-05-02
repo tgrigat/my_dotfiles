@@ -62,3 +62,8 @@ let g:vimtex_compiler_latexmk_engines = {
 -- vim.cmd [[
 -- let g:tex_flavor = 'latex'
 -- ]]
+
+-- Config for glow,nvim
+-- vim.cmd [[
+-- noremap <leader>P :Glow<CR>
+-- ]]
