@@ -67,3 +67,8 @@ let g:vimtex_compiler_latexmk_engines = {
 -- vim.cmd [[
 -- noremap <leader>P :Glow<CR>
 -- ]]
+
+-- set auto linebreak
+vim.cmd [[
+set linebreak
+]]
