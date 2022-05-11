@@ -6,9 +6,9 @@
 	Prüfungen
 1649662340
 'D
-	/home/yang
-	Downloads
-1650291347
+	/home/yang/Downloads
+	..
+1650838607
 'H
 	/home/yang/
 	..
@@ -38,9 +38,9 @@
 	Keepas
 1650291477
 'l
-	/home/yang
-	Documents
-1649594069
+	/home/yang/Documents/Library
+	TUM Studium
+1650707573
 's
 	/home/yang/.ssh
 	id_rsa
@@ -49,6 +49,10 @@
 	/home/yang/Desktop
 	I2DL
 1650291287
+'z
+	/home/yang/Zotero/storage
+	..
+1650724955
 
 # Bookmarks:
 
@@ -62,96 +66,51 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/yang/Desktop
-	Hiwi working
-6
-d/home/yang/Desktop/Hiwi working
-	career-con-2019
-2
+d/home/yang/Desktop/ML basic
+	Prüfungstermine zur Veranstaltung - TUMonline - Technische Universität München.pdf
+8
 d/home/yang/Desktop
 	ML basic
-8
-d/home/yang/Desktop/ML basic
-	Prüfungen
-3
-d/home/yang/Desktop/ML basic/Prüfungen
-	exam-solution-2020 (2).pdf
-3
-d/home/yang/Desktop/ML basic
-	Exercises 2020
-1
-d/home/yang/Desktop/ML basic/Exercises 2020
-	Prüfung
-2
-d/home/yang/Desktop/ML basic/Exercises 2020/Prüfung
-	repeat_exam_2018.pdf
-7
-d/home/yang/Desktop/ML basic/Exercises 2020
-	exercise_04_linear_regression.pdf
-8
-d/home/yang/Desktop/ML basic
-	annotated_02_decision_trees.pdf
-6
-d/home/yang/Desktop
-	Computer Vision: Multi view geometry
-4
-d/home/yang/Desktop/Computer Vision: Multi view geometry
-	Slides
-2
-d/home/yang/Desktop/Computer Vision: Multi view geometry/Slides
-	MultiviewGeometry1.pdf
-1
-d/home/yang/Desktop/Computer Vision: Multi view geometry
-	Slides
-2
-d/home/yang/Desktop
-	Computer Vision: Multi view geometry
-4
-d/home/yang
-	Desktop
-2
-d/home/yang/Desktop
-	Spare readings
-14
-d/home/yang/Desktop/Spare readings
-	..
-0
-d/home/yang/Desktop
-	TUM Administrative staffs
-14
-d/home/yang/Desktop/TUM Administrative staffs
-	TUM入学手册.pdf
-2
-d/home/yang/Desktop
-	gitea
-16
-d/home/yang/Desktop/gitea
-	..
-0
-d/home/yang/Desktop
-	New Folder
-12
-d/home/yang/Desktop/New Folder
-	..
-0
-d/home/yang/Desktop
-	Math
-6
-d/home/yang
-	DoChat
-3
-d/home
-	yang
-2
+5
 d/home/yang
 	Documents
-4
+5
 d/home/yang/Documents
 	Library
 2
 d/home/yang/Documents/Library
 	TUM Studium
-6
+7
+d/home/yang/Documents/Library/TUM Studium
+	play with python
+10
+d/home/yang/Documents/Library/TUM Studium/play with python
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Robotik
+9
+d/home/yang/Documents/Library
+	TUM Studium
+7
+d/home/yang/Documents/Library/TUM Studium
+	Robotik
+9
+d/home/yang/Documents/Library/TUM Studium/Robotik
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Robotic motion and planing
+8
+d/home/yang/Documents/Library/TUM Studium/Robotic motion and planing
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Pattern Recognition
+7
+d/home/yang/Documents/Library/TUM Studium/Pattern Recognition
+	..
+0
 d/home/yang/Documents/Library/TUM Studium
 	NLP
 6
@@ -159,212 +118,290 @@ d/home/yang/Documents/Library/TUM Studium/NLP
 	..
 0
 d/home/yang/Documents/Library/TUM Studium
-	NLP
-6
-d/home/yang/Documents/Library
-	Notes
-4
-d/home/yang/Documents
-	MATLAB
-3
-d/home/yang
-	Desktop
-2
-d/home/yang/Desktop
-	Computer Vision: Multi view geometry
-2
-d/home/yang
-	introspector
-19
-d/home/yang/introspector
-	My Second Brain
-4
-d/home/yang/introspector/My Second Brain
-	Days
-1
-d/home/yang/introspector
-	My Second Brain
-4
-d/home/yang
-	introspector
-19
-d/home
-	yang
-2
-d/
-	home
-4
-d/home
-	yang
-2
-d/home/yang
-	Desktop
-2
-d/home/yang/Desktop
-	Computer Vision: Multi view geometry
-2
-d/home/yang/Desktop/Computer Vision: Multi view geometry
-	Slides
-2
-d/home/yang/Desktop/Computer Vision: Multi view geometry/Slides
+	Mensch Maschine Kummunikation
+5
+d/home/yang/Documents/Library/TUM Studium/Mensch Maschine Kummunikation
 	..
 0
-d/home/yang/Desktop/Computer Vision: Multi view geometry
-	Slides
+d/home/yang/Documents/Library/TUM Studium
+	Kognitive Systeme
+4
+d/home/yang/Documents/Library/TUM Studium/Kognitive Systeme
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Kognitive Systeme
+4
+d/home/yang/Documents/Library/TUM Studium/Kognitive Systeme
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Grundlage Künstlicher Intelligenz
+3
+d/home/yang/Documents/Library/TUM Studium/Grundlage Künstlicher Intelligenz
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Dynamische Systeme
 2
+d/home/yang/Documents/Library/TUM Studium/Dynamische Systeme
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	Algorithm und Datanstruktur
+1
+d/home/yang/Documents/Library/TUM Studium/Algorithm und Datanstruktur
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	play with python
+10
+d/home/yang/Documents/Library/TUM Studium/play with python
+	..
+0
+d/home/yang/Documents/Library/TUM Studium
+	play with python
+10
+d/home/yang/Documents/Library
+	TUM Studium
+7
+d/home/yang/Documents/Library/TUM Studium
+	play with python
+10
+d/home/yang
+	Documents
+5
+d/home/yang/Documents
+	Library
+2
+d/home/yang/Documents/Library
+	TUM Studium
+7
 d/home/yang/Desktop
 	ML basic
 5
 d/home/yang/Desktop/ML basic
-	annotated_02_k_nearest_neighbors.pdf
-11
+	exercise_09_notebook.pdf
+24
 d/home/yang/Desktop
 	ML basic
 5
+d/home/yang/Desktop/ML basic
+	exercise_09_notebook.pdf
+24
 d/home/yang
-	Documents
-4
-d/home/yang/Documents
-	kimai2-cmd-linux
+	Downloads
+6
+d/home/yang/Downloads
+	Miniconda3-py39_4.10.3-Linux-x86_64.sh
+37
+d/home/yang/Desktop
+	Fluent Python.pdf
+13
+d/home/yang
+	Zotero
+17
+d/home/yang/Zotero
+	storage
+5
+d/home/yang/Zotero/storage
+	2D7DW47F
+3
+d/home/yang/Zotero
+	storage
+5
+d/home/yang/Zotero/storage
+	BDXBNB5S
 7
 d/home/yang
-	Desktop
+	Zotero
+17
+d/home/yang/Desktop
+	ADL4CV
+1
+d/home/yang/Desktop/ADL4CV
+	__MACOSX
+1
+d/home/yang/Desktop/ADL4CV/__MACOSX
+	latex
+1
+d/home/yang/Desktop/ADL4CV
+	latex
 2
+d/home/yang/Desktop/ADL4CV/latex
+	..
+0
+d/home/yang/Desktop/ADL4CV
+	Project template
+1
+d/home/yang/Desktop/ADL4CV/Project template
+	..
+0
+d/home/yang/Desktop/ADL4CV
+	Project template
+1
+d/home/yang/Desktop/ADL4CV/Project template
+	__MACOSX
+1
+d/home/yang/Desktop/ADL4CV
+	Project template
+1
 d/home/yang/Desktop
-	I2DL
-4
-d/home/yang/Desktop/I2DL
-	5.Tutorial_-_Neural_Networks-i2dl.pdf
-11
-d/home/yang/Desktop
-	Hiwi working
+	ADL4CV
+1
+d/home/yang/Desktop/ADL4CV
+	Project template
+1
+d/home/yang/Desktop/ADL4CV/Project template
+	latex
+2
+d/home/yang/Desktop/ADL4CV/Project template/latex
+	ReviewTemplate.fls
+9
+d/home/yang/Desktop/ADL4CV/Project template
+	latex
+2
+d/home/yang/Desktop/ADL4CV
+	1.Visualization.pdf
+2
+d/home/yang/.config
+	vifm
+35
+d/home/yang/.config/vifm
+	vifm-help.txt
 3
-d/home/yang/Desktop/Code/Dataset_Distillation_google/.google-research
-	CIQA
-1
-d/home/yang/Desktop/Code/Dataset_Distillation_google
-	kip
-1
-d/home/yang/Desktop/Code/Dataset_Distillation_google/kip
-	README.md
-2
-d/home/yang/Desktop/Code/Dataset_Distillation_google
-	kip
-1
-d/home/yang/Desktop/Code
-	Cpp recap
-1
+d/home/yang/Downloads
+	Kygo - Kygo Life (online-audio-converter.com).mp3
+24
 d/home/yang/Desktop
-	Computer Vision: Multi view geometry
-2
-d/home/yang/Desktop/Computer Vision: Multi view geometry
-	Slides
-2
+	TUM Administrative staffs
+8
+d/home/yang/Desktop/TUM Administrative staffs
+	..
+0
+d/home/yang/Desktop
+	ML basic
+6
+d/home/yang/Desktop/ML basic
+	annotated_04_linear_regression.pdf
+14
 d/home/yang/Desktop
 	Code
-1
-d/home/yang/Desktop/Code
-	Matlab
-5
-d/home/yang/Desktop
-	Code
-1
-d/home/yang/Desktop/Code
-	lua
-12
-d/home/yang/Desktop/Code/lua
-	luatut.lua
-1
-d/home/yang/Desktop/Code
-	Matlab
-5
-d/home/yang/Desktop
-	Code
-1
+2
 d/home/yang/Desktop/Code
 	Dataset_Distillation_google
-2
+3
 d/home/yang/Desktop/Code/Dataset_Distillation_google
 	kip
 1
 d/home/yang/Desktop/Code/Dataset_Distillation_google/kip
 	tutorials
 1
-d/home/yang/Desktop/Code/Dataset_Distillation_google/kip/tutorials
-	..
-0
-d/home/yang/.config/vifm
-	colors
+d/home/yang/Desktop/Code/Dataset_Distillation_google
+	kip
 1
-d/home/yang/.config
-	session
-24
+d/home/yang/Desktop/Code
+	Dataset_Distillation_google
+3
+d/home/yang/Desktop
+	Code
+2
 d/home/yang
-	..
-0
+	Desktop
+3
 d/home
 	yang
 2
-d/home/yang
-	.config
-4
-d/home/yang/.config
-	alacritty
-16
-d/home/yang/.config/alacritty
-	alacritty.yml
-1
-d/home/yang/.config
-	Logseq
+d/
+	usr
+22
+d/usr
+	local
+9
+d/usr/local
+	sbin
 8
-d/home/yang
-	Pictures
-11
-d/home/yang/Pictures
-	Screenshot from 2022-02-10 18-12-23.png
+d/usr
+	local
+9
+d/
+	proc
+13
+d/proc
+	driver
 35
-d/home/yang
-	Applications
+d/proc/driver
+	rtc
 1
-d/home/yang/Applications
-	zathura-pdf-mupdf
-1
+d/proc
+	filesystems
+35
+d/
+	proc
+13
 d/home/yang
-	Videos
-11
-d/home/yang/Videos
-	..
-0
-d/home/yang
-	Zotero
-12
-d/home/yang/Zotero
-	..
-0
-d/home/yang
-	Videos
-15
-d/home/yang/Videos
-	..
-0
-d/home/yang
-	Videos
-15
-d/home
-	yang
+	Documents
+5
+d/home/yang/Documents
+	Library
+2
+d/home/yang/Documents/Library
+	TUM Studium
+7
+d/home/yang/Documents/Library/TUM Studium
+	Pattern Recognition
+7
+d/home/yang/Documents/Library
+	TUM Studium
+7
+d/home/yang/Documents
+	Library
 2
 d/home/yang
-	.config
-4
-d/home/yang/.config
-	alacritty
-16
-d/home/yang/.config/alacritty
-	alacritty.yml
-1
+	Desktop
+3
+d/home/yang/Desktop
+	Robotic motion and planing
+8
+d/home/yang/Desktop/Robotic motion and planing
+	recording.png
+7
 d
 
 # Right window history (oldest to newest):
+D/home/yang/Audio
+	2022-04-21-22-43-30.mp3
+6
+D/home/yang/.local
+	bin
+1
+D/home/yang/.local/bin
+	pyreverse
+5
+D/home/yang/.local
+	lib
+3
+D/home/yang/.local/share
+	applications
+12
+D/home/yang/.local/share/applications
+	mimeapps.list
+15
+D/home/yang/.local/share
+	applications
+12
+D/home/yang/.local
+	share
+4
+D/home/yang/.local/share
+	Trash
+11
+D/home/yang/.local
+	bin
+1
+D/home/yang/.local/bin
+	vizviewer
+10
 D/home/yang/Desktop/mnt/.config/vifm
 	vifmrc
 5
@@ -620,9 +657,35 @@ D/home/yang/Desktop/mnt/.config/vifm
 D/home/yang/Desktop/mnt
 	..
 0
+D/home/yang/Desktop
+	link
+11
+D/home/yang
+	Audio
+4
+D/home/yang/Audio
+	..
+0
+D/home/yang/Downloads
+	data-viz.excalidrawlib
+14
 D
 
 # Command line history (oldest to newest):
+:mkdir Cognitive\ System
+:!nautilus
+:keys
+:colorscheme mc-like
+:colorscheme
+:colorscheme papercolor-dark
+:h
+:mkcd test
+:mkdir .config
+:!touch vifm-tab.sh
+:!mv vifm-tab.sh vifm-tab
+:!touch vifm-tab.desktop
+:!git add vifm-help.txt
+:!git add vifmrc
 :! cd /home/yang/Documents/Library/iWorkstation/
 :s
 :copy
@@ -656,28 +719,48 @@ D
 :fileview */ tree 
 :tabname
 :tabname vifm
-:view
 :colorscheme iceberg
+:! sudo nvim limits.conf
+:!nautilus .
+:find welling
+:!zathura $(fzf)
+:!unzip cvpr2022-author_kit-v1_1.zip
+:mkdir Project\ template
+:view
+:reload
 :q
+:colorscheme dracula
+:colorscheme solarized-dark
 
 # Search history (oldest to newest):
+/obsid
+/.local
+/.loca
+/desk
+/ala
+/applications
 /.ssh
 /math
 /noteboo
 /docker-compose
+/.config
 /vifm
 /config
-/.config
-/ala
+/ardour
+/secu
+/Murph
+/CVPR
+/kit
+/driver
 
 # Prompt history (oldest to newest):
 palacritty.yml.back
 palacritty.yml
+pMurphy_Machine_Learning.pdf
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/yang/.config/vifm/vifmrc
 
 # Directory stack (oldest to newest):
 
@@ -710,11 +793,49 @@ t/home/yang/.local/share/vifm/Trash/000_.bashrc
 	/home/yang/Documents/Library/.bashrc
 t/home/yang/.local/share/vifm/Trash/000_alacritty.yml
 	/home/yang/.config/alacritty/alacritty.yml
+t/home/yang/.local/share/vifm/Trash/000_test
+	/home/yang/test
+t/home/yang/.local/share/vifm/Trash/000_indentline (conflicted copy 2022-03-04 180953).lua
+	/home/yang/.config/nvim/lua/user/indentline (conflicted copy 2022-03-04 180953).lua
+t/home/yang/.local/share/vifm/Trash/000_keymaps (conflicted copy 2022-03-07 144201).lua
+	/home/yang/.config/nvim/lua/user/keymaps (conflicted copy 2022-03-07 144201).lua
+t/home/yang/.local/share/vifm/Trash/000_options (conflicted copy 2022-03-06 113103).lua
+	/home/yang/.config/nvim/lua/user/options (conflicted copy 2022-03-06 113103).lua
+t/home/yang/.local/share/vifm/Trash/000_plugins (conflicted copy 2022-03-12 123320).lua
+	/home/yang/.config/nvim/lua/user/plugins (conflicted copy 2022-03-12 123320).lua
+t/home/yang/.local/share/vifm/Trash/000_colorscheme (conflicted copy 2022-03-07 095816).lua
+	/home/yang/.config/nvim/lua/user/colorscheme (conflicted copy 2022-03-07 095816).lua
+t/home/yang/.local/share/vifm/Trash/000_ardour6
+	/home/yang/.config/ardour6
+t/home/yang/.local/share/vifm/Trash/000_2022-04-21-22-28-03.ogg
+	/home/yang/Audio/2022-04-21-22-28-03.ogg
+t/home/yang/.local/share/vifm/Trash/000_2022-04-21-22-28-26.mp3
+	/home/yang/Audio/2022-04-21-22-28-26.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-21-22-31-27.mp3
+	/home/yang/Audio/2022-04-21-22-31-27.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-21-22-32-55.mp3
+	/home/yang/Audio/2022-04-21-22-32-55.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-21-22-42-16.mp3
+	/home/yang/Audio/2022-04-21-22-42-16.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-21-22-43-30.mp3
+	/home/yang/Audio/2022-04-21-22-43-30.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-25-00-17-16.mp3
+	/home/yang/Audio/2022-04-25-00-17-16.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-25-00-18-41.mp3
+	/home/yang/Audio/2022-04-25-00-18-41.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-25-00-18-59.mp3
+	/home/yang/Audio/2022-04-25-00-18-59.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-25-00-19-15.mp3
+	/home/yang/Audio/2022-04-25-00-19-15.mp3
+t/home/yang/.local/share/vifm/Trash/000_2022-04-25-00-19-39.mp3
+	/home/yang/Audio/2022-04-25-00-19-39.mp3
+t/home/yang/.local/share/vifm/Trash/000_Obsidian-1.1.0.apk
+	/home/yang/introspector/Inbox/Obsidian-1.1.0.apk
 
 # State:
 f
 i1
-[.0
+[.1
 [F
 F
 I1

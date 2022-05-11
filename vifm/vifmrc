@@ -6,6 +6,10 @@ nnoremap o :!xdg-open %f <cr>
 
 nnoremap zo :sync %c<CR><Tab> 
 
+"open the position with nautilus"
+
+nnoremap zn :!nautilus . & <cr>
+
 " Add vifm-tab
 
 let $VIFM_SERVER_NAME = v:servername
@@ -78,7 +82,7 @@ set norunexec
 
 " Selected color scheme
 
-colorscheme onedark
+colorscheme solarized-dark
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
