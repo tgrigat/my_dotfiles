@@ -41,7 +41,7 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  opacity: 0.8
+  opacity: 1
   padding:
     x: 20
     y: 20
@@ -170,7 +170,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#2E3440'
+    background: '#171B1F'
     foreground: '#D8DEE9'
 
   # Normal colors
