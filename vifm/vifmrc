@@ -1,5 +1,7 @@
 " Personal config
 
+:only
+
 nnoremap o :!xdg-open %f <cr>
 
 " open the directory under the cursor at another pane
