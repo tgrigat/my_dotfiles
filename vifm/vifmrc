@@ -2,6 +2,10 @@
 
 :only
 
+nnoremap zv :vsplit <cr>
+
+nnoremap zb :only <cr>
+
 nnoremap o :!xdg-open %f <cr>
 
 " open the directory under the cursor at another pane
