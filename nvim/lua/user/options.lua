@@ -70,7 +70,7 @@ let g:vimtex_compiler_latexmk_engines = {
 
 -- set auto linebreak
 vim.cmd [[
-set linebreak
+set wrap linebreak
 ]]
 
 vim.o.guifont='AurulentSansMono NF:h14'

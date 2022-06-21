@@ -12,7 +12,7 @@ nnoremap o :!xdg-open %f <cr>
 
 nnoremap zo :sync %c<CR><Tab> 
 
-nnoremap zm :bmarks <CR>
+nnoremap zm :bmarks <CR> /
 
 "open the position with nautilus"
 
