@@ -14,6 +14,7 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 env:
+  WINIT_X11_SCALE_FACTOR: "1.0"
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
@@ -41,7 +42,7 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  opacity: 0.6
+  opacity: 0.8
   padding:
     x: 20
     y: 20
