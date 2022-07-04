@@ -73,4 +73,6 @@ vim.cmd [[
 set wrap linebreak
 ]]
 
+vim.o.clipboard = "unnamedplus" 
+
 vim.o.guifont='AurulentSansMono NF:h14'

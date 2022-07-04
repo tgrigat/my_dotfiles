@@ -119,16 +119,16 @@ return packer.startup(function(use)
   })
 
   -- snippets
-  -- use "L3MON4D3/LuaSnip" --snippet engine
-  -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- my own snippets configuration
-  use {
-    "SirVer/ultisnips"
-  }
-  use {
-    "honza/vim-snippets"
-  }
+  -- use {
+  --   "SirVer/ultisnips"
+  -- }
+  -- use {
+  --   "honza/vim-snippets"
+  -- }
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer

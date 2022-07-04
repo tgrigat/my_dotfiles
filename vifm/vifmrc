@@ -16,7 +16,7 @@ nnoremap zm :bmarks <CR> /
 
 "open the position with nautilus"
 
-nnoremap zn :!nautilus . & <cr>
+nnoremap zn :!dolphin . & <cr>
 
 " Add vifm-tab
 
