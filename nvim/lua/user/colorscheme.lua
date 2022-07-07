@@ -1,7 +1,8 @@
 vim.cmd [[
 set termguicolors     " enable true colors support
-let ayucolor="dark"  " for light version of theme
+let ayucolor="light"  " for light version of theme
 colorscheme ayu
+colorscheme PaperColor
 ]]
 -- let ayucolor="mirage" " for mirage version of theme
 -- let ayucolor="dark"   " for dark version of theme
