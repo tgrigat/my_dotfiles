@@ -106,6 +106,7 @@ alias Ss='sudo paru -Ss'
 alias Syu='sudo paru -Syu'
 alias gnome-cc='gnome-control-center'
 alias T='tmux new-session -A -s remote'
+alias Tt='tmux new-session -A -s local'
 alias tk='task'
 alias tm='timew'
 # for nvim remote
