@@ -52,11 +52,12 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
+  use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use {"akinsho/bufferline.nvim", branch = 'main'}
+  use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use {"akinsho/toggleterm.nvim", branch = 'main'}
+  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -68,38 +69,81 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "quangnguyen30192/cmp-nvim-ultisnips",
+      config = function()
+        -- optional call to setup (see customization section)
+        require("cmp_nvim_ultisnips").setup{}
+      end,
+      -- If you want to enable filetype detection based on treesitter:
+      requires = { "nvim-treesitter/nvim-treesitter" },
+    },
+    config = function()
+      local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+      require("cmp").setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body)
+          end,
+        },
+        sources = {
+          { name = "ultisnips" },
+          -- more sources
+        },
+        -- recommended configuration for <Tab> people:
+        mapping = {
+          ["<Tab>"] = cmp.mapping(
+            function(fallback)
+              cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+            end,
+            { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+          ),
+          ["<S-Tab>"] = cmp.mapping(
+            function(fallback)
+              cmp_ultisnips_mappings.jump_backwards(fallback)
+            end,
+            { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+          ),
+        },
+      })
+    end,
+  })
 
-  -- lsp plugins
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use {'hrsh7th/nvim-cmp',
-      config = function() require('cmp') end,
-      requires = {
-          {'hrsh7th/cmp-nvim-lsp'},
-          {'hrsh7th/cmp-buffer'},
-          {'hrsh7th/cmp-path'},
-          {'hrsh7th/cmp-cmdline'},
-          -- {'SirVer/ultisnips'},
-          -- {'quangnguyen30192/cmp-nvim-ultisnips'}
-          {'hrsh7th/cmp-vsnip'},
-          {'hrsh7th/vim-vsnip'},
-      }
-  }
-  use {'neovim/nvim-lspconfig',
-        config = function() require('user.lsp') end
-    }
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-
-
+  -- my own snippets configuration
+  -- use {
+  --   "SirVer/ultisnips"
+  -- }
+  -- use {
+  --   "honza/vim-snippets"
+  -- }
   -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
