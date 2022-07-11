@@ -90,6 +90,10 @@ setopt share_history
 #zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 #zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# easy copy configuration from .config to zsh and tmux
+alias cpconf="cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang"
+alias udconf="cp /home/yang/.zshrc  /home/yang/.config/zsh/ && cp /home/yang/.tmux.conf /home/yang/.config/tmux/"
+
 alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -105,10 +109,11 @@ alias S='sudo paru -S'
 alias Ss='sudo paru -Ss'
 alias Syu='sudo paru -Syu'
 alias gnome-cc='gnome-control-center'
-alias T='tmux new-session -A -s remote'
-alias Tt='tmux new-session -A -s local'
+alias T='tmux new-session -A -s remote' 
+alias Tt='tmux new-session -A -s local'  
 alias tk='task'
 alias tm='timew'
+alias tmux='tmux -u'
 # for nvim remote
 alias sudo="sudo "
 alias matlab="matlab -softwareopengl"
