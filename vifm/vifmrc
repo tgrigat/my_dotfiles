@@ -8,7 +8,6 @@ nnoremap zb :only <cr>
 
 nnoremap o :!xdg-open %f <cr>
 
-nnoremap s :q <cr>
 
 " open the directory under the cursor at another pane
 
@@ -509,3 +508,5 @@ nnoremap <f8> :delete<cr>
 "     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
 "
 " let $VIFM_SERVER_NAME = v:servername
+
+nnoremap s :q <cr>
