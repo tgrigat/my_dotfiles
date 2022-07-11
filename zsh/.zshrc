@@ -126,6 +126,8 @@ alias enable='sudo systemctl enable'
 alias disable='sudo systemctl disable'
 alias reload='sudo systemctl reload'
 
+alias vf="vfcd ."
+
 alias Ss='pacman -Ss'
 alias Si='pacman -Si'
 alias Ssa='paru -Ssa'
@@ -151,7 +153,7 @@ alias syu='paru -Syu'
 
 alias ls="exa"
 
-function vf()
+function vfcd()
 {
     local dst="$(command vifm --choose-dir - "$@")"
     if [ -z "$dst" ]; then

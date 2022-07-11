@@ -8,6 +8,8 @@ nnoremap zb :only <cr>
 
 nnoremap o :!xdg-open %f <cr>
 
+nnoremap s :q <cr>
+
 " open the directory under the cursor at another pane
 
 nnoremap zo :sync %c<CR><Tab> 
