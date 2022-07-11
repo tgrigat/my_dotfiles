@@ -104,7 +104,7 @@ alias vimrc='cd ~/.config/nvim'
 alias desktop='cd ~/Desktop'
 alias texd='cd ~/Desktop/Code/Latex'
 alias e='exit'
-alias vf='vifm .'
+alias vifm='vifm .'
 alias S='sudo paru -S'
 alias Ss='sudo paru -Ss'
 alias Syu='sudo paru -Syu'
@@ -150,6 +150,16 @@ alias Fy='sudo pacman -Fy'
 alias syu='paru -Syu'
 
 alias ls="exa"
+
+function vf()
+{
+    local dst="$(command vifm --choose-dir - "$@")"
+    if [ -z "$dst" ]; then
+        echo 'Directory picking cancelled/failed'
+        return 1
+    fi
+    cd "$dst"
+}
 
 function sudo() {
     case $1 in 
