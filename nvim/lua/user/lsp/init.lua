@@ -32,4 +32,4 @@ nmap('<F18>', '<CMD>lua vim.lsp.buf.rename()<CR>') -- shift F6 for terminal
 nmap('<S-F6>', '<CMD>lua vim.lsp.buf.rename()<CR>') -- shift F6 for gui
 nmap('<A-CR>', '<CMD>lua vim.lsp.buf.code_action()<CR>')
 nmap('<space><space>', '<CMD>lua vim.lsp.buf.formatting()<CR>')
-nmap('<space>e', '<CMD>lua vim.diagnostic.open_float()<CR>')
+nmap('<space>E', '<CMD>lua vim.diagnostic.open_float()<CR>')
