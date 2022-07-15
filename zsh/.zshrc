@@ -117,6 +117,8 @@ alias tmux='tmux -u'
 # for nvim remote
 alias sudo="sudo "
 alias matlab="matlab -softwareopengl"
+# for startup the script
+alias letsgo="zsh /home/yang/startup.sh"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'

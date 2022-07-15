@@ -76,3 +76,5 @@ set wrap linebreak
 vim.o.clipboard = "unnamedplus" 
 
 vim.o.guifont='AurulentSansMono NF:h14'
+
+vim.g.vsnip_snippet_dir="/home/yang/.config/nvim/vsnip"
