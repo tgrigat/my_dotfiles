@@ -119,6 +119,8 @@ alias sudo="sudo "
 alias matlab="matlab -softwareopengl"
 # for startup the script
 alias letsgo="zsh /home/yang/startup.sh"
+# for xmind to start properly
+alias xmind="xmind --no-sandbox"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
