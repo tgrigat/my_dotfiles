@@ -1,0 +1,18 @@
+#!/usr/bin/zsh
+
+CONFDIR='~/.config'
+
+cd $CONFDIR
+
+git pull
+
+git add -u
+
+git commit -m "automatic commit"
+
+git push
+
+cd -
+
+# update the configuration of zsh and tmux as well
+cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang
