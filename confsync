@@ -4,13 +4,7 @@ CONFDIR='/home/yang/.config'
 
 cd $CONFDIR
 
-git pull
-
-git add -u
-
-git commit -m "automatic commit"
-
-git push
+git pull && git add -u && git commit -m "automatic commit" && git push
 
 cd -
 
