@@ -121,6 +121,8 @@ alias matlab="matlab -softwareopengl"
 alias letsgo="zsh /home/yang/startup.sh"
 # for xmind to start properly
 alias xmind="xmind --no-sandbox"
+# for deactivating conda fast
+alias condad="conda deactivate"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
