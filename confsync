@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-CONFDIR='~/.config'
+CONFDIR='/home/yang/.config'
 
 cd $CONFDIR
 
