@@ -1,4 +1,10 @@
-#!/usr/bin/zsh
+#!/usr/bin/python
+import argparse
+
+parser = argparse.ArgumentParser(description="Process if update")
+
+parser.add_argument
+
 
 CONFDIR='/home/yang/.config'
 
