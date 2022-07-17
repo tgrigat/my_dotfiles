@@ -1,18 +1,23 @@
 #!/usr/bin/python
 import argparse
+import os
 
 parser = argparse.ArgumentParser(description="Process if update")
 
-parser.add_argument
+parser.add_argument("-u", action="store_true")
 
+args =parser.parse_args()
 
-CONFDIR='/home/yang/.config'
+current_dir = os.getcwd()
 
-cd $CONFDIR
+conf_dir = "/home/yang/.config"
 
-git pull && git add -u && git commit -m "automatic commit" && git push
+os.chdir(conf_dir)
 
-cd -
+# written together so that the it won't precede if fail to pull
+os.system('git pull && git add -u && git commit -m "automatic commit" && git push')
 
-# update the configuration of zsh and tmux as well
-cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang
+os.chdir(current_dir)
+
+os.system("cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang")
+
