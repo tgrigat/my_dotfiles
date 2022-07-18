@@ -18,7 +18,7 @@ conf_dir = "/home/yang/.config"
 os.chdir(conf_dir)
 
 # written together so that the it won't precede if fail to pull
-os.system('git pull && git add -u && git commit -m "automatic commit" && git push')
+os.system('git pull && git add -u && git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\" && git push')
 
 os.chdir(current_dir)
 
