@@ -53,6 +53,10 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   -- comment and docstring
   use "tpope/vim-commentary" -- Easily comment stuff
+  use {
+    "kkoomen/vim-doge", 
+    run = function() vim.fn["doge#install()"]() end,
+  }
 
   use "kyazdani42/nvim-tree.lua"
   use {"akinsho/bufferline.nvim", branch = 'main'}
