@@ -3,12 +3,14 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
 [user]
 	name = Tangdi
+  email = 45258158+TangdizhiH@users.noreply.github.com
 
 [pull]
   rebase = true
   ff = only
 
 [rebase]
-    autoStash = trueemail = 45258158+TangdizhiH@users.noreply.github.com
+    autoStash = true

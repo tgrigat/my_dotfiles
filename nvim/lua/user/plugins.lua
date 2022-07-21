@@ -55,7 +55,7 @@ return packer.startup(function(use)
   use "tpope/vim-commentary" -- Easily comment stuff
   use {
     "kkoomen/vim-doge", 
-    run = function() vim.fn["doge#install()"]() end,
+    run = function() vim.fn["doge#install"]() end,
   }
 
   use "kyazdani42/nvim-tree.lua"
