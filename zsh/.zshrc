@@ -123,6 +123,9 @@ alias letsgo="zsh /home/yang/startup.sh"
 alias xmind="xmind --no-sandbox"
 # for deactivating conda fast
 alias condad="conda deactivate"
+# for fast SSH_CONNECTION
+alias sshi="ssh iWorkstation"
+alias 3dml="conda activate 3dml"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
