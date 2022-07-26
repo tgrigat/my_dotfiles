@@ -125,7 +125,10 @@ alias xmind="xmind --no-sandbox"
 alias condad="conda deactivate"
 # for fast SSH_CONNECTION
 alias sshi="ssh iWorkstation"
+# for ml3d conda
 alias 3dml="conda activate 3dml"
+# for ankis from terminal
+alias ankis="ankisync && anki && ankisync"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
