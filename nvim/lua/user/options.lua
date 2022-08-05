@@ -78,3 +78,11 @@ vim.o.clipboard = "unnamedplus"
 vim.o.guifont='AurulentSansMono NF:h14'
 
 vim.g.vsnip_snippet_dir="/home/yang/.config/nvim/vsnip"
+vim.cmd([[autocmd BufRead,BufNewFile *.rs nnoremap <F22> :w<CR>:tabnew | term cargo run<CR>]])
+-- disable the Treesitter using autocommand
+
+vim.cmd(
+  [[
+  autocmd BufRead,BufNewFile *.py TSDisable indent
+  ]]
+)
