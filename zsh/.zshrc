@@ -129,6 +129,8 @@ alias sshi="ssh iWorkstation"
 alias 3dml="conda activate 3dml"
 # for ankis from terminal
 alias ankis="ankisync && anki && ankisync"
+# for fast cd to desktop
+alias d="cd ~/Desktop && vf " 
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
@@ -138,7 +140,7 @@ alias enable='sudo systemctl enable'
 alias disable='sudo systemctl disable'
 alias reload='sudo systemctl reload'
 
-alias vf="vfcd ."
+alias vf="vfcd . " 
 
 alias Ss='pacman -Ss'
 alias Si='pacman -Si'
