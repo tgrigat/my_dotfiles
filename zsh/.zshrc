@@ -133,6 +133,8 @@ alias ankis="ankisync && anki && ankisync"
 alias d="cd ~/Desktop && vf " 
 # for pdfgrep
 alias pgrep="pdfgrep -r -n"
+# for opening zathura faster
+alias za="zathura"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
@@ -168,6 +170,16 @@ alias Fy='sudo pacman -Fy'
 alias syu='paru -Syu'
 
 alias ls="exa"
+
+function man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
 
 function vfcd()
 {
