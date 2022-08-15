@@ -1,5 +1,9 @@
 " Personal config
 
+" use r to reload
+
+:command r :reload
+
 :only
 
 nnoremap zv :vsplit <cr>
