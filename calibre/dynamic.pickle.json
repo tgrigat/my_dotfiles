@@ -1,0 +1,30 @@
+{
+  "database location dialog": "/home/yang/Documents/Library/books/calibre-syncing",
+  "notified-version-updates": {
+    "__class__": "set",
+    "__value__": [
+      "6.0",
+      "6.2"
+    ]
+  },
+  "sort_history": [
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "title",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "default",
+  "welcome_wizard_was_run": true
+}

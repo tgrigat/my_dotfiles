@@ -1,0 +1,192 @@
+{
+  "local_storage": {
+    "simple_input_history_net_search_url": [
+      "https://google.com/search?q={q}"
+    ]
+  },
+  "main_window_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAeAAAAAGAAADv8AAAQ3AAAHgAAAADYAAA7/AAAENwAAAAEAAAAAB4AAAAeAAAAANgAADv8AAAQ3"
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAFIAAAEAvwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAAAAAEAgAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAnQD///8AAAABAAABOgAABBP8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAAAABBMAAACEAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAQYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAAN8A////AAAHTAAABAIAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHIDAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "base_font_size": 19,
+    "columns_per_screen": {
+      "landscape": 2,
+      "portrait": 2
+    },
+    "controls_help_shown_count": 2,
+    "current_color_scheme": "*customized",
+    "hide_tooltips": null,
+    "keyboard_shortcuts": {
+      "left": [
+        {
+          "altKey": false,
+          "ctrlKey": false,
+          "key": "ArrowLeft",
+          "metaKey": false,
+          "shiftKey": false
+        },
+        {
+          "altKey": false,
+          "ctrlKey": false,
+          "key": "k",
+          "metaKey": false,
+          "shiftKey": false
+        }
+      ],
+      "right": [
+        {
+          "altKey": false,
+          "ctrlKey": false,
+          "key": "ArrowRight",
+          "metaKey": false,
+          "shiftKey": false
+        },
+        {
+          "altKey": false,
+          "ctrlKey": false,
+          "key": "j",
+          "metaKey": false,
+          "shiftKey": false
+        }
+      ]
+    },
+    "margin_bottom": 100,
+    "margin_left": 100,
+    "margin_right": 100,
+    "margin_top": 100,
+    "read_mode": "paged",
+    "selection_bar_quick_highlights": [
+      "type:builtin;kind:color;which:yellow;light:undefined;dark:undefined;background-color:undefined;text-decoration-line:undefined;text-decoration-color:undefined;text-decoration-style:undefined"
+    ],
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "remember_window_geometry": true,
+      "show_actions_toolbar": true
+    },
+    "standalone_recently_opened": [
+      {
+        "authors": [
+          "更俗"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Geng Su/Xiao Chen  (Cai Tu _Di Tu Ji ) (178)/Xiao Chen  (Cai Tu _Di Tu Ji ) - Geng Su.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Geng Su/Xiao Chen  (Cai Tu _Di Tu Ji ) (178)/Xiao Chen  (Cai Tu _Di Tu Ji ) - Geng Su.epub",
+        "timestamp": "2022-08-17T16:09:03.756Z",
+        "title": "枭臣 (彩图+地图集)"
+      },
+      {
+        "authors": [
+          "Yuval Noah Harari"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Yuval Noah Harari/Homo Deus_ A Brief History of Tomor (115)/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.mobi",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Yuval Noah Harari/Homo Deus_ A Brief History of Tomor (115)/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.mobi",
+        "timestamp": "2022-07-09T20:48:02.703Z",
+        "title": "Homo Deus: A Brief History of Tomorrow"
+      },
+      {
+        "authors": [
+          "斯坦尼斯拉夫·莱姆"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Si Tan Ni Si La Fu _Lai Mu/Suo La Li Si Xing (181)/Suo La Li Si Xing - Si Tan Ni Si La Fu _Lai Mu.mobi",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Si Tan Ni Si La Fu _Lai Mu/Suo La Li Si Xing (181)/Suo La Li Si Xing - Si Tan Ni Si La Fu _Lai Mu.mobi",
+        "timestamp": "2022-03-16T10:27:40.202Z",
+        "title": "索拉里斯星"
+      },
+      {
+        "authors": [
+          "斯坦尼斯拉夫·莱姆"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Si Tan Ni Si La Fu _Lai Mu/Suo La Li Si Xing (181)/Suo La Li Si Xing - Si Tan Ni Si La Fu _Lai Mu.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Si Tan Ni Si La Fu _Lai Mu/Suo La Li Si Xing (181)/Suo La Li Si Xing - Si Tan Ni Si La Fu _Lai Mu.epub",
+        "timestamp": "2022-02-11T10:20:08.604Z",
+        "title": "索拉里斯星"
+      },
+      {
+        "authors": [
+          "文德琳·范·德拉",
+          "安南"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Wen De Lin _Fan _De La/FLIPPED Peng Ran Xin Dong (Zhong Yin (26)/FLIPPED Peng Ran Xin Dong (Zhon - Wen De Lin _Fan _De La.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Wen De Lin _Fan _De La/FLIPPED Peng Ran Xin Dong (Zhong Yin (26)/FLIPPED Peng Ran Xin Dong (Zhon - Wen De Lin _Fan _De La.epub",
+        "timestamp": "2021-12-23T21:59:29.343Z",
+        "title": "FLIPPED 怦然心动（中英双语典藏版）"
+      },
+      {
+        "authors": [
+          "赵南元"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhao Nan Yuan/__Ren Zhi Ke Xue Jie Mi __ 1.1 (191)/__Ren Zhi Ke Xue Jie Mi __ 1.1 - Zhao Nan Yuan.mobi",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhao Nan Yuan/__Ren Zhi Ke Xue Jie Mi __ 1.1 (191)/__Ren Zhi Ke Xue Jie Mi __ 1.1 - Zhao Nan Yuan.mobi",
+        "timestamp": "2021-10-12T22:12:07.247Z",
+        "title": "《认知科学揭秘》1.1"
+      },
+      {
+        "authors": [
+          "「宋」司馬光 編集",
+          "「宋」胡三省 輯注"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/[Song ] Si Ma Guang  Bian Ji/Zi Zhi Tong Jian _Fan Ti Heng Pai Ban (Hu San Sheng Zhu )294Juan Quan (104)/Zi Zhi Tong Jian _Fan Ti Heng Pai Ban (Hu - [Song ] Si Ma Guang  Bian Ji.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/[Song ] Si Ma Guang  Bian Ji/Zi Zhi Tong Jian _Fan Ti Heng Pai Ban (Hu San Sheng Zhu )294Juan Quan (104)/Zi Zhi Tong Jian _Fan Ti Heng Pai Ban (Hu - [Song ] Si Ma Guang  Bian Ji.epub",
+        "timestamp": "2021-10-10T13:58:18.835Z",
+        "title": "資治通鑑·繁體橫排版（胡三省注）294卷全"
+      },
+      {
+        "authors": [
+          "Wang Meng Yuan"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Wang Meng Yuan/Wang Meng Yuan Bo Ke He Ji (24)/Wang Meng Yuan Bo Ke He Ji - Wang Meng Yuan.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Wang Meng Yuan/Wang Meng Yuan Bo Ke He Ji (24)/Wang Meng Yuan Bo Ke He Ji - Wang Meng Yuan.epub",
+        "timestamp": "2021-10-09T19:38:32.033Z",
+        "title": "王孟源博客合集"
+      },
+      {
+        "authors": [
+          "Karl Marx"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Karl Marx/Das Kapital Bd. 1_ Der Produktionsp (185)/Das Kapital Bd. 1_ Der Produkti - Karl Marx.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Karl Marx/Das Kapital Bd. 1_ Der Produktionsp (185)/Das Kapital Bd. 1_ Der Produkti - Karl Marx.epub",
+        "timestamp": "2021-10-09T19:33:28.416Z",
+        "title": "Das Kapital Bd. 1: Der Produktionsprozess des Kapitals"
+      },
+      {
+        "authors": [
+          "Karl Marx"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Karl Marx/Das Kapital Bd. 2_ Der Zirkulations (184)/Das Kapital Bd. 2_ Der Zirkulat - Karl Marx.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Karl Marx/Das Kapital Bd. 2_ Der Zirkulations (184)/Das Kapital Bd. 2_ Der Zirkulat - Karl Marx.epub",
+        "timestamp": "2021-10-09T19:27:40.636Z",
+        "title": "Das Kapital Bd. 2: Der Zirkulationsprozess des Kapitals"
+      },
+      {
+        "authors": [
+          "Jared Diamond"
+        ],
+        "key": "/home/yang/Documents/Meine Bibliothek/Jared Diamond/Guns, Germs, and Steel_ The Fates of (37)/Guns, Germs, and Steel_ The Fat - Jared Diamond.epub",
+        "pathtoebook": "/home/yang/Documents/Meine Bibliothek/Jared Diamond/Guns, Germs, and Steel_ The Fates of (37)/Guns, Germs, and Steel_ The Fat - Jared Diamond.epub",
+        "timestamp": "2021-09-30T08:14:29.145Z",
+        "title": "Guns, Germs, and Steel: The Fates of Human Societies"
+      },
+      {
+        "authors": [
+          "Michael Pollan"
+        ],
+        "key": "/home/yang/Documents/Meine Bibliothek/Michael Pollan/How to Change Your Mind (182)/How to Change Your Mind - Michael Pollan.epub",
+        "pathtoebook": "/home/yang/Documents/Meine Bibliothek/Michael Pollan/How to Change Your Mind (182)/How to Change Your Mind - Michael Pollan.epub",
+        "timestamp": "2021-09-26T07:41:44.622Z",
+        "title": "How to Change Your Mind"
+      }
+    ],
+    "user_color_schemes": {
+      "*customized": {
+        "background": "#f1e7d0",
+        "foreground": "#000000",
+        "name": "customized"
+      }
+    }
+  }
+}

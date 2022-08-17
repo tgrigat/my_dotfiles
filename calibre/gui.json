@@ -1,0 +1,193 @@
+{
+  "basic_metadata_widget_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAABAQAAAXwAAAEZAf////8BAAAAAQA="
+  },
+  "book_details_splitter_horizontal_state": [
+    true,
+    190
+  ],
+  "book_list_pin_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+  },
+  "choose-icon-theme-dialog-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAH0AAAAAAAABXcAAAQKAAAB9AAAAB4AAAV3AAAECgAAAAAAAAAAB4AAAAH0AAAAHgAABXcAAAQK"
+  },
+  "choose-merge-dialog-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAnbAAABagAADJEAAALOAAAJ2wAAAWoAAAyRAAACzgAAAAAAAAAAB4AAAAnbAAABagAADJEAAALO"
+  },
+  "choose-merge-dialog-splitter-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABoQAAAQAA/////wEAAAABAA=="
+  },
+  "convert_single_dialog_geom": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAeZAAAAJQAADtIAAAP4AAAHmQAAACUAAA7SAAAD+AAAAAEAAAAAB4AAAAeZAAAAJQAADtIAAAP4"
+  },
+  "cover_browser_splitter_vertical_state": [
+    false,
+    300
+  ],
+  "cover_grid_color": [
+    80,
+    80,
+    80
+  ],
+  "cover_grid_texture": ":light_wood.png",
+  "custom_colors_for_color_dialog": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ]
+  ],
+  "default_author_link": null,
+  "duplicates-question-dialog-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAohAAABJwAADDYAAAKnAAAKIQAAAScAAAw2AAACpwAAAAEAAAAAB4AAAAohAAABJwAADDYAAAKn"
+  },
+  "grid view visible": true,
+  "jobs view column layout3": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfQAAAAFAQEBAAAAAAAAAAAAAAAAAGT/////AAAAhAAAAAAAAAAFAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAD6AAAAAAA"
+  },
+  "jobs_dialog_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAn6AAABAAAADHIAAAMdAAAJ+gAAAQAAAAxyAAADHQAAAAEAAAAAB4AAAAn6AAABAAAADHIAAAMd"
+  },
+  "library-annotations-browser-geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAlpAAAA0wAADQIAAANlAAAJaQAAANMAAA0CAAADZQAAAAAAAAAAB4AAAAlpAAAA0wAADQIAAANl"
+  },
+  "library-annotations-browser-splitter-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABwgAAAcIA/////wEAAAABAA=="
+  },
+  "library_usage_stats": {
+    "/home/yang/Documents/Library/Library/books/calibre-syncing": 2,
+    "/home/yang/Documents/Library/books/calibre-syncing": 52
+  },
+  "metasingle_window_geometry3": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAA+AAAAGgAAB38AAAQnAAAAQgAAAB4AAAd7AAAEIwAAAAEAAAAAB4AAAABCAAAAHgAAB3sAAAQj"
+  },
+  "preferences dialog geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAHvAAAAmQAABZAAAAOGAAAB7wAAALcAAAWQAAADhgAAAAAAAAAAB4AAAAHvAAAAtwAABZAAAAOG"
+  },
+  "quick_start_guide_added": true,
+  "quickview visible": false,
+  "recently_used_languages": [],
+  "replace_scene_breaks_history": [
+    "",
+    "<hr />",
+    "∗ ∗ ∗",
+    "• • •",
+    "♦ ♦ ♦",
+    "† †",
+    "‡ ‡ ‡",
+    "∞ ∞ ∞",
+    "¤ ¤ ¤"
+  ],
+  "search bar visible": true,
+  "show_emblems": false,
+  "tag browser search box visible": false,
+  "tag_browser_splitter_horizontal_state": [
+    true,
+    200
+  ]
+}
