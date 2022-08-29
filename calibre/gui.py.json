@@ -46,6 +46,9 @@
   "jobs_search_history": [],
   "lrf_viewer_search_history": [],
   "main_search_history": [
+    "Gun",
+    "Deep",
+    "Deeo",
     "枭臣",
     "好好思考",
     "盘龙",
@@ -55,7 +58,7 @@
   ],
   "main_window_geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAAA////sgAAB38AAAQ3AAAABP///7YAAAd7AAAEMwAAAAAAAAAAB4AAAAAE////tgAAB3sAAAQz"
+    "__value__": "AdnQywADAAAAAAPAAAAALAAAB38AAAQ3AAADxAAAADAAAAd7AAAEMwAAAAAAAAAAB4AAAAPEAAAAMAAAB3sAAAQz"
   },
   "match_tags_type": "any",
   "new_version_notification": true,
