@@ -116,7 +116,7 @@ alias tm='timew'
 alias tmux='tmux -u'
 # for nvim remote
 alias sudo="sudo "
-alias matlab="matlab -softwareopengl"
+# alias matlab="matlab -softwareopengl"
 # for startup the script
 alias letsgo="zsh /home/yang/startup.sh"
 # for xmind to start properly
@@ -136,6 +136,12 @@ alias c="cd ~/.config && vf "
 alias pgrep="pdfgrep -r -n -i"
 # for opening zathura faster
 alias za="zathura"
+# for fuzzy pdfgrep
+alias pf="fuzzy-pdf -m 0"
+# for the zoxide
+alias z="zoxide "
+# for fast go to downloads dir
+alias down="cd ~/Downloads && vf "
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
