@@ -1,4 +1,8 @@
 {
+  "Plugin Updater plugin:plugin updater dialog": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAg3AAABCAAAC6AAAAL8AAAIOwAAAQwAAAucAAAC+AAAAAAAAAAAB4AAAAg7AAABDAAAC5wAAAL4"
+  },
   "basic_metadata_widget_splitter_state": {
     "__class__": "bytearray",
     "__value__": "AAAA/wAAAAEAAAADAAABAQAAAXwAAAEZAf////8BAAAAAQA="
@@ -25,7 +29,7 @@
   },
   "convert_single_dialog_geom": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAeZAAAAJQAADtIAAAP4AAAHmQAAACUAAA7SAAAD+AAAAAEAAAAAB4AAAAeZAAAAJQAADtIAAAP4"
+    "__value__": "AdnQywADAAAAAAAjAAAAMAAAB2QAAAQLAAAAJwAAADQAAAdgAAAEBwAAAAEAAAAAB4AAAAAnAAAANAAAB2AAAAQH"
   },
   "cover_browser_splitter_vertical_state": [
     false,
@@ -159,19 +163,21 @@
   },
   "library_usage_stats": {
     "/home/yang/Documents/Library/Library/books/calibre-syncing": 2,
-    "/home/yang/Documents/Library/books/calibre-syncing": 58
+    "/home/yang/Documents/Library/books/calibre-syncing": 66
   },
   "metasingle_window_geometry3": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAA+AAAAGgAAB38AAAQnAAAAQgAAAB4AAAd7AAAEIwAAAAEAAAAAB4AAAABCAAAAHgAAB3sAAAQj"
+    "__value__": "AdnQywADAAAAAAAjAAAAAAAAB2QAAAQLAAAAJwAAAAQAAAdgAAAEBwAAAAEAAAAAB4AAAAAnAAAABAAAB2AAAAQH"
   },
   "preferences dialog geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAHvAAAAmQAABZAAAAOGAAAB7wAAALcAAAWQAAADhgAAAAAAAAAAB4AAAAHvAAAAtwAABZAAAAOG"
+    "__value__": "AdnQywADAAAAAACbAAAAmgAABEQAAANxAAAAnwAAAJ4AAARAAAADbQAAAAEAAAAAB4AAAACfAAAAngAABEAAAANt"
   },
   "quick_start_guide_added": true,
   "quickview visible": false,
-  "recently_used_languages": [],
+  "recently_used_languages": [
+    "中文"
+  ],
   "replace_scene_breaks_history": [
     "",
     "<hr />",

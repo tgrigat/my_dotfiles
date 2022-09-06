@@ -46,6 +46,7 @@
   "jobs_search_history": [],
   "lrf_viewer_search_history": [],
   "main_search_history": [
+    "gun",
     "Gun",
     "Deep",
     "Deeo",
@@ -58,13 +59,16 @@
   ],
   "main_window_geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAPAAAAALAAAB38AAAQ3AAADxAAAADAAAAd7AAAEMwAAAAAAAAAAB4AAAAPEAAAAMAAAB3sAAAQz"
+    "__value__": "AdnQywADAAAAAAtAAAAAAAAADv8AAAQLAAALRAAAAAQAAA77AAAEBwAAAAAAAAAAB4AAAAtEAAAABAAADvsAAAQH"
   },
   "match_tags_type": "any",
   "new_version_notification": true,
   "oldest_news": 60,
   "overwrite_author_title_metadata": true,
-  "plugin_search_history": [],
+  "plugin_search_history": [
+    "chinese中文",
+    "chinese"
+  ],
   "save_to_disk_template_history": [],
   "scheduler_search_history": [],
   "search_as_you_type": false,

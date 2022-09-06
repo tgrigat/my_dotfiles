@@ -6,20 +6,21 @@
   },
   "main_window_geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAAAAAAALAAAA78AAAQ3AAAABAAAAEAAAAd7AAAEQwAAAAACAAAAB4AAAAAEAAAAMAAAA7sAAAQz"
+    "__value__": "AdnQywADAAAAAAeAAAAAAAAADv8AAAQLAAAHgAAAACwAAA7/AAAENwAAAAACAAAAB4AAAAeEAAAABAAADvsAAAQH"
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAFIAAAEBPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawEAAAAAAAAEBAAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAABOgAABBP8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAAAABBMAAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAACNgAABAQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHIDAAAAAP////8AAAAAAAAAAA=="
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAFIAAAEBPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAAAAAEBAAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAABOgAABBP8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAAAABBMAAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAAHRAAABAQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHIDAAAAAP////8AAAAAAAAAAA=="
   },
   "old_prefs_migrated": true,
   "session_data": {
     "base_font_size": 19,
     "columns_per_screen": {
-      "landscape": 2,
-      "portrait": 2
+      "landscape": 0,
+      "portrait": 0
     },
     "controls_help_shown_count": 2,
+    "controls_help_shown_count_rtl_page_progression": 1,
     "current_color_scheme": "*customized",
     "hide_tooltips": null,
     "keyboard_shortcuts": {
@@ -72,11 +73,102 @@
     "standalone_recently_opened": [
       {
         "authors": [
+          "斋藤孝"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
+        "timestamp": "2022-09-03T16:20:56.312Z",
+        "title": "边写边思考的大脑整理笔记法：养成「书写→思考→解决」的习惯，增加生产力，强化学习力，纾解压力，心智升级！"
+      },
+      {
+        "authors": [
+          "[美]本尼迪克特·凯里"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/[Mei ]Ben Ni Di Ke Te _Kai Li/Ru He Xue Xi (224)/Ru He Xue Xi - [Mei ]Ben Ni Di Ke Te _Kai Li.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/[Mei ]Ben Ni Di Ke Te _Kai Li/Ru He Xue Xi (224)/Ru He Xue Xi - [Mei ]Ben Ni Di Ke Te _Kai Li.epub",
+        "timestamp": "2022-09-03T14:19:43.659Z",
+        "title": "如何学习"
+      },
+      {
+        "authors": [
+          "齋藤孝"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (232)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (232)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
+        "timestamp": "2022-09-03T14:15:34.834Z",
+        "title": "邊寫邊思考的大腦整理筆記法：養成「書寫→思考→解決」的習慣，增加生產力，強化學習力，紓解壓力，心智升級！"
+      },
+      {
+        "authors": [
+          "小堀純子"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Xiao Ku Chun Zi/Cong Wei Lai Xie Hui Lai De Ni Suan Shou Zhang _Li Yong [Xiang Xiang Yuan Jing -Ji Hua -Xing Do (228)/Cong Wei Lai Xie Hui Lai De Ni Suan Shou Z - Xiao Ku Chun Zi.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Xiao Ku Chun Zi/Cong Wei Lai Xie Hui Lai De Ni Suan Shou Zhang _Li Yong [Xiang Xiang Yuan Jing -Ji Hua -Xing Do (228)/Cong Wei Lai Xie Hui Lai De Ni Suan Shou Z - Xiao Ku Chun Zi.epub",
+        "timestamp": "2022-09-02T11:00:02.271Z",
+        "title": "從未來寫回來的逆算手帳：利用「想像願景→計畫→行動」的反推習慣，讓你目標不失焦、心情不煩躁、做事不拖延"
+      },
+      {
+        "authors": [
+          "諾姆．華瑟曼(Noam Wasserman)"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Nuo Mu .Hua Se Man (Noam Wasserman)/Ni Yong Yuan You Geng Hao De Xuan Ze _Ha Fo Ding Jian Shang Xue Yuan Jiao Shou De 8Tang Ren She (229)/Ni Yong Yuan You Geng Hao De Xuan Ze _Ha F - Nuo Mu .Hua Se Man (Noam Wasserman).epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Nuo Mu .Hua Se Man (Noam Wasserman)/Ni Yong Yuan You Geng Hao De Xuan Ze _Ha Fo Ding Jian Shang Xue Yuan Jiao Shou De 8Tang Ren She (229)/Ni Yong Yuan You Geng Hao De Xuan Ze _Ha F - Nuo Mu .Hua Se Man (Noam Wasserman).epub",
+        "timestamp": "2022-09-02T10:58:26.337Z",
+        "title": "你永遠有更好的選擇：哈佛頂尖商學院教授的8堂人生經營學"
+      },
+      {
+        "authors": [
+          "丹．查納斯(Dan Charnas)"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Dan .Cha Na Si (Dan Charnas)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Guan Jian Lian Xi ,Mei Tian 30Fen Zhong ,Yang Cheng Xin (231)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Gu - Dan .Cha Na Si (Dan Charnas).epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Dan .Cha Na Si (Dan Charnas)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Guan Jian Lian Xi ,Mei Tian 30Fen Zhong ,Yang Cheng Xin (231)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Gu - Dan .Cha Na Si (Dan Charnas).epub",
+        "timestamp": "2022-09-02T10:56:12.907Z",
+        "title": "就位：從平庸到卓越的關鍵練習，每天30分鐘，養成心流、持續力及精確度同時到位的高效習慣"
+      },
+      {
+        "authors": [
+          "乔希·维茨金",
+          "吉姆·洛尔",
+          "托尼·施瓦茨",
+          "史蒂芬·D.布鲁克菲尔德",
+          "史蒂芬·普莱斯基尔",
+          "美国普林斯顿语言研究中心",
+          "艾比·马克斯·比尔",
+          "道格·莱莫夫",
+          "艾丽卡·伍尔韦",
+          "凯蒂·叶兹",
+          "亚当·罗宾逊"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Qiao Xi _Wei Ci Jin/Xue Xi He Ren Zhi Sheng Ji Jing Dian Shu (Bao Han __Xue Xi Zhi Dao __ __Jing Li Guan Li __ __Ru (227)/Xue Xi He Ren Zhi Sheng Ji Jing Dian Shu ( - Qiao Xi _Wei Ci Jin.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Qiao Xi _Wei Ci Jin/Xue Xi He Ren Zhi Sheng Ji Jing Dian Shu (Bao Han __Xue Xi Zhi Dao __ __Jing Li Guan Li __ __Ru (227)/Xue Xi He Ren Zhi Sheng Ji Jing Dian Shu ( - Qiao Xi _Wei Ci Jin.epub",
+        "timestamp": "2022-09-01T21:01:58.852Z",
+        "title": "学习和认知升级经典书（包含《学习之道》《精力管理》《如何学习》等，全套6册）"
+      },
+      {
+        "authors": [
+          "佐藤將之;鍾嘉惠"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Zuo Teng Jiang Zhi ;Zhong Jia Hui/1Xiao Shi Zuo Wan 1Tian Gong Zuo ,Ya Ma Xun Zen Me Ban Dao De __Ya Ma Xun Chuang Shi Zhu Guan G (223)/1Xiao Shi Zuo Wan 1Tian Gong Zuo ,Ya Ma Xu - Zuo Teng Jiang Zhi ;Zhong Jia Hui.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zuo Teng Jiang Zhi ;Zhong Jia Hui/1Xiao Shi Zuo Wan 1Tian Gong Zuo ,Ya Ma Xun Zen Me Ban Dao De __Ya Ma Xun Chuang Shi Zhu Guan G (223)/1Xiao Shi Zuo Wan 1Tian Gong Zuo ,Ya Ma Xu - Zuo Teng Jiang Zhi ;Zhong Jia Hui.epub",
+        "timestamp": "2022-09-01T20:59:39.005Z",
+        "title": "1小時做完1天工作，亞馬遜怎麼辦到的？：亞馬遜創始主管公開內部超效解決問題、效率翻倍的速度加乘工作法"
+      },
+      {
+        "authors": [
+          "莫琳·希凯"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Mo Lin _Xi Kai/Shen Du Si Kao _Bu Duan Bi Jin Wen Ti De Ben Zhi (226)/Shen Du Si Kao _Bu Duan Bi Jin Wen Ti De B - Mo Lin _Xi Kai.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Mo Lin _Xi Kai/Shen Du Si Kao _Bu Duan Bi Jin Wen Ti De Ben Zhi (226)/Shen Du Si Kao _Bu Duan Bi Jin Wen Ti De B - Mo Lin _Xi Kai.epub",
+        "timestamp": "2022-09-01T20:58:16.428Z",
+        "title": "深度思考：不断逼近问题的本质"
+      },
+      {
+        "authors": [
           "Jared Diamond"
         ],
         "key": "/home/yang/Documents/Library/books/calibre-syncing/Jared Diamond/Guns, Germs, and Steel_ The Fates of (37)/Guns, Germs, and Steel_ The Fat - Jared Diamond.epub",
         "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Jared Diamond/Guns, Germs, and Steel_ The Fates of (37)/Guns, Germs, and Steel_ The Fat - Jared Diamond.epub",
-        "timestamp": "2022-08-29T07:43:10.128Z",
+        "timestamp": "2022-08-29T18:29:52.715Z",
         "title": "Guns, Germs, and Steel: The Fates of Human Societies"
       },
       {

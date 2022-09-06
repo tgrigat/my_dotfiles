@@ -213,6 +213,9 @@ export LD_LIBRARY="${LD_LIBRARY}:/usr/local/cuda-11.5/lib64"
 export PATH=~/.local/bin:$PATH
 export EDITOR=nvim
 
+# setting the ledger file to the obsidian 
+export LEDGER_FILE=/home/yang/introspector/My\ Second\ Brain/transactions.ledger
+
 export HISTFILE=~/.cache/zsh/zsh_history
 export ZCOMPDUMPFILE=~/.cache/zsh/zcompdump
 
