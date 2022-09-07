@@ -178,6 +178,9 @@ alias syu='paru -Syu'
 
 alias ls="exa"
 
+# for now I'm learning cpp. I want to fast cd to the directory
+alias cppcourse="cd /home/yang/Desktop/CPP && vf "
+
 function man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
