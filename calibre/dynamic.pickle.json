@@ -4,7 +4,10 @@
     "__class__": "set",
     "__value__": [
       "6.2",
+<<<<<<< Updated upstream
       "6.4",
+=======
+>>>>>>> Stashed changes
       "6.0"
     ]
   },

@@ -59,7 +59,11 @@
   ],
   "main_window_geometry": {
     "__class__": "bytearray",
+<<<<<<< Updated upstream
     "__value__": "AdnQywADAAAAAAtAAAAAAAAADv8AAAQLAAALRAAAAAQAAA77AAAEBwAAAAAAAAAAB4AAAAtEAAAABAAADvsAAAQH"
+=======
+    "__value__": "AdnQywADAAAAAAUAAAAAAAAACf8AAAV1AAAFBAAAAAQAAAn7AAAFcQAAAAEAAAAACgAAAAUEAAAABAAACfsAAAVx"
+>>>>>>> Stashed changes
   },
   "match_tags_type": "any",
   "new_version_notification": true,
