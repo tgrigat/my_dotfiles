@@ -37,6 +37,7 @@
     "AZW3",
     "HTML",
     "FB2",
+    "FBZ",
     "PDB",
     "RB",
     "SNB",
@@ -45,34 +46,16 @@
   ],
   "jobs_search_history": [],
   "lrf_viewer_search_history": [],
-  "main_search_history": [
-    "gun",
-    "Gun",
-    "Deep",
-    "Deeo",
-    "枭臣",
-    "好好思考",
-    "盘龙",
-    "重生之",
-    "python",
-    "贝叶斯"
-  ],
+  "main_search_history": [],
   "main_window_geometry": {
     "__class__": "bytearray",
-<<<<<<< Updated upstream
-    "__value__": "AdnQywADAAAAAAtAAAAAAAAADv8AAAQLAAALRAAAAAQAAA77AAAEBwAAAAAAAAAAB4AAAAtEAAAABAAADvsAAAQH"
-=======
-    "__value__": "AdnQywADAAAAAAUAAAAAAAAACf8AAAV1AAAFBAAAAAQAAAn7AAAFcQAAAAEAAAAACgAAAAUEAAAABAAACfsAAAVx"
->>>>>>> Stashed changes
+    "__value__": "AdnQywADAAAAAAPAAAAALAAAB38AAAIxAAADxAAAADAAAAd7AAACLQAAAAAAAAAAB4AAAAPEAAAAMAAAB3sAAAIt"
   },
   "match_tags_type": "any",
   "new_version_notification": true,
   "oldest_news": 60,
   "overwrite_author_title_metadata": true,
-  "plugin_search_history": [
-    "chinese中文",
-    "chinese"
-  ],
+  "plugin_search_history": [],
   "save_to_disk_template_history": [],
   "scheduler_search_history": [],
   "search_as_you_type": false,

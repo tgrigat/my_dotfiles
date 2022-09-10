@@ -1,16 +1,4 @@
 {
-  "database location dialog": "/home/yang/Documents/Library/books/calibre-syncing",
-  "notified-version-updates": {
-    "__class__": "set",
-    "__value__": [
-      "6.2",
-<<<<<<< Updated upstream
-      "6.4",
-=======
->>>>>>> Stashed changes
-      "6.0"
-    ]
-  },
   "sort_history": [
     [
       "timestamp",
