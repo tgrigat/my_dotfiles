@@ -5,7 +5,11 @@
   ],
   "book_list_pin_splitter_state": {
     "__class__": "bytearray",
+<<<<<<< Updated upstream
     "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+=======
+    "__value__": "AAAA/wAAAAEAAAACAAABAP////8A/////wEAAAABAA=="
+>>>>>>> Stashed changes
   },
   "cover_browser_splitter_vertical_state": [
     false,
@@ -109,6 +113,7 @@
       255
     ]
   ],
+<<<<<<< Updated upstream
   "grid view visible": true,
   "library_usage_stats": {
 <<<<<<< Updated upstream
@@ -132,6 +137,11 @@
     "__value__": "AdnQywADAAAAAACbAAAAmgAABEQAAANxAAAAnwAAAJ4AAARAAAADbQAAAAEAAAAAB4AAAACfAAAAngAABEAAAANt"
 =======
     "/home/yang/Documents/Library/books/calibre-syncing": 4
+>>>>>>> Stashed changes
+=======
+  "grid view visible": false,
+  "library_usage_stats": {
+    "/home/yang/Documents/Library/books/calibre-syncing": 2
 >>>>>>> Stashed changes
   },
   "quick_start_guide_added": true,
