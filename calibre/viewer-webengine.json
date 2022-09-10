@@ -1,7 +1,7 @@
 {
   "main_window_geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAPAAAAALAAAB38AAAQ3AAADxAAAADAAAAd7AAAEMwAAAAAAAAAAB4AAAAPEAAAAMAAAB3sAAAQz"
+    "__value__": "AdnQywADAAAAAAeAAAAALAAACz8AAAQ3AAAHhAAAADAAAAs7AAAEMwAAAAAAAAAAB4AAAAeEAAAAMAAACzsAAAQz"
   },
   "main_window_state": {
     "__class__": "bytearray",
@@ -9,8 +9,7 @@
   },
   "old_prefs_migrated": true,
   "session_data": {
-    "base_font_size": 22,
-    "controls_help_shown_count": 2,
+    "controls_help_shown_count": 1,
     "current_color_scheme": "sepia-light",
     "keyboard_shortcuts": {
       "left": [
@@ -46,8 +45,8 @@
         }
       ]
     },
-    "margin_left": 50,
-    "margin_right": 50,
+    "margin_left": 100,
+    "margin_right": 100,
     "standalone_font_settings": {},
     "standalone_misc_settings": {
       "remember_last_read": true,
@@ -62,11 +61,7 @@
         ],
         "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
         "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
-<<<<<<< Updated upstream
-        "timestamp": "2022-09-09T13:52:10.788Z",
-=======
-        "timestamp": "2022-09-09T14:47:26.021Z",
->>>>>>> Stashed changes
+        "timestamp": "2022-09-10T07:33:39.466Z",
         "title": "边写边思考的大脑整理笔记法：养成「书写→思考→解决」的习惯，增加生产力，强化学习力，纾解压力，心智升级！"
       }
     ]

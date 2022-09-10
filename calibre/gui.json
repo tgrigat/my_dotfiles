@@ -5,144 +5,15 @@
   ],
   "book_list_pin_splitter_state": {
     "__class__": "bytearray",
-<<<<<<< Updated upstream
-    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
-=======
     "__value__": "AAAA/wAAAAEAAAACAAABAP////8A/////wEAAAABAA=="
->>>>>>> Stashed changes
   },
   "cover_browser_splitter_vertical_state": [
     false,
     300
   ],
-  "custom_colors_for_color_dialog": [
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ],
-    [
-      255,
-      255,
-      255,
-      255
-    ]
-  ],
-<<<<<<< Updated upstream
   "grid view visible": true,
   "library_usage_stats": {
-<<<<<<< Updated upstream
-    "/home/yang/Documents/Library/Library/books/calibre-syncing": 2,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "/home/yang/Documents/Library/books/calibre-syncing": 66
-=======
-    "/home/yang/Documents/Library/books/calibre-syncing": 60
->>>>>>> Stashed changes
-=======
-    "/home/yang/Documents/Library/books/calibre-syncing": 68
->>>>>>> Stashed changes
-  },
-  "metasingle_window_geometry3": {
-    "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAAjAAAAAAAAB2QAAAQLAAAAJwAAAAQAAAdgAAAEBwAAAAEAAAAAB4AAAAAnAAAABAAAB2AAAAQH"
-  },
-  "preferences dialog geometry": {
-    "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAACbAAAAmgAABEQAAANxAAAAnwAAAJ4AAARAAAADbQAAAAEAAAAAB4AAAACfAAAAngAABEAAAANt"
-=======
-    "/home/yang/Documents/Library/books/calibre-syncing": 4
->>>>>>> Stashed changes
-=======
-  "grid view visible": false,
-  "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 2
->>>>>>> Stashed changes
   },
   "quick_start_guide_added": true,
   "quickview visible": false,
