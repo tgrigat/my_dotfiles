@@ -7668,7 +7668,79 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Black-Nerd-Font-Complete.ttf||1341000:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Black-Nerd-Font-Complete.ttf||1360912:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "900",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono Black Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        10,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-Black-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "Black",
+      "subfamily_name": "Regular",
+      "weight": 900,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-Bold-Nerd-Font-Complete.ttf||1355328:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "bold",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono Bold Nerd Font Complete",
+      "is_bold": true,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": false,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        8,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-Bold-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": null,
+      "subfamily_name": "Bold",
+      "weight": 700,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Black-Nerd-Font-Complete.ttf||1351096:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7704,7 +7776,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Bold-Nerd-Font-Complete.ttf||1337584:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Bold-Nerd-Font-Complete.ttf||1347680:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7740,7 +7812,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-ExtraBold-Nerd-Font-Complete.ttf||1337432:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-ExtraBold-Nerd-Font-Complete.ttf||1347528:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7776,7 +7848,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-ExtraLight-Nerd-Font-Complete.ttf||1321072:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-ExtraLight-Nerd-Font-Complete.ttf||1331168:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7812,7 +7884,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Light-Nerd-Font-Complete.ttf||1327704:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Light-Nerd-Font-Complete.ttf||1337800:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7848,7 +7920,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Medium-Nerd-Font-Complete.ttf||1334900:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Medium-Nerd-Font-Complete.ttf||1344996:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7884,7 +7956,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Nerd-Font-Complete.ttf||1334288:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Nerd-Font-Complete.ttf||1344384:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7920,7 +7992,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-SemiBold-Nerd-Font-Complete.ttf||1337936:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-SemiBold-Nerd-Font-Complete.ttf||1348032:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7956,7 +8028,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Thin-Nerd-Font-Complete.ttf||1325056:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-Condensed-Thin-Nerd-Font-Complete.ttf||1335152:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "condensed",
@@ -7992,7 +8064,43 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Black-Nerd-Font-Complete.ttf||1340736:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraBold-Nerd-Font-Complete.ttf||1354412:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "800",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono ExtraBold Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        9,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-ExtraBold-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "ExtraBold",
+      "subfamily_name": "Regular",
+      "weight": 800,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Black-Nerd-Font-Complete.ttf||1350828:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8028,7 +8136,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Bold-Nerd-Font-Complete.ttf||1338396:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Bold-Nerd-Font-Complete.ttf||1348488:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8064,7 +8172,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-ExtraBold-Nerd-Font-Complete.ttf||1339576:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-ExtraBold-Nerd-Font-Complete.ttf||1349668:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8100,7 +8208,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-ExtraLight-Nerd-Font-Complete.ttf||1321528:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-ExtraLight-Nerd-Font-Complete.ttf||1331620:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8136,7 +8244,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Light-Nerd-Font-Complete.ttf||1325816:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Light-Nerd-Font-Complete.ttf||1335908:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8172,7 +8280,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Medium-Nerd-Font-Complete.ttf||1333616:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Medium-Nerd-Font-Complete.ttf||1343708:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8208,7 +8316,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Nerd-Font-Complete.ttf||1333328:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Nerd-Font-Complete.ttf||1343420:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8244,7 +8352,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-SemiBold-Nerd-Font-Complete.ttf||1333620:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-SemiBold-Nerd-Font-Complete.ttf||1343712:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8280,7 +8388,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Thin-Nerd-Font-Complete.ttf||1323956:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraCondensed-Thin-Nerd-Font-Complete.ttf||1334048:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "extra-condensed",
@@ -8316,7 +8424,187 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Black-Nerd-Font-Complete.ttf||1347596:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-ExtraLight-Nerd-Font-Complete.ttf||1333232:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "200",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono ExtraLight Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        3,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-ExtraLight-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "ExtraLight",
+      "subfamily_name": "Regular",
+      "weight": 200,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-Light-Nerd-Font-Complete.ttf||1338024:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "300",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono Light Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        4,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-Light-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "Light",
+      "subfamily_name": "Regular",
+      "weight": 300,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-Medium-Nerd-Font-Complete.ttf||1345484:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "500",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono Medium Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        6,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-Medium-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "Medium",
+      "subfamily_name": "Regular",
+      "weight": 500,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-Regular-Nerd-Font-Complete.ttf||1344348:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "normal",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono Regular Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        5,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-Regular-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": null,
+      "subfamily_name": "Regular",
+      "weight": 400,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-SemiBold-Nerd-Font-Complete.ttf||1348720:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "600",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono SemiBold Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        7,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-SemiBold-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "SemiBold",
+      "subfamily_name": "Regular",
+      "weight": 600,
+      "width": 5,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Black-Nerd-Font-Complete.ttf||1357688:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8352,7 +8640,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Bold-Nerd-Font-Complete.ttf||1336740:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Bold-Nerd-Font-Complete.ttf||1346832:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8388,7 +8676,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-ExtraBold-Nerd-Font-Complete.ttf||1336584:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-ExtraBold-Nerd-Font-Complete.ttf||1346676:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8424,7 +8712,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-ExtraLight-Nerd-Font-Complete.ttf||1322392:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-ExtraLight-Nerd-Font-Complete.ttf||1332484:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8460,7 +8748,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Light-Nerd-Font-Complete.ttf||1327896:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Light-Nerd-Font-Complete.ttf||1337988:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8496,7 +8784,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Medium-Nerd-Font-Complete.ttf||1334192:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Medium-Nerd-Font-Complete.ttf||1344284:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8532,7 +8820,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Nerd-Font-Complete.ttf||1332076:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Nerd-Font-Complete.ttf||1342168:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8568,7 +8856,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-SemiBold-Nerd-Font-Complete.ttf||1335856:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-SemiBold-Nerd-Font-Complete.ttf||1345948:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8604,7 +8892,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Thin-Nerd-Font-Complete.ttf||1323416:1661586734.0": {
+    "/usr/share/fonts/TTF/NotoSansMono-SemiCondensed-Thin-Nerd-Font-Complete.ttf||1333508:1662660332.0": {
       "family_name": "NotoSansMono Nerd Font",
       "font-family": "NotoSansMono Nerd Font",
       "font-stretch": "semi-condensed",
@@ -8637,6 +8925,42 @@
       "subfamily_name": "Regular",
       "weight": 100,
       "width": 4,
+      "wws_family_name": null,
+      "wws_subfamily_name": null
+    },
+    "/usr/share/fonts/TTF/NotoSansMono-Thin-Nerd-Font-Complete.ttf||1336056:1662660332.0": {
+      "family_name": "NotoSansMono Nerd Font",
+      "font-family": "NotoSansMono Nerd Font",
+      "font-stretch": "normal",
+      "font-style": "normal",
+      "font-weight": "100",
+      "fs_type": 0,
+      "full_name": "Noto Sans Mono Thin Nerd Font Complete",
+      "is_bold": false,
+      "is_italic": false,
+      "is_oblique": false,
+      "is_otf": false,
+      "is_regular": true,
+      "is_wws": true,
+      "os2_version": 4,
+      "panose": [
+        2,
+        11,
+        2,
+        9,
+        4,
+        5,
+        4,
+        2,
+        2,
+        4
+      ],
+      "path": "/usr/share/fonts/TTF/NotoSansMono-Thin-Nerd-Font-Complete.ttf",
+      "preferred_family_name": "NotoSansMono Nerd Font",
+      "preferred_subfamily_name": "Thin",
+      "subfamily_name": "Regular",
+      "weight": 100,
+      "width": 5,
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
