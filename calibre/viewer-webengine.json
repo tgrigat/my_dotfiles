@@ -1,15 +1,15 @@
 {
   "main_window_geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAeAAAAALAAACz8AAAQ3AAAHhAAAADAAAAs7AAAEMwAAAAAAAAAAB4AAAAeEAAAAMAAACzsAAAQz"
+    "__value__": "AdnQywADAAAAAAeAAAAALAAADv8AAAQ3AAAHgAAAACwAAA7/AAAENwAAAAAAAAAAB4AAAAeAAAAALAAADv8AAAQ3"
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAADuAAABAQAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAAHgAAABAwAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
   },
   "old_prefs_migrated": true,
   "session_data": {
-    "controls_help_shown_count": 1,
+    "controls_help_shown_count": 2,
     "current_color_scheme": "sepia-light",
     "keyboard_shortcuts": {
       "left": [
@@ -61,8 +61,17 @@
         ],
         "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
         "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
-        "timestamp": "2022-09-10T07:33:39.466Z",
+        "timestamp": "2022-09-13T10:19:47.126Z",
         "title": "边写边思考的大脑整理笔记法：养成「书写→思考→解决」的习惯，增加生产力，强化学习力，纾解压力，心智升级！"
+      },
+      {
+        "authors": [
+          "丹．查納斯(Dan Charnas)"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Dan .Cha Na Si (Dan Charnas)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Guan Jian Lian Xi ,Mei Tian 30Fen Zhong ,Yang Cheng Xin (231)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Gu - Dan .Cha Na Si (Dan Charnas).epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Dan .Cha Na Si (Dan Charnas)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Guan Jian Lian Xi ,Mei Tian 30Fen Zhong ,Yang Cheng Xin (231)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Gu - Dan .Cha Na Si (Dan Charnas).epub",
+        "timestamp": "2022-09-10T09:47:44.223Z",
+        "title": "就位：從平庸到卓越的關鍵練習，每天30分鐘，養成心流、持續力及精確度同時到位的高效習慣"
       }
     ]
   }

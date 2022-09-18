@@ -5,18 +5,131 @@
   ],
   "book_list_pin_splitter_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAEAAAACAAABAP////8A/////wEAAAABAA=="
+    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+  },
+  "convert_single_dialog_geom": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAeVAAAALAAADtYAAAQHAAAHmQAAADAAAA7SAAAEAwAAAAAAAAAAB4AAAAeZAAAAMAAADtIAAAQD"
   },
   "cover_browser_splitter_vertical_state": [
     false,
     300
   ],
+  "custom_colors_for_color_dialog": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ]
+  ],
   "grid view visible": true,
   "library_usage_stats": {
-    "/home/yang/Documents/Library/books/calibre-syncing": 2
+    "/home/yang/Documents/Library/books/calibre-syncing": 6
   },
   "quick_start_guide_added": true,
   "quickview visible": false,
+  "replace_scene_breaks_history": [
+    "",
+    "<hr />",
+    "∗ ∗ ∗",
+    "• • •",
+    "♦ ♦ ♦",
+    "† †",
+    "‡ ‡ ‡",
+    "∞ ∞ ∞",
+    "¤ ¤ ¤"
+  ],
   "search bar visible": true,
   "tag browser search box visible": false,
   "tag_browser_splitter_horizontal_state": [
