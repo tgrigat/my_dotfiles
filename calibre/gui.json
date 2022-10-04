@@ -1,4 +1,9 @@
 {
+  "advanced search dialog current tab": 0,
+  "basic_metadata_widget_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAAA4AAAAUoAAAEKAf////8BAAAAAQA="
+  },
   "book_details_splitter_horizontal_state": [
     true,
     200
@@ -115,6 +120,7 @@
   ],
   "grid view visible": true,
   "library_usage_stats": {
+<<<<<<< Updated upstream
     "/home/yang/Documents/Library/books/calibre-syncing": 6
   },
   "quick_start_guide_added": true,
@@ -129,6 +135,25 @@
     "‡ ‡ ‡",
     "∞ ∞ ∞",
     "¤ ¤ ¤"
+=======
+    "/home/yang/Documents/Library/books/calibre-syncing": 10
+  },
+  "metasingle_window_geometry3": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAA+AAAAAAAACf8AAAV1AAAAQgAAAAQAAAn7AAAFcQAAAAEAAAAACgAAAABCAAAABAAACfsAAAVx"
+  },
+  "preferences dialog geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAACrAAABTwAABFQAAAQmAAAArwAAAVMAAARQAAAEIgAAAAEAAAAACgAAAACvAAABUwAABFAAAAQi"
+  },
+  "previous_sort_order_BooksView": {
+    "tags": true
+  },
+  "quick_start_guide_added": true,
+  "quickview visible": false,
+  "recently_used_languages": [
+    "中文"
+>>>>>>> Stashed changes
   ],
   "search bar visible": true,
   "tag browser search box visible": false,

@@ -1,6 +1,10 @@
 {
   "sort_history": [
     [
+      "tags",
+      true
+    ],
+    [
       "timestamp",
       false
     ],

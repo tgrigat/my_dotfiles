@@ -142,6 +142,11 @@ alias pf="fuzzy-pdf -m 0"
 alias z="zoxide "
 # for fast go to downloads dir
 alias down="cd ~/Downloads && vf "
+# for the proxy
+alias pxy="export http_proxy=http://127.0.0.1:8889;export https_proxy=http://127.0.0.1:8889;export ALL_PROXY=socks5://127.0.0.1:1089"
+# for unproxy
+alias unpxy='unset all_proxy; unset http_proxy; unset https_proxy'
+
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
