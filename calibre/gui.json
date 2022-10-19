@@ -1,5 +1,4 @@
 {
-  "advanced search dialog current tab": 0,
   "basic_metadata_widget_splitter_state": {
     "__class__": "bytearray",
     "__value__": "AAAA/wAAAAEAAAADAAAA4AAAAUoAAAEKAf////8BAAAAAQA="
@@ -12,9 +11,13 @@
     "__class__": "bytearray",
     "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
   },
-  "convert_single_dialog_geom": {
+  "choose-merge-dialog-geometry": {
     "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAeVAAAALAAADtYAAAQHAAAHmQAAADAAAA7SAAAEAwAAAAAAAAAAB4AAAAeZAAAAMAAADtIAAAQD"
+    "__value__": "AdnQywADAAAAAAJ7AAABpAAABP0AAALnAAACfwAAAagAAAT5AAAC4wAAAAAAAAAAB4AAAAJ/AAABqAAABPkAAALj"
+  },
+  "choose-merge-dialog-splitter-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABZQAAAQAA/////wEAAAABAA=="
   },
   "cover_browser_splitter_vertical_state": [
     false,
@@ -118,47 +121,28 @@
       255
     ]
   ],
-  "grid view visible": true,
+  "grid view visible": false,
   "library_usage_stats": {
-<<<<<<< Updated upstream
     "/home/yang/Documents/Library/books/calibre-syncing": 6
   },
-  "quick_start_guide_added": true,
-  "quickview visible": false,
-  "replace_scene_breaks_history": [
-    "",
-    "<hr />",
-    "∗ ∗ ∗",
-    "• • •",
-    "♦ ♦ ♦",
-    "† †",
-    "‡ ‡ ‡",
-    "∞ ∞ ∞",
-    "¤ ¤ ¤"
-=======
-    "/home/yang/Documents/Library/books/calibre-syncing": 10
-  },
-  "metasingle_window_geometry3": {
-    "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAA+AAAAAAAACf8AAAV1AAAAQgAAAAQAAAn7AAAFcQAAAAEAAAAACgAAAABCAAAABAAACfsAAAVx"
-  },
-  "preferences dialog geometry": {
-    "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAACrAAABTwAABFQAAAQmAAAArwAAAVMAAARQAAAEIgAAAAEAAAAACgAAAACvAAABUwAABFAAAAQi"
-  },
-  "previous_sort_order_BooksView": {
-    "tags": true
-  },
-  "quick_start_guide_added": true,
-  "quickview visible": false,
-  "recently_used_languages": [
-    "中文"
->>>>>>> Stashed changes
+  "metasingle_window_size": [
+    1850,
+    986
   ],
+  "previous_sort_order_BooksView": {
+    "title": true
+  },
+  "quick_start_guide_added": true,
+  "quickview visible": false,
+  "recently_used_languages": [],
   "search bar visible": true,
   "tag browser search box visible": false,
   "tag_browser_splitter_horizontal_state": [
     true,
     200
-  ]
+  ],
+  "tag_editor_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAJ0AAAA5QAABPsAAAOGAAACeAAAAOkAAAT3AAADggAAAAAAAAAAB4AAAAJ4AAAA6QAABPcAAAOC"
+  }
 }

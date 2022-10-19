@@ -47,17 +47,12 @@
   "jobs_search_history": [],
   "lrf_viewer_search_history": [],
   "main_search_history": [
-    "Deep Learning",
-    "python",
-    "浪荡"
+    "3d",
+    "machine learning"
   ],
   "main_window_geometry": {
     "__class__": "bytearray",
-<<<<<<< Updated upstream
-    "__value__": "AdnQywADAAAAAAeAAAAALAAADv8AAAQ3AAAHgAAAACwAAA7/AAAENwAAAAAAAAAAB4AAAAeAAAAALAAADv8AAAQ3"
-=======
-    "__value__": "AdnQywADAAAAAAFOAAAFzAAACM0AAAnXAAABUgAABdAAAAjJAAAJ0wAAAAAAAAAAB4AAAAFSAAAF0AAACMkAAAnT"
->>>>>>> Stashed changes
+    "__value__": "AdnQywADAAAAAAPAAAAALgAAB30AAAQ1AAADxAAAADIAAAd5AAAEMQAAAAAAAAAAB4AAAAPEAAAAMgAAB3kAAAQx"
   },
   "match_tags_type": "any",
   "new_version_notification": true,

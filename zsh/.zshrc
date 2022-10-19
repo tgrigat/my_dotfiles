@@ -98,8 +98,8 @@ alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'
 
-alias vim="nvim"
-alias note='cd ~/introspector/My\ Second\ Brain && vim'
+alias vim="lvim"
+alias note='cd ~/introspector/My\ Second\ Brain && vim '
 alias vimrc='cd ~/.config/nvim'
 alias desktop='cd ~/Desktop'
 alias texd='cd ~/Desktop/Code/Latex'
@@ -185,6 +185,8 @@ alias ls="exa"
 
 # for now I'm learning cpp. I want to fast cd to the directory
 alias cppcourse="cd /home/yang/Desktop/CPP && vf "
+# for helping zotero get rid of enforced dark theme 
+alias zotero="GTK_THEME=Default zotero "
 
 function man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
