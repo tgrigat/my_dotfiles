@@ -94,11 +94,14 @@ setopt share_history
 # alias cpconf="cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang"
 # alias udconf="cp /home/yang/.zshrc  /home/yang/.config/zsh/ && cp /home/yang/.tmux.conf /home/yang/.config/tmux/"
 
+###### Ros setup ######
+source /opt/ros/noetic/setup.zsh
+#######################
 alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'
 
-alias vim="lvim"
+alias vim="nvim"
 alias note='cd ~/introspector/My\ Second\ Brain && vim '
 alias vimrc='cd ~/.config/nvim'
 alias desktop='cd ~/Desktop'
