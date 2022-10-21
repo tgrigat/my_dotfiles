@@ -40,7 +40,7 @@ local lsp_flags = {
 
 require('plugins.lsp.bash')
 require('plugins.lsp.clangd')
-require('lsp.lua')
+require('plugins.lsp.lua')
 require('plugins.lsp.pyright')
 require('plugins.lsp.texlab')
 -- require('lsp.rust')
