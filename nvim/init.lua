@@ -1,12 +1,13 @@
-if vim.g.vscode:
+if vim.g.vscode then
     -- vscode settings
-    --
-else:
+    require("vscode")
+else
+    -- ordinary Neovim
     -- below are basic configurations for neovim
     require "basic"
     require "keymaps"
-    require "colorscheme"
     require "plugins"
+    require "colorscheme"
     -- require "plugs"
 
     -- below are configuration files for individual plugins.
