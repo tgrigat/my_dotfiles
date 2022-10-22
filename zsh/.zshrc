@@ -96,6 +96,11 @@ setopt share_history
 
 ###### Ros setup ######
 source /opt/ros/noetic/setup.zsh
+
+if [ $(hostname) = node ]; then
+    source /opt/ros/noetic/setup.zsh
+fi
+
 #######################
 alias -g ..='..'
 alias -g ...='../..'
