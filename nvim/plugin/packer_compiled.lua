@@ -115,10 +115,19 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
+    cond = { "\27LJ\2\n(\0\0\1\0\3\0\0056\0\0\0009\0\1\0009\0\2\0\19\0\0\0L\0\2\0\vvscode\6g\bvim\0" },
     config = { "\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins.cmp\frequire\0" },
-    loaded = true,
-    path = "/home/yang/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = true,
+    path = "/home/yang/.local/share/nvim/site/pack/packer/opt/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-comment"] = {
+    config = { "\27LJ\2\n“\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\a\30comment_chunk_text_object\aic\21operator_mapping\agc\17line_mapping\bgcc\20create_mappings\2\"comment_empty_trim_whitespace\2\18comment_empty\2\19marker_padding\2\nsetup\17nvim_comment\frequire\0" },
+    loaded = true,
+    path = "/home/yang/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -152,8 +161,11 @@ _G.packer_plugins = {
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["popup.nvim"] = {
-    loaded = true,
-    path = "/home/yang/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    cond = { "\27LJ\2\n(\0\0\1\0\3\0\0056\0\0\0009\0\1\0009\0\2\0\19\0\0\0L\0\2\0\vvscode\6g\bvim\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = true,
+    path = "/home/yang/.local/share/nvim/site/pack/packer/opt/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["telescope.nvim"] = {
@@ -162,8 +174,11 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/home/yang/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    cond = { "\27LJ\2\n(\0\0\1\0\3\0\0056\0\0\0009\0\1\0009\0\2\0\19\0\0\0L\0\2\0\vvscode\6g\bvim\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = true,
+    path = "/home/yang/.local/share/nvim/site/pack/packer/opt/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["vim-vsnip"] = {
@@ -183,10 +198,20 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-lspconfig]], true)
 try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins.lsp\frequire\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins.cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+try_loadstring("\27LJ\2\n“\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\a\30comment_chunk_text_object\aic\21operator_mapping\agc\17line_mapping\bgcc\20create_mappings\2\"comment_empty_trim_whitespace\2\18comment_empty\2\19marker_padding\2\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
+time([[Config for nvim-comment]], false)
+-- Conditional loads
+time([[Conditional loading of nvim-cmp]], true)
+  require("packer.load")({"nvim-cmp"}, {}, _G.packer_plugins)
+time([[Conditional loading of nvim-cmp]], false)
+time([[Conditional loading of popup.nvim]], true)
+  require("packer.load")({"popup.nvim"}, {}, _G.packer_plugins)
+time([[Conditional loading of popup.nvim]], false)
+time([[Conditional loading of toggleterm.nvim]], true)
+  require("packer.load")({"toggleterm.nvim"}, {}, _G.packer_plugins)
+time([[Conditional loading of toggleterm.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
