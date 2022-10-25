@@ -117,9 +117,11 @@ if not vim.g.vscode then
               -- Hook function to call before commenting takes place
               hook = nil
             }
-        )
-        end
-        }
+            )
+            end
+            }
+
+        use {"tpope/vim-surround"}
 
 
         if PACKER_BOOTSTRAP then
@@ -151,5 +153,6 @@ else
     )
     end
     }
+    use {"tpope/vim-surround"}
 end
 
