@@ -17,4 +17,8 @@ setxkbmap -option caps:escape_shifted_capslock
 
 export PATH=~/.local/bin:$PATH
 
+# for synology support
 export QT_QPA_PLATFORM="wayland;xcb"
+
+# enable firefox wayland
+export MOZ_ENABLE_WAYLAND=1
