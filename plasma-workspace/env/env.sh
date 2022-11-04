@@ -16,3 +16,5 @@ setxkbmap -option caps:escape_shifted_capslock
 
 
 export PATH=~/.local/bin:$PATH
+
+export QT_QPA_PLATFORM="wayland;xcb"
