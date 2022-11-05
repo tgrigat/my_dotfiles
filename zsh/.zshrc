@@ -102,6 +102,13 @@ if [ $(hostname) = node ]; then
 fi
 
 #######################
+# Here are environment variables
+#
+# export QT_QPA_PLATFORM="wayland;xcb"
+
+#######################
+
+alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
 alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'

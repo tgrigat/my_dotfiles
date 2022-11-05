@@ -123,7 +123,7 @@
   ],
   "grid view visible": false,
   "library_usage_stats": {
-    "/home/yang/Documents/Library/books/calibre-syncing": 6
+    "/home/yang/Documents/Library/books/calibre-syncing": 8
   },
   "metasingle_window_size": [
     1850,
@@ -134,7 +134,9 @@
   },
   "quick_start_guide_added": true,
   "quickview visible": false,
-  "recently_used_languages": [],
+  "recently_used_languages": [
+    "英语"
+  ],
   "search bar visible": true,
   "tag browser search box visible": false,
   "tag_browser_splitter_horizontal_state": [
