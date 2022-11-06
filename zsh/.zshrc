@@ -114,12 +114,13 @@ alias -g ...='../..'
 alias -g ....='../../..'
 
 alias vim="nvim"
-alias note='cd ~/introspector/My\ Second\ Brain && vim '
+alias note='cd ~/obsidian && vim '
 alias vimrc='cd ~/.config/nvim'
 alias desktop='cd ~/Desktop'
 alias texd='cd ~/Desktop/Code/Latex'
 alias e='exit'
 alias vifm='vifm .'
+alias ra='ranger . '
 alias S='sudo paru -S'
 alias Ss='sudo paru -Ss'
 alias Syu='sudo paru -Syu'
@@ -213,6 +214,7 @@ function man() {
     command man "$@"
 }
 
+# press S to quit vifm and move to pwd
 function vfcd()
 {
     local dst="$(command vifm --choose-dir - "$@")"
@@ -221,6 +223,21 @@ function vfcd()
         return 1
     fi
     cd "$dst"
+}
+
+# press Q to quit ranger and move to pwd
+function ranger() {
+    local IFS=$'\t\n'
+    local tempfile="$(mktemp -t tmp.XXXXXX)"
+    local ranger_cmd=(
+    command ranger --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
+    )
+
+    ${ranger_cmd[@]} "$@"
+    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$PWD" ]]; then
+        cd -- "$(cat "$tempfile")" || return
+    fi
+    command rm -f -- "$tempfile" 2>/dev/null
 }
 
 function sudo() {

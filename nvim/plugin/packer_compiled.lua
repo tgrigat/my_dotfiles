@@ -124,7 +124,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-comment"] = {
-    config = { "\27LJ\2\n“\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\a\30comment_chunk_text_object\aic\21operator_mapping\agc\17line_mapping\bgcc\20create_mappings\2\"comment_empty_trim_whitespace\2\18comment_empty\2\19marker_padding\2\nsetup\17nvim_comment\frequire\0" },
+    config = { "\27LJ\2\n“\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\a\"comment_empty_trim_whitespace\2\18comment_empty\2\19marker_padding\2\30comment_chunk_text_object\aic\21operator_mapping\agc\17line_mapping\bgcc\20create_mappings\2\nsetup\17nvim_comment\frequire\0" },
     loaded = true,
     path = "/home/yang/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
@@ -181,6 +181,11 @@ _G.packer_plugins = {
     path = "/home/yang/.local/share/nvim/site/pack/packer/opt/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/yang/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/yang/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -200,15 +205,15 @@ try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16plugins
 time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-comment
 time([[Config for nvim-comment]], true)
-try_loadstring("\27LJ\2\n“\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\a\30comment_chunk_text_object\aic\21operator_mapping\agc\17line_mapping\bgcc\20create_mappings\2\"comment_empty_trim_whitespace\2\18comment_empty\2\19marker_padding\2\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
+try_loadstring("\27LJ\2\n“\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\a\"comment_empty_trim_whitespace\2\18comment_empty\2\19marker_padding\2\30comment_chunk_text_object\aic\21operator_mapping\agc\17line_mapping\bgcc\20create_mappings\2\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
 time([[Config for nvim-comment]], false)
 -- Conditional loads
-time([[Conditional loading of nvim-cmp]], true)
-  require("packer.load")({"nvim-cmp"}, {}, _G.packer_plugins)
-time([[Conditional loading of nvim-cmp]], false)
 time([[Conditional loading of popup.nvim]], true)
   require("packer.load")({"popup.nvim"}, {}, _G.packer_plugins)
 time([[Conditional loading of popup.nvim]], false)
+time([[Conditional loading of nvim-cmp]], true)
+  require("packer.load")({"nvim-cmp"}, {}, _G.packer_plugins)
+time([[Conditional loading of nvim-cmp]], false)
 time([[Conditional loading of toggleterm.nvim]], true)
   require("packer.load")({"toggleterm.nvim"}, {}, _G.packer_plugins)
 time([[Conditional loading of toggleterm.nvim]], false)
