@@ -147,8 +147,8 @@ alias 3dml="conda activate 3dml"
 # for ankis from terminal
 alias ankis="ankisync && anki && ankisync"
 # for fast cd to desktop
-alias d="cd ~/Desktop && vf " 
-alias c="cd ~/.config && vf "
+alias d="dolphin . " 
+alias c="cd "
 # for pdfgrep
 alias pgrep="pdfgrep -r -n -i"
 # for opening zathura faster
