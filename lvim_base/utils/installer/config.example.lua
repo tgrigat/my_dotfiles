@@ -10,8 +10,8 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = false
-lvim.colorscheme = "everforest"
+lvim.format_on_save.enabled = false
+lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -19,8 +19,8 @@ lvim.colorscheme = "everforest"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+-- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+-- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -64,7 +64,6 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
--- lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -165,16 +164,10 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Additional Plugins
 -- lvim.plugins = {
---   {
---     "folke/trouble.nvim",
---     cmd = "TroubleToggle",
---   },
---   {
---     'sainnhe/everforest'
---   },
---   {
---     'smbl64/vim-black-macchiato'
---   },
+--     {
+--       "folke/trouble.nvim",
+--       cmd = "TroubleToggle",
+--     },
 -- }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -190,43 +183,3 @@ lvim.builtin.treesitter.highlight.enable = true
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
-
------------------------------------------------
--- Below are configurations for a python ide.
-
-lvim.format_on_save = false
-lvim.lsp.diagnostics.virtual_text = true
-lvim.builtin.terminal.active = true
-
--- All the treesitter parsers you want to install. If you want all of them, just
--- replace everything with "all".
-lvim.builtin.treesitter.ensure_installed = {
-  "python",
-}
-
-
--- Additional Plugins
-lvim.plugins = {
-  -- You can switch between vritual environmnts.
-  "AckslD/swenv.nvim",
-  "mfussenegger/nvim-dap-python",
-    'sainnhe/everforest',
-  {
-    -- You can generate docstrings automatically.
-    "danymat/neogen",
-    config = function()
-      require("neogen").setup {
-        enabled = true,
-        languages = {
-          python = {
-            template = {
-              annotation_convention = "numpydoc",
-            },
-          },
-        },
-      }
-    end,
-  },
-  -- You can run blocks of code like jupyter notebook.
-  { "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" },
-}
