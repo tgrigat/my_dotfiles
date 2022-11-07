@@ -1,0 +1,9 @@
+{
+  "hello": {
+    "prefix": "com",
+    "body": [
+      "# yang:"
+    ],
+    "description": "my comments for me to understand the code "
+  }
+}
