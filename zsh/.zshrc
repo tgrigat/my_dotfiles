@@ -113,7 +113,8 @@ alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'
 
-alias vim="nvim"
+alias vim="lvim "
+alias mvim="nvim "
 alias note='cd ~/obsidian && vim '
 alias vimrc='cd ~/.config/nvim'
 alias desktop='cd ~/Desktop'
