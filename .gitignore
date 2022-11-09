@@ -228,6 +228,7 @@ khotkeysrc
 kinfocenterrc
 kiorc
 kioslaverc
+<<<<<<< HEAD
 klipperrc
 Element
 catkin/verb_aliases
@@ -239,3 +240,6 @@ breezerc
 harunarc
 kde_backup.tar.gz
 rvizrc
+=======
+klipperrc
+>>>>>>> a4b29f3 (exclude most of them)
