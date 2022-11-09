@@ -1,0 +1,317 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[020e6b2d-0454-4db2-b4bd-d6f37f33798d]
+Description=Application settings for steam
+clientmachine=localhost
+noborder=true
+noborderrule=2
+wmclass=steam
+wmclassmatch=1
+
+[0c5d9426-22aa-435c-853d-6dad3036f3d4]
+Description=Application settings for feishu
+clientmachine=localhost
+noborderrule=2
+wmclass=feishu
+wmclassmatch=1
+
+[1]
+Description=Application settings for firefox
+clientmachine=localhost
+noborderrule=2
+title=Welcome to Chrome - Google Chrome
+windowrole=browser
+wmclass=firefox
+wmclassmatch=1
+
+[10]
+Description=Application settings for telegramdesktop
+clientmachine=localhost
+noborderrule=2
+wmclass=telegram-desktop telegramdesktop
+wmclasscomplete=true
+wmclassmatch=1
+
+[11]
+Description=Application settings for firefox
+clientmachine=localhost
+noborderrule=2
+wmclass=toolkit firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[117071c1-d34e-4c11-b876-38d1de787868]
+Description=Application settings for zotero
+clientmachine=localhost
+noborderrule=2
+wmclass=navigator zotero
+wmclasscomplete=true
+wmclassmatch=1
+
+[12]
+Description=Application settings for wechat.exe
+clientmachine=localhost
+noborderrule=2
+wmclass=wechat.exe
+wmclassmatch=1
+
+[123d6f0d-baa9-4ab8-ac10-5250dc1689d9]
+Description=Application settings for clash-verge
+clientmachine=localhost
+noborderrule=2
+wmclass=clash-verge
+wmclassmatch=1
+
+[13]
+Description=Application settings for zathura
+clientmachine=localhost
+noborderrule=2
+wmclass=org.pwmt.zathura zathura
+wmclasscomplete=true
+wmclassmatch=1
+
+[14]
+Description=Application settings for anki
+clientmachine=localhost
+noborderrule=2
+wmclass=anki
+wmclassmatch=1
+
+[15]
+Description=Application settings for alacritty
+clientmachine=localhost
+noborderrule=2
+wmclass=alacritty
+wmclassmatch=1
+
+[16]
+Description=Application settings for obsidian
+clientmachine=localhost
+noborderrule=2
+wmclass=obsidian
+wmclassmatch=1
+
+[17]
+Description=Application settings for xournalpp
+clientmachine=localhost
+noborderrule=2
+wmclass=xournalpp
+wmclassmatch=1
+
+[18]
+Description=Application settings for obsidian
+clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+types=1
+wmclass=obsidian
+wmclassmatch=1
+
+[19]
+Description=Application settings for firefox
+clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+noborderrule=2
+types=1
+wmclass=navigator firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[1bfadfd1-0149-4274-8493-1e66f0435a3f]
+Description=Application settings for telegramdesktop
+clientmachine=localhost
+noborderrule=2
+wmclass=telegram-desktop telegramdesktop
+wmclasscomplete=true
+wmclassmatch=1
+
+[2]
+Description=Application settings for google-chrome
+clientmachine=localhost
+noborderrule=2
+title=Welcome to Chrome - Google Chrome
+windowrole=browser
+wmclass=google-chrome
+wmclassmatch=1
+
+[3]
+Description=Application settings for zotero
+clientmachine=localhost
+noborderrule=2
+title=Welcome to Chrome - Google Chrome
+windowrole=browser
+wmclass=navigator zotero
+wmclasscomplete=true
+wmclassmatch=1
+
+[3a89945a-c8a8-4097-960e-fe663f8b1fc6]
+Description=Application settings for firefox
+noborderrule=2
+wmclass=firefox
+wmclassmatch=1
+
+[4]
+Description=Application settings for steam
+clientmachine=localhost
+noborderrule=2
+wmclass=steam
+wmclassmatch=1
+
+[5]
+Description=Application settings for code
+clientmachine=localhost
+noborderrule=2
+wmclass=code
+wmclassmatch=1
+
+[6]
+Description=Application settings for clash-verge
+clientmachine=localhost
+noborderrule=2
+wmclass=clash-verge
+wmclassmatch=1
+
+[6c6357f3-afe7-40a1-9fde-ceb5f5d8325b]
+Description=Application settings for obsidian
+clientmachine=localhost
+noborderrule=3
+wmclass=obsidian
+wmclassmatch=1
+
+[7]
+Description=Application settings for discover
+clientmachine=localhost
+noborderrule=2
+wmclass=plasma-discover discover
+wmclasscomplete=true
+wmclassmatch=1
+
+[71205302-35a9-4891-a6e2-3e96e62fe1c6]
+Description=Application settings for discover
+clientmachine=localhost
+noborderrule=2
+wmclass=plasma-discover discover
+wmclasscomplete=true
+wmclassmatch=1
+
+[71ac286f-e5df-44f9-86eb-880e4887fae4]
+Description=Application settings for xournalpp
+clientmachine=localhost
+noborder=true
+noborderrule=3
+wmclass=xournalpp
+wmclassmatch=1
+
+[7bc3f7b7-207e-42c7-a4ff-3324dcc9097a]
+Description=Application settings for firefox
+clientmachine=localhost
+noborderrule=2
+wmclass=toolkit firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[7e22b45a-d01e-4a31-8867-eefd717860cf]
+Description=Application settings for firefox
+clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+wmclass=navigator firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[8]
+Description=Application settings for feishu
+clientmachine=localhost
+noborderrule=2
+wmclass=feishu
+wmclassmatch=1
+
+[8363a941-1e6d-4a83-ab2f-13a7507d6272]
+Description=Application settings for wechat.exe
+clientmachine=localhost
+noborderrule=2
+wmclass=wechat.exe
+wmclassmatch=1
+
+[9]
+Description=Application settings for xmind
+clientmachine=localhost
+noborderrule=2
+wmclass=xmind
+wmclassmatch=1
+
+[91006c58-9c21-4453-a920-b91575c9e5af]
+Description=Application settings for dolphin
+clientmachine=localhost
+fullscreenrule=2
+wmclass=dolphin
+wmclassmatch=1
+
+[93951604-a886-4da9-baa2-c33d5b29924f]
+Description=Application settings for code
+clientmachine=localhost
+noborderrule=2
+wmclass=code
+wmclassmatch=1
+
+[9f0229de-9a11-457d-afaf-624ce2cf92f0]
+Description=Application settings for xmind
+clientmachine=localhost
+noborderrule=2
+wmclass=xmind
+wmclassmatch=1
+
+[9f61408b-eff6-4551-9138-af62b6dfa19c]
+Description=Application settings for anki
+clientmachine=localhost
+noborderrule=2
+wmclass=anki
+wmclassmatch=1
+
+[General]
+count=19
+rules=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+
+[c36a6621-4c2e-4e09-99d4-1025bcf08f41]
+Description=Application settings for obsidian
+clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+types=1
+wmclass=obsidian
+wmclassmatch=1
+
+[c58c3625-4176-4531-92a8-bb1cdedf8bb7]
+Description=Application settings for alacritty
+clientmachine=localhost
+noborderrule=2
+wmclass=alacritty
+wmclassmatch=1
+
+[c6e2bc76-5d9a-45c4-9689-79326e927398]
+Description=Window settings for google-chrome
+clientmachine=localhost
+noborderrule=2
+title=Welcome to Chrome - Google Chrome
+types=1
+windowrole=browser
+windowrolematch=1
+wmclass=google-chrome
+wmclassmatch=1
+
+[ce86c542-e7a1-47be-9ec1-b6de9e9c2b32]
+Description=Application settings for zathura
+clientmachine=localhost
+noborderrule=2
+wmclass=org.pwmt.zathura zathura
+wmclasscomplete=true
+wmclassmatch=1
+
+[f3598ab7-ee92-4d25-b389-7a6212f379f0]
+Description=Application settings for google-chrome
+clientmachine=localhost
+noborderrule=2
+wmclass=google-chrome
+wmclassmatch=1
