@@ -143,6 +143,7 @@ alias letsgo="zsh /home/yang/startup.sh"
 alias xmind="xmind --no-sandbox"
 # for deactivating conda fast
 alias condad="conda deactivate"
+alias condaa="conda activate"
 # for fast SSH_CONNECTION
 alias sshi="ssh iWorkstation"
 # for ml3d conda
