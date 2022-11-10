@@ -92,7 +92,6 @@ google-chrome/Default/GPUCache
 google-chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi
 google-chrome/Default/Feature Engagement Tracker
 google-chrome
-kde.org
 kdeconnect
 kdedefaults
 keepassxc
@@ -243,3 +242,5 @@ rvizrc
 =======
 klipperrc
 >>>>>>> a4b29f3 (exclude most of them)
+
+kde.org
