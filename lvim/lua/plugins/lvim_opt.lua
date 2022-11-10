@@ -189,7 +189,7 @@ lvim.plugins = {
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-    ft = "markdown"
+    ft = 'markdown'
   },
   -- You can run blocks of code like jupyter notebook.
   { "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" },
