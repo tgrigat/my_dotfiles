@@ -87,7 +87,7 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enable = false
+lvim.builtin.treesitter.highlight.enable = true
 
 -- generic LSP settings
 
@@ -196,7 +196,7 @@ lvim.builtin.treesitter.highlight.enable = false
 -- Below are configurations for a python ide.
 
 lvim.format_on_save = false
-lvim.lsp.diagnostics.virtual_text = true
+lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.terminal.active = true
 
 -- All the treesitter parsers you want to install. If you want all of them, just
