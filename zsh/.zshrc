@@ -108,6 +108,7 @@ fi
 
 #######################
 
+alias lg="lazygit"
 alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
 alias -g ..='..'
 alias -g ...='../..'
@@ -148,7 +149,7 @@ alias 3dml="conda activate 3dml"
 alias ankis="ankisync && anki && ankisync"
 # for fast cd to desktop
 alias d="dolphin . " 
-alias c="cd "
+# alias c="cd && ls "
 # for pdfgrep
 alias pgrep="pdfgrep -r -n -i"
 # for opening zathura faster
@@ -198,12 +199,15 @@ alias Fy='sudo pacman -Fy'
 
 alias syu='paru -Syu'
 
-alias ls="exa"
+alias ls="exa "
 
 # for now I'm learning cpp. I want to fast cd to the directory
 alias cppcourse="cd /home/yang/Desktop/CPP && vf "
 # for helping zotero get rid of enforced dark theme 
 alias zotero="GTK_THEME=Default zotero "
+
+# cd and ls
+c() { builtin cd "$@" && ls; }
 
 function man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
