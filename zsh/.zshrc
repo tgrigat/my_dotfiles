@@ -95,10 +95,13 @@ setopt share_history
 # alias udconf="cp /home/yang/.zshrc  /home/yang/.config/zsh/ && cp /home/yang/.tmux.conf /home/yang/.config/tmux/"
 
 ###### Ros setup ######
-source /opt/ros/noetic/setup.zsh
+# source /opt/ros/noetic/setup.zsh
 
-if [ $(hostname) = node ]; then
+if [ $(hostname) = "node" ]; then
     source /opt/ros/noetic/setup.zsh
+    printf '%s\n' "You are on private laptop, Initialized ros for zsh!"
+else
+    printf '%s\n' "Welcome, Jiaye."
 fi
 
 #######################
