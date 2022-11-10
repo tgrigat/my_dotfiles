@@ -201,6 +201,8 @@ alias syu='paru -Syu'
 
 alias ls="exa "
 
+alias zshconf="vim ~/.zshrc"
+alias conf="cd ~/.config && vim"
 # for now I'm learning cpp. I want to fast cd to the directory
 alias cppcourse="cd /home/yang/Desktop/CPP && vf "
 # for helping zotero get rid of enforced dark theme 
