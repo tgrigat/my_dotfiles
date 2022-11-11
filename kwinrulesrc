@@ -96,6 +96,9 @@ wmclassmatch=1
 [17]
 Description=Application settings for obsidian
 clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+types=1
 wmclass=obsidian
 wmclassmatch=1
 
@@ -273,8 +276,8 @@ wmclass=anki
 wmclassmatch=1
 
 [General]
-count=19
-rules=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+count=17
+rules=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
 
 [c36a6621-4c2e-4e09-99d4-1025bcf08f41]
 Description=Application settings for obsidian

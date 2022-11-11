@@ -4,6 +4,11 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+## alias for temporary usage
+
+if [ $(hostname) = "ArchDM" ]; then
+  alias wkdir="cd ~/Workspace/git/deep-video-mvs-dm/"
+fi
 
 # Set up the prompt
 #----------------------------------------------------------------------------------------------------
@@ -203,6 +208,7 @@ alias Fy='sudo pacman -Fy'
 alias syu='paru -Syu'
 
 alias ls="exa "
+alias ll="ls -la "
 
 alias zshconf="vim ~/.zshrc"
 alias conf="cd ~/.config && vim"
