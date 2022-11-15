@@ -10,6 +10,17 @@ linters.setup {
   { command = "flake8", filetypes = { "python" } },
 }
 
+-- TODO: debugpy installed by default
+-- Setup dap for python
+lvim.builtin.dap.active = true
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python") end)
+
+-- Supported test frameworks are unittest, pytest and django. By default it
+-- tries to detect the runner by probing for pytest.ini and manage.py, if
+-- neither are present it defaults to unittest.
+pcall(function() require("dap-python").test_runner = "pytest" end)
+
 -- Magma Setup
 
 -- Image options. Other options:
@@ -35,8 +46,16 @@ vim.g.magma_cell_highlight_group = "CursorLine"
 -- The generated file is placed in this directory, with the filename itself
 -- being the buffer's name, with % replaced by %% and / replaced by %, and
 -- postfixed with the extension .json.
-
 vim.g.magma_save_path = vim.fn.stdpath "data" .. "/magma"
+
+-- Mappings
+lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" }
+lvim.builtin.which_key.mappings["df"] = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" }
+lvim.builtin.which_key.vmappings["d"] = {
+  name = "Debug",
+  s = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
+}
+
 lvim.builtin.which_key.mappings["j"] = {
   name = "Jupyter",
   i = { "<Cmd>MagmaInit<CR>", "Init Magma" },
@@ -60,29 +79,31 @@ lvim.builtin.which_key.mappings["P"] = {
   d = { "<cmd>lua require('swenv.api').get_current_venv()<cr>", "Show Env" },
 }
 
+-- local status_ok, which_key = pcall(require, "which-key")
+-- if not status_ok then
+--   return
+-- end
 
-lvim.builtin.which_key.mappings["j"] = {
-  name = "Jupyter",
-  i = { "<Cmd>MagmaInit<CR>", "Init Magma" },
-  d = { "<Cmd>MagmaDeinit<CR>", "Deinit Magma" },
-  e = { "<Cmd>MagmaEvaluateLine<CR>", "Evaluate Line" },
-  r = { "<Cmd>MagmaReevaluateCell<CR>", "Re evaluate cell" },
-  D = { "<Cmd>MagmaDelete<CR>", "Delete cell" },
-  s = { "<Cmd>MagmaShowOutput<CR>", "Show Output" },
-  R = { "<Cmd>MagmaRestart!<CR>", "Restart Magma" },
-  S = { "<Cmd>MagmaSave<CR>", "Save" },
-}
+-- local opts = {
+--   mode = "n", -- NORMAL mode
+--   prefix = "<leader>",
+--   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+--   silent = true, -- use `silent` when creating keymaps
+--   noremap = true, -- use `noremap` when creating keymaps
+--   nowait = true, -- use `nowait` when creating keymaps
+-- }
 
-lvim.builtin.which_key.vmappings["j"] = {
-  name = "Jupyter",
-  e = { "<esc><cmd>MagmaEvaluateVisual<cr>", "Evaluate Highlighted Line" },
-}
+-- local mappings = {
+--   C = {
+--     name = "Python",
+--     t = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" },
+--     T = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" },
+--     d = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
+--   },
+-- }
 
-lvim.builtin.which_key.mappings["P"] = {
-  name = "Python",
-  i = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Pick env" },
-  d = { "<cmd>lua require('swenv.api').get_current_venv()<cr>", "Show Env" },
-}
+-- which_key.register(mappings, opts)
+--
 local keymap = vim.keymap
 
 keymap.set("n", "j", "jzz")
