@@ -5,8 +5,6 @@ local keymap = vim.keymap.set
 -- when you use action in finder like open vsplit then you can
 -- use <C-t> to jump back
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-
-lvim.builtin.which_key["o"] = {"<Cmd>LSoutlineToggle<CR>" ," Toggle outline"}
-
