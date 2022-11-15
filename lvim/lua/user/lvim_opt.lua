@@ -8,9 +8,6 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
--------------------------------------------------------------------------
------------------------ Basic setups  -----------------------------------
--------------------------------------------------------------------------
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
@@ -128,7 +125,7 @@ lvim.plugins = {
     "glepnir/lspsaga.nvim",
     branch = "main",
     config = function()
-      local saga = require("plugins.lspsaga")
+      local saga = require("user.lspsaga")
       saga.init_lsp_saga({
         -- your configuration
       })
@@ -143,9 +140,3 @@ vim.api.nvim_create_autocmd("FileType", {
     require("nvim-treesitter.highlight").attach(0, "bash")
   end,
 })
-
--------------------------------------------------------------------------
------------------------ Additional requires -----------------------------
--------------------------------------------------------------------------
-
-require("plugins.lsp")

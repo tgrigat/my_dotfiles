@@ -1,4 +1,4 @@
-require "plugins.lsp.lang.python"
+require "user.lsp.lang.python"
 
 lvim.lsp.diagnostics.virtual_text = false
 
