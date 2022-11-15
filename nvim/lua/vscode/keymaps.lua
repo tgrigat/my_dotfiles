@@ -2,6 +2,10 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- keymap.set("n", "j", "jzz")
+
+-- keymap.set("n", "k", "kzz")
+
 keymap.set("n", "gr", "<Cmd>call VSCodeNotifyVisual('editor.action.goToReferences',1)<CR>")
 
 keymap.set("n", "<leader>ft", "<Cmd>call VSCodeNotifyVisual('workbench.files.action.focusFilesExplorer',1)<CR>")

@@ -103,3 +103,8 @@ lvim.builtin.which_key.mappings["P"] = {
 -- }
 
 -- which_key.register(mappings, opts)
+--
+local keymap = vim.keymap
+
+keymap.set("n", "j", "jzz")
+keymap.set("n", "k", "kzz")

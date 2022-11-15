@@ -48,7 +48,7 @@ wobblywindowsEnabled=true
 [Script-bismuth]
 enableSpiralLayout=false
 enableSpreadLayout=false
-ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam
+ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam,org.kde.kalarm
 ignoreTitle=Zoom Meeting
 newWindowAsMaster=true
 screenGapBottom=2
