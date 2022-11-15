@@ -8,6 +8,7 @@ fi
 
 if [ $(hostname) = "ArchDM" ]; then
   alias wkdir="cd ~/Workspace/git/deep-video-mvs-dm/"
+  export DET_MASTER=https://determined.corp.deepmirror.com:443 
 fi
 
 # Set up the prompt
@@ -116,6 +117,7 @@ fi
 #######################
 
 alias lg="lazygit"
+alias ldocker="lazydocker"
 alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
 alias -g ..='..'
 alias -g ...='../..'
