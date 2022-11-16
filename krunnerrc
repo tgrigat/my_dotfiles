@@ -9,8 +9,10 @@ migrated=true
 browserhistoryEnabled=false
 browsertabsEnabled=false
 krunner_systemsettingsEnabled=false
+locationsEnabled=false
 plasma-runner-browserhistoryEnabled=false
 plasma-runner-browsertabsEnabled=false
+recentdocumentsEnabled=false
 
 [Runners][Dictionary]
 triggerWord=def

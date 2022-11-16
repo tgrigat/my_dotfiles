@@ -34,7 +34,7 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 Active=true
 LatitudeAuto=39.9075
 LongitudeAuto=116.3972
-NightTemperature=6500
+NightTemperature=4800
 
 [Plugins]
 bismuthEnabled=true

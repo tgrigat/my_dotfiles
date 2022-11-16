@@ -22,7 +22,10 @@ lvim.plugins = {
       }
     end,
   },
-
+  {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  },
   -- {
   --   "utilyre/barbecue.nvim",
   --   requires = {
@@ -76,5 +79,5 @@ lvim.plugins = {
     end,
   },
   -- outline for languages
-  {'simrat39/symbols-outline.nvim', config = function() require("user.outline")  end}
+  { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end }
 }
