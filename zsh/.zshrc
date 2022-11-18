@@ -11,6 +11,15 @@ if [ $(hostname) = "ArchDM" ]; then
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
 fi
 
+if [ $(hostname) = "node" ]; then
+  export DET_MASTER=https://determined.corp.deepmirror.com:443 
+  alias wk1="cd ~/Desktop/Autonomous-System/"
+  alias wk2="cd ~/Desktop/Advanced-Programming/"
+  alias wk="cd ~/Workspace/git/deep-video-mvs-dm-own/"
+  source /opt/ros/noetic/setup.zsh
+  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
+  alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
+fi
 # Set up the prompt
 #----------------------------------------------------------------------------------------------------
 # completion settings
@@ -100,14 +109,6 @@ setopt share_history
 # alias cpconf="cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang"
 # alias udconf="cp /home/yang/.zshrc  /home/yang/.config/zsh/ && cp /home/yang/.tmux.conf /home/yang/.config/tmux/"
 
-###### Ros setup ######
-
-if [ $(hostname) = "node" ]; then
-    source /opt/ros/noetic/setup.zsh
-    # printf '%s\n' "You are on private laptop, Initialized ros for zsh!"
-else
-    # printf '%s\n' "Welcome, Jiaye."
-fi
 
 #######################
 # Here are environment variables
@@ -116,6 +117,7 @@ fi
 
 #######################
 
+alias xo="xdg-open"
 alias lg="lazygit"
 alias ldocker="lazydocker"
 alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
