@@ -2,7 +2,21 @@
 ----------------------- Additional Plugins ------------------------------
 -------------------------------------------------------------------------
 lvim.plugins = {
-  -- You can switch between vritual environmnts.
+  "savq/melange",
+  {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+  },
+  -- github light theme
+  {
+    'projekt0n/github-nvim-theme',
+    -- config = function()
+    --   require('github-theme').setup({
+    --     -- ...
+    --     dark_sidebar = true
+    --   })
+    -- end
+  },
   -- "AckslD/swenv.nvim",
   "mfussenegger/nvim-dap-python",
   'sainnhe/everforest',

@@ -32,8 +32,8 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 
 [NightColor]
 Active=true
-LatitudeAuto=39.9075
-LongitudeAuto=116.3972
+LatitudeAuto=52.4991
+LongitudeAuto=13.3798
 NightTemperature=4800
 
 [Plugins]
@@ -61,7 +61,6 @@ PopupHideDelay=300
 
 [TabBox]
 HighlightWindows=false
-LayoutName=thumbnail_grid
 
 [TabBoxAlternative]
 HighlightWindows=false
@@ -78,5 +77,3 @@ Scale=1
 [org.kde.kdecoration2]
 ButtonsOnLeft=MF
 ButtonsOnRight=SIAX
-library=org.kde.breeze
-theme=Breeze
