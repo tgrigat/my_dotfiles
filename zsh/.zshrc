@@ -17,7 +17,8 @@ if [ $(hostname) = "node" ]; then
   alias wk2="cd ~/Desktop/Advanced-Programming/"
   alias wk="cd ~/Workspace/git/deep-video-mvs-dm-own/"
   source /opt/ros/noetic/setup.zsh
-  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
+  # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
+  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
   alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
 fi
 # Set up the prompt
@@ -124,6 +125,8 @@ alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
 alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'
+
+alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
 
 alias vim="lvim "
 alias mvim="nvim "

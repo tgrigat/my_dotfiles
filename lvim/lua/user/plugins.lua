@@ -93,7 +93,23 @@ lvim.plugins = {
       local saga = require("lspsaga")
       saga.init_lsp_saga({
         -- your configuration
-        border_style = "rounded"
+        border_style = "rounded",
+        symbol_in_winbar = {
+          in_custom = true
+        },
+        show_outline = {
+          win_position = 'right',
+          --set special filetype win that outline window split.like NvimTree neotree
+          -- defx, db_ui
+          win_with = '',
+          win_width = 30,
+          auto_enter = true,
+          auto_preview = true,
+          virt_text = '┃',
+          jump_key = 'o',
+          -- auto refresh when change buffer
+          auto_refresh = true,
+        },
       })
     end,
   },

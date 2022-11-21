@@ -29,94 +29,54 @@ packer.init {
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
 --
-if not vim.g.vscode then
-    return require('packer').startup(function(use)
-        -- Packer can manage itself
-        use 'wbthomason/packer.nvim'
-        use 'sainnhe/everforest'
-        use {
-            'neovim/nvim-lspconfig', 
-            config = function() require('plugins.lsp') end 
-        } -- Configurations for Nvim LSP
-        use {'kyazdani42/nvim-tree.lua'} -- nvim tree for the file exploration
-        -- The following plugins are borrowed from LunarVim
-        use {'nvim-telescope/telescope.nvim'}
-        use {'hrsh7th/nvim-cmp',
-            config = function() require('plugins.ncmp') end,
-            requires = {
-                {'hrsh7th/cmp-nvim-lsp'},
-                {'hrsh7th/cmp-buffer'},
-                {'hrsh7th/cmp-path'},
-                {'hrsh7th/cmp-cmdline'},
-                -- {'SirVer/ultisnips'},
-                -- {'quangnguyen30192/cmp-nvim-ultisnips'}
-                {'hrsh7th/cmp-vsnip'},
-                {'hrsh7th/vim-vsnip'},
-            },
-            cond = function()
-                return not vim.g.vscode
-            end
-        }
-        
-        use {'nvim-lua/popup.nvim',
-            cond = function()
-                return not vim.g.vscode
-            end
-            }
-        use {
-            'akinsho/toggleterm.nvim',
-            cond = function()
-                return not vim.g.vscode
-            end
-        }
-        use 'rcarriga/nvim-notify'
-        use "goolord/alpha-nvim"
-        use { "folke/which-key.nvim" }
-        
-        use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-        }
-        
-        use {
-        "windwp/nvim-autopairs",
-        config = function() require(plugins.autopair) end
-        }
-        -- Autopairsintegrates with both cmp and treesitter
-        use "williamboman/nvim-lsp-installer"
-        -- comment
-        
-        use {"terrortylor/nvim-comment", 
-        config = function() require('nvim_comment').setup(
-            {
-              -- Linters prefer comment and line to have a space in between markers
-              marker_padding = true,
-              -- should comment out empty or whitespace only lines
-              comment_empty = true,
-              -- trim empty comment whitespace
-              comment_empty_trim_whitespace = true,
-              -- Should key mappings be created
-              create_mappings = true,
-              -- Normal mode mapping left hand side
-              line_mapping = "gcc",
-              -- Visual/Operator mapping left hand side
-              operator_mapping = "gc",
-              -- text object mapping, comment chunk,,
-              comment_chunk_text_object = "ic",
-              -- Hook function to call before commenting takes place
-              hook = nil
-            }
-            )
-            end
-            }
-        use {"tpope/vim-surround"}
-        if PACKER_BOOTSTRAP then
-        require("packer").sync()
-        end
-    end)
-else
-    -- Here are plugins that are only enabled for vscode
-    use {"terrortylor/nvim-comment", 
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+  use 'sainnhe/everforest'
+  use {
+    'neovim/nvim-lspconfig',
+    config = function() require('user.lsp') end
+  } -- Configurations for Nvim LSP
+  use { 'kyazdani42/nvim-tree.lua' } -- nvim tree for the file exploration
+  -- The following plugins are borrowed from LunarVim
+  use { 'nvim-telescope/telescope.nvim' }
+  use { 'hrsh7th/nvim-cmp',
+    config = function() require('user.cmp') end,
+    requires = {
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-cmdline' },
+      -- {'SirVer/ultisnips'},
+      -- {'quangnguyen30192/cmp-nvim-ultisnips'}
+      { 'hrsh7th/cmp-vsnip' },
+      { 'hrsh7th/vim-vsnip' },
+    },
+  }
+
+  use { 'nvim-lua/popup.nvim',
+  }
+  use {
+    'akinsho/toggleterm.nvim',
+  }
+  use 'rcarriga/nvim-notify'
+  use "goolord/alpha-nvim"
+  use { "folke/which-key.nvim" }
+
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("user.autopair") end
+  }
+  -- Autopairsintegrates with both cmp and treesitter
+  use "williamboman/nvim-lsp-installer"
+  -- comment
+
+  use { "terrortylor/nvim-comment",
     config = function() require('nvim_comment').setup(
         {
           -- Linters prefer comment and line to have a space in between markers
@@ -136,78 +96,11 @@ else
           -- Hook function to call before commenting takes place
           hook = nil
         }
-    )
+      )
     end
-    }
-    use {"tpope/vim-surround"},
-  use { "ggandor/leap.nvim",
-    config = function()
-      require('leap').add_default_mappings()
-    end
-  },
-  use {
-    'rose-pine/neovim',
-    as = 'rose-pine',
-  },
-  -- github light theme
-  -- "AckslD/swenv.nvim",
-  use "mfussenegger/nvim-dap-python",
-  use 'sainnhe/everforest',
-  {
-    -- You can generate docstrings automatically.
-    "danymat/neogen",
-    config = function()
-      require("neogen").setup {
-        enabled = true,
-        languages = {
-          python = {
-            template = {
-              annotation_convention = "numpydoc",
-            },
-          },
-        },
-      }
-    end,
-  },
-  -- {
-  --   'glacambre/firenvim',
-  --   run = function() vim.fn['firenvim#install'](0) end
-  -- },
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   requires = {
-  --     "neovim/nvim-lspconfig",
-  --     "smiteshp/nvim-navic",
-  --     "kyazdani42/nvim-web-devicons", -- optional
-  --   },
-  --   config = function()
-  --     require("barbecue").setup()
-  --   end,
-  -- },
-
-  -- add markdown preview
-  use {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-    ft = 'markdown'
-  },
-
-  -- You can run blocks of code like jupyter notebook.
-  use { "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" },
-
-  use {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-      local saga = require("lspsaga")
-      saga.init_lsp_saga({
-        -- your configuration
-        border_style = "rounded"
-      })
-    end,
-  },
-  -- outline for languages
-  use { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end }
-end
-
-
+  }
+  use { "tpope/vim-surround" }
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
+end)
