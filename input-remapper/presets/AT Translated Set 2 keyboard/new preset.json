@@ -1,0 +1,24 @@
+{
+    "mapping": {
+        "1,100,1": [
+            "hold_keys(key_down)",
+            "keyboard"
+        ],
+        "1,97,1": [
+            "hold_keys(key_up)",
+            "keyboard"
+        ],
+        "1,56,1+1,57,1": [
+            "key(w).key(i).key(n).key(d).key(o).key(w).key(s)",
+            "keyboard"
+        ],
+        "1,125,1+1,49,1": [
+            "KEY_DOWN",
+            "keyboard"
+        ],
+        "1,125,1+1,25,1": [
+            "KEY_UP",
+            "keyboard"
+        ]
+    }
+}

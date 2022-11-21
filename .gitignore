@@ -168,7 +168,6 @@ kmenueditrc
 kmixctrlrc
 kmailsearchindexingrc
 kmail2rc
-input-remapper
 htop
 .gsd-keyboard.settings-ported
 KeePassXCrc
@@ -253,3 +252,4 @@ EasyConnect
 PlasmaDiscoverUpdates
 calibre/viewer
 lvim_base
+BreakTimer

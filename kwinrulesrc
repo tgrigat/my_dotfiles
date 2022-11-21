@@ -17,28 +17,29 @@ wmclass=feishu
 wmclassmatch=1
 
 [1]
-Description=Application settings for waydroid
+Description=Application settings for org.kde.dolphin
 above=true
 clientmachine=localhost
 noborderrule=2
 title=Welcome to Chrome - Google Chrome
 windowrole=browser
-wmclass=\swaydroid
+wmclass=dolphin org.kde.dolphin
 wmclasscomplete=true
 wmclassmatch=1
 
 [10]
+Description=Application settings for feishu
+clientmachine=localhost
+noborderrule=2
+wmclass=feishu
+wmclasscomplete=true
+wmclassmatch=1
+
+[11]
 Description=Application settings for xmind
 clientmachine=localhost
 noborderrule=2
 wmclass=xmind
-wmclassmatch=1
-
-[11]
-Description=Application settings for telegramdesktop
-clientmachine=localhost
-noborderrule=2
-wmclass=telegram-desktop telegramdesktop
 wmclassmatch=1
 
 [117071c1-d34e-4c11-b876-38d1de787868]
@@ -50,11 +51,10 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [12]
-Description=Application settings for firefox
+Description=Application settings for telegramdesktop
 clientmachine=localhost
 noborderrule=2
-wmclass=toolkit firefox
-wmclasscomplete=true
+wmclass=telegram-desktop telegramdesktop
 wmclassmatch=1
 
 [123d6f0d-baa9-4ab8-ac10-5250dc1689d9]
@@ -65,13 +65,21 @@ wmclass=clash-verge
 wmclassmatch=1
 
 [13]
+Description=Application settings for firefox
+clientmachine=localhost
+noborderrule=2
+wmclass=toolkit firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[14]
 Description=Application settings for wechat.exe
 clientmachine=localhost
 noborderrule=2
 wmclass=wechat.exe
 wmclassmatch=1
 
-[14]
+[15]
 Description=Application settings for zathura
 clientmachine=localhost
 noborderrule=2
@@ -79,7 +87,7 @@ wmclass=org.pwmt.zathura zathura
 wmclasscomplete=true
 wmclassmatch=1
 
-[15]
+[16]
 Description=Application settings for anki
 clientmachine=localhost
 noborderrule=2
@@ -87,34 +95,25 @@ wmclass=anki
 wmclasscomplete=true
 wmclassmatch=1
 
-[16]
+[17]
 Description=Application settings for alacritty
 clientmachine=localhost
 noborderrule=2
 wmclass=alacritty
 wmclassmatch=1
 
-[17]
+[18]
 Description=Application settings for obsidian
 clientmachine=localhost
 noborderrule=2
 wmclass=obsidian
 wmclassmatch=1
 
-[18]
+[19]
 Description=Application settings for xournalpp
 clientmachine=localhost
 noborderrule=2
 wmclass=xournalpp
-wmclassmatch=1
-
-[19]
-Description=Application settings for obsidian
-clientmachine=localhost
-maximizehorizrule=3
-maximizevertrule=3
-types=1
-wmclass=obsidian
 wmclassmatch=1
 
 [1bfadfd1-0149-4274-8493-1e66f0435a3f]
@@ -126,6 +125,27 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [2]
+Description=Application settings for waydroid
+above=true
+clientmachine=localhost
+noborderrule=2
+size=1009,509
+title=Welcome to Chrome - Google Chrome
+windowrole=browser
+wmclass=\swaydroid
+wmclasscomplete=true
+wmclassmatch=1
+
+[20]
+Description=Application settings for obsidian
+clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+types=1
+wmclass=obsidian
+wmclassmatch=1
+
+[3]
 Description=Application settings for org.kde.kalarm
 above=true
 clientmachine=localhost
@@ -137,7 +157,13 @@ wmclass=kalarm org.kde.kalarm
 wmclasscomplete=true
 wmclassmatch=1
 
-[3]
+[3a89945a-c8a8-4097-960e-fe663f8b1fc6]
+Description=Application settings for firefox
+noborderrule=2
+wmclass=firefox
+wmclassmatch=1
+
+[4]
 Description=Application settings for flameshot
 above=true
 aboverule=3
@@ -147,29 +173,13 @@ windowrole=browser
 wmclass=flameshot
 wmclassmatch=1
 
-[3a89945a-c8a8-4097-960e-fe663f8b1fc6]
-Description=Application settings for firefox
-noborderrule=2
-wmclass=firefox
-wmclassmatch=1
-
-[4]
+[5]
 Description=Application settings for zotero
 clientmachine=localhost
 noborderrule=2
 title=Welcome to Chrome - Google Chrome
 windowrole=browser
 wmclass=navigator zotero
-wmclasscomplete=true
-wmclassmatch=1
-
-[5]
-Description=Application settings for steam
-clientmachine=localhost
-noborderrule=2
-title=Welcome to Chrome - Google Chrome
-windowrole=browser
-wmclass=steam
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -182,12 +192,13 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [6]
-Description=Application settings for code
+Description=Application settings for steam
 clientmachine=localhost
 noborderrule=2
 title=Welcome to Chrome - Google Chrome
 windowrole=browser
-wmclass=code
+wmclass=steam
+wmclasscomplete=true
 wmclassmatch=1
 
 [6c6357f3-afe7-40a1-9fde-ceb5f5d8325b]
@@ -198,10 +209,12 @@ wmclass=obsidian
 wmclassmatch=1
 
 [7]
-Description=Application settings for clash-verge
+Description=Application settings for code
 clientmachine=localhost
 noborderrule=2
-wmclass=clash-verge
+title=Welcome to Chrome - Google Chrome
+windowrole=browser
+wmclass=code
 wmclassmatch=1
 
 [71205302-35a9-4891-a6e2-3e96e62fe1c6]
@@ -238,11 +251,10 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [8]
-Description=Application settings for discover
+Description=Application settings for clash-verge
 clientmachine=localhost
 noborderrule=2
-wmclass=plasma-discover discover
-wmclasscomplete=true
+wmclass=clash-verge
 wmclassmatch=1
 
 [8363a941-1e6d-4a83-ab2f-13a7507d6272]
@@ -253,10 +265,10 @@ wmclass=wechat.exe
 wmclassmatch=1
 
 [9]
-Description=Application settings for feishu
+Description=Application settings for discover
 clientmachine=localhost
 noborderrule=2
-wmclass=feishu
+wmclass=plasma-discover discover
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -289,8 +301,8 @@ wmclass=anki
 wmclassmatch=1
 
 [General]
-count=19
-rules=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+count=20
+rules=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
 
 [c36a6621-4c2e-4e09-99d4-1025bcf08f41]
 Description=Application settings for obsidian
@@ -338,6 +350,13 @@ wmclassmatch=1
 [d7a428d5-091d-4aef-9134-5d5070107dee]
 Description=Application settings for org.kde.kalarm
 wmclass=kalarm org.kde.kalarm
+wmclasscomplete=true
+wmclassmatch=1
+
+[ede2936b-1d3e-4225-b149-02d71eb75c91]
+Description=Application settings for org.kde.dolphin
+noborderrule=2
+wmclass=dolphin org.kde.dolphin
 wmclasscomplete=true
 wmclassmatch=1
 

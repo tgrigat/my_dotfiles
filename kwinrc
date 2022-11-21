@@ -32,8 +32,8 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 
 [NightColor]
 Active=true
-LatitudeAuto=52.4991
-LongitudeAuto=13.3798
+LatitudeAuto=39.9075
+LongitudeAuto=116.3972
 NightTemperature=4800
 
 [Plugins]
@@ -48,7 +48,7 @@ wobblywindowsEnabled=true
 [Script-bismuth]
 enableSpiralLayout=false
 enableSpreadLayout=false
-ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam,org.kde.kalarm
+ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam,org.kde.kalarm, nextcloud, com.nextcloud.desktopclient.nextcloud
 ignoreTitle=Zoom Meeting
 newWindowAsMaster=true
 screenGapBottom=2
