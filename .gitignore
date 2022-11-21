@@ -254,3 +254,4 @@ calibre/viewer
 lvim_base
 BreakTimer
 lapce-stable
+nvim/plugin/packer_compiled.lua
