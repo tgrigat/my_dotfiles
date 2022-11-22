@@ -1,2 +1,4 @@
-require "user.plugins"
 require "user.options"
+require "user.plugins"
+require "user.which-key"
+require "user.nvim-tree"

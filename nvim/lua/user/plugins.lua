@@ -32,12 +32,23 @@ packer.init {
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  -- Leap for better navigation
+  use { "ggandor/leap.nvim",
+    config = function()
+      require('leap').add_default_mappings()
+    end
+  }
   use 'sainnhe/everforest'
   use {
     'neovim/nvim-lspconfig',
     config = function() require('user.lsp') end
   } -- Configurations for Nvim LSP
-  use { 'kyazdani42/nvim-tree.lua' } -- nvim tree for the file exploration
+  use { 
+      'nvim-tree/nvim-tree.lua' ,
+        requires = {
+    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  },
+  } -- nvim tree for the file exploration
   -- The following plugins are borrowed from LunarVim
   use { 'nvim-telescope/telescope.nvim' }
   use { 'hrsh7th/nvim-cmp',
