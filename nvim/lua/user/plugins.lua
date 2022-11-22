@@ -50,7 +50,11 @@ return require('packer').startup(function(use)
   },
   } -- nvim tree for the file exploration
   -- The following plugins are borrowed from LunarVim
-  use { 'nvim-telescope/telescope.nvim' }
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
   use { 'hrsh7th/nvim-cmp',
     config = function() require('user.cmp') end,
     requires = {
@@ -85,6 +89,7 @@ return require('packer').startup(function(use)
   }
   -- Autopairsintegrates with both cmp and treesitter
   use "williamboman/nvim-lsp-installer"
+
   -- comment
 
   use { "terrortylor/nvim-comment",
