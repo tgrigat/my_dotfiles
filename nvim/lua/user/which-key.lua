@@ -99,7 +99,9 @@ local mappings = {
     ["<leader>l"] = {
         name = "LSP",
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
-        a = {"<cmd>Lspsaga code_action<CR>", "Code Actions"}
+        a = {"<cmd>Lspsaga code_action<CR>", "Code Actions"},
+        f = {"<cmd>lua vim.lsp.buf.format{async=true}<CR>", "Format"},
+        i = {"<cmd>LspInfo<cr>","Info"}
     },
     ["<leader>o"] = { "<cmd>LSoutlineToggle<CR>", "Show Outline"},
     ["<leader>s"] = {

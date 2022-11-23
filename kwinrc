@@ -32,8 +32,8 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 
 [NightColor]
 Active=true
-LatitudeAuto=22.2578
-LongitudeAuto=114.1657
+LatitudeAuto=39.9075
+LongitudeAuto=116.3972
 NightTemperature=4800
 
 [Plugins]

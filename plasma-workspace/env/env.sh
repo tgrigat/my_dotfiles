@@ -25,6 +25,6 @@ export MOZ_ENABLE_WAYLAND=1
 
 # # to proxy all the plasma
 
-export http_proxy=http://127.0.0.1:1089
-export https_proxy=http://127.0.0.1:1089
-export ALL_PROXY=socks5://127.0.0.1:1089
+# export http_proxy=http://127.0.0.1:1089
+# export https_proxy=http://127.0.0.1:1089
+# export ALL_PROXY=socks5://127.0.0.1:1089
