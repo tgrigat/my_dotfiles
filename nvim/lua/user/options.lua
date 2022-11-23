@@ -42,3 +42,5 @@ keymap.set("n", "<leader>s<down>", "10<C-w>-")
 
 keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>")
+
+keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")

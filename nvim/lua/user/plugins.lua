@@ -39,23 +39,24 @@ return require('packer').startup(function(use)
     end
   }
   use 'sainnhe/everforest'
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function() require("bufferline").setup{} end}
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',
+    config = function() require("bufferline").setup {} end }
   use {
     'neovim/nvim-lspconfig',
     config = function() require('user.lsp') end
   } -- Configurations for Nvim LSP
-  use { 
-      'nvim-tree/nvim-tree.lua' ,
-        requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
   } -- nvim tree for the file exploration
   -- The following plugins are borrowed from LunarVim
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
--- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
   use { 'hrsh7th/nvim-cmp',
     config = function() require('user.cmp') end,
     requires = {
@@ -69,55 +70,57 @@ return require('packer').startup(function(use)
       { 'hrsh7th/vim-vsnip' },
     },
   }
-
+use { "williamboman/mason.nvim", config = function ()
+    require("mason").setup()
+end }
   use { 'nvim-lua/popup.nvim'
   }
-    use {"akinsho/toggleterm.nvim", tag = '*',  config = function()
-      require("toggleterm").setup {
-    active = true,
-    on_config_done = nil,
-    -- size can be a number or function which is passed the current terminal
-    size = 20,
-    open_mapping = [[<c-\>]],
-    hide_numbers = true, -- hide the number column in toggleterm buffers
-    shade_filetypes = {},
-    shade_terminals = true,
-    shading_factor = 2, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
-    start_in_insert = true,
-    insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    persist_size = false,
-    -- direction = 'vertical' | 'horizontal' | 'window' | 'float',
-    direction = "float",
-    close_on_exit = true, -- close the terminal window when the process exits
-    shell = vim.o.shell, -- change the default shell
-    -- This field is only relevant if direction is set to 'float'
-    float_opts = {
-      -- The border key is *almost* the same as 'nvim_win_open'
-      -- see :h nvim_win_open for details on borders however
-      -- the 'curved' border is a custom border type
-      -- not natively supported but implemented in this plugin.
-      -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
-      border = "curved",
-      -- width = <value>,
-      -- height = <value>,
-      winblend = 0,
-      highlights = {
-        border = "Normal",
-        background = "Normal",
+  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup {
+      active = true,
+      on_config_done = nil,
+      -- size can be a number or function which is passed the current terminal
+      size = 20,
+      open_mapping = [[<c-\>]],
+      hide_numbers = true, -- hide the number column in toggleterm buffers
+      shade_filetypes = {},
+      shade_terminals = true,
+      shading_factor = 2, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+      start_in_insert = true,
+      insert_mappings = true, -- whether or not the open mapping applies in insert mode
+      persist_size = false,
+      -- direction = 'vertical' | 'horizontal' | 'window' | 'float',
+      direction = "float",
+      close_on_exit = true, -- close the terminal window when the process exits
+      shell = vim.o.shell, -- change the default shell
+      -- This field is only relevant if direction is set to 'float'
+      float_opts = {
+        -- The border key is *almost* the same as 'nvim_win_open'
+        -- see :h nvim_win_open for details on borders however
+        -- the 'curved' border is a custom border type
+        -- not natively supported but implemented in this plugin.
+        -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
+        border = "curved",
+        -- width = <value>,
+        -- height = <value>,
+        winblend = 0,
+        highlights = {
+          border = "Normal",
+          background = "Normal",
+        },
       },
-    },
-    -- Add executables on the config.lua
-    -- { exec, keymap, name}
-    -- lvim.builtin.terminal.execs = {{}} to overwrite
-    -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
-    -- TODO: pls add mappings in which key and refactor this
-    execs = {
-      { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
-      { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
-      { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
-    },
-      }
-    end}
+      -- Add executables on the config.lua
+      -- { exec, keymap, name}
+      -- lvim.builtin.terminal.execs = {{}} to overwrite
+      -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
+      -- TODO: pls add mappings in which key and refactor this
+      execs = {
+        { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
+        { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
+        { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
+      },
+    }
+  end }
   use 'rcarriga/nvim-notify'
   use "goolord/alpha-nvim"
   use { "folke/which-key.nvim" }
@@ -125,6 +128,12 @@ return require('packer').startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    config = function()
+      require 'nvim-treesitter.configs'.setup {
+        -- A list of parser names, or "all"
+        ensure_installed = { "c", "lua", "python" }
+      }
+    end
   }
 
   use {
@@ -136,6 +145,34 @@ return require('packer').startup(function(use)
   use "williamboman/nvim-lsp-installer"
 
   -- comment
+
+  use {
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      local saga = require("lspsaga")
+      saga.init_lsp_saga({
+        -- your configuration
+        border_style = "rounded",
+        symbol_in_winbar = {
+          in_custom = true
+        },
+        show_outline = {
+          win_position = 'right',
+          --set special filetype win that outline window split.like NvimTree neotree
+          -- defx, db_ui
+          win_with = '',
+          win_width = 30,
+          auto_enter = true,
+          auto_preview = true,
+          virt_text = '┃',
+          jump_key = 'o',
+          -- auto refresh when change buffer
+          auto_refresh = true,
+        },
+      })
+    end,
+  }
 
   use { "terrortylor/nvim-comment",
     config = function() require('nvim_comment').setup(

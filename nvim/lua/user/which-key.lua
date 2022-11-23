@@ -94,6 +94,21 @@ local mappings = {
     ["<leader>w"] = {"<cmd>w<cr>", "Write"},
     ["<leader>e"] = {"<cmd>NvimTreeToggle<cr>", "File Explorer"},
     ["<leader>c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
+    ["<leader>q"] = { "<cmd>lua require('utils.functions').smart_quit()<CR>", "Quit" },
+    ["<leader>f"] = { require("utils.telescope_finders").find_project_files, "Find File" },
+    ["<leader>l"] = {
+        name = "LSP",
+        s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
+        a = {"<cmd>Lspsaga code_action<CR>", "Code Actions"}
+    },
+    ["<leader>o"] = { "<cmd>LSoutlineToggle<CR>", "Show Outline"},
+    -- g related keys
+    ["g"] = {
+        d = {"<cmd>Lspsaga peek_definition<CR>", "Goto Definition"},
+        r = {"<cmd>Lspsaga lsp_finder<CR>", "Goto references"},
+        R = {"<cmd>Lspsaga rename<CR>", "rename"},
+        l = {"<cmd>Lspsaga show_line_diagnostics<CR>", "Show Diagnostics"}
+    }
 
 }
 which_key.setup(setup)
