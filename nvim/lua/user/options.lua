@@ -39,3 +39,6 @@ keymap.set("n", "<leader>s<left>", "10<C-w><")
 keymap.set("n", "<leader>s<right>", "10<C-w>>")
 keymap.set("n", "<leader>s<up>", "10<C-w>+")
 keymap.set("n", "<leader>s<down>", "10<C-w>-")
+
+keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>")
+keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>")

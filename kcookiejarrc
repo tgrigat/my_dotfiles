@@ -1,0 +1,6 @@
+[Cookie Policy]
+AcceptSessionCookies=true
+CookieDomainAdvice=
+CookieGlobalAdvice=Ask
+Cookies=true
+RejectCrossDomainCookies=true

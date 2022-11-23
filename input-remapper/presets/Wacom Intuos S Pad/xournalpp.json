@@ -1,19 +1,19 @@
 {
     "mapping": {
         "1,258,1": [
-            "Super_L + j",
+            "key(e)",
             "keyboard"
         ],
         "1,259,1": [
-            "Super_L + k",
+            "Super_L\t+ w",
             "keyboard"
         ],
         "1,256,1": [
-            "KEY_LEFTCTRL + KEY_PAGEDOWN",
+            "repeat(25, key(key_down).w(3))",
             "keyboard"
         ],
         "1,257,1": [
-            "KEY_LEFTCTRL + KEY_PAGEUP",
+            "repeat(25, key(key_up).w(3))",
             "keyboard"
         ]
     }

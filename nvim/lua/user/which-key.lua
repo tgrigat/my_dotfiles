@@ -92,7 +92,8 @@ local mappings = {
         c = {"<cmd>PackerCompile<cr>", "Packer Compile"},
     },
     ["<leader>w"] = {"<cmd>w<cr>", "Write"},
-    ["<leader>e"] = {"<cmd>NvimTreeToggle<cr>", "File Explorer"}
+    ["<leader>e"] = {"<cmd>NvimTreeToggle<cr>", "File Explorer"},
+    ["<leader>c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
 
 }
 which_key.setup(setup)

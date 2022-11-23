@@ -9,11 +9,11 @@
             "keyboard"
         ],
         "1,256,1": [
-            "repeat(17, key(key_down).w(10))",
+            "repeat(17, key(key_down).w(3))",
             "keyboard"
         ],
         "1,257,1": [
-            "repeat(17, key(key_up).w(10))",
+            "repeat(17, key(key_up).w(3))",
             "keyboard"
         ]
     }
