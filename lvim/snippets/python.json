@@ -5,5 +5,26 @@
       "# yang:"
     ],
     "description": "my comments for me to understand the code "
+  },
+  "goodbye": {
+    "prefix": "goodbye",
+    "body": [
+      "# yang: print $1 goodbye"
+    ],
+    "description": "test for loading snippets"
+  },
+  "nice": {
+    "prefix": "nice",
+    "body": [
+      "# yang: print $1 goodbye"
+    ],
+    "description": "test for loading snippets"
+  },
+  "sth": {
+    "prefix": "sth",
+    "body": [
+      "# yang: print $1 goodbye"
+    ],
+    "description": "test for loading snippets"
   }
 }

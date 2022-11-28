@@ -41,19 +41,6 @@ local clangd_flags = {
 
 local provider = "clangd"
 
-local custom_on_attach = function(client, bufnr)
-  require("lvim.lsp").common_on_attach(client, bufnr)
-
-  local opts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set("n", "<leader>lh", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
-  vim.keymap.set("x", "<leader>lA", "<cmd>ClangdAST<cr>", opts)
-  vim.keymap.set("n", "<leader>lH", "<cmd>ClangdTypeHierarchy<cr>", opts)
-  vim.keymap.set("n", "<leader>lt", "<cmd>ClangdSymbolInfo<cr>", opts)
-  vim.keymap.set("n", "<leader>lm", "<cmd>ClangdMemoryUsage<cr>", opts)
-
-  require("clangd_extensions.inlay_hints").setup_autocmd()
-  require("clangd_extensions.inlay_hints").set_inlay_hints()
-end
 
 local status_ok, project_config = pcall(require, "rhel.clangd_wrl")
 if status_ok then

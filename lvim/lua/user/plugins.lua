@@ -8,6 +8,7 @@ lvim.plugins = {
     end
   },
   "savq/melange",
+  {"p00f/clangd_extensions.nvim"},
   {
     'rose-pine/neovim',
     as = 'rose-pine',
