@@ -143,6 +143,7 @@ setopt share_history
 
 #######################
 
+alias sshk="kitty +kitten ssh"
 alias cpr='rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1'
 alias xo="xdg-open"
 alias lg="lazygit"
