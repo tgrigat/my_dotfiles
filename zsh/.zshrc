@@ -34,6 +34,7 @@ fi
 if [ $(hostname) = "ArchDM" ]; then
   alias wkdir="cd ~/Workspace/git/deep-video-mvs-dm/"
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
+  alias ezpxy="export http_proxy=http://192.168.1.108:8888;export https_proxy=http://192.168.1.108:8888"
 fi
 
 if [ $(hostname) = "node" ]; then
@@ -143,7 +144,7 @@ setopt share_history
 
 #######################
 
-alias sshk="kitty +kitten ssh"
+alias kssh="kitty +kitten ssh"
 alias cpr='rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1'
 alias xo="xdg-open"
 alias lg="lazygit"
