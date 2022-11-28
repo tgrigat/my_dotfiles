@@ -1,0 +1,24 @@
+
+{
+  "hello": {
+    "prefix": "com",
+    "body": [
+      "// yang:"
+    ],
+    "description": "my comments for me to understand the code "
+  },
+    "typeinfo": {
+    "prefix": "ptype",
+    "body": [
+      "std::cout << boost::typeindex::type_id_runtime($1) << std::endl;"
+    ],
+    "description": "my comments for me to understand the code "
+  }
+    "typeinfoheader": {
+    "prefix": "ptypeheader",
+    "body": [
+      "#include <boost/type_index.hpp> "
+    ],
+    "description": "my comments for me to understand the code "
+  }
+}
