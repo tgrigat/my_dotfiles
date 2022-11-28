@@ -7,12 +7,12 @@ migrated=true
 
 [Plugins]
 browserhistoryEnabled=false
-browsertabsEnabled=false
-krunner_systemsettingsEnabled=false
+browsertabsEnabled=true
+krunner_systemsettingsEnabled=true
 locationsEnabled=false
 plasma-runner-browserhistoryEnabled=false
 plasma-runner-browsertabsEnabled=false
-recentdocumentsEnabled=false
+recentdocumentsEnabled=true
 
 [Runners][Dictionary]
 triggerWord=def

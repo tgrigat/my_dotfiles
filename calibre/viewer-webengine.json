@@ -1,59 +1,113 @@
 {
-<<<<<<< Updated upstream
-  "main_window_geometry": {
-    "__class__": "bytearray",
-    "__value__": "AdnQywADAAAAAAeAAAAALAAADv8AAAQ3AAAHgAAAACwAAA7/AAAENwAAAAAAAAAAB4AAAAeAAAAALAAADv8AAAQ3"
+  "geometry-of-main_window_geometry": {
+    "frame_geometry": {
+      "height": 1142,
+      "width": 958,
+      "x": 2,
+      "y": 56
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1123,
+      "width": 958,
+      "x": 2,
+      "y": 75
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1123,
+      "width": 958,
+      "x": 2,
+      "y": 75
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAACAAAAOAAAA78AAAStAAAAAgAAAEsAAAO/AAAErQAAAAAAAAAAB4AAAAACAAAASwAAA78AAASt"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.5,
+      "geometry_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "XWAYLAND0",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-viewer_image_popup_geometry": {
+    "frame_geometry": {
+      "height": 125,
+      "width": 728,
+      "x": 586,
+      "y": 520
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 125,
+      "width": 728,
+      "x": 586,
+      "y": 520
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 125,
+      "width": 728,
+      "x": 586,
+      "y": 520
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAJKAAACCAAABSEAAAKEAAACSgAAAggAAAUhAAAChAAAAAAAAAAAB4AAAAJKAAACCAAABSEAAAKE"
+    },
+    "screen": {
+      "depth": 24,
+      "device_pixel_ratio": 1.5,
+      "geometry_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "",
+      "model": "",
+      "name": "XWAYLAND0",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAAHgAAABAwAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAADvgAABGMAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
   },
   "old_prefs_migrated": true,
   "session_data": {
     "controls_help_shown_count": 2,
-    "current_color_scheme": "sepia-light",
-    "keyboard_shortcuts": {
-      "left": [
-        {
-          "altKey": false,
-          "ctrlKey": false,
-          "key": "ArrowLeft",
-          "metaKey": false,
-          "shiftKey": false
-        },
-        {
-          "altKey": false,
-          "ctrlKey": false,
-          "key": "k",
-          "metaKey": false,
-          "shiftKey": false
-        }
-      ],
-      "right": [
-        {
-          "altKey": false,
-          "ctrlKey": false,
-          "key": "ArrowRight",
-          "metaKey": false,
-          "shiftKey": false
-        },
-        {
-          "altKey": false,
-          "ctrlKey": false,
-          "key": "j",
-          "metaKey": false,
-          "shiftKey": false
-        }
-      ]
-    },
-=======
-  "old_prefs_migrated": true,
-  "session_data": {
-    "controls_help_shown_count": 1,
-    "current_color_scheme": "sepia-light",
->>>>>>> Stashed changes
-    "margin_left": 100,
-    "margin_right": 100,
     "standalone_font_settings": {},
     "standalone_misc_settings": {
       "remember_last_read": true,
@@ -64,29 +118,12 @@
     "standalone_recently_opened": [
       {
         "authors": [
-          "SoBooKs.cc",
-          "陈春成"
+          "Unknown"
         ],
-<<<<<<< Updated upstream
-        "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
-        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
-        "timestamp": "2022-09-13T10:19:47.126Z",
-        "title": "边写边思考的大脑整理笔记法：养成「书写→思考→解决」的习惯，增加生产力，强化学习力，纾解压力，心智升级！"
-      },
-      {
-        "authors": [
-          "丹．查納斯(Dan Charnas)"
-        ],
-        "key": "/home/yang/Documents/Library/books/calibre-syncing/Dan .Cha Na Si (Dan Charnas)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Guan Jian Lian Xi ,Mei Tian 30Fen Zhong ,Yang Cheng Xin (231)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Gu - Dan .Cha Na Si (Dan Charnas).epub",
-        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Dan .Cha Na Si (Dan Charnas)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Guan Jian Lian Xi ,Mei Tian 30Fen Zhong ,Yang Cheng Xin (231)/Jiu Wei _Cong Ping Yong Dao Zhuo Yue De Gu - Dan .Cha Na Si (Dan Charnas).epub",
-        "timestamp": "2022-09-10T09:47:44.223Z",
-        "title": "就位：從平庸到卓越的關鍵練習，每天30分鐘，養成心流、持續力及精確度同時到位的高效習慣"
-=======
-        "key": "/home/yang/Documents/Library/books/calibre-syncing/SoBooKs.cc/Ye Wan De Qian Shui Ting (Chen Chun Cheng Shou Bu Xiao Shuo Ji  Shou Huo Wen Xue Pai Xing Bang (174)/Ye Wan De Qian Shui Ting (Chen Chun Cheng - SoBooKs.cc.epub",
-        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/SoBooKs.cc/Ye Wan De Qian Shui Ting (Chen Chun Cheng Shou Bu Xiao Shuo Ji  Shou Huo Wen Xue Pai Xing Bang (174)/Ye Wan De Qian Shui Ting (Chen Chun Cheng - SoBooKs.cc.epub",
-        "timestamp": "2022-09-20T15:01:04.605Z",
-        "title": "夜晚的潜水艇（陈春成首部小说集 收获文学排行榜入选作品 阿乙、贾行家、史航 推荐 理想国出品）"
->>>>>>> Stashed changes
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Fa Biao De Gua Niu/__Zhong Sheng Zhi Zei Xing Tian Xia __ (126)/__Zhong Sheng Zhi Zei Xing Tian Xia __ - Fa Biao De Gua Niu.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Fa Biao De Gua Niu/__Zhong Sheng Zhi Zei Xing Tian Xia __ (126)/__Zhong Sheng Zhi Zei Xing Tian Xia __ - Fa Biao De Gua Niu.epub",
+        "timestamp": "2022-11-28T07:19:23.325Z",
+        "title": "《重生之贼行天下》（校对版全本）作者：发飙的蜗牛"
       }
     ]
   }
