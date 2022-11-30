@@ -46,6 +46,7 @@ if [ $(hostname) = "node" ]; then
   # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
   alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
   alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
+  export EDITOR=lvim
 fi
 # Set up the prompt
 #----------------------------------------------------------------------------------------------------
@@ -245,7 +246,8 @@ alias Fy='sudo pacman -Fy'
 
 alias syu='paru -Syu'
 
-alias ls="exa "
+# alias ls="exa "
+alias ls="ls --color --hyperlink=auto "
 alias ll="ls -la "
 
 alias zshconf="vim ~/.zshrc"

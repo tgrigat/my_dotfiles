@@ -178,35 +178,35 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1142,
-      "width": 1916,
-      "x": 2,
-      "y": 56
+      "height": 968,
+      "width": 819,
+      "x": 822,
+      "y": 58
     },
     "full_screened": false,
     "geometry": {
-      "height": 1123,
-      "width": 1916,
-      "x": 2,
+      "height": 951,
+      "width": 819,
+      "x": 822,
       "y": 75
     },
     "maximized": false,
     "normal_geometry": {
-      "height": 1123,
-      "width": 1916,
-      "x": 2,
+      "height": 951,
+      "width": 819,
+      "x": 822,
       "y": 75
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAACAAAAOAAAB30AAAStAAAAAgAAAEsAAAd9AAAErQAAAAAAAAAAB4AAAAACAAAASwAAB30AAASt"
+      "__value__": "AdnQywADAAAAAAM2AAAAOgAABmgAAAQBAAADNgAAAEsAAAZoAAAEAQAAAAAAAAAABm4AAAM2AAAASwAABmgAAAQB"
     },
     "screen": {
       "depth": 24,
-      "device_pixel_ratio": 1.5,
+      "device_pixel_ratio": 1.75,
       "geometry_in_logical_pixels": {
-        "height": 1200,
-        "width": 1920,
+        "height": 1029,
+        "width": 1646,
         "x": 0,
         "y": 0
       },
@@ -216,12 +216,12 @@
       "name": "XWAYLAND0",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1200,
-        "width": 1920
+        "height": 1029,
+        "width": 1646
       },
       "virtual_geometry": {
-        "height": 1200,
-        "width": 1920,
+        "height": 1029,
+        "width": 1646,
         "x": 0,
         "y": 0
       }
@@ -280,7 +280,7 @@
   },
   "grid view visible": false,
   "library_usage_stats": {
-    "/home/yang/Documents/Library/books/calibre-syncing": 10
+    "/home/yang/Documents/Library/books/calibre-syncing": 12
   },
   "metasingle_window_size": [
     1850,

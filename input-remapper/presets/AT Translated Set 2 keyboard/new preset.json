@@ -1,13 +1,5 @@
 {
     "mapping": {
-        "1,100,1": [
-            "hold_keys(key_down)",
-            "keyboard"
-        ],
-        "1,97,1": [
-            "hold_keys(key_up)",
-            "keyboard"
-        ],
         "1,56,1+1,57,1": [
             "key(w).key(i).key(n).key(d).key(o).key(w).key(s)",
             "keyboard"
@@ -22,6 +14,14 @@
         ],
         "1,125,1+1,32,1": [
             "Delete",
+            "keyboard"
+        ],
+        "1,97,1": [
+            "repeat(5, key(key_up).w(3))",
+            "keyboard"
+        ],
+        "1,100,1": [
+            "repeat(5, key(key_down).w(3))",
             "keyboard"
         ]
     }
