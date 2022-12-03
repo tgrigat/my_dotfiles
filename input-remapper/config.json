@@ -1,7 +1,7 @@
 {
     "version": "1.5.0",
     "autoload": {
-        "AT Translated Set 2 keyboard": "new preset",
+        "AT Translated Set 2 keyboard": "daily",
         "Wacom Intuos S Pad": "xournalpp"
     },
     "macros": {

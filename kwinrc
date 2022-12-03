@@ -34,7 +34,7 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 Active=true
 LatitudeAuto=39.9075
 LongitudeAuto=116.3972
-NightTemperature=4800
+NightTemperature=6400
 
 [Plugins]
 bismuthEnabled=true
@@ -72,7 +72,7 @@ ActiveMouseScreen=false
 SeparateScreenFocus=true
 
 [Xwayland]
-Scale=1.75
+Scale=1.5
 
 [org.kde.kdecoration2]
 ButtonsOnLeft=MF
