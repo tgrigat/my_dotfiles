@@ -14,4 +14,7 @@ keymap.set("n", "<C-w>gd", "<Cmd>call VSCodeNotify('editor.action.revealDefiniti
 
 keymap.set("n", "?", "<Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>")
 
+keymap.set("n", "j", "jzz")
+keymap.set("n", "k", "kzz")
+
 
