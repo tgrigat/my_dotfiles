@@ -108,6 +108,7 @@
   "old_prefs_migrated": true,
   "session_data": {
     "controls_help_shown_count": 2,
+    "current_color_scheme": "sepia-light",
     "standalone_font_settings": {},
     "standalone_misc_settings": {
       "remember_last_read": true,
@@ -116,6 +117,15 @@
       "singleinstance": false
     },
     "standalone_recently_opened": [
+      {
+        "authors": [
+          "斋藤孝"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Zhai Teng Xiao/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi Ji Fa _Yang Cheng [Shu Xie -Si Kao -Jie Jue ] De Xi (233)/Bian Xie Bian Si Kao De Da Nao Zheng Li Bi - Zhai Teng Xiao.epub",
+        "timestamp": "2022-12-04T10:35:42.614Z",
+        "title": "边写边思考的大脑整理笔记法：养成「书写→思考→解决」的习惯，增加生产力，强化学习力，纾解压力，心智升级！"
+      },
       {
         "authors": [
           "Unknown"

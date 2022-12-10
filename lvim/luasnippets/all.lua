@@ -24,6 +24,4 @@ local postfix = require("luasnip.extras.postfix").postfix
 local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 
-return {
-  s('printdebug', { t"print(Debug:)"})
-}
+return { }

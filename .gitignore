@@ -112,7 +112,6 @@ dconf
 evolution/sources
 clash
 clash-verge
-calibre
 cef_user_data/Dictionaries
 autostart
 akonadi
@@ -263,3 +262,16 @@ kamosorc
 dragonplayerrc
 pudb
 libvirt/storage
+calibre/calibre/conversion
+calibre/calibre/fonts
+calibre/calibre/.owncloudsync.log
+calibre/calibre/.sync-exclude.lst
+calibre/calibre/viewer/._sync_b7fe1f963a83.db
+calibre/calibre/viewer/._sync_b7fe1f963a83.db-shm
+calibre/calibre/viewer/._sync_b7fe1f963a83.db-wal
+calibre/calibre/viewer/.owncloudsync.log
+calibre/calibre/viewer/.sync_b7fe1f963a83.db
+calibre/calibre/viewer/.sync_b7fe1f963a83.db-shm
+calibre/calibre/viewer/.sync_b7fe1f963a83.db-wal
+unity3d/DefaultCompany/VNAV_2018
+vifm/vifminfo.json
