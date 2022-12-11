@@ -119,5 +119,5 @@ lvim.plugins = {
   },
   -- outline for languages
   { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
-  { 'kkoomen/vim-doge', run = ':call doge#install()' }
+  { 'kkoomen/vim-doge', run = ':call doge#install()' },
 }
