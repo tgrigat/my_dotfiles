@@ -46,8 +46,6 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
-
-lvim.format_on_save = false
 lvim.builtin.terminal.active = true
 
 -- All the treesitter parsers you want to install. If you want all of them, just
