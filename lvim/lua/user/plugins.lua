@@ -126,5 +126,6 @@ lvim.plugins = {
     -- requires = 'kkharji/sqlite.lua'
   },
   {'stevearc/dressing.nvim'},
-  {'hrsh7th/cmp-cmdline'}
+  {'hrsh7th/cmp-cmdline'},
+  {"p00f/clangd_extensions.nvim"},
 }

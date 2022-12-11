@@ -12,11 +12,6 @@ lvim.builtin.treesitter.highlight.enable = true
 -- auto install treesitter parsers
 lvim.builtin.treesitter.ensure_installed = { "cpp", "c" }
 
--- Additional Plugins
-table.insert(lvim.plugins, {
-  "p00f/clangd_extensions.nvim",
-})
-
 -- some settings can only passed as commandline flags, see `clangd --help`
 local clangd_flags = {
   "--background-index",
@@ -41,7 +36,6 @@ local clangd_flags = {
 
 local provider = "clangd"
 
-
 local status_ok, project_config = pcall(require, "rhel.clangd_wrl")
 if status_ok then
   clangd_flags = vim.tbl_deep_extend("keep", project_config, clangd_flags)
@@ -62,7 +56,6 @@ end
 
 local opts = {
   cmd = { provider, unpack(clangd_flags) },
-  on_attach = custom_on_attach,
   on_init = custom_on_init,
 }
 

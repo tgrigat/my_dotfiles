@@ -18,7 +18,7 @@ require('legendary').setup({
   },
   autocmds = {
     -- Create autocmds and augroups
-    { 'BufWritePre', vim.lsp.buf.format, description = 'Format on save' },
+    -- { 'BufWritePre', vim.lsp.buf.format, description = 'Format on save' },
     {
       name = 'MyAugroup',
       clear = true,
