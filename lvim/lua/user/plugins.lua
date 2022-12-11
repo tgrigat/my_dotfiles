@@ -120,4 +120,11 @@ lvim.plugins = {
   -- outline for languages
   { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
   { 'kkoomen/vim-doge', run = ':call doge#install()' },
+  {
+    'mrjones2014/legendary.nvim'
+    -- sqlite is only needed if you want to use frecency sorting
+    -- requires = 'kkharji/sqlite.lua'
+  },
+  {'stevearc/dressing.nvim'},
+  {'hrsh7th/cmp-cmdline'}
 }
