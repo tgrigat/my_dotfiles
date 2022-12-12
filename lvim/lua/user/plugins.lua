@@ -127,5 +127,4 @@ lvim.plugins = {
   },
   {'stevearc/dressing.nvim'},
   {'hrsh7th/cmp-cmdline'},
-  {"p00f/clangd_extensions.nvim"},
 }
