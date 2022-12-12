@@ -201,6 +201,8 @@ alias d="dolphin . 2>/dev/null &"
 alias pgrep="pdfgrep -r -n -i"
 # for opening zathura faster
 alias za="zathura"
+# for sioyek
+alias si="sioyek"
 # for fuzzy pdfgrep
 alias pf="fuzzy-pdf -m 0"
 # for the zoxide
