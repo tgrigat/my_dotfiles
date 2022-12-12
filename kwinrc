@@ -50,11 +50,13 @@ enableSpiralLayout=false
 enableSpreadLayout=false
 ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam,org.kde.kalarm, nextcloud, com.nextcloud.desktopclient.nextcloud, keepassxc
 ignoreTitle=Zoom Meeting
+maximizeSoleTile=true
 newWindowAsMaster=true
-screenGapBottom=2
-screenGapLeft=2
-screenGapRight=2
-screenGapTop=2
+screenGapBottom=7
+screenGapLeft=7
+screenGapRight=7
+screenGapTop=7
+tileLayoutGap=6
 
 [Script-desktopchangeosd]
 PopupHideDelay=300
@@ -70,9 +72,10 @@ MultiScreenMode=2
 [Windows]
 ActiveMouseScreen=false
 SeparateScreenFocus=true
+TitlebarDoubleClickCommand=Minimize
 
 [Xwayland]
-Scale=1.5
+Scale=1
 
 [org.kde.kdecoration2]
 ButtonsOnLeft=MF
