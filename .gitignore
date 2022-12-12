@@ -14,7 +14,6 @@ Vulcan/
 baidunetdisk/
 draw.io/
 Lepton/
-
 manjaro
 massCode
 matray
@@ -225,7 +224,6 @@ khotkeysrc
 kinfocenterrc
 kiorc
 kioslaverc
-<<<<<<< HEAD
 klipperrc
 Element
 catkin/verb_aliases
@@ -237,10 +235,7 @@ breezerc
 harunarc
 kde_backup.tar.gz
 rvizrc
-=======
 klipperrc
->>>>>>> a4b29f3 (exclude most of them)
-
 kde.org
 lazygit/state.yml
 unity3d/DefaultCompany/VNAV_2019
@@ -276,3 +271,5 @@ calibre/calibre/viewer/.sync_b7fe1f963a83.db-wal
 unity3d/DefaultCompany/VNAV_2018
 vifm/vifminfo.json
 discord
+clash_win
+pavucontrol.ini
