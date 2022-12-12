@@ -19,6 +19,8 @@ require('legendary').setup({
   autocmds = {
     -- Create autocmds and augroups
     -- { 'BufWritePre', vim.lsp.buf.format, description = 'Format on save' },
+    -- { 'UIEnter', ':so Session.vim!', description = 'Restore session' },
+    -- { 'QuitPre', ':mks', description = 'Save session' },
     {
       name = 'MyAugroup',
       clear = true,

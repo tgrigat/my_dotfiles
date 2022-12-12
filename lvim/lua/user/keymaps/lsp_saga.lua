@@ -9,5 +9,5 @@ keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
--- Outline
-keymap("n","<leader>lo", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+-- Command palette
+keymap("n","<C-p>", "<cmd>Legendary commands<CR>",{ silent = true })
