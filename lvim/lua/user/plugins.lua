@@ -90,7 +90,7 @@ lvim.plugins = {
   },
 
   -- You can run blocks of code like jupyter notebook.
-  { "dccsillag/magma-nvim", run = ":UpdateRemotePlugins" },
+  { "dccsillag/magma-nvim", run = ':UpdateRemotePlugins' },
 
   {
     "glepnir/lspsaga.nvim",
@@ -125,6 +125,6 @@ lvim.plugins = {
     -- sqlite is only needed if you want to use frecency sorting
     -- requires = 'kkharji/sqlite.lua'
   },
-  {'stevearc/dressing.nvim'},
-  {'hrsh7th/cmp-cmdline'},
+  { 'stevearc/dressing.nvim' },
+  { 'hrsh7th/cmp-cmdline' },
 }
