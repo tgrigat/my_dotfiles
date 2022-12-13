@@ -143,10 +143,47 @@ local mappings = {
       "<cmd>BufferLinePickClose<cr>",
       "Pick which buffer to close",
     },
-    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-    l = {
-      "<cmd>BufferLineCloseRight<cr>",
-      "Close all to the right",
+    ["<leader>o"] = { "<cmd>LSoutlineToggle<CR>", "Show Outline" },
+    ["<leader>g"] = {
+        name = "Git",
+        g = { "<cmd>lua require 'user.terminal'.lazygit_toggle()<cr>", "Lazygit" },
+        j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
+        k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
+        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+        u = {
+            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+            "Undo Stage Hunk",
+        },
+        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        C = {
+            "<cmd>Telescope git_bcommits<cr>",
+            "Checkout commit(for current file)",
+        },
+        d = {
+            "<cmd>Gitsigns diffthis HEAD<cr>",
+            "Git Diff",
+        }
+    },
+
+    ["<leader>s"] = {
+        name = "Search",
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
+        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        R = { "<cmd>Telescope registers<cr>", "Registers" },
+        t = { "<cmd>Telescope live_grep<cr>", "Text" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
     D = {
       "<cmd>BufferLineSortByDirectory<cr>",
