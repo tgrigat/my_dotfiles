@@ -17,12 +17,12 @@ require('nvim-treesitter.configs').setup {
         'lua',
         'make',
         'markdown',
-        'python',
         'regex',
         'rust',
         'toml',
         'vim',
         'yaml',
+        'python'
     },
     -- ignore_install = { "javascript" },
     highlight = {

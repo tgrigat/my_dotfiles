@@ -6,4 +6,8 @@ else
   require "user.which-key"
   require "user.nvim-tree"
   require "user.alpha"
+  require "user.ft-which-key"
+  require "user.command-palette"
+  require "user.indentlines"
+  require "user.tree-sitter"
 end

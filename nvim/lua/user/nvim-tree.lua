@@ -12,9 +12,6 @@ require("nvim-tree").setup({
     },
   },
   -- new
-  active = true,
-    on_config_done = nil,
-    setup = {
       ignore_ft_on_setup = {
         "startify",
         "dashboard",
@@ -25,7 +22,6 @@ require("nvim-tree").setup({
         enable = false,
       },
       update_cwd = true,
-      },
       update_focused_file = {
         enable = true,
         update_cwd = true,
@@ -48,35 +44,6 @@ require("nvim-tree").setup({
             edge = "│",
             item = "│",
             none = " ",
-          },
-        },
-        icons = {
-          webdev_colors = lvim.use_icons,
-          show = {
-            git = lvim.use_icons,
-            folder = lvim.use_icons,
-            file = lvim.use_icons,
-            folder_arrow = lvim.use_icons,
-          },
-          glyphs = {
-            default = lvim.icons.ui.Text,
-            symlink = lvim.icons.ui.FileSymlink,
-            git = {
-              deleted = lvim.icons.git.FileDeleted,
-              ignored = lvim.icons.git.FileIgnored,
-              renamed = lvim.icons.git.FileRenamed,
-              staged = lvim.icons.git.FileStaged,
-              unmerged = lvim.icons.git.FileUnmerged,
-              unstaged = lvim.icons.git.FileUnstaged,
-              untracked = lvim.icons.git.FileUntracked,
-            },
-            folder = {
-              default = lvim.icons.ui.Folder,
-              empty = lvim.icons.ui.EmptyFolder,
-              empty_open = lvim.icons.ui.EmptyFolderOpen,
-              open = lvim.icons.ui.FolderOpen,
-              symlink = lvim.icons.ui.FolderSymlink,
-            },
           },
         },
         highlight_git = true,
@@ -123,5 +90,4 @@ require("nvim-tree").setup({
           },
         },
       },
-    },
 })
