@@ -1,3 +1,12 @@
+-- some keys to directly overwrite
+
+-- add g 
+lvim.builtin.which_key.setup.plugins.presets.g = true
+lvim.builtin.which_key.setup.plugins.presets.z = true
+lvim.builtin.which_key.setup.plugins.presets.windows = true
+lvim.builtin.which_key.setup.plugins.registers = true
+lvim.builtin.which_key.setup.plugins.marks = true
+
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
   return

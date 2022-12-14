@@ -7,7 +7,7 @@ require("user.plugins")
 require("user.cmp")
 require("user.legendary")
 require("user.which-key")
-
+require("user.alpha")
 -------------------------------------------------------------------------
 ----------------------- Basic setups  -----------------------------------
 -------------------------------------------------------------------------
@@ -29,6 +29,8 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+
+lvim.builtin.breadcrumbs.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {

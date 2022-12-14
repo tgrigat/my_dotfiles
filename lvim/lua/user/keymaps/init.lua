@@ -22,3 +22,7 @@ lvim.builtin.which_key.mappings['P'] = { "<cmd>Legendary commands<cr>","Command 
 lvim.builtin.which_key.mappings['p'] = { "<cmd>Telescope commands<cr>","Command palette" }
 
 lvim.builtin.which_key.mappings["lo"] = { "<cmd>LSoutlineToggle<cr>", "Saga Outline" }
+
+local keymap = vim.keymap.set
+
+keymap("n","<C-p>", "<cmd>Legendary commands<CR>",{ silent = true })
