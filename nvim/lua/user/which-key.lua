@@ -24,7 +24,7 @@ local setup = {
     },
     -- add operators that will trigger motion and text object completion
     -- to enable all native operators, set the preset / operators plugin above
-    operators = { gc = "Comments" },
+    -- operators = { gc = "Comments" },
     key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
@@ -42,7 +42,7 @@ local setup = {
         scroll_up = '<c-u>', -- binding to scroll up inside the popup
     },
     window = {
-        border = "none", -- none, single, double, shadow
+        border = "single", -- none, single, double, shadow
         position = "bottom", -- bottom, top
         margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
         padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
@@ -96,9 +96,10 @@ local mappings = {
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         a = { "<cmd>Lspsaga code_action<CR>", "Code Actions" },
         f = { "<cmd>lua vim.lsp.buf.format{async=true}<CR>", "Format" },
-        i = { "<cmd>LspInfo<cr>", "Info" }
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        r = { "<cmd>Lspsaga rename<CR>", "Rename" },
     },
-    ["<leader>o"] = { "<cmd>LSoutlineToggle<CR>", "Show Outline" },
+    ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Show Outline" },
     ["<leader>s"] = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -223,11 +224,13 @@ local mappings = {
     ["<leader>]"] = { "<cmd>Alpha<cr>", "Show Alpha" },
     -- g related keys
     ["g"] = {
-        d = { "<cmd>Lspsaga peek_definition<CR>", "Goto Definition" },
-        r = { "<cmd>Lspsaga lsp_finder<CR>", "Goto references" },
-        R = { "<cmd>Lspsaga rename<CR>", "rename" },
+        d = { vim.lsp.buf.definition, "Goto Definition" },
+        D = { vim.lsp.buf.declaration, "Goto Declaration" },
+        -- r = { "<cmd>Lspsaga lsp_finder<CR>", "Goto references" },
+        r = { vim.lsp.buf.references, "Goto references" },
         l = { "<cmd>Lspsaga show_line_diagnostics<CR>", "Show Diagnostics" }
     },
+    ["K"] = { vim.lsp.buf.hover, "Show hover"}
 
 
 }

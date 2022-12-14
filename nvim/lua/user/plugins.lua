@@ -66,10 +66,10 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-cmdline' },
             -- {'SirVer/ultisnips'},
             -- {'quangnguyen30192/cmp-nvim-ultisnips'}
-            -- { 'hrsh7th/cmp-vsnip' },
-            -- { 'hrsh7th/vim-vsnip' },
-            { "L3MON4D3/LuaSnip" },
-            { "saadparwaiz1/cmp_luasnip" },
+            { 'hrsh7th/cmp-vsnip' },
+            { 'hrsh7th/vim-vsnip' },
+            -- { "L3MON4D3/LuaSnip" },
+            -- { "saadparwaiz1/cmp_luasnip" },
             { "onsails/lspkind.nvim" },
         },
     }
@@ -226,7 +226,29 @@ return require('packer').startup(function(use)
                 -- your configuration
                 border_style = "rounded",
                 symbol_in_winbar = {
-                    in_custom = true
+                    in_custom = true,
+                    click_support = function(node, clicks, button, modifiers)
+                        -- To see all available details: vim.pretty_print(node)
+                        local st = node.range.start
+                        local en = node.range['end']
+                        if button == "l" then
+                            if clicks == 2 then
+                                -- double left click to do nothing
+                            else -- jump to node's starting line+char
+                                vim.fn.cursor(st.line + 1, st.character + 1)
+                            end
+                        elseif button == "r" then
+                            if modifiers == "s" then
+                                print "lspsaga" -- shift right click to print "lspsaga"
+                            end -- jump to node's ending line+char
+                            vim.fn.cursor(en.line + 1, en.character + 1)
+                        elseif button == "m" then
+                            -- middle click to visual select node
+                            vim.fn.cursor(st.line + 1, st.character + 1)
+                            vim.cmd "normal v"
+                            vim.fn.cursor(en.line + 1, en.character + 1)
+                        end
+                    end
                 },
                 show_outline = {
                     win_position = 'right',
@@ -245,27 +267,9 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use { "terrortylor/nvim-comment",
-        config = function() require('nvim_comment').setup(
-                {
-                    -- Linters prefer comment and line to have a space in between markers
-                    marker_padding = true,
-                    -- should comment out empty or whitespace only lines
-                    comment_empty = true,
-                    -- trim empty comment whitespace
-                    comment_empty_trim_whitespace = true,
-                    -- Should key mappings be created
-                    create_mappings = true,
-                    -- Normal mode mapping left hand side
-                    line_mapping = "gcc",
-                    -- Visual/Operator mapping left hand side
-                    operator_mapping = "gc",
-                    -- text object mapping, comment chunk,,
-                    comment_chunk_text_object = "ic",
-                    -- Hook function to call before commenting takes place
-                    hook = nil
-                }
-            )
+    use { "numToStr/Comment.nvim",
+        config = function()
+            require("user.comment")
         end
     }
     use { "tpope/vim-surround" }
@@ -276,24 +280,11 @@ return require('packer').startup(function(use)
     }
     use { 'stevearc/dressing.nvim' }
     use { "dccsillag/magma-nvim", run = ':UpdateRemotePlugins' }
-    use {
-        "petertriho/nvim-scrollbar",
-        config = function()
-            require("scrollbar").setup()
-        end
-    }
     -- indent blankline
     use { "lukas-reineke/indent-blankline.nvim" }
 
     -- comment
     use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use {
-        "numToStr/Comment.nvim",
-        event = "BufRead",
-        config = function()
-            require("user.comment").setup()
-        end,
-    }
     use {
         "ahmedkhalf/project.nvim",
         config = function()
@@ -306,6 +297,7 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
+    use "rafamadriz/friendly-snippets"
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
