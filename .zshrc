@@ -34,7 +34,7 @@ fi
 if [ $(hostname) = "ArchDM" ]; then
   alias wk="cd ~/Workspace/git/deep-video-mvs-dm/"
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias ezpxy="export http_proxy=http://192.168.1.108:8888;export https_proxy=http://192.168.1.108:8888"
+  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
 fi
 
 if [ $(hostname) = "node" ]; then

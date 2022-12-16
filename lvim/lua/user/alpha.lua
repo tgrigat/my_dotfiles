@@ -18,8 +18,10 @@ lvim.builtin.alpha.dashboard.section.buttons.entries = {
 }
 
 local text = require "lvim.interface.text"
+  local lvim_version = require("lvim.utils.git").get_lvim_version()
 
 lvim.builtin.alpha.dashboard.section.footer.val = text.align_center({ width = 0 }, {
   "",
   "Jiaye Yang",
+  lvim_version
 }, 0.5)
