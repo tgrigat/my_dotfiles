@@ -184,5 +184,23 @@ lvim.plugins = {
       })
     end
   },
+  { "epwalsh/obsidian.nvim", config = function()
+    require("obsidian").setup({
+      dir = "~/obsidian",
+      completion = {
+        nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+      },
+      daily_notes = {
+        folder = "Days",
+      },
+      disable_frontmatter = true
+    })
+    require("nvim-treesitter.configs").setup({
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "markdown" },
+      },
+    })
+  end }
 
 }
