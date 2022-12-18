@@ -187,13 +187,13 @@ lvim.plugins = {
   { "epwalsh/obsidian.nvim", config = function()
     require("obsidian").setup({
       dir = "~/obsidian",
+      disable_frontmatter = true,
       completion = {
         nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
       },
       daily_notes = {
         folder = "Days",
       },
-      disable_frontmatter = true
     })
     require("nvim-treesitter.configs").setup({
       highlight = {

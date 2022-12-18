@@ -69,13 +69,17 @@ HighlightWindows=false
 LayoutName=thumbnail_grid
 MultiScreenMode=2
 
+[Wayland]
+InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
+VirtualKeyboardEnabled=false
+
 [Windows]
 ActiveMouseScreen=false
 SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize
 
 [Xwayland]
-Scale=1
+Scale=1.5
 
 [org.kde.kdecoration2]
 ButtonsOnLeft=MF

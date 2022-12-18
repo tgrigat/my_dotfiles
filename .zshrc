@@ -39,9 +39,9 @@ fi
 
 if [ $(hostname) = "node" ]; then
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias wk1="cd ~/Desktop/Autonomous-System/"
+  alias wk="cd ~/Workspace/git/AS_final_project//"
   alias wk2="cd ~/Desktop/Advanced-Programming/"
-  alias wk="cd ~/Workspace/git/deep-video-mvs-dm-own/"
+  alias wk1="cd ~/Workspace/git/deep-video-mvs-dm-own/"
   source /opt/ros/noetic/setup.zsh
   # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
   alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
