@@ -201,6 +201,6 @@ lvim.plugins = {
         additional_vim_regex_highlighting = { "markdown" },
       },
     })
-  end }
-
+  end },
+  { "simrat39/rust-tools.nvim" }
 }
