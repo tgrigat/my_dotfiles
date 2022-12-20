@@ -18,6 +18,16 @@ lvim.builtin.which_key.mappings["="] = {
   }
 }
 
+lvim.builtin.which_key.mappings["o"] = {
+  name = "Obsidian",
+  ['t'] = {"<cmd>ObsidianToday<cr>", "Daily note"},
+  ['y'] = {"<cmd>ObsidianYesterday<cr>", "Yesterday's note"},
+  ['s'] = {"<cmd>ObsidianSearch<cr>", "Search notes"},
+  ['g'] = {"<cmd>ObsidianFollowLink<cr>", "Goto link"},
+  ['o'] = {"<cmd>ObsidianOpen<cr>", "Open Obsidian"}
+}
+
+
 lvim.builtin.which_key.mappings['P'] = { "<cmd>Legendary commands<cr>","Command palette" }
 lvim.builtin.which_key.mappings['p'] = { "<cmd>Telescope commands<cr>","Command palette" }
 
