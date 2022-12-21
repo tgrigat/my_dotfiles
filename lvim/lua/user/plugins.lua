@@ -187,6 +187,7 @@ lvim.plugins = {
   { "epwalsh/obsidian.nvim", config = function()
     require("obsidian").setup({
       dir = "~/obsidian",
+      use_advanced_uri = true,
       disable_frontmatter = true,
       completion = {
         nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
