@@ -8,6 +8,7 @@ require("user.cmp")
 require("user.legendary")
 require("user.which-key")
 require("user.alpha")
+require("user.indent_blankline")
 -------------------------------------------------------------------------
 ----------------------- Basic setups  -----------------------------------
 -------------------------------------------------------------------------
