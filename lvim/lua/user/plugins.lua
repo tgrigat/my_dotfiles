@@ -203,5 +203,18 @@ lvim.plugins = {
       },
     })
   end },
-  { "simrat39/rust-tools.nvim" }
+  { "simrat39/rust-tools.nvim" },
+  { 'echasnovski/mini.animate', config = function()
+    require('mini.animate').setup(
+      { cursor = {
+        enable = true,
+        timing = function(_, n) return 100 / n end, --<function: implements linear total 250ms animation duration>,
+      } }
+    )
+
+  end },
+  { "stevearc/aerial.nvim", config = function()
+    require('aerial').setup()
+  end }
+
 }
