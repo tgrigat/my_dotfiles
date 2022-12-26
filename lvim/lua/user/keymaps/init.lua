@@ -15,6 +15,7 @@ lvim.builtin.which_key.mappings["="] = {
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+    p = {"<cmd>vs ~/dotfiles/lvim/lua/user/plugins.lua<cr>", "Plugins"}
   }
 }
 

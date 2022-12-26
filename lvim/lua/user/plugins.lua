@@ -208,8 +208,13 @@ lvim.plugins = {
     require('mini.animate').setup(
       { cursor = {
         enable = true,
-        timing = function(_, n) return 100 / n end, --<function: implements linear total 250ms animation duration>,
-      } }
+        timing = function(_, n) return 150 / n end, --<function: implements linear total 250ms animation duration>,
+      },
+        scroll = {
+          -- Whether to enable this animation
+          enable = false,
+        },
+      }
     )
 
   end },
