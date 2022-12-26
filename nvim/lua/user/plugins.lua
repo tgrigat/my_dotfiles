@@ -1,65 +1,49 @@
-local fn = vim.fn
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
         "git",
         "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-    }
-    print "Installing packer close and reopen Neovim..."
-    vim.cmd [[packadd packer.nvim]]
+        "--filter=blob:none",
+        "--single-branch",
+        "https://github.com/folke/lazy.nvim.git",
+        lazypath,
+    })
 end
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-    return
-end
--- Have packer use a popup window
-packer.init {
-    display = {
-        open_fn = function()
-            return require("packer.util").float { border = "rounded" }
-        end,
-    },
-}
--- Only required if you have packer configured as `opt`
--- vim.cmd [[packadd packer.nvim]]
---
-return require('packer').startup(function(use)
+vim.opt.runtimepath:prepend(lazypath)
+
+
+vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
+
+local plugins = {
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
     -- Leap for better navigation
-    use { "ggandor/leap.nvim",
+    { "ggandor/leap.nvim",
         config = function()
             require('leap').add_default_mappings()
         end
-    }
-    use 'sainnhe/everforest'
-    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',
-        config = function() require("bufferline").setup {} end }
-    use {
+    },
+    'sainnhe/everforest',
+    { 'akinsho/bufferline.nvim', version = "v3.*",
+        config = function() require("bufferline").setup {} end },
+    {
         'neovim/nvim-lspconfig',
         config = function() require('user.lsp') end
-    } -- Configurations for Nvim LSP
-    use {
+    }, -- Configurations for Nvim LSP
+    {
         'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        dependencies = {
+            'kyazdani42/nvim-web-devicons', opt = true
         },
-    } -- nvim tree for the file exploration
+    }, -- nvim tree for the file exploration
     -- The following plugins are borrowed from LunarVim
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    {
+        'nvim-telescope/telescope.nvim', version = '0.1.0',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-    use { 'hrsh7th/nvim-cmp',
+        dependencies = { { 'nvim-lua/plenary.nvim' } }
+    },
+    { 'hrsh7th/nvim-cmp',
         config = function() require('user.cmp') end,
-        requires = {
+        dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
@@ -72,152 +56,60 @@ return require('packer').startup(function(use)
             -- { "saadparwaiz1/cmp_luasnip" },
             { "onsails/lspkind.nvim" },
         },
-    }
-    use { "williamboman/mason.nvim", config = function()
+    },
+    { "williamboman/mason.nvim", config = function()
         require("mason").setup()
-    end }
-    use {
+    end },
+    {
         "jose-elias-alvarez/null-ls.nvim",
-        requires = "PlatyPew/format-installer.nvim",
+        dependencies = "PlatyPew/format-installer.nvim",
         after = "nvim-lspconfig", -- To prevent null-ls from failing to read buffer
-    }
-    use { 'nvim-lua/popup.nvim' }
-    -- use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    --   require("toggleterm").setup {
-    --     active = true,
-    --     on_config_done = nil,
-    --     -- size can be a number or function which is passed the current terminal
-    --     size = 20,
-    --     open_mapping = [[<c-\>]],
-    --     hide_numbers = true, -- hide the number column in toggleterm buffers
-    --     shade_filetypes = {},
-    --     shade_terminals = true,
-    --     shading_factor = 2, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
-    --     start_in_insert = true,
-    --     insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    --     persist_size = false,
-    --     -- direction = 'vertical' | 'horizontal' | 'window' | 'float',
-    --     direction = "float",
-    --     close_on_exit = true, -- close the terminal window when the process exits
-    --     shell = vim.o.shell, -- change the default shell
-    --     -- This field is only relevant if direction is set to 'float'
-    --     float_opts = {
-    --       -- The border key is *almost* the same as 'nvim_win_open'
-    --       -- see :h nvim_win_open for details on borders however
-    --       -- the 'curved' border is a custom border type
-    --       -- not natively supported but implemented in this plugin.
-    --       -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
-    --       border = "curved",
-    --       -- width = <value>,
-    --       -- height = <value>,
-    --       winblend = 0,
-    --       highlights = {
-    --         border = "Normal",
-    --         background = "Normal",
-    --       },
-    --     },
-    --     -- Add executables on the config.lua
-    --     -- { exec, keymap, name}
-    --     -- lvim.builtin.terminal.execs = {{}} to overwrite
-    --     -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
-    --     -- TODO: pls add mappings in which key and refactor this
-    --     execs = {
-    --       { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
-    --       { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
-    --       { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
-    --     },
-    --   }
-    -- end }
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+    },
+    { 'nvim-lua/popup.nvim' },
+    { "akinsho/toggleterm.nvim", version = '*', config = function()
         require("toggleterm").setup {
             require("user.terminal").setup()
         }
-    end }
-    -- use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    --   require("toggleterm").setup {
-    --     active = true,
-    --     on_config_done = nil,
-    --     -- size can be a number or function which is passed the current terminal
-    --     size = 20,
-    --     open_mapping = [[<c-\>]],
-    --     hide_numbers = true, -- hide the number column in toggleterm buffers
-    --     shade_filetypes = {},
-    --     shade_terminals = true,
-    --     shading_factor = 2, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
-    --     start_in_insert = true,
-    --     insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    --     persist_size = false,
-    --     -- direction = 'vertical' | 'horizontal' | 'window' | 'float',
-    --     direction = "float",
-    --     close_on_exit = true, -- close the terminal window when the process exits
-    --     shell = vim.o.shell, -- change the default shell
-    --     -- This field is only relevant if direction is set to 'float'
-    --     float_opts = {
-    --       -- The border key is *almost* the same as 'nvim_win_open'
-    --       -- see :h nvim_win_open for details on borders however
-    --       -- the 'curved' border is a custom border type
-    --       -- not natively supported but implemented in this plugin.
-    --       -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
-    --       border = "curved",
-    --       -- width = <value>,
-    --       -- height = <value>,
-    --       winblend = 0,
-    --       highlights = {
-    --         border = "Normal",
-    --         background = "Normal",
-    --       },
-    --     },
-    --     -- Add executables on the config.lua
-    --     -- { exec, keymap, name}
-    --     -- lvim.builtin.terminal.execs = {{}} to overwrite
-    --     -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
-    --     -- TODO: pls add mappings in which key and refactor this
-    --     execs = {
-    --       { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
-    --       { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
-    --       { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
-    --     },
-    --   }
-    -- end }
-    use 'rcarriga/nvim-notify'
-    use "goolord/alpha-nvim"
-    use { "folke/which-key.nvim" }
-    use {
+    end },
+    'rcarriga/nvim-notify',
+    "goolord/alpha-nvim",
+    { "folke/which-key.nvim" },
+    {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        dependencies = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
             require("user.lualine")
         end
-    }
-    use { "mhartington/formatter.nvim",
+    },
+    { "mhartington/formatter.nvim",
         config = function()
             pcall(require, "user.formatter")
         end
-    }
-    use {
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        build = ":TSUpdate",
         config = function()
             require("user.nvim-tree")
         end
-    }
+    },
 
-    use {
+    {
         "windwp/nvim-autopairs",
         config = function() require("user.autopair") end
-    }
+    },
     -- Autopairsintegrates with both cmp and treesitter
-    use "williamboman/nvim-lsp-installer"
+    "williamboman/nvim-lsp-installer",
 
-    use {
+    {
         "petertriho/nvim-scrollbar",
         config = function()
             require("scrollbar").setup()
         end
-    }
+    },
 
     --
-    use {
+    {
         "glepnir/lspsaga.nvim",
         branch = "main",
         config = function()
@@ -265,40 +157,40 @@ return require('packer').startup(function(use)
                 },
             })
         end,
-    }
+    },
 
-    use { "numToStr/Comment.nvim",
+    { "numToStr/Comment.nvim",
         config = function()
             require("user.comment")
         end
-    }
-    use { "tpope/vim-surround" }
-    use {
+    },
+    { "tpope/vim-surround" },
+    {
         'mrjones2014/legendary.nvim'
-        -- sqlite is only needed if you want to use frecency sorting
-        -- requires = 'kkharji/sqlite.lua'
-    }
-    use { 'stevearc/dressing.nvim' }
-    use { "dccsillag/magma-nvim", run = ':UpdateRemotePlugins' }
+        -- sqlite is only needed if you want to frecency sorting
+        -- dependencies = 'kkharji/sqlite.lua'
+    },
+    { 'stevearc/dressing.nvim' },
+    { "dccsillag/magma-nvim", build = ':UpdateRemotePlugins' },
     -- indent blankline
-    use { "lukas-reineke/indent-blankline.nvim" }
+    { "lukas-reineke/indent-blankline.nvim" },
 
     -- comment
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    {
         "ahmedkhalf/project.nvim",
         config = function()
             require("user.project").setup()
         end
-    }
-    use {
+    },
+    {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()
         end
-    }
-    use "rafamadriz/friendly-snippets"
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+    },
+    "rafamadriz/friendly-snippets"
+}
+
+
+require("lazy").setup(plugins)
