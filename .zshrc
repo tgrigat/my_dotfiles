@@ -200,7 +200,10 @@ alias d="dolphin . 2>/dev/null &"
 # for pdfgrep
 alias pgrep="pdfgrep -r -n -i"
 # for opening zathura faster
-alias za="zathura"
+# alias za="zathura"
+za() {
+  zathura $@ &
+}
 # for sioyek
 alias si="sioyek"
 # for fuzzy pdfgrep
