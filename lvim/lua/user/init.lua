@@ -1,21 +1,23 @@
 -------------------------------------------------------------------------
 ----------------------- Additional requires -----------------------------
 -------------------------------------------------------------------------
-require("user.lsp")
-require("user.keymaps")
-require("user.plugins")
-require("user.cmp")
-require("user.legendary")
-require("user.which-key")
-require("user.alpha")
-require("user.indent_blankline")
+reload("user.lsp")
+reload("user.keymaps")
+reload("user.plugins")
+reload("user.cmp")
+reload("user.legendary")
+reload("user.which-key")
+reload("user.alpha")
+reload("user.indent_blankline")
+reload("user.lvim_opt")
+reload("user.terminal")
 -------------------------------------------------------------------------
 ----------------------- Basic setups  -----------------------------------
 -------------------------------------------------------------------------
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "everforest"
+-- lvim.colorscheme = "everforest"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -52,6 +54,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 
 lvim.format_on_save = false

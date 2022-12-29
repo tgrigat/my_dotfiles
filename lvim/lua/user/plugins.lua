@@ -223,10 +223,10 @@ lvim.plugins = {
   { "stevearc/aerial.nvim", config = function()
     require('aerial').setup()
   end },
-  {
-    "tzachar/cmp-tabnine",
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-  },
+  -- {
+  --   "tzachar/cmp-tabnine",
+  --   run = "./install.sh",
+  --   requires = "hrsh7th/nvim-cmp",
+  --   event = "InsertEnter",
+  -- },
 }

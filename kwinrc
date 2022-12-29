@@ -39,7 +39,6 @@ NightTemperature=6400
 [Plugins]
 bismuthEnabled=true
 desktopchangeosdEnabled=true
-highlightwindowEnabled=false
 invertEnabled=true
 kwin4_effect_fadedesktopEnabled=true
 slideEnabled=false
@@ -62,7 +61,7 @@ tileLayoutGap=6
 PopupHideDelay=300
 
 [TabBox]
-HighlightWindows=false
+LayoutName=thumbnail_grid
 
 [TabBoxAlternative]
 HighlightWindows=false
@@ -79,7 +78,7 @@ SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize
 
 [Xwayland]
-Scale=1
+Scale=1.5
 
 [org.kde.kdecoration2]
 ButtonsOnLeft=MF
