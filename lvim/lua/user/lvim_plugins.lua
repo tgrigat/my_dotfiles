@@ -83,12 +83,12 @@ lvim.plugins = {
     end
   },
   -- notify with pop up
-  {'rcarriga/nvim-notify'},
+  { 'rcarriga/nvim-notify' },
   -- add markdown preview
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-    ft = 'markdown'
+    ft = 'markdown',
   },
 
   -- You can run blocks of code like jupyter notebook.
@@ -223,6 +223,16 @@ lvim.plugins = {
   { "stevearc/aerial.nvim", config = function()
     require('aerial').setup()
   end },
+  { "lervag/vimtex",
+    config = function()
+      vim.cmd [[
+      syntax enable
+      let g:vimtex_view_method = 'sioyek'
+      let maplocalleader = '\'
+      ]]
+    end,
+    ft = "tex",
+  }
   -- {
   --   "tzachar/cmp-tabnine",
   --   run = "./install.sh",

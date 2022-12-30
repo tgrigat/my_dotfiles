@@ -1,9 +1,13 @@
 -------------------------------------------------------------------------
 ----------------------- Additional requires -----------------------------
 -------------------------------------------------------------------------
+lvim.log.level = "warn"
+lvim.format_on_save = false
+lvim.colorscheme = "everforest"
+
 reload("user.lsp")
 reload("user.keymaps")
-reload("user.plugins")
+reload("user.lvim_plugins")
 reload("user.cmp")
 reload("user.legendary")
 reload("user.which-key")
@@ -15,9 +19,6 @@ reload("user.terminal")
 ----------------------- Basic setups  -----------------------------------
 -------------------------------------------------------------------------
 -- general
-lvim.log.level = "warn"
-lvim.format_on_save = false
--- lvim.colorscheme = "everforest"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
