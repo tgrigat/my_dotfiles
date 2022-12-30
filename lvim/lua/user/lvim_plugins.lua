@@ -206,20 +206,20 @@ lvim.plugins = {
     })
   end },
   { "simrat39/rust-tools.nvim" },
-  { 'echasnovski/mini.animate', config = function()
-    require('mini.animate').setup(
-      { cursor = {
-        enable = true,
-        timing = function(_, n) return 150 / n end, --<function: implements linear total 250ms animation duration>,
-      },
-        scroll = {
-          -- Whether to enable this animation
-          enable = false,
-        },
-      }
-    )
+  -- { 'echasnovski/mini.animate', config = function()
+  --   require('mini.animate').setup(
+  --     { cursor = {
+  --       enable = true,
+  --       timing = function(_, n) return 150 / n end, --<function: implements linear total 250ms animation duration>,
+  --     },
+  --       scroll = {
+  --         -- Whether to enable this animation
+  --         enable = false,
+  --       },
+  --     }
+  --   )
 
-  end },
+  -- end },
   { "stevearc/aerial.nvim", config = function()
     require('aerial').setup()
   end },
@@ -232,11 +232,30 @@ lvim.plugins = {
       ]]
     end,
     ft = "tex",
-  }
+  },
   -- {
   --   "tzachar/cmp-tabnine",
   --   run = "./install.sh",
   --   requires = "hrsh7th/nvim-cmp",
   --   event = "InsertEnter",
   -- },
+  { 'edluffy/specs.nvim', config = function()
+    require('specs').setup {
+      show_jumps       = true,
+      min_jump         = 30,
+      popup            = {
+        delay_ms = 0, -- delay before popup displays
+        inc_ms = 10, -- time increments used for fade/resize effects
+        blend = 10, -- starting blend, between 0-100 (fully transparent), see :h winblend
+        width = 10,
+        winhl = "PMenu",
+        fader = require('specs').linear_fader,
+        resizer = require('specs').shrink_resizer
+      },
+      ignore_filetypes = {},
+      ignore_buftypes  = {
+        nofile = true,
+      },
+    }
+  end }
 }

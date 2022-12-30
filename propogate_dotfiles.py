@@ -13,9 +13,12 @@ dot_config = f"/home/{user}/.config"
 home = f"/home/{user}"
 
 
-to_ignore = [".git", "dotflie.py", ".gitignore", "confsync"]
+to_ignore = [".git", "dotflie.py", "confsync"]
 
 to_home = [".zshrc", ".tmux.conf"]
+
+# TODO list
+# add .local/share
 
 # read from the config directory
 all_configs = [config for config in os.listdir(repo) if config not in to_ignore]

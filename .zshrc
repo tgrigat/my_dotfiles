@@ -205,7 +205,10 @@ za() {
   zathura $@ &
 }
 # for sioyek
-alias si="sioyek"
+# alias si="sioyek"
+si() {
+  sioyek $@ &
+}
 # for fuzzy pdfgrep
 alias pf="fuzzy-pdf -m 0"
 # for the zoxide
