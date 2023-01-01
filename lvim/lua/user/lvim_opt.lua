@@ -28,6 +28,12 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
+lvim.builtin.project.manual_mode=true
+
+lvim.builtin.project.patterns = { ".is_project_root", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json",
+  "pom.xml",
+  "compile_commands.json" }
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -53,5 +59,8 @@ lvim.builtin.terminal.active = true
 
 -- All the treesitter parsers you want to install. If you want all of them, just
 -- replace everything with "all".
+--
 
-
+vim.opt.titlestring = "%<%F%=%l/%L - lvim" -- what the title of the window will be set to
+vim.opt.undodir = vim.fn.stdpath "cache" .. "/undo"
+vim.opt.undofile = true -- enable persistent undo

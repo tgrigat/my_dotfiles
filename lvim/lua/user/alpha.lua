@@ -12,7 +12,7 @@ lvim.builtin.alpha.dashboard.section.buttons.entries = {
   {
     "p",
     lvim.icons.ui.Gear .. "  Plugins",
-    "<CMD>edit " .. "~/dotfiles/lvim/lua/user/plugins.lua" .. " <CR>",
+    "<CMD>edit " .. "~/dotfiles/lvim/lua/user/lvim_plugins.lua" .. " <CR>",
   },
 
 }

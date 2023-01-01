@@ -16,8 +16,11 @@ lvim.builtin.which_key.mappings["="] = {
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
     p = { "<cmd>vs ~/dotfiles/lvim/lua/user/plugins.lua<cr>", "Plugins" }
-  }
+  },
+  P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins"}
 }
+
+lvim.builtin.which_key.mappings["Q"] = { "<cmd>quitall<cr>", "Quit all" }
 
 lvim.builtin.which_key.mappings["o"] = {
   name = "Obsidian",
@@ -29,9 +32,21 @@ lvim.builtin.which_key.mappings["o"] = {
 }
 
 
-lvim.builtin.which_key.mappings['P'] = { "<cmd>Legendary commands<cr>", "Command palette" }
+lvim.builtin.which_key.mappings['P'] = {
+  name = "Project",
+  M = {"<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Manual CWD"},
+  m = {"<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Auto CWD"},
+  c = {"<cmd>ProjectRoot ", "Change Root"},
+  s = {"<cmd>SessionsSave .session<cr>", "Save Session"},
+  r = {"<cmd>SessionsLoad .session<cr>", "Restore Session"}
 
-lvim.builtin.which_key.mappings['p'] = { "<cmd>Telescope commands<cr>", "Command palette" }
+}
+
+lvim.builtin.which_key.mappings['p'] = {
+  name = "Palettes",
+  p = { "<cmd>Telescope commands<cr>", "Telescope palette" },
+  o = { "<cmd>Legendary commands<cr>", "Command palette" }
+}
 
 -- doc here: https://neovim.io/doc/user/diagnostic.html#diagnostic-api
 lvim.builtin.which_key.mappings['lV'] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", "VirtualText Off" }
