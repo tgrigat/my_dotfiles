@@ -258,9 +258,6 @@ lvim.plugins = {
       },
     }
   end },
-  { 'natecraddock/sessions.nvim', config = function()
-    require("sessions").setup()
-  end },
   {"Shatur/neovim-session-manager", config = function ()
     local Path = require('plenary.path')
 require('session_manager').setup({
