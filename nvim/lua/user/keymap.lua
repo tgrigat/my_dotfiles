@@ -7,4 +7,4 @@ local keymap = vim.keymap.set
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 -- Command palette
-keymap("n","<C-p>", "<cmd>Legendary commands<CR>",{ silent = true })
+-- keymap("n","<C-p>", "<cmd>Legendary commands<CR>",{ silent = true })
