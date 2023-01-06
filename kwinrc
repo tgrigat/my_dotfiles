@@ -48,6 +48,8 @@ wobblywindowsEnabled=true
 [Script-bismuth]
 enableSpiralLayout=false
 enableSpreadLayout=false
+enableStairLayout=false
+enableThreeColumnLayout=false
 ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam,org.kde.kalarm, nextcloud, com.nextcloud.desktopclient.nextcloud, keepassxc
 ignoreTitle=Zoom Meeting
 maximizeSoleTile=true
@@ -79,7 +81,7 @@ SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize
 
 [Xwayland]
-Scale=1.5
+Scale=1
 
 [org.kde.kdecoration2]
 ButtonsOnLeft=MF
