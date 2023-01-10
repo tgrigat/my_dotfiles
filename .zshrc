@@ -199,6 +199,20 @@ alias d="dolphin . 2>/dev/null &"
 # alias c="cd && ls "
 # for pdfgrep
 alias pgrep="pdfgrep -r -n -i"
+
+ln-ccjson() {
+ln -s build/compile_commands.json compile_commands.json
+echo "Link performed, please ensure that you run this command at the project root"
+}
+
+refresh-build() {
+  echo "Warning: this alias should run at build directory "
+  cd ..
+  rm -rf build
+  mkdir build
+  cd build
+}
+
 # for opening zathura faster
 # alias za="zathura"
 za() {
@@ -241,6 +255,7 @@ alias Qo='pacman -Qo'
 alias Qe='pacman -Qe'
 alias Qdt='pacman -Qdt'
 alias Qdtq='pacman -Qdtq'
+alias Qql='pacman -Qql'
 alias Fl='pacman -Fl'
 alias Fx='pacman -Fx'
 alias G='paru -G'
