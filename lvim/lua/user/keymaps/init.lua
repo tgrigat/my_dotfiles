@@ -1,4 +1,4 @@
-require("user.keymaps.lsp_saga")
+-- require("user.keymaps.lsp_saga")
 
 lvim.builtin.which_key.mappings["="] = {
   name = "Settings",
@@ -54,6 +54,8 @@ lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtu
 
 lvim.builtin.which_key.mappings['lc'] = { "<cmd>lua vim.diagnostic.disable(0,nil)<cr>", "Disable Diagnostics" }
 lvim.builtin.which_key.mappings['lC'] = { "<cmd>lua vim.diagnostic.enable(0,nil)<cr>", "Enable Diagnostics" }
+
+lvim.builtin.which_key.mappings['lx'] = { "<cmd>DogeGenerate<cr>", "Generate Docstring" }
 
 lvim.builtin.which_key.mappings["lo"] = { "<cmd>AerialToggle right<cr>", "Saga Outline" }
 

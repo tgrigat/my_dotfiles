@@ -46,18 +46,6 @@ lvim.plugins = {
     'glacambre/firenvim',
     run = function() vim.fn['firenvim#install'](0) end
   },
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   requires = {
-  --     "neovim/nvim-lspconfig",
-  --     "smiteshp/nvim-navic",
-  --     "kyazdani42/nvim-web-devicons", -- optional
-  --   },
-  --   config = function()
-  --     require("barbecue").setup()
-  --   end,
-  -- },
-
   {
     "rmagatti/goto-preview",
     config = function()
@@ -93,53 +81,13 @@ lvim.plugins = {
 
   -- You can run blocks of code like jupyter notebook.
   { "dccsillag/magma-nvim", run = ':UpdateRemotePlugins' },
-  {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-      local saga = require("lspsaga")
-      saga.init_lsp_saga({
-        -- your configuration
-        border_style = "rounded",
-        symbol_in_winbar = {
-          in_custom = true,
-          click_support = function(node, clicks, button, modifiers)
-            -- To see all available details: vim.pretty_print(node)
-            local st = node.range.start
-            local en = node.range['end']
-            if button == "l" then
-              if clicks == 2 then
-                -- double left click to do nothing
-              else -- jump to node's starting line+char
-                vim.fn.cursor(st.line + 1, st.character + 1)
-              end
-            elseif button == "r" then
-              if modifiers == "s" then
-                print "lspsaga" -- shift right click to print "lspsaga"
-              end -- jump to node's ending line+char
-              vim.fn.cursor(en.line + 1, en.character + 1)
-            elseif button == "m" then
-              -- middle click to visual select node
-              vim.fn.cursor(st.line + 1, st.character + 1)
-              vim.cmd "normal v"
-              vim.fn.cursor(en.line + 1, en.character + 1)
-            end
-          end
-        },
-        show_outline = {
-          win_position = 'right',
-          win_with = '',
-          win_width = 30,
-          auto_enter = true,
-          auto_preview = true,
-          -- virt_text = '┃',
-          jump_key = 'o',
-          -- auto refresh when change buffer
-          auto_refresh = true,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "glepnir/lspsaga.nvim",
+  --   branch = "main",
+  --   config = function()
+  --       require('lspsaga').setup({})
+  --   end
+  -- },
   -- outline for languages
   { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
   { 'kkoomen/vim-doge', run = ':call doge#install()' },
@@ -275,22 +223,10 @@ lvim.plugins = {
       autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
       max_path_length = 80, -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
     })
-  end }
 
-
-  -- {
-  --   'rmagatti/auto-session',
-  --   config = function()
-  --     require("auto-session").setup {
-  --       log_level = "error",
-  --       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-  --       bypass_session_save_file_types = nil, -- table: Bypass auto save when only buffer open is one of these file types
-  --       cwd_change_handling = { -- table: Config for handling the DirChangePre and DirChanged autocmds, can be set to nil to disable altogether
-  --         restore_upcoming_session = true, -- boolean: restore session for upcoming cwd on cwd change
-  --         pre_cwd_changed_hook = nil, -- function: This is called after auto_session code runs for the `DirChangedPre` autocmd
-  --         post_cwd_changed_hook = nil, -- function: This is called after auto_session code runs for the `DirChanged` autocmd
-  --       },
-  --     }
-  --   end
-  -- }
+  end },
+  {
+    'declancm/cinnamon.nvim',
+    config = function() require('cinnamon').setup() end
+  }
 }

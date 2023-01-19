@@ -57,6 +57,8 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
 
+lvim.builtin.lir.active = false
+
 
 lvim.format_on_save = false
 lvim.builtin.terminal.active = true

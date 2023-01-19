@@ -1,9 +1,5 @@
 {
     "mapping": {
-        "1,56,1+1,57,1": [
-            "key(w).key(i).key(n).key(d).key(o).key(w).key(s)",
-            "keyboard"
-        ],
         "1,125,1+1,49,1": [
             "KEY_DOWN",
             "keyboard"
@@ -22,6 +18,14 @@
         ],
         "1,100,1": [
             "repeat(5, key(key_down).w(3))",
+            "keyboard"
+        ],
+        "1,125,1+1,24,1": [
+            "key.(Super_L).key(w).key(i).key(n).key(d).key(o).key(w).key(s).key(KEY_SPACE).key(o).key(b).key(s).key(i).key(d).key(i).key(a).key(n).key(KEY_ENTER)",
+            "keyboard"
+        ],
+        "1,56,1+1,57,1": [
+            "key(w).key(i).key(n).key(d).key(o).key(w).key(s)",
             "keyboard"
         ]
     }

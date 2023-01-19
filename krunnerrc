@@ -13,6 +13,7 @@ locationsEnabled=false
 plasma-runner-browserhistoryEnabled=false
 plasma-runner-browsertabsEnabled=false
 recentdocumentsEnabled=true
+servicesEnabled=true
 
 [Runners][Dictionary]
 triggerWord=def

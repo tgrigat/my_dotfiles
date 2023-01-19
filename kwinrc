@@ -52,7 +52,7 @@ enableStairLayout=false
 enableThreeColumnLayout=false
 floatingClass=keepassxc
 ignoreClass=yakuake,spectacle,Conky,flameshot,latexocr,steam,org.kde.kalarm, nextcloud, com.nextcloud.desktopclient.nextcloud,\s
-ignoreTitle=Zoom Meeting
+ignoreTitle=Zoom Meeting,Picture-in-Picture
 maximizeSoleTile=true
 newWindowAsMaster=true
 screenGapBottom=7
@@ -78,6 +78,7 @@ VirtualKeyboardEnabled=false
 
 [Windows]
 ActiveMouseScreen=false
+RollOverDesktops=true
 SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize
 
