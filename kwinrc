@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default,bismuth_new_logger.upd:bismuth-new-logger,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default,bismuth_new_logger.upd:bismuth-new-logger,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup,kwin.upd:replace-cascaded-zerocornered
 
 [Compositing]
 OpenGLIsUnsafe=false
@@ -25,7 +25,7 @@ Color=128,255,255
 BorderActivateAll=9
 
 [Effect-windowview]
-BorderActivateAll=9
+BorderActivateAll=2
 
 [ModifierOnlyShortcuts]
 Meta=org.kde.krunner,/App,,toggleDisplay
@@ -38,7 +38,6 @@ LongitudeAuto=116.3972
 NightTemperature=3900
 
 [Plugins]
-bismuthEnabled=true
 desktopchangeosdEnabled=true
 invertEnabled=true
 kwin4_effect_fadedesktopEnabled=true
@@ -72,9 +71,15 @@ HighlightWindows=false
 LayoutName=thumbnail_grid
 MultiScreenMode=2
 
+[Tiling]
+padding=4
+
+[Tiling][bd455426-91b5-5aa4-b78c-9e21c3c810ab]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.4},{"width":0.6}]}
+
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
-VirtualKeyboardEnabled=false
+VirtualKeyboardEnabled=true
 
 [Windows]
 ActiveMouseScreen=false
@@ -86,5 +91,4 @@ TitlebarDoubleClickCommand=Minimize
 Scale=1.5
 
 [org.kde.kdecoration2]
-ButtonsOnLeft=MF
-ButtonsOnRight=SIAX
+ButtonsOnRight=FIAX

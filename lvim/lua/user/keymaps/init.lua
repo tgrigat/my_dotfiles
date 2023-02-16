@@ -62,3 +62,7 @@ lvim.builtin.which_key.mappings["lo"] = { "<cmd>AerialToggle right<cr>", "Saga O
 local keymap = vim.keymap.set
 
 keymap("n", "<C-p>", "<cmd>Legendary commands<CR>", { silent = true })
+
+-- keymap("n", "<CR>", "o<Esc>k", { silent = true })
+-- keymap("n", "<CR>", "O<Esc>j", { silent = true })
+

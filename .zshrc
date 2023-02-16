@@ -145,6 +145,7 @@ setopt share_history
 
 #######################
 
+alias pls="please "
 alias kssh="kitty +kitten ssh"
 alias cpr='rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1'
 alias xo="xdg-open"
@@ -166,7 +167,7 @@ alias texd='cd ~/Desktop/Code/Latex'
 alias lvimconf="cd ~/.local/share/lunarvim/lvim && vim"
 
 
-alias e='exit'
+# alias e='exit'
 alias vifm='vifm .'
 alias ra='ranger . '
 alias S='sudo paru -S'
@@ -671,3 +672,7 @@ fi
 ############################################
 # Zoxide end of configuration
 ############################################
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+please

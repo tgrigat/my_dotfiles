@@ -1,28 +1,28 @@
 {
   "geometry-of-main_window_geometry": {
     "frame_geometry": {
-      "height": 1142,
-      "width": 958,
-      "x": 2,
-      "y": 56
+      "height": 1160,
+      "width": 1920,
+      "x": 0,
+      "y": 40
     },
     "full_screened": false,
     "geometry": {
-      "height": 1123,
-      "width": 958,
-      "x": 2,
-      "y": 75
+      "height": 1160,
+      "width": 1920,
+      "x": 0,
+      "y": 40
     },
     "maximized": false,
     "normal_geometry": {
-      "height": 1123,
-      "width": 958,
-      "x": 2,
-      "y": 75
+      "height": 1160,
+      "width": 1920,
+      "x": 0,
+      "y": 40
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAACAAAAOAAAA78AAAStAAAAAgAAAEsAAAO/AAAErQAAAAAAAAAAB4AAAAACAAAASwAAA78AAASt"
+      "__value__": "AdnQywADAAAAAAAAAAAAKAAAB38AAASvAAAAAAAAACgAAAd/AAAErwAAAAAAAAAAB4AAAAAAAAAAKAAAB38AAASv"
     },
     "screen": {
       "depth": 24,
@@ -103,13 +103,41 @@
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACFAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAADvgAABGMAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACGAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAAHgAAABIgAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
   },
   "old_prefs_migrated": true,
   "session_data": {
+    "base_font_size": 20,
+    "controls_footer": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "progress"
+    },
     "controls_help_shown_count": 2,
     "current_color_scheme": "sepia-light",
-    "standalone_font_settings": {},
+    "footer": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "progress"
+    },
+    "header": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "left-margin": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "right-margin": {
+      "left": "empty",
+      "middle": "empty",
+      "right": "empty"
+    },
+    "standalone_font_settings": {
+      "minimum_font_size": 12
+    },
     "standalone_misc_settings": {
       "remember_last_read": true,
       "remember_window_geometry": false,
@@ -117,6 +145,15 @@
       "singleinstance": false
     },
     "standalone_recently_opened": [
+      {
+        "authors": [
+          "Tracy Dennis-Tiwary"
+        ],
+        "key": "/home/yang/Documents/Library/books/calibre-syncing/Tracy Dennis-Tiwary/Future Tense (237)/Future Tense - Tracy Dennis-Tiwary.epub",
+        "pathtoebook": "/home/yang/Documents/Library/books/calibre-syncing/Tracy Dennis-Tiwary/Future Tense (237)/Future Tense - Tracy Dennis-Tiwary.epub",
+        "timestamp": "2023-01-25T10:19:21.100Z",
+        "title": "Future Tense"
+      },
       {
         "authors": [
           "斋藤孝"

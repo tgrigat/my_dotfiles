@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 
-keymap.set("n", "j", "jzz")
-keymap.set("n", "k", "kzz")
+-- keymap.set("n", "j", "jzz")
+-- keymap.set("n", "k", "kzz")
 
 -- Set a formatter.
 local formatters = require "lvim.lsp.null-ls.formatters"

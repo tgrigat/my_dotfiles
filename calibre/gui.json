@@ -178,28 +178,28 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1094,
-      "width": 1916,
-      "x": 2,
-      "y": 104
+      "height": 1160,
+      "width": 1920,
+      "x": 0,
+      "y": 40
     },
     "full_screened": false,
     "geometry": {
-      "height": 1075,
-      "width": 1916,
-      "x": 2,
-      "y": 123
+      "height": 1160,
+      "width": 1920,
+      "x": 0,
+      "y": 40
     },
     "maximized": false,
     "normal_geometry": {
-      "height": 1075,
-      "width": 1916,
-      "x": 2,
-      "y": 123
+      "height": 1160,
+      "width": 1920,
+      "x": 0,
+      "y": 40
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAACAAAAaAAAB30AAAStAAAAAgAAAHsAAAd9AAAErQAAAAAAAAAAB4AAAAACAAAAewAAB30AAASt"
+      "__value__": "AdnQywADAAAAAAAAAAAAKAAAB38AAASvAAAAAAAAACgAAAd/AAAErwAAAAAAAAAAB4AAAAAAAAAAKAAAB38AAASv"
     },
     "screen": {
       "depth": 24,
@@ -280,7 +280,7 @@
   },
   "grid view visible": false,
   "library_usage_stats": {
-    "/home/yang/Documents/Library/books/calibre-syncing": 14
+    "/home/yang/Documents/Library/books/calibre-syncing": 16
   },
   "metasingle_window_size": [
     1850,

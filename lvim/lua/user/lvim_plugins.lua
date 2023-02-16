@@ -228,5 +228,13 @@ lvim.plugins = {
   {
     'declancm/cinnamon.nvim',
     config = function() require('cinnamon').setup() end
+  },
+  { "zbirenbaum/copilot.lua" },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
   }
 }
