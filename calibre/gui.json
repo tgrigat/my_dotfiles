@@ -181,29 +181,29 @@
       "height": 1160,
       "width": 1920,
       "x": 0,
-      "y": 40
+      "y": 20
     },
     "full_screened": false,
     "geometry": {
       "height": 1160,
       "width": 1920,
       "x": 0,
-      "y": 40
+      "y": 20
     },
     "maximized": false,
     "normal_geometry": {
       "height": 1160,
       "width": 1920,
       "x": 0,
-      "y": 40
+      "y": 20
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAKAAAB38AAASvAAAAAAAAACgAAAd/AAAErwAAAAAAAAAAB4AAAAAAAAAAKAAAB38AAASv"
+      "__value__": "AdnQywADAAAAAAAAAAAAFAAAB38AAASbAAAAAAAAABQAAAd/AAAEmwAAAAAAAAAAB4AAAAAAAAAAFAAAB38AAASb"
     },
     "screen": {
-      "depth": 24,
-      "device_pixel_ratio": 1.5,
+      "depth": 32,
+      "device_pixel_ratio": 2.0,
       "geometry_in_logical_pixels": {
         "height": 1200,
         "width": 1920,
@@ -211,9 +211,9 @@
         "y": 0
       },
       "index_in_screens_list": 0,
-      "manufacturer": "",
-      "model": "",
-      "name": "XWAYLAND0",
+      "manufacturer": "AU Optronics",
+      "model": "eDP-1-unknown",
+      "name": "eDP-1",
       "serial": "",
       "size_in_logical_pixels": {
         "height": 1200,
@@ -280,7 +280,7 @@
   },
   "grid view visible": false,
   "library_usage_stats": {
-    "/home/yang/Documents/Library/books/calibre-syncing": 16
+    "/home/yang/Documents/Library/books/calibre-syncing": 18
   },
   "metasingle_window_size": [
     1850,

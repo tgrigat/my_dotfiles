@@ -2,7 +2,8 @@
   "notified-version-updates": {
     "__class__": "set",
     "__value__": [
-      "6.7"
+      "6.7",
+      "6.13"
     ]
   },
   "sort_history": [
