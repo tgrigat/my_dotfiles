@@ -8,16 +8,17 @@ lvim.builtin.which_key.mappings["="] = {
   w = { "<cmd>set wrap<cr>", "Wrap" },
   W = { "<cmd>set nowrap<cr>", "Unwrap" },
   p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-    p = { "<cmd>vs ~/dotfiles/lvim/lua/user/plugins.lua<cr>", "Plugins" }
+    name = "Plugins",
+    i = { "<cmd>Lazy install<cr>", "Install" },
+    s = { "<cmd>Lazy sync<cr>", "Sync" },
+    S = { "<cmd>Lazy clear<cr>", "Status" },
+    c = { "<cmd>Lazy clean<cr>", "Clean" },
+    u = { "<cmd>Lazy update<cr>", "Update" },
+    p = { "<cmd>Lazy profile<cr>", "Profile" },
+    l = { "<cmd>Lazy log<cr>", "Log" },
+    d = { "<cmd>Lazy debug<cr>", "Debug" },
   },
-  P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins"}
+  P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins" }
 }
 
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>quitall<cr>", "Quit all" }
@@ -34,11 +35,11 @@ lvim.builtin.which_key.mappings["o"] = {
 
 lvim.builtin.which_key.mappings['P'] = {
   name = "Project",
-  M = {"<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Manual CWD"},
-  m = {"<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Auto CWD"},
-  c = {"<cmd>ProjectRoot ", "Change Root"},
-  s = {"<cmd>SessionsSave .session<cr>", "Save Session"},
-  r = {"<cmd>SessionsLoad .session<cr>", "Restore Session"}
+  M = { "<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Manual CWD" },
+  m = { "<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Auto CWD" },
+  c = { "<cmd>ProjectRoot ", "Change Root" },
+  s = { "<cmd>SessionsSave .session<cr>", "Save Session" },
+  r = { "<cmd>SessionsLoad .session<cr>", "Restore Session" }
 
 }
 
@@ -65,4 +66,3 @@ keymap("n", "<C-p>", "<cmd>Legendary commands<CR>", { silent = true })
 
 -- keymap("n", "<CR>", "o<Esc>k", { silent = true })
 -- keymap("n", "<CR>", "O<Esc>j", { silent = true })
-

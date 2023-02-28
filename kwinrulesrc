@@ -21,7 +21,6 @@ Description=Window settings for obsidian
 above=true
 clientmachine=localhost
 noborderrule=2
-shortcut=Meta+T
 title=Direct Sparse Odometry - obsidian - Obsidian v1.1.9
 types=1
 windowrole=browser
@@ -89,6 +88,7 @@ above=true
 aboverule=3
 clientmachine=localhost
 shortcut=Meta+Z
+size=1009,509
 title=Welcome to Chrome - Google Chrome
 windowrole=browser
 wmclass=flameshot
@@ -96,6 +96,7 @@ wmclassmatch=1
 
 [14]
 Description=Application settings for zotero
+above=true
 clientmachine=localhost
 noborderrule=2
 shortcut=Meta+Z
@@ -110,6 +111,7 @@ wmclassmatch=1
 Description=Application settings for steam
 clientmachine=localhost
 noborderrule=2
+shortcut=Meta+Z
 title=Welcome to Chrome - Google Chrome
 windowrole=browser
 wmclass=steam
@@ -129,6 +131,8 @@ wmclassmatch=1
 Description=Application settings for clash-verge
 clientmachine=localhost
 noborderrule=2
+title=Welcome to Chrome - Google Chrome
+windowrole=browser
 wmclass=clash-verge
 wmclassmatch=1
 
@@ -161,7 +165,7 @@ Description=Application settings for org.kde.konsole
 above=true
 clientmachine=localhost
 noborderrule=2
-shortcut=Meta+T
+shortcut=Meta+7
 shortcutrule=4
 size=1009,509
 title=Picture-in-Picture
@@ -241,7 +245,6 @@ Description=Application settings for obsidian
 clientmachine=localhost
 noborderrule=2
 shortcut=Meta+O
-shortcutrule=4
 wmclass=obsidian
 wmclassmatch=1
 
@@ -266,11 +269,20 @@ Description=Application settings for anki
 above=true
 clientmachine=localhost
 noborderrule=2
-shortcut=Meta+B
+shortcut=Meta+7
 size=1009,509
 title=Picture-in-Picture
 windowrole=browser
 wmclass=anki
+wmclassmatch=1
+
+[30]
+Description=Application settings for obsidian
+clientmachine=localhost
+maximizehorizrule=3
+maximizevertrule=3
+types=1
+wmclass=obsidian
 wmclassmatch=1
 
 [3a89945a-c8a8-4097-960e-fe663f8b1fc6]
@@ -321,6 +333,14 @@ size=1009,509
 title=Picture-in-Picture
 windowrole=browser
 wmclass=firefox
+wmclassmatch=1
+
+[6b206266-08cc-4286-8fa5-2e2f22a5dc33]
+Description=Application settings for com.github.flxzt.rnote
+shortcut=Meta+R
+shortcutrule=3
+wmclass=rnote com.github.flxzt.rnote
+wmclasscomplete=true
 wmclassmatch=1
 
 [6c6357f3-afe7-40a1-9fde-ceb5f5d8325b]
@@ -388,6 +408,7 @@ above=true
 clientmachine=localhost
 noborder=true
 noborderrule=2
+shortcut=Meta+I
 size=1009,509
 title=Picture-in-Picture
 titlematch=1
@@ -414,6 +435,7 @@ Description=Application settings for org.kde.spectacle
 above=true
 aboverule=3
 clientmachine=localhost
+noborder=true
 shortcut=Meta+Z
 size=1009,509
 title=Welcome to Chrome - Google Chrome

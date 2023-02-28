@@ -71,11 +71,14 @@ MultiScreenMode=2
 [Tiling]
 padding=4
 
+[Tiling][453b0086-f5ae-5a1f-85e9-2c7b3827df26]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3078124999999999},{"width":0.6921874999999995}]}
+
 [Tiling][92e842d7-5928-5c43-884a-4912e7cc82ed]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][bd455426-91b5-5aa4-b78c-9e21c3c810ab]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.4135416666666667},{"width":0.5864583333333324}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3567708333333333},{"width":0.6432291666666663}]}
 
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop

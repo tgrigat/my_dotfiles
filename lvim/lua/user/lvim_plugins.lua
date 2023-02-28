@@ -11,7 +11,7 @@ lvim.plugins = {
   { "p00f/clangd_extensions.nvim" },
   {
     'rose-pine/neovim',
-    as = 'rose-pine',
+    name = 'rose-pine',
   },
   -- github light theme
   {
@@ -20,31 +20,31 @@ lvim.plugins = {
     --   require('github-theme').setup({
     --     -- ...
     --     dark_sidebar = true
-    --   })
+   --   })
     -- end
   },
   -- "AckslD/swenv.nvim",
   "mfussenegger/nvim-dap-python",
   'sainnhe/everforest',
-  {
-    -- You can generate docstrings automatically.
-    "danymat/neogen",
-    config = function()
-      require("neogen").setup {
-        enabled = true,
-        languages = {
-          python = {
-            template = {
-              annotation_convention = "numpydoc",
-            },
-          },
-        },
-      }
-    end,
-  },
+  -- {
+  --   -- You can generate docstrings automatically.
+  --   "danymat/neogen",
+  --   config = function()
+  --     require("neogen").setup {
+  --       enabled = true,
+  --       languages = {
+  --         python = {
+  --           template = {
+  --             annotation_convention = "numpydoc",
+  --           },
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
+    build = function() vim.fn['firenvim#install'](0) end
   },
   {
     "rmagatti/goto-preview",
@@ -75,12 +75,12 @@ lvim.plugins = {
   -- add markdown preview
   {
     "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+    build = function() vim.fn["mkdp#util#install"]() end,
     ft = 'markdown',
   },
 
   -- You can run blocks of code like jupyter notebook.
-  { "dccsillag/magma-nvim", run = ':UpdateRemotePlugins' },
+  { "dccsillag/magma-nvim", build = ':UpdateRemotePlugins' },
   -- {
   --   "glepnir/lspsaga.nvim",
   --   branch = "main",
@@ -90,11 +90,10 @@ lvim.plugins = {
   -- },
   -- outline for languages
   { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
-  { 'kkoomen/vim-doge', run = ':call doge#install()' },
+  { 'kkoomen/vim-doge', build = ':call doge#install()' },
   {
     'mrjones2014/legendary.nvim'
     -- sqlite is only needed if you want to use frecency sorting
-    -- requires = 'kkharji/sqlite.lua'
   },
   { 'stevearc/dressing.nvim' },
   { 'hrsh7th/cmp-cmdline' },
@@ -181,12 +180,6 @@ lvim.plugins = {
     end,
     ft = "tex",
   },
-  -- {
-  --   "tzachar/cmp-tabnine",
-  --   run = "./install.sh",
-  --   requires = "hrsh7th/nvim-cmp",
-  --   event = "InsertEnter",
-  -- },
   { 'edluffy/specs.nvim', config = function()
     require('specs').setup {
       show_jumps       = true,
@@ -241,9 +234,20 @@ lvim.plugins = {
   },
   {
     "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
+    dependencies = { "copilot.lua" },
     config = function()
       require("copilot_cmp").setup()
     end
-  }
+  },
+  {
+  "iurimateus/luasnip-latex-snippets.nvim",
+  -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
+  -- using treesitter.
+  dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+  config = function()
+    require'luasnip-latex-snippets'.setup()
+    -- or setup({ use_treesitter = true })
+  end,
+  ft = "tex",
+}
 }

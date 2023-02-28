@@ -59,9 +59,14 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 lvim.builtin.lir.active = false
 
-
 lvim.format_on_save = false
 lvim.builtin.terminal.active = true
+
+-- The bufferline modification
+
+lvim.builtin.bufferline.options.numbers = "ordinal"
+lvim.builtin.bufferline.options.numbers = "ordinal"
+lvim.builtin.bufferline.options.max_name_length = 35
 
 -- All the treesitter parsers you want to install. If you want all of them, just
 -- replace everything with "all".
@@ -75,4 +80,3 @@ vim.api.nvim_create_autocmd("FileType", {
     require("nvim-treesitter.highlight").attach(0, "bash")
   end,
 })
-

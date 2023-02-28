@@ -41,7 +41,7 @@ if [ $(hostname) = "node" ]; then
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
   alias wk="cd ~/Workspace/git/AS_final_project//"
   alias wk2="cd ~/Desktop/Advanced-Programming/"
-  alias wk1="cd ~/Workspace/git/deep-video-mvs-dm-own/"
+  alias wk1="cd ~/Workspace/git/DSOPP/"
   source /opt/ros/noetic/setup.zsh
   # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
   alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
@@ -103,46 +103,10 @@ setopt inc_append_history
 setopt share_history
 
 
-
-# Use emacs keybindings even if our EDITOR is set to vi
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-#HISTSIZE=1000
-#SAVEHIST=1000
-#HISTFILE=~/.zsh_history
-
-# Use modern completion system
-#autoload -Uz compinit
-#compinit
-#
-#zstyle ':completion:*' auto-description 'specify: %d'
-#zstyle ':completion:*' completer _expand _complete _correct _approximate
-#zstyle ':completion:*' format 'Completing %d'
-#zstyle ':completion:*' group-name ''
-#zstyle ':completion:*' menu select=2
-#eval "$(dircolors -b)"
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-#zstyle ':completion:*' menu select=long
-#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-#zstyle ':completion:*' use-compctl false
-#zstyle ':completion:*' verbose true
-#
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-#zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# easy copy configuration from .config to zsh and tmux
-# alias cpconf="cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang"
-# alias udconf="cp /home/yang/.zshrc  /home/yang/.config/zsh/ && cp /home/yang/.tmux.conf /home/yang/.config/tmux/"
-
-
 #######################
 # Here are environment variables
 #
 # export QT_QPA_PLATFORM="wayland;xcb"
-
 #######################
 
 alias pls="please "
@@ -156,9 +120,16 @@ alias -g ..='..'
 alias -g ...='../..'
 alias -g ....='../../..'
 
+if [[ "${SHELL##*/}" = "zsh" ]]; then
+  alias refresh-fzf="rm ~/.local/bin/fzf && exec zsh"
+fi
+
+
 alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
 
-alias vim="lvim "
+if (which lvim > /dev/null); then
+  alias vim="lvim "
+fi
 alias mvim="nvim "
 alias note='cd ~/obsidian && vim '
 alias vimrc='cd ~/.config/nvim'
@@ -166,20 +137,15 @@ alias desktop='cd ~/Desktop'
 alias texd='cd ~/Desktop/Code/Latex'
 alias lvimconf="cd ~/.local/share/lunarvim/lvim && vim"
 
-
 # alias e='exit'
 alias vifm='vifm .'
 alias ra='ranger . '
-alias S='sudo paru -S'
-alias Ss='sudo paru -Ss'
-alias Syu='sudo paru -Syu'
 alias gnome-cc='gnome-control-center'
 alias T='tmux new-session -A -s remote' 
 alias Tt='tmux new-session -A -s local'  
 alias tk='task'
 alias tm='timew'
 alias tmux='tmux -u'
-# for nvim remote
 alias sudo="sudo "
 # alias matlab="matlab -softwareopengl"
 # for startup the script
@@ -246,30 +212,6 @@ alias reload='sudo systemctl reload'
 
 alias vf="vfcd . " 
 
-alias Ss='pacman -Ss'
-alias Si='pacman -Si'
-alias Ssa='paru -Ssa'
-alias Qs='pacman -Qs'
-alias Qi='pacman -Qi'
-alias Ql='pacman -Ql'
-alias Qo='pacman -Qo'
-alias Qe='pacman -Qe'
-alias Qdt='pacman -Qdt'
-alias Qdtq='pacman -Qdtq'
-alias Qql='pacman -Qql'
-alias Fl='pacman -Fl'
-alias Fx='pacman -Fx'
-alias G='paru -G'
-
-alias S='sudo pacman -S'
-alias Sa='paru -Sa'
-alias Syu='sudo pacman -Syu'
-alias R='sudo pacman -R'
-alias Rns='sudo pacman -Rns'
-alias Fy='sudo pacman -Fy'
-
-alias syu='paru -Syu'
-
 # alias ls="exa "
 alias ls="ls --color --hyperlink=auto "
 alias ll="ls -la "
@@ -281,6 +223,33 @@ alias dot="cd ~/dotfiles && vim"
 alias cppcourse="cd /home/yang/Desktop/CPP && vf "
 # for helping zotero get rid of enforced dark theme 
 alias zotero="GTK_THEME=Default zotero "
+
+if command -v moar &> /dev/null; then
+  export PAGER=moar
+fi
+if command -v pacman &> /dev/null; then
+  alias S='sudo pacman -S'
+  alias Sa='paru -Sa'
+  alias Syu='sudo pacman -Syu'
+  alias R='sudo pacman -R'
+  alias Rns='sudo pacman -Rns'
+  alias Fy='sudo pacman -Fy'
+  alias syu='paru -Syu'
+  alias Ss='pacman -Ss'
+  alias Si='pacman -Si'
+  alias Ssa='paru -Ssa'
+  alias Qs='pacman -Qs'
+  alias Qi='pacman -Qi'
+  alias Ql='pacman -Ql'
+  alias Qo='pacman -Qo'
+  alias Qe='pacman -Qe'
+  alias Qdt='pacman -Qdt'
+  alias Qdtq='pacman -Qdtq'
+  alias Qql='pacman -Qql'
+  alias Fl='pacman -Fl'
+  alias Fx='pacman -Fx'
+  alias G='paru -G'
+fi
 
 # cd and ls
 c() { builtin cd "$@" && ls; }
@@ -332,11 +301,9 @@ function sudo() {
 
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 
-# export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 export PATH="${PATH}:/usr/local/cuda-11.5/bin"
 export LD_LIBRARY="${LD_LIBRARY}:/usr/local/cuda-11.5/lib64"
 export PATH=~/.local/bin:$PATH
-# export EDITOR=nvim
 
 # setting the ledger file to the obsidian 
 export LEDGER_FILE=/home/yang/introspector/My\ Second\ Brain/transactions.ledger
@@ -541,138 +508,136 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#############################################
-# Zoxide configuration 
-#############################################
+if command -v zoxide &> /dev/null; then
+  #############################################
+  # Zoxide configuration 
+  #############################################
 
 
-# =============================================================================
-#
-# Utility functions for zoxide.
-#
+  # =============================================================================
+  #
+  # Utility functions for zoxide.
+  #
 
-# pwd based on the value of _ZO_RESOLVE_SYMLINKS.
-function __zoxide_pwd() {
-    \builtin pwd -L
-}
+  # pwd based on the value of _ZO_RESOLVE_SYMLINKS.
+  function __zoxide_pwd() {
+      \builtin pwd -L
+  }
 
-# cd + custom logic based on the value of _ZO_ECHO.
-function __zoxide_cd() {
-    # shellcheck disable=SC2164
-    \builtin cd -- "$@" >/dev/null
-}
+  # cd + custom logic based on the value of _ZO_ECHO.
+  function __zoxide_cd() {
+      # shellcheck disable=SC2164
+      \builtin cd -- "$@" >/dev/null
+  }
 
-# =============================================================================
-#
-# Hook configuration for zoxide.
-#
+  # =============================================================================
+  #
+  # Hook configuration for zoxide.
+  #
 
-# Hook to add new entries to the database.
-function __zoxide_hook() {
-    # shellcheck disable=SC2312
-    \command zoxide add -- "$(__zoxide_pwd)"
-}
+  # Hook to add new entries to the database.
+  function __zoxide_hook() {
+      # shellcheck disable=SC2312
+      \command zoxide add -- "$(__zoxide_pwd)"
+  }
 
-# Initialize hook.
-# shellcheck disable=SC2154
-if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
-    chpwd_functions+=(__zoxide_hook)
+  # Initialize hook.
+  # shellcheck disable=SC2154
+  if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
+      chpwd_functions+=(__zoxide_hook)
+  fi
+
+  # =============================================================================
+  #
+  # When using zoxide with --no-cmd, alias these internal functions as desired.
+  #
+
+  __zoxide_z_prefix='z#'
+
+  # Jump to a directory using only keywords.
+  function __zoxide_z() {
+      # shellcheck disable=SC2199
+      if [[ "$#" -eq 0 ]]; then
+          __zoxide_cd ~
+      elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
+          __zoxide_cd "$1"
+      elif [[ "$@[-1]" == "${__zoxide_z_prefix}"* ]]; then
+          # shellcheck disable=SC2124
+          \builtin local result="${@[-1]}"
+          __zoxide_cd "${result:${#__zoxide_z_prefix}}"
+      else
+          \builtin local result
+          # shellcheck disable=SC2312
+          result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" &&
+              __zoxide_cd "${result}"
+      fi
+  }
+
+  # Jump to a directory using interactive search.
+  function __zoxide_zi() {
+      \builtin local result
+      result="$(\command zoxide query -i -- "$@")" && __zoxide_cd "${result}"
+  }
+
+  # =============================================================================
+  #
+  # Commands for zoxide. Disable these using --no-cmd.
+  #
+
+  \builtin unalias z &>/dev/null || \builtin true
+  function z() {
+      __zoxide_z "$@"
+  }
+
+  \builtin unalias zi &>/dev/null || \builtin true
+  function zi() {
+      __zoxide_zi "$@"
+  }
+
+  if [[ -o zle ]]; then
+      function __zoxide_z_complete() {
+          # Only show completions when the cursor is at the end of the line.
+          # shellcheck disable=SC2154
+          [[ "${#words[@]}" -eq "${CURRENT}" ]] || return
+
+          if [[ "${#words[@]}" -eq 2 ]]; then
+              _files -/
+          elif [[ "${words[-1]}" == '' ]]; then
+              \builtin local result
+              # shellcheck disable=SC2086,SC2312
+              if result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -i -- ${words[2,-1]})"; then
+                  __zoxide_result="${result}"
+              else
+                  __zoxide_result=''
+              fi
+              \builtin printf '\e[5n'
+          fi
+      }
+
+      function __zoxide_z_complete_helper() {
+          \builtin local result="${__zoxide_z_prefix}${__zoxide_result}"
+          # shellcheck disable=SC2296
+          [[ -n "${__zoxide_result}" ]] && LBUFFER="${LBUFFER}${(q-)result}"
+          \builtin zle reset-prompt
+      }
+
+      \builtin zle -N __zoxide_z_complete_helper
+      \builtin bindkey "\e[0n" __zoxide_z_complete_helper
+      if [[ "${+functions[compdef]}" -ne 0 ]]; then
+          \compdef -d z
+          \compdef -d zi
+          \compdef __zoxide_z_complete z
+      fi
+  fi
+
+  # =============================================================================
+  #
+  # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
+  #
+  # eval "$(zoxide init zsh)"
+
+
+  ############################################
+  # Zoxide end of configuration
+  ############################################
 fi
-
-# =============================================================================
-#
-# When using zoxide with --no-cmd, alias these internal functions as desired.
-#
-
-__zoxide_z_prefix='z#'
-
-# Jump to a directory using only keywords.
-function __zoxide_z() {
-    # shellcheck disable=SC2199
-    if [[ "$#" -eq 0 ]]; then
-        __zoxide_cd ~
-    elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
-        __zoxide_cd "$1"
-    elif [[ "$@[-1]" == "${__zoxide_z_prefix}"* ]]; then
-        # shellcheck disable=SC2124
-        \builtin local result="${@[-1]}"
-        __zoxide_cd "${result:${#__zoxide_z_prefix}}"
-    else
-        \builtin local result
-        # shellcheck disable=SC2312
-        result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" &&
-            __zoxide_cd "${result}"
-    fi
-}
-
-# Jump to a directory using interactive search.
-function __zoxide_zi() {
-    \builtin local result
-    result="$(\command zoxide query -i -- "$@")" && __zoxide_cd "${result}"
-}
-
-# =============================================================================
-#
-# Commands for zoxide. Disable these using --no-cmd.
-#
-
-\builtin unalias z &>/dev/null || \builtin true
-function z() {
-    __zoxide_z "$@"
-}
-
-\builtin unalias zi &>/dev/null || \builtin true
-function zi() {
-    __zoxide_zi "$@"
-}
-
-if [[ -o zle ]]; then
-    function __zoxide_z_complete() {
-        # Only show completions when the cursor is at the end of the line.
-        # shellcheck disable=SC2154
-        [[ "${#words[@]}" -eq "${CURRENT}" ]] || return
-
-        if [[ "${#words[@]}" -eq 2 ]]; then
-            _files -/
-        elif [[ "${words[-1]}" == '' ]]; then
-            \builtin local result
-            # shellcheck disable=SC2086,SC2312
-            if result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -i -- ${words[2,-1]})"; then
-                __zoxide_result="${result}"
-            else
-                __zoxide_result=''
-            fi
-            \builtin printf '\e[5n'
-        fi
-    }
-
-    function __zoxide_z_complete_helper() {
-        \builtin local result="${__zoxide_z_prefix}${__zoxide_result}"
-        # shellcheck disable=SC2296
-        [[ -n "${__zoxide_result}" ]] && LBUFFER="${LBUFFER}${(q-)result}"
-        \builtin zle reset-prompt
-    }
-
-    \builtin zle -N __zoxide_z_complete_helper
-    \builtin bindkey "\e[0n" __zoxide_z_complete_helper
-    if [[ "${+functions[compdef]}" -ne 0 ]]; then
-        \compdef -d z
-        \compdef -d zi
-        \compdef __zoxide_z_complete z
-    fi
-fi
-
-# =============================================================================
-#
-# To initialize zoxide, add this to your configuration (usually ~/.zshrc):
-#
-# eval "$(zoxide init zsh)"
-
-
-############################################
-# Zoxide end of configuration
-############################################
-
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-please
