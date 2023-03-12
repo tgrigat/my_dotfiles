@@ -39,9 +39,9 @@ fi
 
 if [ $(hostname) = "node" ]; then
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias wk="cd ~/Workspace/git/AS_final_project//"
+  alias wk="cd ~/Documents/git/AS_final_project//"
   alias wk2="cd ~/Desktop/Advanced-Programming/"
-  alias wk1="cd ~/Workspace/git/DSOPP/"
+  alias wk1="cd ~/Documents/git/DSOPP/"
   source /opt/ros/noetic/setup.zsh
   # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
   alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
@@ -109,6 +109,8 @@ setopt share_history
 # export QT_QPA_PLATFORM="wayland;xcb"
 #######################
 
+alias chat="python ~/Workspace/git/gpt_based_bot/chatgpt.py"
+
 alias pls="please "
 alias kssh="kitty +kitten ssh"
 alias cpr='rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1'
@@ -124,6 +126,9 @@ if [[ "${SHELL##*/}" = "zsh" ]]; then
   alias refresh-fzf="rm ~/.local/bin/fzf && exec zsh"
 fi
 
+if (which distrobox > /dev/null); then
+  alias dsb="distrobox "
+fi
 
 alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
 

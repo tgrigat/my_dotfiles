@@ -35,7 +35,8 @@ Active=true
 DayTemperature=5800
 LatitudeAuto=39.9075
 LongitudeAuto=116.3972
-NightTemperature=3900
+Mode=Constant
+NightTemperature=3600
 
 [Plugins]
 desktopchangeosdEnabled=true
@@ -71,6 +72,9 @@ MultiScreenMode=2
 [Tiling]
 padding=4
 
+[Tiling][038ca034-d5ba-561c-9f67-742eedfafbf2]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][453b0086-f5ae-5a1f-85e9-2c7b3827df26]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3078124999999999},{"width":0.6921874999999995}]}
 
@@ -79,6 +83,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][bd455426-91b5-5aa4-b78c-9e21c3c810ab]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3567708333333333},{"width":0.6432291666666663}]}
+
+[Tiling][beec67b5-50a7-5fcb-bcdf-84a717c804fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.43398437500000014},{"width":0.5660156249999995}]}
 
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
