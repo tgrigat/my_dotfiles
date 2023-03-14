@@ -87,6 +87,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3567708333333333},{"wi
 [Tiling][beec67b5-50a7-5fcb-bcdf-84a717c804fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.43398437500000014},{"width":0.5660156249999995}]}
 
+[Tiling][e3991eb1-739c-5139-b089-3e9de64f0d16]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
 VirtualKeyboardEnabled=true

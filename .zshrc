@@ -42,7 +42,6 @@ if [ $(hostname) = "node" ]; then
   alias wk="cd ~/Documents/git/AS_final_project//"
   alias wk2="cd ~/Desktop/Advanced-Programming/"
   alias wk1="cd ~/Documents/git/DSOPP/"
-  source /opt/ros/noetic/setup.zsh
   # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
   alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
   alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
@@ -109,7 +108,7 @@ setopt share_history
 # export QT_QPA_PLATFORM="wayland;xcb"
 #######################
 
-alias chat="python ~/Workspace/git/gpt_based_bot/chatgpt.py"
+alias chat="cliai chat"
 
 alias pls="please "
 alias kssh="kitty +kitten ssh"
