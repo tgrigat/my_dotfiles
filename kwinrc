@@ -75,8 +75,20 @@ padding=4
 [Tiling][038ca034-d5ba-561c-9f67-742eedfafbf2]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][27c10515-628a-5851-880e-0dbf4639235c]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][2b438375-0aa4-5d84-8689-b1cbaf79455e]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][453b0086-f5ae-5a1f-85e9-2c7b3827df26]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3078124999999999},{"width":0.6921874999999995}]}
+
+[Tiling][4f702a5b-8e36-5c3f-ba4a-436118f8d477]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][7a9dbff3-2b6d-571c-8fd9-2262b977fd6b]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][92e842d7-5928-5c43-884a-4912e7cc82ed]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
@@ -88,7 +100,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3567708333333333},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.43398437500000014},{"width":0.5660156249999995}]}
 
 [Tiling][e3991eb1-739c-5139-b089-3e9de64f0d16]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.37968750000000023},{"width":0.6203124999999998}]}
 
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop

@@ -12,6 +12,8 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
+
 function gui() {
   if [[ $1 = "x" ]]; then
     # todo fix this
@@ -26,27 +28,30 @@ function gui() {
   fi
 }
 
+
+function notify() {
+  if [[ -z "$1" ]]; then
+    echo "done" > ~/.notify
+  else
+    echo "$1" > ~/.notify
+  fi
+}
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 ## alias for temporary usage
 
-if [ $(hostname) = "ArchDM" ]; then
-  alias wk="cd ~/Workspace/git/deep-video-mvs-dm/"
-  export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
-fi
-
 if [ $(hostname) = "node" ]; then
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias wk="cd ~/Documents/git/AS_final_project//"
-  alias wk2="cd ~/Desktop/Advanced-Programming/"
-  alias wk1="cd ~/Documents/git/DSOPP/"
   # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
   alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
   alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
   export EDITOR=lvim
 fi
+alias wk="cd ~/Documents/git/autsys-projects-f4/"
+alias wk2="cd ~/Documents/git/cliai/"
+alias wk1="cd ~/Documents/git/DSOPP/"
 # Set up the prompt
 #----------------------------------------------------------------------------------------------------
 # completion settings
@@ -127,6 +132,10 @@ fi
 
 if (which distrobox > /dev/null); then
   alias dsb="distrobox "
+fi
+
+if [ -d "/etc/ros/noetic" ] && [ $SHELL = "/bin/zsh" ]; then
+    source /etc/ros/noetic/setup.zsh
 fi
 
 alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
