@@ -307,7 +307,7 @@ function ranger() {
 
 function sudo() {
     case $1 in 
-        vi|vim|nvim) command sudo -E "$@";;
+        vi|vim|nvim|lvim) command sudo -E "$@";;
         *) command sudo "$@";;
     esac
 }

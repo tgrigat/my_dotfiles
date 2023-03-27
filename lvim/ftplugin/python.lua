@@ -12,7 +12,7 @@ formatters.setup {
 -- Set a linter.
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "yapf", filetypes = { "python" } },
+  { command = "black", filetypes = { "python" } },
 }
 
 -- Setup dap for python
