@@ -13,6 +13,9 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
+##############################################################################
+# Laptop configurations
+##############################################################################
 
 function gui() {
   if [[ $1 = "x" ]]; then
@@ -36,6 +39,10 @@ function notify() {
     echo "$1" > ~/.notify
   fi
 }
+
+if [[ $(hostname) == "introspector" ]]; then
+    export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
+fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -182,7 +189,7 @@ alias pgrep="pdfgrep -r -n -i"
 
 ln-ccjson() {
 ln -s build/compile_commands.json compile_commands.json
-echo "Link performed, please ensure that you run this command at the project root"
+echo 'Link performed, please ensure that you run this command at the project root'
 }
 
 refresh-build() {
