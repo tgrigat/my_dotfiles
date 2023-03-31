@@ -42,6 +42,7 @@ function notify() {
 
 if [[ $(hostname) == "introspector" ]]; then
     export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
+    alias docker-com=$HOME/Drive/docker-com
 fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
