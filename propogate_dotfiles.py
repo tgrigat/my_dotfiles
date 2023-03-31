@@ -8,7 +8,7 @@ user = os.environ.get("USER")
 
 repo = wkdir
 # home = join("/home/yang/script", "P_home")  # /home/yang, for tmux and .zshrc
-home = os.environ.get("USER")
+home = os.environ.get("HOME")
 dot_config = f"{home}/.config"
 
 to_ignore = [".git", "dotflie.py", "confsync"]
