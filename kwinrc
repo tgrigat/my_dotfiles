@@ -41,7 +41,6 @@ NightTemperature=3600
 [Plugins]
 desktopchangeosdEnabled=true
 invertEnabled=true
-kwin4_effect_fadedesktopEnabled=true
 slideEnabled=false
 wobblywindowsEnabled=true
 
@@ -64,10 +63,9 @@ tileLayoutGap=6
 [Script-desktopchangeosd]
 PopupHideDelay=300
 
-[TabBoxAlternative]
-HighlightWindows=false
+[TabBox]
+DesktopMode=0
 LayoutName=thumbnail_grid
-MultiScreenMode=2
 
 [Tiling]
 padding=4
@@ -88,7 +86,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.3078124999999999},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][51c03203-cd3d-5e67-b2e5-6e8992bef80b]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5},{"width":0.5}]}
 
 [Tiling][7916a0f3-37c2-566e-8ca0-70809ec5c4e7]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
@@ -114,6 +112,7 @@ VirtualKeyboardEnabled=true
 
 [Windows]
 ActiveMouseScreen=false
+ElectricBorderCornerRatio=0.49
 RollOverDesktops=true
 SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize

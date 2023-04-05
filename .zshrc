@@ -40,9 +40,64 @@ function notify() {
   fi
 }
 
+# function enlarge-pdf() {
+# pdf-crop-margins -o $2 -p 100 -a4 0 0 -500 0 $1
+# }
+
+function enlarge-pdf() {
+  # Set default values
+  local width=500
+  local input
+  local output
+
+  # Parse arguments
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -o | --output )
+        output="$2"
+        shift 2 ;;
+      -w | --width )
+        width="$2"
+        shift 2 ;;
+      * )
+        if [[ -z "$input" ]]; then
+          input="$1"
+        else
+          echo "Error: Unknown argument $1"
+          return 1
+        fi
+        shift ;;
+    esac
+  done
+
+  # Check input file is specified
+  if [[ -z "$input" ]]; then
+    echo "Usage: enlarge-pdf -i INPUT_FILE [-o OUTPUT_FILE] [-w WIDTH]"
+    return 1
+  fi
+
+  # Set output filename
+  if [[ -z "$output" ]]; then
+    output="${input%.*}_enlarged.pdf"
+  fi
+
+  # Check if output filename is valid
+  if [[ -z "$output" ]]; then
+    echo "Error: output filename is empty"
+    return 1
+  fi
+
+  # Modify PDF file
+  if ! pdf-crop-margins -o "$output" -p 100 -a4 0 0 -"$width" 0 "$input"; then
+    echo "Error: Failed to modify PDF file"
+    return 1
+  fi
+}
+
+
 if [[ $(hostname) == "introspector" ]]; then
     export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
-    alias docker-com=$HOME/Drive/docker-com
+    alias docker-com=$HOME/docker-com
 fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -174,12 +229,12 @@ alias letsgo="zsh /home/yang/startup.sh"
 # for xmind to start properly
 alias xmind="xmind --no-sandbox"
 # for deactivating conda fast
-alias conda-d="conda deactivate"
-alias conda-a="conda activate"
+# alias conda-d="conda deactivate"
+# alias conda-a="conda activate"
 # for fast SSH_CONNECTION
 alias sshi="ssh iWorkstation"
 # for ml3d conda
-alias 3dml="conda activate 3dml"
+# alias 3dml="conda activate 3dml"
 # for ankis from terminal
 alias ankis="ankisync && anki && ankisync"
 # for fast cd to desktop
@@ -349,21 +404,6 @@ else
 fi
 eval bindkey '^R' fzf-history-widget
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/yang/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/yang/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/yang/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/yang/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda ...ENVS)
 
 # prompt
@@ -662,3 +702,21 @@ if command -v zoxide &> /dev/null; then
   # Zoxide end of configuration
   ############################################
 fi
+
+alias mba="micromamba"
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/usr/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/yang/.mamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/yang/.mamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/yang/.mamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/yang/.mamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<

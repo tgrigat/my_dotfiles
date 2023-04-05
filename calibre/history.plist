@@ -4,6 +4,7 @@
 <dict>
 	<key>lineedit_history_choose_library_dialog</key>
 	<array>
+		<string>/home/yang/Documents/Synology_Library/books/calibre-syncing</string>
 		<string>/home/yang/Documents/Library/Library/books/calibre-syncing</string>
 		<string>/home/yang/Documents/Meine Bibliothek</string>
 	</array>
