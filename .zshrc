@@ -31,6 +31,10 @@ function gui() {
   fi
 }
 
+function run_background {
+    $* >/dev/null 2>&1 &
+}
+
 
 function notify() {
   if [[ -z "$1" ]]; then
@@ -42,7 +46,6 @@ function notify() {
 
 # function enlarge-pdf() {
 # pdf-crop-margins -o $2 -p 100 -a4 0 0 -500 0 $1
-# }
 
 function enlarge-pdf() {
   # Set default values

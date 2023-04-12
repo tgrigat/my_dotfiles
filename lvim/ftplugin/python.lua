@@ -4,10 +4,10 @@ local keymap = vim.keymap
 -- keymap.set("n", "k", "kzz")
 
 -- Set a formatter.
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { command = "black", filetypes = { "python" } },
-}
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   { command = "yapf", filetypes = { "python" } },
+-- }
 
 -- Set a linter.
 local linters = require "lvim.lsp.null-ls.linters"

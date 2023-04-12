@@ -3,8 +3,8 @@
   "notified-version-updates": {
     "__class__": "set",
     "__value__": [
-      "6.7",
-      "6.13"
+      "6.13",
+      "6.7"
     ]
   },
   "sort_history": [
@@ -15,10 +15,6 @@
     [
       "tags",
       true
-    ],
-    [
-      "timestamp",
-      false
     ],
     [
       "timestamp",

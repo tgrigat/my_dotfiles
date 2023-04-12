@@ -178,49 +178,49 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1051,
+      "height": 1137,
       "width": 1920,
       "x": 0,
-      "y": 0
+      "y": 74
     },
     "full_screened": false,
     "geometry": {
-      "height": 1051,
+      "height": 1137,
       "width": 1920,
       "x": 0,
-      "y": 0
+      "y": 74
     },
     "maximized": true,
     "normal_geometry": {
-      "height": 1080,
+      "height": 1051,
       "width": 1920,
       "x": 0,
-      "y": 1080
+      "y": 74
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAAQaAAAAAAAABDgAAAd/AAAIbwAAAAECAAAAB4AAAAAAAAAAAAAAB38AAAQa"
+      "__value__": "AdnQywADAAAAAAAAAAAASgAAB38AAAS6AAAAAAAAAEoAAAd/AAAEZAAAAAACAAAAB4AAAAAAAAAASgAAB38AAAS6"
     },
     "screen": {
       "depth": 32,
-      "device_pixel_ratio": 1.0,
+      "device_pixel_ratio": 2.0,
       "geometry_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920,
         "x": 0,
         "y": 0
       },
-      "index_in_screens_list": 1,
-      "manufacturer": "HP Inc.",
-      "model": "OMEN by HP 25/3CQ0011QZX",
-      "name": "HDMI-A-1",
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "eDP-1-unknown",
+      "name": "eDP-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 2280,
+        "height": 1200,
         "width": 1920,
         "x": 0,
         "y": 0
@@ -281,7 +281,7 @@
   "grid view visible": false,
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 3
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 5
   },
   "metasingle_window_size": [
     1850,
