@@ -2,7 +2,20 @@
 ----------------------- Additional Plugins ------------------------------
 -------------------------------------------------------------------------
 lvim.plugins = {
-  { "ggandor/leap.nvim",
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  },
+  {
+    "ggandor/leap.nvim",
     config = function()
       require('leap').add_default_mappings()
     end
@@ -20,7 +33,7 @@ lvim.plugins = {
     --   require('github-theme').setup({
     --     -- ...
     --     dark_sidebar = true
-   --   })
+    --   })
     -- end
   },
   -- "AckslD/swenv.nvim",
@@ -50,12 +63,12 @@ lvim.plugins = {
     "rmagatti/goto-preview",
     config = function()
       require('goto-preview').setup {
-        width = 120; -- Width of the floating window
-        height = 25; -- Height of the floating window
-        default_mappings = true; -- Bind default mappings
-        debug = false; -- Print debug information
-        opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
-        post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
+        width = 120,             -- Width of the floating window
+        height = 25,             -- Height of the floating window
+        default_mappings = true, -- Bind default mappings
+        debug = false,           -- Print debug information
+        opacity = nil,           -- 0-100 opacity level of the floating window where 100 is fully transparent.
+        post_open_hook = nil     -- A function taking two arguments, a buffer and a window to be ran as a hook.
         -- You can use "default_mappings = true" setup option
         -- Or explicitly set keybindings
         -- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
@@ -80,7 +93,7 @@ lvim.plugins = {
   },
 
   -- You can run blocks of code like jupyter notebook.
-  { "dccsillag/magma-nvim", build = ':UpdateRemotePlugins' },
+  { "dccsillag/magma-nvim",          build = ':UpdateRemotePlugins' },
   -- {
   --   "glepnir/lspsaga.nvim",
   --   branch = "main",
@@ -90,7 +103,7 @@ lvim.plugins = {
   -- },
   -- outline for languages
   { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
-  { 'kkoomen/vim-doge', build = ':call doge#install()' },
+  { 'kkoomen/vim-doge',              build = ':call doge#install()' },
   {
     'mrjones2014/legendary.nvim'
     -- sqlite is only needed if you want to use frecency sorting
@@ -124,34 +137,37 @@ lvim.plugins = {
           scroll_view = '┃',
         },
         window = {
-          side = 'right', -- Side to stick ('left' or 'right')
-          width = 17, -- Total width
-          winblend = 25, -- Value of 'winblend' option
-          focusable = true, -- Whether window is focusable in normal way (with `wincmd` or mouse)
+          side = 'right',                 -- Side to stick ('left' or 'right')
+          width = 17,                     -- Total width
+          winblend = 25,                  -- Value of 'winblend' option
+          focusable = true,               -- Whether window is focusable in normal way (with `wincmd` or mouse)
           show_integration_count = false, -- Whether to show count of multiple integration highlights
         },
       })
     end
   },
-  { "epwalsh/obsidian.nvim", config = function()
-    require("obsidian").setup({
-      dir = "~/obsidian",
-      use_advanced_uri = true,
-      disable_frontmatter = true,
-      completion = {
-        nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-      },
-      daily_notes = {
-        folder = "Days",
-      },
-    })
-    require("nvim-treesitter.configs").setup({
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { "markdown" },
-      },
-    })
-  end },
+  {
+    "epwalsh/obsidian.nvim",
+    config = function()
+      require("obsidian").setup({
+        dir = "~/obsidian",
+        use_advanced_uri = true,
+        disable_frontmatter = true,
+        completion = {
+          nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+        },
+        daily_notes = {
+          folder = "Days",
+        },
+      })
+      require("nvim-treesitter.configs").setup({
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = { "markdown" },
+        },
+      })
+    end
+  },
   { "simrat39/rust-tools.nvim" },
   -- { 'echasnovski/mini.animate', config = function()
   --   require('mini.animate').setup(
@@ -167,10 +183,14 @@ lvim.plugins = {
   --   )
 
   -- end },
-  { "stevearc/aerial.nvim", config = function()
-    require('aerial').setup()
-  end },
-  { "lervag/vimtex",
+  {
+    "stevearc/aerial.nvim",
+    config = function()
+      require('aerial').setup()
+    end
+  },
+  {
+    "lervag/vimtex",
     config = function()
       vim.cmd [[
       syntax enable
@@ -180,49 +200,55 @@ lvim.plugins = {
     end,
     ft = "tex",
   },
-  { 'edluffy/specs.nvim', config = function()
-    require('specs').setup {
-      show_jumps       = true,
-      min_jump         = 30,
-      popup            = {
-        delay_ms = 0, -- delay before popup displays
-        inc_ms = 10, -- time increments used for fade/resize effects
-        blend = 10, -- starting blend, between 0-100 (fully transparent), see :h winblend
-        width = 10,
-        winhl = "PMenu",
-        fader = require('specs').linear_fader,
-        resizer = require('specs').shrink_resizer
-      },
-      ignore_filetypes = {},
-      ignore_buftypes  = {
-        nofile = true,
-      },
-    }
-  end },
-  { "Shatur/neovim-session-manager", config = function()
-    local Path = require('plenary.path')
-    require('session_manager').setup({
-      sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'), -- The directory where the session files will be saved.
-      path_replacer = '__', -- The character to which the path separator will be replaced for session files.
-      colon_replacer = '++', -- The character to which the colon symbol will be replaced for session files.
-      autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-      autosave_last_session = true, -- Automatically save last session on exit and on session switch.
-      autosave_ignore_not_normal = true, -- Plugin will not save a session when no buffers are opened, or all of them aren't writable or listed.
-      autosave_ignore_dirs = {}, -- A list of directories where the session will not be autosaved.
-      autosave_ignore_filetypes = { -- All buffers of these file types will be closed before the session is saved.
-        'gitcommit',
-      },
-      autosave_ignore_buftypes = {}, -- All buffers of these bufer types will be closed before the session is saved.
-      autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
-      max_path_length = 80, -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
-    })
-
-  end },
+  {
+    'edluffy/specs.nvim',
+    config = function()
+      require('specs').setup {
+        show_jumps       = true,
+        min_jump         = 30,
+        popup            = {
+          delay_ms = 0, -- delay before popup displays
+          inc_ms = 10, -- time increments used for fade/resize effects
+          blend = 10, -- starting blend, between 0-100 (fully transparent), see :h winblend
+          width = 10,
+          winhl = "PMenu",
+          fader = require('specs').linear_fader,
+          resizer = require('specs').shrink_resizer
+        },
+        ignore_filetypes = {},
+        ignore_buftypes  = {
+          nofile = true,
+        },
+      }
+    end
+  },
+  {
+    "Shatur/neovim-session-manager",
+    config = function()
+      local Path = require('plenary.path')
+      require('session_manager').setup({
+        sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'),             -- The directory where the session files will be saved.
+        path_replacer = '__',                                                    -- The character to which the path separator will be replaced for session files.
+        colon_replacer = '++',                                                   -- The character to which the colon symbol will be replaced for session files.
+        autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+        autosave_last_session = true,                                            -- Automatically save last session on exit and on session switch.
+        autosave_ignore_not_normal = true,                                       -- Plugin will not save a session when no buffers are opened, or all of them aren't writable or listed.
+        autosave_ignore_dirs = {},                                               -- A list of directories where the session will not be autosaved.
+        autosave_ignore_filetypes = {                                            -- All buffers of these file types will be closed before the session is saved.
+          'gitcommit',
+        },
+        autosave_ignore_buftypes = {},  -- All buffers of these bufer types will be closed before the session is saved.
+        autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
+        max_path_length = 80,           -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
+      })
+    end
+  },
   {
     'declancm/cinnamon.nvim',
     config = function() require('cinnamon').setup() end
   },
-  { "zbirenbaum/copilot.lua",
+  {
+    "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
@@ -240,14 +266,14 @@ lvim.plugins = {
     end
   },
   {
-  "iurimateus/luasnip-latex-snippets.nvim",
-  -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
-  -- using treesitter.
-  dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-  config = function()
-    require'luasnip-latex-snippets'.setup()
-    -- or setup({ use_treesitter = true })
-  end,
-  ft = "tex",
-}
+    "iurimateus/luasnip-latex-snippets.nvim",
+    -- replace "lervag/vimtex" with "nvim-treesitter/nvim-treesitter" if you're
+    -- using treesitter.
+    dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    config = function()
+      require 'luasnip-latex-snippets'.setup()
+      -- or setup({ use_treesitter = true })
+    end,
+    ft = "tex",
+  }
 }
