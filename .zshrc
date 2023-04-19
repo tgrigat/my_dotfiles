@@ -572,6 +572,11 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+if [[ $(uname) == "Darwin" ]]; then
+  source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+  unalias ls
+fi
+
 if command -v zoxide &> /dev/null; then
   #############################################
   # Zoxide configuration 
@@ -723,3 +728,4 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
