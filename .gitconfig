@@ -5,8 +5,8 @@
 	process = git-lfs filter-process
 
 [user]
-	name = Tangdi
-  email = 45258158+TangdizhiH@users.noreply.github.com
+	name = Lumen Yang
+	email = git@lumeny.io
 
 [pull]
   rebase = true

@@ -25,6 +25,9 @@ config.font = wezterm.font("Iosevka Term")
 --   })
 -- end    
 
+config.front_end = "OpenGL"
+
+
 config.keys = {
         {
             key = "1",

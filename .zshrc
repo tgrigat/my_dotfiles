@@ -31,6 +31,16 @@ function gui() {
   fi
 }
 
+function rbt2win() {
+    if [[ -f /usr/bin/grub-reboot ]]; then
+        sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg|cut -d"'" -f2)" 
+        sudo reboot
+    else
+        systemctl reboot --boot-loader-entry=auto-windows
+    fi
+
+}
+
 function run_background {
     $* >/dev/null 2>&1 &
 }
@@ -208,6 +218,9 @@ alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
 
 if (which lvim > /dev/null); then
   alias vim="lvim "
+fi
+if (which vdirsyncer > /dev/null); then
+  alias vsync="vdirsyncer sync"
 fi
 alias mvim="nvim "
 alias note='cd ~/obsidian && vim '

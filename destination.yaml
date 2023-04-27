@@ -35,3 +35,4 @@ wezterm: ~/.config/wezterm
 zathura: ~/.config/zathura
 zsh: ~/.config/zsh
 .zshrc: ~/.zshrc
+ankisync: ~/.local/bin/ankisync
