@@ -264,13 +264,27 @@ ln -s build/compile_commands.json compile_commands.json
 echo 'Link performed, please ensure that you run this command at the project root'
 }
 
+# refresh-build() {
+#   echo "Warning: this alias should run at build directory "
+#   cd ..
+#   rm -rf build
+#   mkdir build
+#   cd build
+# }
+
 refresh-build() {
-  echo "Warning: this alias should run at build directory "
+  if [ "$(basename "$(pwd)")" != "build" ]; then
+    echo "Warning: this alias should run at the build directory"
+    echo "abort, please cd to build directory"
+    return
+  fi
+
   cd ..
   rm -rf build
   mkdir build
   cd build
 }
+
 
 # for opening zathura faster
 # alias za="zathura"
