@@ -116,7 +116,6 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-## alias for temporary usage
 
 if [ $(hostname) = "node" ]; then
   export DET_MASTER=https://determined.corp.deepmirror.com:443 
@@ -368,6 +367,155 @@ function man() {
     LESS_TERMCAP_ue=$'\e[0m' \
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
+}
+
+function mal {
+	
+	# Check if the user has provided a help option or no arguments
+	if [[ "$1" = "-h" ]] || [[ "$1" = "--help" ]] || [[ "$1" = "-help" ]] || [[ $# -eq 0 ]]; then
+		# Display usage information
+		echo "Usage: mal [OPTION]... [ALIAS_NAME] [ALIAS_COMMAND]..."
+		echo ""
+		echo "Create, delete, change, or execute aliases interactively."
+		echo ""
+		echo "Options:"
+		echo "  -h, --help       display this help and exit"
+		echo "  -l               list all aliases in \$ALIASES_FILE"
+		echo "  -e               execute an alias interactively"
+		echo "  -d               delete an alias interactively"
+		echo "  -dn NAME         delete an alias by name"
+		echo "  -r               rename an alias interactively"
+		echo "  -rn OLD NEW      rename an existing alias"
+		echo "  -c               change the command associated with an existing alias interactively"
+		echo "  -cc NAME COMMAND change the command associated with an existing alias by name"
+		return 0
+	fi
+
+# Execute an alias interactively if the -e option is used
+	if [[ $1 = "-e" ]]; then
+		# Use fzf to allow the user to select an alias from the aliases file
+		local alias_to_execute=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
+		# Check if the user cancelled the selection
+		if [[ -z $alias_to_execute ]]; then
+			return 1
+		fi
+		echo Executing alias: $alias_to_execute
+		# Execute the selected alias
+		eval ${alias_to_execute%%=*}
+		return 0
+
+	# List all aliases if the -l option is used
+	elif [[ $1 = -l ]]; then
+		# List all aliases in $ALIASES_FILE
+		cut -d' ' -f2- $ALIASES_FILE | cat
+
+	# Delete an alias interactively if the -d option is used
+	elif [[ $1 = -d ]]; then
+		# Use fzf to allow the user to select an alias from the aliases file
+		local alias_to_delete=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
+		# Check if the user cancelled the selection
+		if [[ -z $alias_to_delete ]]; then
+			return 1
+		fi
+		echo Deleted alias: $alias_to_delete
+		# Delete the selected alias from the aliases file
+		sed -i "/^alias ${alias_to_delete%%=*}=/d" $ALIASES_FILE
+		unalias ${alias_to_delete%%=*}
+
+	# Delete an alias by name if the -dn option is used
+	elif [[ $1 = -dn ]]; then
+		local alias_to_delete=$2
+		local line_with_alias=$(grep "$2=" $ALIASES_FILE)
+		# Check if the alias exists in the aliases file
+		if [[ -z "$line_with_alias" ]]; then
+			echo No alias with the name $2 found.
+			return 2
+		fi
+		echo Deleted alias: $alias_to_delete
+		# Delete the selected alias from the aliases file
+		sed -i "/^alias ${alias_to_delete%%=*}=/d" $ALIASES_FILE
+		unalias ${alias_to_delete%%=*}
+
+  # rename an alias interactively
+  elif [[ $1 = "-r" ]]; then
+    # Rename an existing alias by selecting it from a list
+    local alias_to_rename=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
+    # Check if the user cancelled the selection
+    if [[ -z $alias_to_rename ]]; then
+      return 1
+    fi
+
+    echo "Input new name:"
+    read new_name
+    echo "Renaming alias from $alias_to_rename to $new_name"
+    sed -i "s/^alias ${alias_to_rename%%=*}=/alias ${new_name}=/g" $ALIASES_FILE
+    unalias ${alias_to_rename%%=*}
+
+  elif [[ $1 = "-rn" ]]; then
+    # Rename an existing alias using specified old and new names
+    if [[ -z "$2" || -z "$3" ]]; then
+      echo "Usage: mal -r OLD_ALIAS_NAME NEW_ALIAS_NAME"
+      return 1
+    fi
+
+    local old_alias_name=$2
+    local new_alias_name=$3
+    local line_with_alias=$(grep "^alias ${old_alias_name}=" $ALIASES_FILE)
+
+    if [[ -z "$line_with_alias" ]]; then
+      echo "No alias with the name $old_alias_name found."
+      return 1
+    fi
+
+    echo "Renaming alias from $old_alias_name to $new_alias_name"
+    sed -i "s/^alias ${old_alias_name}=/alias ${new_alias_name}=/g" $ALIASES_FILE
+    unalias ${old_alias_name}
+
+  elif [[ $1 = "-c" ]]; then
+    # Change the command associated with an existing alias by selecting it from a list
+    local alias_to_change=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
+    # Check if the user cancelled the selection
+    if [[ -z $alias_to_change ]]; then
+      return 1
+    fi
+
+    echo "Input new command:"
+    read new_command
+    echo "Changing command for alias ${alias_to_change%%=*} to \"$new_command\""
+    sed -i "/^alias ${alias_to_change%%=*}=/{s/=.*/=\"$new_command\"/}" $ALIASES_FILE
+
+  elif [[ $1 = "-cc" ]]; then
+    # Change the command associated with an existing alias using specified name and command
+    local alias_to_change=$2
+    local new_command="${@:3}"
+    local line_with_alias=$(grep "$alias_to_change=" $ALIASES_FILE)
+
+    if [[ -z "$line_with_alias" ]]; then
+      echo "No alias with the name $alias_to_change found."
+      return 1
+    fi
+
+    echo "Changing command for alias $alias_to_change to \"$new_command\""
+    sed -i "/^alias ${alias_to_change}=/{s/=.*/=\"$new_command\"/}" $ALIASES_FILE
+  else
+      # Add a new alias
+      local line_with_alias=$(grep "$1=" $ALIASES_FILE)
+      if [[ ! -z "$line_with_alias" ]]; then
+          echo Alias found: $line_with_alias
+          echo change alias by using the -c flag.
+          return 1
+      fi
+
+      local lh="alias $1"
+      local rh=\"${@:2}\"
+      local alias_str="$lh=$rh"
+
+      echo $alias_str >>$ALIASES_FILE
+      echo added \"$alias_str\" to .aliases
+  fi
+
+  # Reload aliases
+  source $ALIASES_FILE
 }
 
 
