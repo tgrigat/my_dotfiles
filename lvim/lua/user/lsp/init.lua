@@ -1,6 +1,6 @@
 require "user.lsp.lang.python"
 
-lvim.lsp.diagnostics.virtual_text = false
+vim.diagnostic.config({ virtual_text = false })
 
 lvim.builtin.treesitter.ensure_installed = {
   "python",
