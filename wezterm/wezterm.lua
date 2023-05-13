@@ -23,114 +23,114 @@ config.font = wezterm.font("Iosevka Term")
 --     mods = 'ALT',
 --     action = act.ActivateTab(i - 1),
 --   })
--- end    
+-- end
 
 config.front_end = "OpenGL"
 
 
 config.keys = {
-        {
-            key = "1",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(0) ,
-        },
-        {
-            key = "2",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(1) ,
-        },
-        {
-            key = "3",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(2) ,
-        },
-        {
-            key = "4",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(3) ,
-        },
-        {
-            key = "5",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(4) ,
-        },
-        {
-            key = "6",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(5) ,
-        },
-        {
-            key = "7",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(6) ,
-        },
-        {
-            key = "8",
-            mods = "ALT",
-            action = wezterm.action.ActivateTab(7) ,
-        },
-        {
-            key = "(",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.SplitPane {
-                direction = "Right",
-                size = { Percent = 50 }
-            },
-        },
-        {
-            key = ")",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.SplitPane {
-                direction = "Down",
-                size = { Percent = 50 }
-            },
-        },
-        {
-            key = "h",
-            mods = "ALT",
-            action = wezterm.action.ActivatePaneDirection "Left",
-        },
-        {
-            key = "j",
-            mods = "ALT",
-            action = wezterm.action.ActivatePaneDirection "Down",
-        },
-        {
-            key = "k",
-            mods = "ALT",
-            action = wezterm.action.ActivatePaneDirection "Up",
-        },
-        {
-            key = "l",
-            mods = "ALT",
-            action = wezterm.action.ActivatePaneDirection "Right",
-        },
-        {
-            key = "R",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.RotatePanes "Clockwise",
-        },
-        {
-            key = "Enter",
-            mods = "ALT",
-            action = wezterm.action.DisableDefaultAssignment,
-        },
-        {
-            key = "Insert",
-            mods = "SHIFT",
-            action = wezterm.action.PasteFrom "Clipboard",
-        },
-        {
-            key = "Insert",
-            mods = "CTRL",
-            action = wezterm.action.CopyTo "Clipboard",
-        },
-        {
-            key = "Insert",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.PasteFrom "PrimarySelection",
-        },
-    }
+  {
+    key = "1",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(0),
+  },
+  {
+    key = "2",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(1),
+  },
+  {
+    key = "3",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(2),
+  },
+  {
+    key = "4",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(3),
+  },
+  {
+    key = "5",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(4),
+  },
+  {
+    key = "6",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(5),
+  },
+  {
+    key = "7",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(6),
+  },
+  {
+    key = "8",
+    mods = "ALT",
+    action = wezterm.action.ActivateTab(7),
+  },
+  {
+    key = "9",
+    mods = "ALT",
+    action = wezterm.action.SplitPane {
+      direction = "Right",
+      size = { Percent = 50 }
+    },
+  },
+  {
+    key = "0",
+    mods = "ALT",
+    action = wezterm.action.SplitPane {
+      direction = "Down",
+      size = { Percent = 50 }
+    },
+  },
+  {
+    key = "h",
+    mods = "ALT",
+    action = wezterm.action.ActivatePaneDirection "Left",
+  },
+  {
+    key = "j",
+    mods = "ALT",
+    action = wezterm.action.ActivatePaneDirection "Down",
+  },
+  {
+    key = "k",
+    mods = "ALT",
+    action = wezterm.action.ActivatePaneDirection "Up",
+  },
+  {
+    key = "l",
+    mods = "ALT",
+    action = wezterm.action.ActivatePaneDirection "Right",
+  },
+  {
+    key = "R",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.RotatePanes "Clockwise",
+  },
+  {
+    key = "Enter",
+    mods = "ALT",
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
+    key = "Insert",
+    mods = "SHIFT",
+    action = wezterm.action.PasteFrom "Clipboard",
+  },
+  {
+    key = "Insert",
+    mods = "CTRL",
+    action = wezterm.action.CopyTo "Clipboard",
+  },
+  {
+    key = "Insert",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.PasteFrom "PrimarySelection",
+  },
+}
 
 config.color_scheme = 'nord'
 -- config.color_scheme = 'nord'
