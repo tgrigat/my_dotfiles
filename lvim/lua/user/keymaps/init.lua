@@ -1,5 +1,15 @@
 -- require("user.keymaps.lsp_saga")
 
+lvim.builtin.which_key.setup.plugins.marks = true
+lvim.builtin.which_key.setup.plugins.regiesters = true
+lvim.builtin.which_key.setup.plugins.presets.operators = true
+lvim.builtin.which_key.setup.plugins.presets.motions = true
+lvim.builtin.which_key.setup.plugins.presets.text_objects = true
+lvim.builtin.which_key.setup.plugins.presets.windows = true
+lvim.builtin.which_key.setup.plugins.presets.nav = true
+lvim.builtin.which_key.setup.plugins.presets.z = true
+lvim.builtin.which_key.setup.plugins.presets.g = true
+
 lvim.builtin.which_key.mappings["="] = {
   name = "Settings",
   l = { "<cmd>set background=light<cr>", "Theme Light" },
@@ -34,15 +44,13 @@ lvim.builtin.which_key.mappings["o"] = {
 
 lvim.builtin.which_key.mappings["a"] = {
   name = "ChatGPT",
-  ['i'] = {"<cmd>ChatGPT<cr>", "Chat"},
-  ['o'] = {"<cmd>ChatGPTActAs<cr>", "Act as"},
+  ['i'] = { "<cmd>ChatGPT<cr>", "Chat" },
+  ['o'] = { "<cmd>ChatGPTActAs<cr>", "Act as" },
 }
 
 lvim.builtin.which_key.vmappings["a"] = {
-  ['i'] ={"<cmd>ChatGPTEditWithInstructions<cr>"}
+  ['i'] = { "<cmd>ChatGPTEditWithInstructions<cr>" }
 }
-
-
 
 lvim.builtin.which_key.mappings['P'] = {
   name = "Project",
@@ -51,7 +59,6 @@ lvim.builtin.which_key.mappings['P'] = {
   c = { "<cmd>ProjectRoot ", "Change Root" },
   s = { "<cmd>SessionsSave .session<cr>", "Save Session" },
   r = { "<cmd>SessionsLoad .session<cr>", "Restore Session" }
-
 }
 
 lvim.builtin.which_key.mappings['p'] = {
