@@ -45,6 +45,19 @@ function run_background {
     $* >/dev/null 2>&1 &
 }
 
+function run_autostart_apps() {
+  autostart_dir="${HOME}/.config/autostart"
+  
+  if [ -d "${autostart_dir}" ]; then
+    for desktop_file in "${autostart_dir}"/*.desktop; do
+      if [ -f "${desktop_file}" ]; then
+        xdg-open "${desktop_file}" >/dev/null 2>&1 &
+      fi
+    done
+  else
+    echo "Autostart directory not found: ${autostart_dir}"
+  fi
+}
 
 function notify() {
   if [[ -z "$1" ]]; then
@@ -908,4 +921,8 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
