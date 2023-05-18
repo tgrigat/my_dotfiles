@@ -5,9 +5,9 @@ if not status_ok then
   return
 end
 
-vim.cmd('autocmd FileType * lua setKeybinds()')
+vim.cmd('autocmd FileType * lua SetKeybinds()')
 
-function setKeybinds()
+function SetKeybinds()
   local fileTy = vim.api.nvim_buf_get_option(0, "filetype")
   local opts = { prefix = '', buffer = 0 }
 
