@@ -376,7 +376,7 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
 
+if [[ -f ~/.local.zsh ]]; then
+    source ~/.local.zsh
+fi

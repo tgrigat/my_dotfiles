@@ -16,6 +16,3 @@ path=(
     $path
 )
 
-if [[ -f ~/.local.zsh ]]; then
-    source ~/.local.zsh
-fi
