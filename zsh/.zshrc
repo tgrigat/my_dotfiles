@@ -12,51 +12,25 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-function gui() {
-  if [[ $1 = "x" ]]; then
-    # todo fix this
-    export XDG_SESSION_TYPE=x11
-    export XDG_SESSION_TYPE=xcb
-    export DISPLAY=:1
-    startplasma-x11
-  else
-    export XDG_SESSION_TYPE=wayland
-    export QT_QPA_PLATFORM=wayland
-    exec startplasma-wayland
-  fi
-}
+
+##############################################################################
+# Laptop configurations
+##############################################################################
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-## alias for temporary usage
 
-if [ $(hostname) = "ArchDM" ]; then
-  alias wk="cd ~/Workspace/git/deep-video-mvs-dm/"
-  export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias ezpxy="export http_proxy=http://192.168.1.108:8888;export https_proxy=http://192.168.1.108:8888"
-fi
-
-if [ $(hostname) = "node" ]; then
-  export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  alias wk1="cd ~/Desktop/Autonomous-System/"
-  alias wk2="cd ~/Desktop/Advanced-Programming/"
-  alias wk="cd ~/Workspace/git/deep-video-mvs-dm-own/"
-  source /opt/ros/noetic/setup.zsh
-  # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
-  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
-  alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
-  export EDITOR=lvim
-fi
 # Set up the prompt
 #----------------------------------------------------------------------------------------------------
 # completion settings
 #----------------------------------------------------------------------------------------------------
-autoload -Uz compinit && compinit -d $ZCOMPDUMPFILE
+autoload -Uz compinit && compinit -d ~/.cache/zsh/zcompdump
 setopt globdots
 
+setopt correct
 setopt complete_aliases
-setopt auto_menu 
+setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 zmodload zsh/complist
@@ -68,24 +42,28 @@ zstyle ':completion:*' list-colors ''
 zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
+zstyle ':completion:*' cache-path ~/.cache/zsh/zcompcache
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' accept-exact '*(N)'
 
 # cd options
 setopt autocd
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushd_minus
+setopt pushd_silent
 
 setopt interactive_comments
 setopt auto_continue
 # setopt extended_glob
+# setopt no_bare_glob_qual
 setopt listpacked
 setopt magic_equal_subst
 
 # rm option
 setopt rm_star_silent
 
-# setup cache directory if not exist
-[[ -d ~/.cache/zsh ]] || mkdir -p ~/.cache/zsh;
+setopt numeric_glob_sort
 
 #----------------------------------------------------------------------------------------------------
 # history settings
@@ -93,397 +71,32 @@ setopt rm_star_silent
 HISTORY_IGNORE="(ls|l|ll|cd|pwd|exit|vim|.|..|...)"
 HISTSIZE=10000
 SAVEHIST=10000
+HISTFILE=~/.cache/zsh/zsh_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_find_no_dups
 setopt hist_save_no_dups
 setopt hist_verify
 setopt hist_reduce_blanks
-setopt inc_append_history
 setopt share_history
+setopt append_history
 
+#----------------------------------------------------------------------------------------------------
+# prompt settings
+#----------------------------------------------------------------------------------------------------
+# autoload -Uz promptinit && promptinit
+# prompt redhat
+autoload -U colors && colors
+setopt prompt_subst
 
+#----------------------------------------------------------------------------------------------------
+# misc settings
+#----------------------------------------------------------------------------------------------------
 
-# Use emacs keybindings even if our EDITOR is set to vi
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-#HISTSIZE=1000
-#SAVEHIST=1000
-#HISTFILE=~/.zsh_history
-
-# Use modern completion system
-#autoload -Uz compinit
-#compinit
-#
-#zstyle ':completion:*' auto-description 'specify: %d'
-#zstyle ':completion:*' completer _expand _complete _correct _approximate
-#zstyle ':completion:*' format 'Completing %d'
-#zstyle ':completion:*' group-name ''
-#zstyle ':completion:*' menu select=2
-#eval "$(dircolors -b)"
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-#zstyle ':completion:*' menu select=long
-#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-#zstyle ':completion:*' use-compctl false
-#zstyle ':completion:*' verbose true
-#
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-#zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# easy copy configuration from .config to zsh and tmux
-# alias cpconf="cp /home/yang/.config/zsh/.zshrc /home/yang && cp /home/yang/.config/tmux/.tmux.conf /home/yang"
-# alias udconf="cp /home/yang/.zshrc  /home/yang/.config/zsh/ && cp /home/yang/.tmux.conf /home/yang/.config/tmux/"
-
-
-#######################
-# Here are environment variables
-#
-# export QT_QPA_PLATFORM="wayland;xcb"
-
-#######################
-
-alias kssh="kitty +kitten ssh"
-alias cpr='rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1'
-alias xo="xdg-open"
-alias lg="lazygit"
-alias ldocker="lazydocker"
-alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
-alias -g ..='..'
-alias -g ...='../..'
-alias -g ....='../../..'
-
-alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
-
-alias vim="lvim "
-alias mvim="nvim "
-alias note='cd ~/obsidian && vim '
-alias vimrc='cd ~/.config/nvim'
-alias desktop='cd ~/Desktop'
-alias texd='cd ~/Desktop/Code/Latex'
-alias lvimconf="cd ~/.local/share/lunarvim/lvim && vim"
-
-
-alias e='exit'
-alias vifm='vifm .'
-alias ra='ranger . '
-alias S='sudo paru -S'
-alias Ss='sudo paru -Ss'
-alias Syu='sudo paru -Syu'
-alias gnome-cc='gnome-control-center'
-alias T='tmux new-session -A -s remote' 
-alias Tt='tmux new-session -A -s local'  
-alias tk='task'
-alias tm='timew'
-alias tmux='tmux -u'
-# for nvim remote
-alias sudo="sudo "
-# alias matlab="matlab -softwareopengl"
-# for startup the script
-alias letsgo="zsh /home/yang/startup.sh"
-# for xmind to start properly
-alias xmind="xmind --no-sandbox"
-# for deactivating conda fast
-alias conda-d="conda deactivate"
-alias conda-a="conda activate"
-# for fast SSH_CONNECTION
-alias sshi="ssh iWorkstation"
-# for ml3d conda
-alias 3dml="conda activate 3dml"
-# for ankis from terminal
-alias ankis="ankisync && anki && ankisync"
-# for fast cd to desktop
-alias d="dolphin . 2>/dev/null &" 
-# alias c="cd && ls "
-# for pdfgrep
-alias pgrep="pdfgrep -r -n -i"
-# for opening zathura faster
-alias za="zathura"
-# for sioyek
-alias si="sioyek"
-# for fuzzy pdfgrep
-alias pf="fuzzy-pdf -m 0"
-# for the zoxide
-alias z="zoxide "
-# for fast go to downloads dir
-alias down="cd ~/Downloads && vf "
-# for the proxy
-alias pxy="export http_proxy=http://127.0.0.1:1089;export https_proxy=http://127.0.0.1:1089;export ALL_PROXY=socks5://127.0.0.1:1089"
-# for unproxy
-alias unpxy='unset all_proxy; unset http_proxy; unset https_proxy'
-
-
-alias start='sudo systemctl start'
-alias stop='sudo systemctl stop'
-alias restart='sudo systemctl restart'
-alias status='systemctl status'
-alias enable='sudo systemctl enable'
-alias disable='sudo systemctl disable'
-alias reload='sudo systemctl reload'
-
-alias vf="vfcd . " 
-
-alias Ss='pacman -Ss'
-alias Si='pacman -Si'
-alias Ssa='paru -Ssa'
-alias Qs='pacman -Qs'
-alias Qi='pacman -Qi'
-alias Ql='pacman -Ql'
-alias Qo='pacman -Qo'
-alias Qe='pacman -Qe'
-alias Qdt='pacman -Qdt'
-alias Qdtq='pacman -Qdtq'
-alias Fl='pacman -Fl'
-alias Fx='pacman -Fx'
-alias G='paru -G'
-
-alias S='sudo pacman -S'
-alias Sa='paru -Sa'
-alias Syu='sudo pacman -Syu'
-alias R='sudo pacman -R'
-alias Rns='sudo pacman -Rns'
-alias Fy='sudo pacman -Fy'
-
-alias syu='paru -Syu'
-
-# alias ls="exa "
-alias ls="ls --color --hyperlink=auto "
-alias ll="ls -la "
-
-alias zshconf="vim ~/.zshrc"
-alias conf="cd ~/.config && vim"
-# for now I'm learning cpp. I want to fast cd to the directory
-alias cppcourse="cd /home/yang/Desktop/CPP && vf "
-# for helping zotero get rid of enforced dark theme 
-alias zotero="GTK_THEME=Default zotero "
-
-# cd and ls
-c() { builtin cd "$@" && ls; }
-
-function man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
-}
-
-#############################################
-# Zoxide configuration 
-#############################################
-
-
-# =============================================================================
-#
-# Utility functions for zoxide.
-#
-
-# pwd based on the value of _ZO_RESOLVE_SYMLINKS.
-function __zoxide_pwd() {
-    \builtin pwd -L
-}
-
-# cd + custom logic based on the value of _ZO_ECHO.
-function __zoxide_cd() {
-    # shellcheck disable=SC2164
-    \builtin cd -- "$@" >/dev/null
-}
-
-# =============================================================================
-#
-# Hook configuration for zoxide.
-#
-
-# Hook to add new entries to the database.
-function __zoxide_hook() {
-    # shellcheck disable=SC2312
-    \command zoxide add -- "$(__zoxide_pwd)"
-}
-
-# Initialize hook.
-# shellcheck disable=SC2154
-if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
-    chpwd_functions+=(__zoxide_hook)
+if command -v moar &> /dev/null; then
+  export PAGER=moar
 fi
 
-# =============================================================================
-#
-# When using zoxide with --no-cmd, alias these internal functions as desired.
-#
-
-__zoxide_z_prefix='z#'
-
-# Jump to a directory using only keywords.
-function __zoxide_z() {
-    # shellcheck disable=SC2199
-    if [[ "$#" -eq 0 ]]; then
-        __zoxide_cd ~
-    elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
-        __zoxide_cd "$1"
-    elif [[ "$@[-1]" == "${__zoxide_z_prefix}"* ]]; then
-        # shellcheck disable=SC2124
-        \builtin local result="${@[-1]}"
-        __zoxide_cd "${result:${#__zoxide_z_prefix}}"
-    else
-        \builtin local result
-        # shellcheck disable=SC2312
-        result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" &&
-            __zoxide_cd "${result}"
-    fi
-}
-
-# Jump to a directory using interactive search.
-function __zoxide_zi() {
-    \builtin local result
-    result="$(\command zoxide query -i -- "$@")" && __zoxide_cd "${result}"
-}
-
-# =============================================================================
-#
-# Commands for zoxide. Disable these using --no-cmd.
-#
-
-\builtin unalias z &>/dev/null || \builtin true
-function z() {
-    __zoxide_z "$@"
-}
-
-\builtin unalias zi &>/dev/null || \builtin true
-function zi() {
-    __zoxide_zi "$@"
-}
-
-if [[ -o zle ]]; then
-    function __zoxide_z_complete() {
-        # Only show completions when the cursor is at the end of the line.
-        # shellcheck disable=SC2154
-        [[ "${#words[@]}" -eq "${CURRENT}" ]] || return
-
-        if [[ "${#words[@]}" -eq 2 ]]; then
-            _files -/
-        elif [[ "${words[-1]}" == '' ]]; then
-            \builtin local result
-            # shellcheck disable=SC2086,SC2312
-            if result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -i -- ${words[2,-1]})"; then
-                __zoxide_result="${result}"
-            else
-                __zoxide_result=''
-            fi
-            \builtin printf '\e[5n'
-        fi
-    }
-
-    function __zoxide_z_complete_helper() {
-        \builtin local result="${__zoxide_z_prefix}${__zoxide_result}"
-        # shellcheck disable=SC2296
-        [[ -n "${__zoxide_result}" ]] && LBUFFER="${LBUFFER}${(q-)result}"
-        \builtin zle reset-prompt
-    }
-
-    \builtin zle -N __zoxide_z_complete_helper
-    \builtin bindkey "\e[0n" __zoxide_z_complete_helper
-    if [[ "${+functions[compdef]}" -ne 0 ]]; then
-        \compdef -d z
-        \compdef -d zi
-        \compdef __zoxide_z_complete z
-    fi
-fi
-
-# =============================================================================
-#
-# To initialize zoxide, add this to your configuration (usually ~/.zshrc):
-#
-# eval "$(zoxide init zsh)"
-
-
-############################################
-# Zoxide end of configuration
-############################################
-
-
-# press S to quit vifm and move to pwd
-function vfcd()
-{
-    local dst="$(command vifm --choose-dir - "$@")"
-    if [ -z "$dst" ]; then
-        echo 'Directory picking cancelled/failed'
-        return 1
-    fi
-    cd "$dst"
-}
-
-# press Q to quit ranger and move to pwd
-function ranger() {
-    local IFS=$'\t\n'
-    local tempfile="$(mktemp -t tmp.XXXXXX)"
-    local ranger_cmd=(
-    command ranger --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
-    )
-
-    ${ranger_cmd[@]} "$@"
-    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$PWD" ]]; then
-        cd -- "$(cat "$tempfile")" || return
-    fi
-    command rm -f -- "$tempfile" 2>/dev/null
-}
-
-function sudo() {
-    case $1 in 
-        vi|vim|nvim) command sudo -E "$@";;
-        *) command sudo "$@";;
-    esac
-}
-
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-
-# export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
-export PATH="${PATH}:/usr/local/cuda-11.5/bin"
-export LD_LIBRARY="${LD_LIBRARY}:/usr/local/cuda-11.5/lib64"
-export PATH=~/.local/bin:$PATH
-export EDITOR=nvim
-
-# setting the ledger file to the obsidian 
-export LEDGER_FILE=/home/yang/introspector/My\ Second\ Brain/transactions.ledger
-
-export HISTFILE=~/.cache/zsh/zsh_history
-export ZCOMPDUMPFILE=~/.cache/zsh/zcompdump
-
-
-if (which fzf > /dev/null); then 
-    if [[ -f /usr/bin/fzf ]]; then
-        [[ $- == *i* ]] && source /usr/share/fzf/completion.zsh 2> /dev/null
-        source /usr/share/fzf/key-bindings.zsh
-    else
-        [[ $- == *i* ]] && source ~/.local/share/fzf/shell/completion.zsh 2> /dev/null
-        source ~/.local/share/fzf/shell/key-bindings.zsh
-    fi
-else
-    git clone --depth=1 https://github.com/junegunn/fzf.git ~/.local/share/fzf
-    ~/.local/share/fzf/install --no-bash --no-fish --no-key-bindings --no-completion --no-update-rc --bin
-    ln -s ~/.local/share/fzf/bin/fzf ~/.local/bin/fzf
-    echo "fzf will be available for next shell instance"
-fi
-eval bindkey '^R' fzf-history-widget
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/yang/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/yang/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/yang/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/yang/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda ...ENVS)
 
 # prompt
@@ -579,72 +192,191 @@ else
     unset -f check_plugin
 fi
 
-#----------------------------------------------------------------------------------------------------
-# keybinding settings
-#----------------------------------------------------------------------------------------------------
-bindkey -v
-bindkey '^ ' autosuggest-accept
-# Use vim keys for select when autocomplete
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-# Use vim keys for history search
-zle -N history-substring-search-up
-zle -N history-substring-search-down
-# bindkey "$terminfo[kcuu1]" history-substring-search-up
-# bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-# create a zkbd compatible hash;
-# to add other keys to this hash, see: man 5 terminfo
-typeset -g -A key
-
-key[Home]="${terminfo[khome]}"
-key[End]="${terminfo[kend]}"
-key[Insert]="${terminfo[kich1]}"
-key[Backspace]="${terminfo[kbs]}"
-key[Delete]="${terminfo[kdch1]}"
-key[Up]="${terminfo[kcuu1]}"
-key[Down]="${terminfo[kcud1]}"
-key[Left]="${terminfo[kcub1]}"
-key[Right]="${terminfo[kcuf1]}"
-key[PageUp]="${terminfo[kpp]}"
-key[PageDown]="${terminfo[knp]}"
-key[Shift-Tab]="${terminfo[kcbt]}"
-
-# setup key accordingly
-[[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
-[[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
-[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
-[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}" backward-delete-char
-[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"    delete-char
-[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"        up-line-or-beginning-search
-[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"      down-line-or-beginning-search
-[[ -n "${key[Left]}"      ]] && bindkey -- "${key[Left]}"      backward-char
-[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"     forward-char
-[[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"    beginning-of-buffer-or-history
-[[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
-[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
-
-key[SEnter]=OM # manually setup since terminfo is not avaliable
-[[ -n "${key[SEnter]}"   ]] && bindkey "${key[SEnter]}"          accept-and-hold
-[[ -n "${key[SEnter]}"   ]] && bindkey -M vicmd "${key[SEnter]}" accept-and-hold
-
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
-if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-    autoload -Uz add-zle-hook-widget
-    function zle_application_mode_start { echoti smkx }
-    function zle_application_mode_stop { echoti rmkx }
-    add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-    add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [[ $(uname) == "Darwin" ]]; then
+  source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+  unalias ls
+fi
+
+if command -v zoxide &> /dev/null; then
+  #############################################
+  # Zoxide configuration 
+  #############################################
+
+
+  # =============================================================================
+  #
+  # Utility functions for zoxide.
+  #
+
+  # pwd based on the value of _ZO_RESOLVE_SYMLINKS.
+  function __zoxide_pwd() {
+      \builtin pwd -L
+  }
+
+  # cd + custom logic based on the value of _ZO_ECHO.
+  function __zoxide_cd() {
+      # shellcheck disable=SC2164
+      \builtin cd -- "$@" >/dev/null
+  }
+
+  # =============================================================================
+  #
+  # Hook configuration for zoxide.
+  #
+
+  # Hook to add new entries to the database.
+  function __zoxide_hook() {
+      # shellcheck disable=SC2312
+      \command zoxide add -- "$(__zoxide_pwd)"
+  }
+
+  # Initialize hook.
+  # shellcheck disable=SC2154
+  if [[ ${precmd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]] && [[ ${chpwd_functions[(Ie)__zoxide_hook]:-} -eq 0 ]]; then
+      chpwd_functions+=(__zoxide_hook)
+  fi
+
+  # =============================================================================
+  #
+  # When using zoxide with --no-cmd, alias these internal functions as desired.
+  #
+
+  __zoxide_z_prefix='z#'
+
+  # Jump to a directory using only keywords.
+  function __zoxide_z() {
+      # shellcheck disable=SC2199
+      if [[ "$#" -eq 0 ]]; then
+          __zoxide_cd ~
+      elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
+          __zoxide_cd "$1"
+      elif [[ "$@[-1]" == "${__zoxide_z_prefix}"* ]]; then
+          # shellcheck disable=SC2124
+          \builtin local result="${@[-1]}"
+          __zoxide_cd "${result:${#__zoxide_z_prefix}}"
+      else
+          \builtin local result
+          # shellcheck disable=SC2312
+          result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" &&
+              __zoxide_cd "${result}"
+      fi
+  }
+
+  # Jump to a directory using interactive search.
+  function __zoxide_zi() {
+      \builtin local result
+      result="$(\command zoxide query -i -- "$@")" && __zoxide_cd "${result}"
+  }
+
+  # =============================================================================
+  #
+  # Commands for zoxide. Disable these using --no-cmd.
+  #
+
+  \builtin unalias z &>/dev/null || \builtin true
+  function z() {
+      __zoxide_z "$@"
+  }
+
+  \builtin unalias zi &>/dev/null || \builtin true
+  function zi() {
+      __zoxide_zi "$@"
+  }
+
+  if [[ -o zle ]]; then
+      function __zoxide_z_complete() {
+          # Only show completions when the cursor is at the end of the line.
+          # shellcheck disable=SC2154
+          [[ "${#words[@]}" -eq "${CURRENT}" ]] || return
+
+          if [[ "${#words[@]}" -eq 2 ]]; then
+              _files -/
+          elif [[ "${words[-1]}" == '' ]]; then
+              \builtin local result
+              # shellcheck disable=SC2086,SC2312
+              if result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -i -- ${words[2,-1]})"; then
+                  __zoxide_result="${result}"
+              else
+                  __zoxide_result=''
+              fi
+              \builtin printf '\e[5n'
+          fi
+      }
+
+      function __zoxide_z_complete_helper() {
+          \builtin local result="${__zoxide_z_prefix}${__zoxide_result}"
+          # shellcheck disable=SC2296
+          [[ -n "${__zoxide_result}" ]] && LBUFFER="${LBUFFER}${(q-)result}"
+          \builtin zle reset-prompt
+      }
+
+      \builtin zle -N __zoxide_z_complete_helper
+      \builtin bindkey "\e[0n" __zoxide_z_complete_helper
+      if [[ "${+functions[compdef]}" -ne 0 ]]; then
+          \compdef -d z
+          \compdef -d zi
+          \compdef __zoxide_z_complete z
+      fi
+  fi
+
+  # =============================================================================
+  #
+  # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
+  #
+  # eval "$(zoxide init zsh)"
+
+
+  ############################################
+  # Zoxide end of configuration
+  ############################################
+fi
+
+function auto_compile() {
+    if [[ $1 -nt $1.zwc ]] || [[ ! -e $1.zwc ]]; then
+        zcompile -R $1
+    fi
+}
+
+function auto_source() {
+    auto_compile $1
+    . $1
+}
+
+auto_source $ZDOTDIR/plugins.zsh
+auto_source $ZDOTDIR/keys.zsh
+auto_source $ZDOTDIR/alias.zsh
+auto_source $ZDOTDIR/functions.zsh
+auto_source $ZDOTDIR/device.zsh
+
+unset -f auto_source
+
+#----------------------------------------------------------------------------------------------------
+# auto compile zshrc
+auto_compile $ZDOTDIR/.zshrc
+unset -f auto_compile
+
+alias mba="micromamba"
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/usr/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/yang/.mamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/yang/.mamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/yang/.mamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/yang/.mamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+

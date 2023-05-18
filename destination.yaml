@@ -34,5 +34,6 @@ vs_setting.json: ~/.config/vs_setting.json
 wezterm: ~/.config/wezterm
 zathura: ~/.config/zathura
 zsh: ~/.config/zsh
-.zshrc: ~/.zshrc
+# .zshrc: ~/.zshrc
 ankisync: ~/.local/bin/ankisync
+.zshenv: ~/.zshenv

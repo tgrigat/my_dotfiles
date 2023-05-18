@@ -17,138 +17,20 @@
 # Laptop configurations
 ##############################################################################
 
-function gui() {
-  if [[ $1 = "x" ]]; then
-    # todo fix this
-    export XDG_SESSION_TYPE=x11
-    export XDG_SESSION_TYPE=xcb
-    export DISPLAY=:1
-    startplasma-x11
-  else
-    export XDG_SESSION_TYPE=wayland
-    export QT_QPA_PLATFORM=wayland
-    exec startplasma-wayland
-  fi
-}
-
-function rbt2win() {
-    if [[ -f /usr/bin/grub-reboot ]]; then
-        sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg|cut -d"'" -f2)" 
-        sudo reboot
-    else
-        systemctl reboot --boot-loader-entry=auto-windows
-    fi
-
-}
-
-function run_background {
-    $* >/dev/null 2>&1 &
-}
-
-function run_autostart_apps() {
-  autostart_dir="${HOME}/.config/autostart"
-  
-  if [ -d "${autostart_dir}" ]; then
-    for desktop_file in "${autostart_dir}"/*.desktop; do
-      if [ -f "${desktop_file}" ]; then
-        xdg-open "${desktop_file}" >/dev/null 2>&1 &
-      fi
-    done
-  else
-    echo "Autostart directory not found: ${autostart_dir}"
-  fi
-}
-
-function notify() {
-  if [[ -z "$1" ]]; then
-    echo "done" > ~/.notify
-  else
-    echo "$1" > ~/.notify
-  fi
-}
-
-# function enlarge-pdf() {
-# pdf-crop-margins -o $2 -p 100 -a4 0 0 -500 0 $1
-
-function enlarge-pdf() {
-  # Set default values
-  local width=500
-  local input
-  local output
-
-  # Parse arguments
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      -o | --output )
-        output="$2"
-        shift 2 ;;
-      -w | --width )
-        width="$2"
-        shift 2 ;;
-      * )
-        if [[ -z "$input" ]]; then
-          input="$1"
-        else
-          echo "Error: Unknown argument $1"
-          return 1
-        fi
-        shift ;;
-    esac
-  done
-
-  # Check input file is specified
-  if [[ -z "$input" ]]; then
-    echo "Usage: enlarge-pdf -i INPUT_FILE [-o OUTPUT_FILE] [-w WIDTH]"
-    return 1
-  fi
-
-  # Set output filename
-  if [[ -z "$output" ]]; then
-    output="${input%.*}_enlarged.pdf"
-  fi
-
-  # Check if output filename is valid
-  if [[ -z "$output" ]]; then
-    echo "Error: output filename is empty"
-    return 1
-  fi
-
-  # Modify PDF file
-  if ! pdf-crop-margins -o "$output" -p 100 -a4 0 0 -"$width" 0 "$input"; then
-    echo "Error: Failed to modify PDF file"
-    return 1
-  fi
-}
-
-
-if [[ $(hostname) == "introspector" ]]; then
-    export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
-    alias docker-com=$HOME/docker-com
-fi
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [ $(hostname) = "node" ]; then
-  export DET_MASTER=https://determined.corp.deepmirror.com:443 
-  # alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888;export ALL_PROXY=socks5://localhost:1080"
-  alias ezpxy="export http_proxy=http://localhost:8888;export https_proxy=http://localhost:8888"
-  alias apdir="cd ~/Desktop/Advanced-programming/tutorials"
-  export EDITOR=lvim
-fi
-alias wk="cd ~/Documents/git/autsys-projects-f4/"
-alias wk2="cd ~/Documents/git/cliai/"
-alias wk1="cd ~/Documents/git/DSOPP/"
 # Set up the prompt
 #----------------------------------------------------------------------------------------------------
 # completion settings
 #----------------------------------------------------------------------------------------------------
-autoload -Uz compinit && compinit -d $ZCOMPDUMPFILE
+autoload -Uz compinit && compinit -d ~/.cache/zsh/zcompdump
 setopt globdots
 
+setopt correct
 setopt complete_aliases
-setopt auto_menu 
+setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 zmodload zsh/complist
@@ -160,24 +42,28 @@ zstyle ':completion:*' list-colors ''
 zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
+zstyle ':completion:*' cache-path ~/.cache/zsh/zcompcache
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' accept-exact '*(N)'
 
 # cd options
 setopt autocd
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushd_minus
+setopt pushd_silent
 
 setopt interactive_comments
 setopt auto_continue
 # setopt extended_glob
+# setopt no_bare_glob_qual
 setopt listpacked
 setopt magic_equal_subst
 
 # rm option
 setopt rm_star_silent
 
-# setup cache directory if not exist
-[[ -d ~/.cache/zsh ]] || mkdir -p ~/.cache/zsh;
+setopt numeric_glob_sort
 
 #----------------------------------------------------------------------------------------------------
 # history settings
@@ -185,415 +71,31 @@ setopt rm_star_silent
 HISTORY_IGNORE="(ls|l|ll|cd|pwd|exit|vim|.|..|...)"
 HISTSIZE=10000
 SAVEHIST=10000
+HISTFILE=~/.cache/zsh/zsh_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_find_no_dups
 setopt hist_save_no_dups
 setopt hist_verify
 setopt hist_reduce_blanks
-setopt inc_append_history
 setopt share_history
+setopt append_history
 
+#----------------------------------------------------------------------------------------------------
+# prompt settings
+#----------------------------------------------------------------------------------------------------
+# autoload -Uz promptinit && promptinit
+# prompt redhat
+autoload -U colors && colors
+setopt prompt_subst
 
-#######################
-# Here are environment variables
-#
-# export QT_QPA_PLATFORM="wayland;xcb"
-#######################
-
-alias chat="cliai chat"
-
-alias pls="please "
-alias kssh="kitty +kitten ssh"
-alias cpr='rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1'
-alias xo="xdg-open"
-alias lg="lazygit"
-alias ldocker="lazydocker"
-alias xcb-system="QT_QPA_PLATFORM=xcb systemsettings"
-alias -g ..='..'
-alias -g ...='../..'
-alias -g ....='../../..'
-
-if [[ "${SHELL##*/}" = "zsh" ]]; then
-  alias refresh-fzf="rm ~/.local/bin/fzf && exec zsh"
-fi
-
-if (which distrobox > /dev/null); then
-  alias dsb="distrobox "
-fi
-
-if [ -d "/etc/ros/noetic" ] && [ $SHELL = "/bin/zsh" ]; then
-    source /etc/ros/noetic/setup.zsh
-fi
-
-alias clean-nvim="rm -rf ~/.local/share/nvim/site/pack/packer/start/"
-
-if (which lvim > /dev/null); then
-  alias vim="lvim "
-fi
-if (which vdirsyncer > /dev/null); then
-  alias vsync="vdirsyncer sync"
-fi
-alias mvim="nvim "
-alias note='cd ~/obsidian && vim '
-alias vimrc='cd ~/.config/nvim'
-alias desktop='cd ~/Desktop'
-alias texd='cd ~/Desktop/Code/Latex'
-alias lvimconf="cd ~/.local/share/lunarvim/lvim && vim"
-
-# alias e='exit'
-alias vifm='vifm .'
-alias ra='ranger . '
-alias gnome-cc='gnome-control-center'
-alias T='tmux new-session -A -s remote' 
-alias Tt='tmux new-session -A -s local'  
-alias tk='task'
-alias tm='timew'
-alias tmux='tmux -u'
-alias sudo="sudo "
-# alias matlab="matlab -softwareopengl"
-# for startup the script
-alias letsgo="zsh /home/yang/startup.sh"
-# for xmind to start properly
-alias xmind="xmind --no-sandbox"
-# for deactivating conda fast
-# alias conda-d="conda deactivate"
-# alias conda-a="conda activate"
-# for fast SSH_CONNECTION
-alias sshi="ssh iWorkstation"
-# for ml3d conda
-# alias 3dml="conda activate 3dml"
-# for ankis from terminal
-alias ankis="ankisync && anki && ankisync"
-# for fast cd to desktop
-alias d="dolphin . 2>/dev/null &" 
-# alias c="cd && ls "
-# for pdfgrep
-alias pgrep="pdfgrep -r -n -i"
-
-ln-ccjson() {
-ln -s build/compile_commands.json compile_commands.json
-echo 'Link performed, please ensure that you run this command at the project root'
-}
-
-# refresh-build() {
-#   echo "Warning: this alias should run at build directory "
-#   cd ..
-#   rm -rf build
-#   mkdir build
-#   cd build
-# }
-
-refresh-build() {
-  if [ "$(basename "$(pwd)")" != "build" ]; then
-    echo "Warning: this alias should run at the build directory"
-    echo "abort, please cd to build directory"
-    return
-  fi
-
-  cd ..
-  rm -rf build
-  mkdir build
-  cd build
-}
-
-
-# for opening zathura faster
-# alias za="zathura"
-za() {
-  zathura $@ &
-}
-# for sioyek
-# alias si="sioyek"
-si() {
-  sioyek $@ &
-}
-# for fuzzy pdfgrep
-alias pf="fuzzy-pdf -m 0"
-# for the zoxide
-alias z="zoxide "
-# for fast go to downloads dir
-alias down="cd ~/Downloads && vf "
-# for the proxy
-alias pxy="export http_proxy=http://127.0.0.1:1089;export https_proxy=http://127.0.0.1:1089;export ALL_PROXY=socks5://127.0.0.1:1089"
-# for unproxy
-alias unpxy='unset all_proxy; unset http_proxy; unset https_proxy'
-
-
-alias start='sudo systemctl start'
-alias stop='sudo systemctl stop'
-alias restart='sudo systemctl restart'
-alias status='systemctl status'
-alias enable='sudo systemctl enable'
-alias disable='sudo systemctl disable'
-alias reload='sudo systemctl reload'
-
-alias vf="vfcd . " 
-
-# alias ls="exa "
-alias ls="ls --color --hyperlink=auto "
-alias ll="ls -la "
-
-alias zshconf="vim ~/.zshrc"
-alias conf="cd ~/.config && vim"
-alias dot="cd ~/dotfiles && vim"
-# for now I'm learning cpp. I want to fast cd to the directory
-alias cppcourse="cd /home/yang/Desktop/CPP && vf "
-# for helping zotero get rid of enforced dark theme 
-alias zotero="GTK_THEME=Default zotero "
+#----------------------------------------------------------------------------------------------------
+# misc settings
+#----------------------------------------------------------------------------------------------------
 
 if command -v moar &> /dev/null; then
   export PAGER=moar
 fi
-if command -v pacman &> /dev/null; then
-  alias S='sudo pacman -S'
-  alias Sa='paru -Sa'
-  alias Syu='sudo pacman -Syu'
-  alias R='sudo pacman -R'
-  alias Rns='sudo pacman -Rns'
-  alias Fy='sudo pacman -Fy'
-  alias syu='paru -Syu'
-  alias Ss='pacman -Ss'
-  alias Si='pacman -Si'
-  alias Ssa='paru -Ssa'
-  alias Qs='pacman -Qs'
-  alias Qi='pacman -Qi'
-  alias Ql='pacman -Ql'
-  alias Qo='pacman -Qo'
-  alias Qe='pacman -Qe'
-  alias Qdt='pacman -Qdt'
-  alias Qdtq='pacman -Qdtq'
-  alias Qql='pacman -Qql'
-  alias Fl='pacman -Fl'
-  alias Fx='pacman -Fx'
-  alias G='paru -G'
-fi
-
-# cd and ls
-c() { builtin cd "$@" && ls; }
-
-function man() {
-    LESS_TERMCAP_md=$'\e[01;31m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;33m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;32m' \
-    command man "$@"
-}
-
-function mal {
-	
-	# Check if the user has provided a help option or no arguments
-	if [[ "$1" = "-h" ]] || [[ "$1" = "--help" ]] || [[ "$1" = "-help" ]] || [[ $# -eq 0 ]]; then
-		# Display usage information
-		echo "Usage: mal [OPTION]... [ALIAS_NAME] [ALIAS_COMMAND]..."
-		echo ""
-		echo "Create, delete, change, or execute aliases interactively."
-		echo ""
-		echo "Options:"
-		echo "  -h, --help       display this help and exit"
-		echo "  -l               list all aliases in \$ALIASES_FILE"
-		echo "  -e               execute an alias interactively"
-		echo "  -d               delete an alias interactively"
-		echo "  -dn NAME         delete an alias by name"
-		echo "  -r               rename an alias interactively"
-		echo "  -rn OLD NEW      rename an existing alias"
-		echo "  -c               change the command associated with an existing alias interactively"
-		echo "  -cc NAME COMMAND change the command associated with an existing alias by name"
-		return 0
-	fi
-
-# Execute an alias interactively if the -e option is used
-	if [[ $1 = "-e" ]]; then
-		# Use fzf to allow the user to select an alias from the aliases file
-		local alias_to_execute=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
-		# Check if the user cancelled the selection
-		if [[ -z $alias_to_execute ]]; then
-			return 1
-		fi
-		echo Executing alias: $alias_to_execute
-		# Execute the selected alias
-		eval ${alias_to_execute%%=*}
-		return 0
-
-	# List all aliases if the -l option is used
-	elif [[ $1 = -l ]]; then
-		# List all aliases in $ALIASES_FILE
-		cut -d' ' -f2- $ALIASES_FILE | cat
-
-	# Delete an alias interactively if the -d option is used
-	elif [[ $1 = -d ]]; then
-		# Use fzf to allow the user to select an alias from the aliases file
-		local alias_to_delete=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
-		# Check if the user cancelled the selection
-		if [[ -z $alias_to_delete ]]; then
-			return 1
-		fi
-		echo Deleted alias: $alias_to_delete
-		# Delete the selected alias from the aliases file
-		sed -i "/^alias ${alias_to_delete%%=*}=/d" $ALIASES_FILE
-		unalias ${alias_to_delete%%=*}
-
-	# Delete an alias by name if the -dn option is used
-	elif [[ $1 = -dn ]]; then
-		local alias_to_delete=$2
-		local line_with_alias=$(grep "$2=" $ALIASES_FILE)
-		# Check if the alias exists in the aliases file
-		if [[ -z "$line_with_alias" ]]; then
-			echo No alias with the name $2 found.
-			return 2
-		fi
-		echo Deleted alias: $alias_to_delete
-		# Delete the selected alias from the aliases file
-		sed -i "/^alias ${alias_to_delete%%=*}=/d" $ALIASES_FILE
-		unalias ${alias_to_delete%%=*}
-
-  # rename an alias interactively
-  elif [[ $1 = "-r" ]]; then
-    # Rename an existing alias by selecting it from a list
-    local alias_to_rename=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
-    # Check if the user cancelled the selection
-    if [[ -z $alias_to_rename ]]; then
-      return 1
-    fi
-
-    echo "Input new name:"
-    read new_name
-    echo "Renaming alias from $alias_to_rename to $new_name"
-    sed -i "s/^alias ${alias_to_rename%%=*}=/alias ${new_name}=/g" $ALIASES_FILE
-    unalias ${alias_to_rename%%=*}
-
-  elif [[ $1 = "-rn" ]]; then
-    # Rename an existing alias using specified old and new names
-    if [[ -z "$2" || -z "$3" ]]; then
-      echo "Usage: mal -r OLD_ALIAS_NAME NEW_ALIAS_NAME"
-      return 1
-    fi
-
-    local old_alias_name=$2
-    local new_alias_name=$3
-    local line_with_alias=$(grep "^alias ${old_alias_name}=" $ALIASES_FILE)
-
-    if [[ -z "$line_with_alias" ]]; then
-      echo "No alias with the name $old_alias_name found."
-      return 1
-    fi
-
-    echo "Renaming alias from $old_alias_name to $new_alias_name"
-    sed -i "s/^alias ${old_alias_name}=/alias ${new_alias_name}=/g" $ALIASES_FILE
-    unalias ${old_alias_name}
-
-  elif [[ $1 = "-c" ]]; then
-    # Change the command associated with an existing alias by selecting it from a list
-    local alias_to_change=$(cut -d' ' -f2- $ALIASES_FILE | fzf)
-    # Check if the user cancelled the selection
-    if [[ -z $alias_to_change ]]; then
-      return 1
-    fi
-
-    echo "Input new command:"
-    read new_command
-    echo "Changing command for alias ${alias_to_change%%=*} to \"$new_command\""
-    sed -i "/^alias ${alias_to_change%%=*}=/{s/=.*/=\"$new_command\"/}" $ALIASES_FILE
-
-  elif [[ $1 = "-cc" ]]; then
-    # Change the command associated with an existing alias using specified name and command
-    local alias_to_change=$2
-    local new_command="${@:3}"
-    local line_with_alias=$(grep "$alias_to_change=" $ALIASES_FILE)
-
-    if [[ -z "$line_with_alias" ]]; then
-      echo "No alias with the name $alias_to_change found."
-      return 1
-    fi
-
-    echo "Changing command for alias $alias_to_change to \"$new_command\""
-    sed -i "/^alias ${alias_to_change}=/{s/=.*/=\"$new_command\"/}" $ALIASES_FILE
-  else
-      # Add a new alias
-      local line_with_alias=$(grep "$1=" $ALIASES_FILE)
-      if [[ ! -z "$line_with_alias" ]]; then
-          echo Alias found: $line_with_alias
-          echo change alias by using the -c flag.
-          return 1
-      fi
-
-      local lh="alias $1"
-      local rh=\"${@:2}\"
-      local alias_str="$lh=$rh"
-
-      echo $alias_str >>$ALIASES_FILE
-      echo added \"$alias_str\" to .aliases
-  fi
-
-  # Reload aliases
-  source $ALIASES_FILE
-}
-
-
-
-# press S to quit vifm and move to pwd
-function vfcd()
-{
-    local dst="$(command vifm --choose-dir - "$@")"
-    if [ -z "$dst" ]; then
-        echo 'Directory picking cancelled/failed'
-        return 1
-    fi
-    cd "$dst"
-}
-
-# press Q to quit ranger and move to pwd
-function ranger() {
-    local IFS=$'\t\n'
-    local tempfile="$(mktemp -t tmp.XXXXXX)"
-    local ranger_cmd=(
-    command ranger --cmd="map Q chain shell echo %d > "$tempfile"; quitall"
-    )
-
-    ${ranger_cmd[@]} "$@"
-    if [[ -f "$tempfile" ]] && [[ "$(cat -- "$tempfile")" != "$PWD" ]]; then
-        cd -- "$(cat "$tempfile")" || return
-    fi
-    command rm -f -- "$tempfile" 2>/dev/null
-}
-
-function sudo() {
-    case $1 in 
-        vi|vim|nvim|lvim) command sudo -E "$@";;
-        *) command sudo "$@";;
-    esac
-}
-
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-
-export PATH="${PATH}:/usr/local/cuda-11.5/bin"
-export LD_LIBRARY="${LD_LIBRARY}:/usr/local/cuda-11.5/lib64"
-export PATH=~/.local/bin:$PATH
-
-# setting the ledger file to the obsidian 
-export LEDGER_FILE=/home/yang/introspector/My\ Second\ Brain/transactions.ledger
-
-export HISTFILE=~/.cache/zsh/zsh_history
-export ZCOMPDUMPFILE=~/.cache/zsh/zcompdump
-
-
-if (which fzf > /dev/null); then 
-    if [[ -f /usr/bin/fzf ]]; then
-        [[ $- == *i* ]] && source /usr/share/fzf/completion.zsh 2> /dev/null
-        source /usr/share/fzf/key-bindings.zsh
-    else
-        [[ $- == *i* ]] && source ~/.local/share/fzf/shell/completion.zsh 2> /dev/null
-        source ~/.local/share/fzf/shell/key-bindings.zsh
-    fi
-else
-    git clone --depth=1 https://github.com/junegunn/fzf.git ~/.local/share/fzf
-    ~/.local/share/fzf/install --no-bash --no-fish --no-key-bindings --no-completion --no-update-rc --bin
-    ln -s ~/.local/share/fzf/bin/fzf ~/.local/bin/fzf
-    echo "fzf will be available for next shell instance"
-fi
-eval bindkey '^R' fzf-history-widget
 
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda ...ENVS)
 
@@ -688,78 +190,6 @@ else
     check_plugin zsh-history-substring-search
 
     unset -f check_plugin
-fi
-
-#----------------------------------------------------------------------------------------------------
-# keybinding settings
-#----------------------------------------------------------------------------------------------------
-bindkey -v
-bindkey '^ ' autosuggest-accept
-# Use vim keys for select when autocomplete
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd 'v' edit-command-line
-
-# Use vim keys for history search
-zle -N history-substring-search-up
-zle -N history-substring-search-down
-# bindkey "$terminfo[kcuu1]" history-substring-search-up
-# bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
-autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
-# create a zkbd compatible hash;
-# to add other keys to this hash, see: man 5 terminfo
-typeset -g -A key
-
-key[Home]="${terminfo[khome]}"
-key[End]="${terminfo[kend]}"
-key[Insert]="${terminfo[kich1]}"
-key[Backspace]="${terminfo[kbs]}"
-key[Delete]="${terminfo[kdch1]}"
-key[Up]="${terminfo[kcuu1]}"
-key[Down]="${terminfo[kcud1]}"
-key[Left]="${terminfo[kcub1]}"
-key[Right]="${terminfo[kcuf1]}"
-key[PageUp]="${terminfo[kpp]}"
-key[PageDown]="${terminfo[knp]}"
-key[Shift-Tab]="${terminfo[kcbt]}"
-
-# setup key accordingly
-[[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
-[[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
-[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
-[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}" backward-delete-char
-[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"    delete-char
-[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"        up-line-or-beginning-search
-[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"      down-line-or-beginning-search
-[[ -n "${key[Left]}"      ]] && bindkey -- "${key[Left]}"      backward-char
-[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"     forward-char
-[[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"    beginning-of-buffer-or-history
-[[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
-[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
-
-key[SEnter]=OM # manually setup since terminfo is not avaliable
-[[ -n "${key[SEnter]}"   ]] && bindkey "${key[SEnter]}"          accept-and-hold
-[[ -n "${key[SEnter]}"   ]] && bindkey -M vicmd "${key[SEnter]}" accept-and-hold
-
-# Finally, make sure the terminal is in application mode, when zle is
-# active. Only then are the values from $terminfo valid.
-if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-    autoload -Uz add-zle-hook-widget
-    function zle_application_mode_start { echoti smkx }
-    function zle_application_mode_stop { echoti rmkx }
-    add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-    add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -903,6 +333,30 @@ if command -v zoxide &> /dev/null; then
   # Zoxide end of configuration
   ############################################
 fi
+
+function auto_compile() {
+    if [[ $1 -nt $1.zwc ]] || [[ ! -e $1.zwc ]]; then
+        zcompile -R $1
+    fi
+}
+
+function auto_source() {
+    auto_compile $1
+    . $1
+}
+
+auto_source $ZDOTDIR/plugins.zsh
+auto_source $ZDOTDIR/keys.zsh
+auto_source $ZDOTDIR/alias.zsh
+auto_source $ZDOTDIR/functions.zsh
+auto_source $ZDOTDIR/device.zsh
+
+unset -f auto_source
+
+#----------------------------------------------------------------------------------------------------
+# auto compile zshrc
+auto_compile $ZDOTDIR/.zshrc
+unset -f auto_compile
 
 alias mba="micromamba"
 # >>> mamba initialize >>>
