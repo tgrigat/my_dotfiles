@@ -1,8 +1,11 @@
+# pylint: disable=invalid-name, line-too-long, missing-docstring, redefined-outer-name
+"""Propogate my dotfiles in the repo, they are symlinked to destinations defined in destinations.yaml"""
+
 import os
-import yaml
 from typing import Dict, List, Any
 from os.path import join, isdir, isfile, islink
 import shutil
+import yaml
 
 wkdir = os.getcwd()
 user = os.environ.get("USER")
@@ -27,7 +30,7 @@ to_ignore = [
 
 # Read the destinations from the destination.yaml file
 def read_destinations(file: str) -> Dict[str, str]:
-    with open(file, "r") as f:
+    with open(file, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -42,7 +45,7 @@ def remove(path):
     elif os.path.isdir(path):
         shutil.rmtree(path)
     else:
-        raise ValueError("file {} is not a file or dir.".format(path))
+        raise ValueError(f"file {path} is not a file or dir.")
 
 
 def create_link(
@@ -56,14 +59,14 @@ def create_link(
         ):
             if islink(join(target_dir_expanded, cfg)):
                 continue
+
+            if safe_mode:
+                raise NotImplementedError(
+                    f"{cfg} already exists at {target_dir_expanded}, please remove it manually"
+                )
             else:
-                if safe_mode:
-                    raise NotImplementedError(
-                        f"{cfg} already exists at {target_dir_expanded}, please remove it manually"
-                    )
-                else:
-                    remove(join(target_dir_expanded, cfg))
-                    print(f"Warning: removed {cfg} in {target_dir_expanded}")
+                remove(join(target_dir_expanded, cfg))
+                print(f"Warning: removed {cfg} in {target_dir_expanded}")
 
         try:
             os.symlink(join(config_dir, cfg), target_dir_expanded)
@@ -89,4 +92,4 @@ for config in all_configs:
 
 # scan_for_unknown(dot_config, all_configs)
 
-print(f"finished the linking process")
+print("finished the linking process")
