@@ -4,6 +4,7 @@
 lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.colorscheme = "everforest"
+lvim.colorscheme = "onedark"
 
 reload("user.lsp")
 reload("user.keymaps")

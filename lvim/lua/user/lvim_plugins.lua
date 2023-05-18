@@ -3,6 +3,9 @@
 -------------------------------------------------------------------------
 lvim.plugins = {
   {
+    "navarasu/onedark.nvim"
+  },
+  {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
     config = function()
