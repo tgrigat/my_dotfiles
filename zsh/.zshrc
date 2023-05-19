@@ -242,3 +242,6 @@ unset __mamba_setup
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
+if [[ -f ~/.local.zsh ]]; then
+      source ~/.local.zsh
+fi
