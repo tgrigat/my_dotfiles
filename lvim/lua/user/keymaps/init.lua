@@ -1,7 +1,7 @@
 -- require("user.keymaps.lsp_saga")
 
 lvim.builtin.which_key.setup.plugins.marks = true
-lvim.builtin.which_key.setup.plugins.regiesters = true
+lvim.builtin.which_key.setup.plugins.registers = true
 lvim.builtin.which_key.setup.plugins.presets.operators = true
 lvim.builtin.which_key.setup.plugins.presets.motions = true
 lvim.builtin.which_key.setup.plugins.presets.text_objects = true
