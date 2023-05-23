@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "everforest"
+lvim.colorscheme = "github_dark"
 -- lvim.colorscheme = "onedark"
 
 reload("user.lsp")
