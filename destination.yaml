@@ -18,7 +18,7 @@ krunnerrc: ~/.config/krunnerrc
 lazygit: ~/.config/lazygit
 lvim: ~/.config/lvim
 nvim: ~/.config/nvim
-nvim.b: ~/.config/nvim.b
+# nvim.b: ~/.config/nvim.b
 paru: ~/.config/paru
 PlasmaUserFeedback: ~/.config/PlasmaUserFeedback
 plasma-workspace: ~/.config/plasma-workspace
@@ -35,5 +35,5 @@ wezterm: ~/.config/wezterm
 zathura: ~/.config/zathura
 zsh: ~/.config/zsh
 # .zshrc: ~/.zshrc
-ankisync: ~/.local/bin/ankisync
+# ankisync: ~/.local/bin/ankisync
 .zshenv: ~/.zshenv
