@@ -9,7 +9,6 @@ lvim.colorscheme = "onedark"
 reload("user.lsp")
 reload("user.keymaps")
 reload("user.lvim_plugins")
--- reload("user.cmp")
 reload("user.legendary")
 reload("user.which-key")
 reload("user.alpha")
