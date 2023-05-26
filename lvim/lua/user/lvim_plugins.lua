@@ -276,7 +276,7 @@ lvim.plugins = {
           auto_refresh = true,
           layout = {
             position = "bottom", -- | top | left | right
-            ratio = 0.4
+            ratio = 0.3
           },
         }
       })
