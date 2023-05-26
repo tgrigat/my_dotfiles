@@ -25,7 +25,7 @@ plasma-workspace: ~/.config/plasma-workspace
 pacman: ~/.config/pacman
 ranger: ~/.config/ranger
 sioyek: ~/.config/sioyek
-svim: ~/.config/svim
+# svim: ~/.config/svim
 tabletprofilesrc: ~/.config/tabletprofilesrc
 tmux : ~/.config/tmux
 .tmux.conf: ~/.tmux.conf
