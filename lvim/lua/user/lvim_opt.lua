@@ -28,9 +28,10 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
-lvim.builtin.project.manual_mode=true
+lvim.builtin.project.manual_mode = true
 
-lvim.builtin.project.patterns = { ".is_project_root", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json",
+lvim.builtin.project.patterns = { ".is_project_root", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile",
+  "package.json",
   "pom.xml",
   "compile_commands.json" }
 
@@ -65,4 +66,32 @@ lvim.builtin.terminal.active = true
 
 vim.opt.titlestring = "%<%F%=%l/%L - lvim" -- what the title of the window will be set to
 vim.opt.undodir = vim.fn.stdpath "cache" .. "/undo"
-vim.opt.undofile = true -- enable persistent undo
+vim.opt.undofile = true                    -- enable persistent undo
+
+-- set virtual text level
+
+local diagnostic_config = {
+  signs = {
+    active = true,
+    values = {
+      { name = "DiagnosticSignError", text = lvim.icons.diagnostics.Error },
+      { name = "DiagnosticSignWarn",  text = lvim.icons.diagnostics.Warning },
+      -- { name = "DiagnosticSignHint",  text = lvim.icons.diagnostics.Hint },
+      -- { name = "DiagnosticSignInfo",  text = lvim.icons.diagnostics.Information },
+    },
+  },
+  virtual_text = false,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = true,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
+}
+
+vim.diagnostic.config(diagnostic_config)
