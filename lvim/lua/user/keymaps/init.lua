@@ -79,6 +79,11 @@ lvim.builtin.which_key.mappings['lC'] = { "<cmd>lua vim.diagnostic.enable(0,nil)
 lvim.builtin.which_key.mappings['lx'] = { "<cmd>DogeGenerate<cr>", "Generate Docstring" }
 
 lvim.builtin.which_key.mappings["lo"] = { "<cmd>AerialToggle right<cr>", "Saga Outline" }
+lvim.builtin.which_key.mappings["lf"] = {
+  function()
+    require("lvim.lsp.utils").format { timeout_ms = 2000 }
+  end,
+  "Format" }
 
 local keymap = vim.keymap.set
 
