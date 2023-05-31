@@ -12,7 +12,7 @@ local keymap = vim.keymap
 -- Set a linter.
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "pylint", filetypes = { "python" } },
+  { command = "ruff", filetypes = { "python" } },
 }
 
 -- Setup dap for python

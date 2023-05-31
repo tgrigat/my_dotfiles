@@ -19,18 +19,18 @@ lvim.plugins = {
       vim.cmd('colorscheme github_dark')
     end,
   },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- },
   {
     "ggandor/leap.nvim",
     config = function()
@@ -44,15 +44,15 @@ lvim.plugins = {
     name = 'rose-pine',
   },
   -- github light theme
-  {
-    'projekt0n/github-nvim-theme',
-    -- config = function()
-    --   require('github-theme').setup({
-    --     -- ...
-    --     dark_sidebar = true
-    --   })
-    -- end
-  },
+  -- {
+  --   'projekt0n/github-nvim-theme',
+  --   -- config = function()
+  --   --   require('github-theme').setup({
+  --   --     -- ...
+  --   --     dark_sidebar = true
+  --   --   })
+  --   -- end
+  -- },
   -- "AckslD/swenv.nvim",
   "mfussenegger/nvim-dap-python",
   'sainnhe/everforest',
@@ -72,10 +72,10 @@ lvim.plugins = {
   --     }
   --   end,
   -- },
-  {
-    'glacambre/firenvim',
-    build = function() vim.fn['firenvim#install'](0) end
-  },
+  -- {
+  --   'glacambre/firenvim',
+  --   build = function() vim.fn['firenvim#install'](0) end
+  -- },
   {
     "rmagatti/goto-preview",
     config = function()
@@ -163,28 +163,28 @@ lvim.plugins = {
       })
     end
   },
-  {
-    "epwalsh/obsidian.nvim",
-    config = function()
-      require("obsidian").setup({
-        dir = "~/obsidian",
-        use_advanced_uri = true,
-        disable_frontmatter = true,
-        completion = {
-          nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-        },
-        daily_notes = {
-          folder = "Days",
-        },
-      })
-      require("nvim-treesitter.configs").setup({
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = { "markdown" },
-        },
-      })
-    end
-  },
+  -- {
+  --   "epwalsh/obsidian.nvim",
+  --   config = function()
+  --     require("obsidian").setup({
+  --       dir = "~/obsidian",
+  --       use_advanced_uri = true,
+  --       disable_frontmatter = true,
+  --       completion = {
+  --         nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+  --       },
+  --       daily_notes = {
+  --         folder = "Days",
+  --       },
+  --     })
+  --     require("nvim-treesitter.configs").setup({
+  --       highlight = {
+  --         enable = true,
+  --         additional_vim_regex_highlighting = { "markdown" },
+  --       },
+  --     })
+  --   end
+  -- },
   { "simrat39/rust-tools.nvim" },
   -- { 'echasnovski/mini.animate', config = function()
   --   require('mini.animate').setup(
@@ -267,7 +267,7 @@ lvim.plugins = {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "InsertEnter",
+    -- event = "InsertEnter",
     config = function()
       require("copilot").setup({
         suggestion = { enabled = true },
