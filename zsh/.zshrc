@@ -211,7 +211,10 @@ auto_source $ZDOTDIR/keys.zsh
 auto_source $ZDOTDIR/alias.zsh
 auto_source $ZDOTDIR/functions.zsh
 auto_source $ZDOTDIR/device.zsh
-auto_source $ZDOTDIR/zoxide.zsh
+
+if command -v zoxide &> /dev/null ; then
+  auto_source $ZDOTDIR/zoxide.zsh
+fi
 
 unset -f auto_source
 
