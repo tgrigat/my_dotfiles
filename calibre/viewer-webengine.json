@@ -1,50 +1,50 @@
 {
   "geometry-of-main_window_geometry": {
     "frame_geometry": {
-      "height": 1160,
-      "width": 1920,
+      "height": 800,
+      "width": 902,
       "x": 0,
-      "y": 40
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1160,
-      "width": 1920,
+      "height": 800,
+      "width": 902,
       "x": 0,
-      "y": 40
+      "y": 0
     },
     "maximized": false,
     "normal_geometry": {
-      "height": 1160,
-      "width": 1920,
+      "height": 800,
+      "width": 902,
       "x": 0,
-      "y": 40
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAKAAAB38AAASvAAAAAAAAACgAAAd/AAAErwAAAAAAAAAAB4AAAAAAAAAAKAAAB38AAASv"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAA4UAAAMfAAAAAAAAAAAAAAOFAAADHwAAAAEAAAAAB4AAAAAAAAAAAAAAA4UAAAMf"
     },
     "screen": {
-      "depth": 24,
-      "device_pixel_ratio": 1.5,
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
       "geometry_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920,
-        "x": 0,
-        "y": 0
+        "x": 1920,
+        "y": 60
       },
-      "index_in_screens_list": 0,
-      "manufacturer": "",
-      "model": "",
-      "name": "XWAYLAND0",
+      "index_in_screens_list": 1,
+      "manufacturer": "HP Inc.",
+      "model": "OMEN by HP 25/3CQ0011QZX",
+      "name": "HDMI-A-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920
       },
       "virtual_geometry": {
         "height": 1200,
-        "width": 1920,
+        "width": 3840,
         "x": 0,
         "y": 0
       }
@@ -54,30 +54,30 @@
     "frame_geometry": {
       "height": 125,
       "width": 728,
-      "x": 586,
-      "y": 520
+      "x": 0,
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
       "height": 125,
       "width": 728,
-      "x": 586,
-      "y": 520
+      "x": 0,
+      "y": 0
     },
     "maximized": false,
     "normal_geometry": {
       "height": 125,
       "width": 728,
-      "x": 586,
-      "y": 520
+      "x": 0,
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAJKAAACCAAABSEAAAKEAAACSgAAAggAAAUhAAAChAAAAAAAAAAAB4AAAAJKAAACCAAABSEAAAKE"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAAtcAAAB8AAAAAAAAAAAAAALXAAAAfAAAAAAAAAAAB4AAAAAAAAAAAAAAAtcAAAB8"
     },
     "screen": {
-      "depth": 24,
-      "device_pixel_ratio": 1.5,
+      "depth": 32,
+      "device_pixel_ratio": 2.0,
       "geometry_in_logical_pixels": {
         "height": 1200,
         "width": 1920,
@@ -85,9 +85,9 @@
         "y": 0
       },
       "index_in_screens_list": 0,
-      "manufacturer": "",
-      "model": "",
-      "name": "XWAYLAND0",
+      "manufacturer": "AU Optronics",
+      "model": "eDP-1-unknown",
+      "name": "eDP-1",
       "serial": "",
       "size_in_logical_pixels": {
         "height": 1200,
@@ -103,11 +103,11 @@
   },
   "main_window_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACGAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPYA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANQA////AAAHgAAABIgAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAEAAAADIPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawEAAAAAAAADIAAAAIoA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAmgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACEAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPIA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANIA////AAACgAAAAyAAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
   },
   "old_prefs_migrated": true,
   "session_data": {
-    "base_font_size": 20,
+    "base_font_size": 24,
     "controls_footer": {
       "left": "empty",
       "middle": "empty",
@@ -125,6 +125,8 @@
       "middle": "empty",
       "right": "empty"
     },
+    "hide_tooltips": null,
+    "keyboard_shortcuts": {},
     "left-margin": {
       "left": "empty",
       "middle": "empty",
@@ -138,13 +140,53 @@
     "standalone_font_settings": {
       "minimum_font_size": 12
     },
-    "standalone_misc_settings": {
-      "remember_last_read": true,
-      "remember_window_geometry": false,
-      "save_annotations_in_ebook": true,
-      "singleinstance": false
-    },
+    "standalone_misc_settings": {},
     "standalone_recently_opened": [
+      {
+        "authors": [
+          "Wei Zhi"
+        ],
+        "key": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Wei Zhi/-__Dou Po Cang Qiong __ (Xiao Dui Ban Quan Ben )Zuo Zhe _Tian Can Tu Dou (198)/-__Dou Po Cang Qiong __ (Xiao Dui Ban Quan - Wei Zhi.epub",
+        "pathtoebook": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Wei Zhi/-__Dou Po Cang Qiong __ (Xiao Dui Ban Quan Ben )Zuo Zhe _Tian Can Tu Dou (198)/-__Dou Po Cang Qiong __ (Xiao Dui Ban Quan - Wei Zhi.epub",
+        "timestamp": "2023-07-07T10:45:57.967Z",
+        "title": "-《斗破苍穹》（校对版全本）作者：天蚕土豆"
+      },
+      {
+        "authors": [
+          "更俗"
+        ],
+        "key": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Geng Su/Xiao Chen  (Cai Tu _Di Tu Ji ) (178)/Xiao Chen  (Cai Tu _Di Tu Ji ) - Geng Su.epub",
+        "pathtoebook": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Geng Su/Xiao Chen  (Cai Tu _Di Tu Ji ) (178)/Xiao Chen  (Cai Tu _Di Tu Ji ) - Geng Su.epub",
+        "timestamp": "2023-07-07T06:49:22.343Z",
+        "title": "枭臣 (彩图+地图集)"
+      },
+      {
+        "authors": [
+          "Yuval Noah Harari"
+        ],
+        "key": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Yuval Noah Harari/Homo Deus_ A Brief History of Tomor (115)/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.mobi",
+        "pathtoebook": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Yuval Noah Harari/Homo Deus_ A Brief History of Tomor (115)/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.mobi",
+        "timestamp": "2023-06-26T21:54:00.626Z",
+        "title": "Homo Deus: A Brief History of Tomorrow"
+      },
+      {
+        "authors": [
+          "Jason Selk"
+        ],
+        "key": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Jason Selk/Organize Tomorrow Today (225)/Organize Tomorrow Today - Jason Selk.epub",
+        "pathtoebook": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Jason Selk/Organize Tomorrow Today (225)/Organize Tomorrow Today - Jason Selk.epub",
+        "timestamp": "2023-06-26T05:16:25.676Z",
+        "title": "Organize Tomorrow Today"
+      },
+      {
+        "authors": [
+          "齐佩甲"
+        ],
+        "key": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Qi Pei Jia/__Chao Shen Ji Xie Shi __ (127)/__Chao Shen Ji Xie Shi __ - Qi Pei Jia.epub",
+        "pathtoebook": "/home/yang/Documents/Synology_Library/books/calibre-syncing/Qi Pei Jia/__Chao Shen Ji Xie Shi __ (127)/__Chao Shen Ji Xie Shi __ - Qi Pei Jia.epub",
+        "timestamp": "2023-06-04T12:36:15.458Z",
+        "title": "《超神机械师》"
+      },
       {
         "authors": [
           "Tracy Dennis-Tiwary"
@@ -172,6 +214,7 @@
         "timestamp": "2022-11-28T07:19:23.325Z",
         "title": "《重生之贼行天下》（校对版全本）作者：发飙的蜗牛"
       }
-    ]
+    ],
+    "user_stylesheet": ""
   }
 }

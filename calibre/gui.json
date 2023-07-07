@@ -27,6 +27,12 @@
     false,
     300
   ],
+  "cover_grid_color": [
+    80,
+    80,
+    80
+  ],
+  "cover_grid_texture": null,
   "custom_colors_for_color_dialog": [
     [
       255,
@@ -125,6 +131,7 @@
       255
     ]
   ],
+  "default_author_link": null,
   "geometry-of-book_info_dialog_geometry": {
     "frame_geometry": {
       "height": 1075,
@@ -178,28 +185,79 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1137,
+      "height": 1051,
       "width": 1920,
       "x": 0,
-      "y": 74
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1137,
+      "height": 1051,
       "width": 1920,
       "x": 0,
-      "y": 74
+      "y": 0
     },
-    "maximized": true,
+    "maximized": false,
     "normal_geometry": {
       "height": 1051,
       "width": 1920,
       "x": 0,
-      "y": 74
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAASgAAB38AAAS6AAAAAAAAAEoAAAd/AAAEZAAAAAACAAAAB4AAAAAAAAAASgAAB38AAAS6"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAAQaAAAAAAAAAAAAAAd/AAAEGgAAAAAAAAAAB4AAAAAAAAAAAAAAB38AAAQa"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 2.0,
+      "geometry_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "eDP-1-unknown",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-choose-merge-dialog-geometry": {
+    "frame_geometry": {
+      "height": 316,
+      "width": 635,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 316,
+      "width": 635,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 316,
+      "width": 635,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAAnoAAAE7AAAAAAAAAAAAAAJ6AAABOwAAAAAAAAAAB4AAAAAAAAAAAAAAAnoAAAE7"
     },
     "screen": {
       "depth": 32,
@@ -231,26 +289,26 @@
     "frame_geometry": {
       "height": 720,
       "width": 929,
-      "x": 0,
-      "y": 0
+      "x": 1920,
+      "y": 60
     },
     "full_screened": false,
     "geometry": {
       "height": 720,
       "width": 929,
-      "x": 0,
-      "y": 0
+      "x": 1920,
+      "y": 60
     },
     "maximized": false,
     "normal_geometry": {
       "height": 720,
       "width": 929,
-      "x": 0,
-      "y": 0
+      "x": 1920,
+      "y": 60
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAAAAAA6AAAALPAAAAAAAAAAAAAAOgAAACzwAAAAEAAAAAB4AAAAAAAAAAAAAAA6AAAALP"
+      "__value__": "AdnQywADAAAAAAeAAAAAPAAACyAAAAMLAAAHgAAAADwAAAsgAAADCwAAAAEAAAAAB4AAAAeAAAAAPAAACyAAAAML"
     },
     "screen": {
       "depth": 32,
@@ -258,8 +316,8 @@
       "geometry_in_logical_pixels": {
         "height": 1080,
         "width": 1920,
-        "x": 0,
-        "y": 0
+        "x": 1920,
+        "y": 60
       },
       "index_in_screens_list": 1,
       "manufacturer": "HP Inc.",
@@ -271,8 +329,8 @@
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 2280,
-        "width": 1920,
+        "height": 1200,
+        "width": 3840,
         "x": 0,
         "y": 0
       }
@@ -281,7 +339,7 @@
   "grid view visible": false,
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 5
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 20
   },
   "metasingle_window_size": [
     1850,
@@ -296,6 +354,7 @@
     "英语"
   ],
   "search bar visible": true,
+  "show_emblems": false,
   "tag browser search box visible": false,
   "tag_browser_splitter_horizontal_state": [
     true,
@@ -304,5 +363,12 @@
   "tag_editor_geometry": {
     "__class__": "bytearray",
     "__value__": "AdnQywADAAAAAAJ0AAAA5QAABPsAAAOGAAACeAAAAOkAAAT3AAADggAAAAAAAAAAB4AAAAJ4AAAA6QAABPcAAAOC"
+  },
+  "tb_search_order": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 0
   }
 }
