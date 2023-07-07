@@ -6,7 +6,7 @@
 
 [user]
 	name = Lumen Yang
-	email = git@lumeny.io
+	email = lumen.yang@lumeny.io
 
 [pull]
   rebase = true
