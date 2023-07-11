@@ -134,79 +134,28 @@
   "default_author_link": null,
   "geometry-of-book_info_dialog_geometry": {
     "frame_geometry": {
-      "height": 1075,
-      "width": 909,
-      "x": 495,
-      "y": 54
-    },
-    "full_screened": false,
-    "geometry": {
-      "height": 1056,
-      "width": 909,
-      "x": 495,
-      "y": 73
-    },
-    "maximized": false,
-    "normal_geometry": {
-      "height": 1056,
-      "width": 909,
-      "x": 495,
-      "y": 73
-    },
-    "qt": {
-      "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAHvAAAANgAABXsAAARoAAAB7wAAAEkAAAV7AAAEaAAAAAAAAAAAB4AAAAHvAAAASQAABXsAAARo"
-    },
-    "screen": {
-      "depth": 24,
-      "device_pixel_ratio": 1.5,
-      "geometry_in_logical_pixels": {
-        "height": 1200,
-        "width": 1920,
-        "x": 0,
-        "y": 0
-      },
-      "index_in_screens_list": 0,
-      "manufacturer": "",
-      "model": "",
-      "name": "XWAYLAND0",
-      "serial": "",
-      "size_in_logical_pixels": {
-        "height": 1200,
-        "width": 1920
-      },
-      "virtual_geometry": {
-        "height": 1200,
-        "width": 1920,
-        "x": 0,
-        "y": 0
-      }
-    }
-  },
-  "geometry-of-calibre_main_window_geometry": {
-    "frame_geometry": {
-      "height": 1051,
+      "height": 1131,
       "width": 1920,
       "x": 0,
       "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1051,
+      "height": 1131,
       "width": 1920,
       "x": 0,
       "y": 0
     },
-    "maximized": false,
+    "maximized": true,
     "normal_geometry": {
-      "height": 1051,
-      "width": 1920,
+      "height": 1056,
+      "width": 909,
       "x": 0,
       "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAAQaAAAAAAAAAAAAAAd/AAAEGgAAAAAAAAAAB4AAAAAAAAAAAAAAB38AAAQa"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAARqAAAAAAAAAAAAAAOMAAAEHwAAAAACAAAAB4AAAAAAAAAAAAAAB38AAARq"
     },
     "screen": {
       "depth": 32,
@@ -228,7 +177,58 @@
       },
       "virtual_geometry": {
         "height": 1200,
-        "width": 3840,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-calibre_main_window_geometry": {
+    "frame_geometry": {
+      "height": 1131,
+      "width": 1920,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1131,
+      "width": 1920,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": true,
+    "normal_geometry": {
+      "height": 1051,
+      "width": 1920,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAARqAAAAAAAAAAAAAAd/AAAEGgAAAAACAAAAB4AAAAAAAAAAAAAAB38AAARq"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 2.0,
+      "geometry_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "eDP-1-unknown",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 1920,
         "x": 0,
         "y": 0
       }
@@ -289,48 +289,48 @@
     "frame_geometry": {
       "height": 720,
       "width": 929,
-      "x": 1920,
-      "y": 60
+      "x": 0,
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
       "height": 720,
       "width": 929,
-      "x": 1920,
-      "y": 60
+      "x": 0,
+      "y": 0
     },
     "maximized": false,
     "normal_geometry": {
       "height": 720,
       "width": 929,
-      "x": 1920,
-      "y": 60
+      "x": 0,
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAeAAAAAPAAACyAAAAMLAAAHgAAAADwAAAsgAAADCwAAAAEAAAAAB4AAAAeAAAAAPAAACyAAAAML"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAA6AAAALPAAAAAAAAAAAAAAOgAAACzwAAAAAAAAAAB4AAAAAAAAAAAAAAA6AAAALP"
     },
     "screen": {
       "depth": 32,
-      "device_pixel_ratio": 1.0,
+      "device_pixel_ratio": 2.0,
       "geometry_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920,
-        "x": 1920,
-        "y": 60
+        "x": 0,
+        "y": 0
       },
-      "index_in_screens_list": 1,
-      "manufacturer": "HP Inc.",
-      "model": "OMEN by HP 25/3CQ0011QZX",
-      "name": "HDMI-A-1",
+      "index_in_screens_list": 0,
+      "manufacturer": "AU Optronics",
+      "model": "eDP-1-unknown",
+      "name": "eDP-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920
       },
       "virtual_geometry": {
         "height": 1200,
-        "width": 3840,
+        "width": 1920,
         "x": 0,
         "y": 0
       }
@@ -339,7 +339,7 @@
   "grid view visible": false,
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 20
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 24
   },
   "metasingle_window_size": [
     1850,
