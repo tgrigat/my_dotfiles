@@ -37,3 +37,4 @@ zsh: ~/.config/zsh
 # .zshrc: ~/.zshrc
 # ankisync: ~/.local/bin/ankisync
 .zshenv: ~/.zshenv
+nixpkgs: ~/.config/nixpkgs
