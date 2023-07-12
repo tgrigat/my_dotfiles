@@ -1,11 +1,12 @@
 local keymap = vim.keymap
 
-keymap.set("n", "j", "jzz")
-keymap.set("n", "k", "kzz")
+-- keymap.set("n", "j", "jzz")
+-- keymap.set("n", "k", "kzz")
 -- create a file at $LUNARVIM_CONFIG_DIR/after/ftplugin/c.lua
 
 lvim.format_on_save = false
-lvim.lsp.diagnostics.virtual_text = true
+-- lvim.lsp.diagnostics.virtual_text = true
+vim.diagnostic.config({ virtual_text = true })
 
 lvim.builtin.treesitter.highlight.enable = true
 
