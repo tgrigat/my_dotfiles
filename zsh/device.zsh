@@ -15,3 +15,10 @@ if [[ $(uname) == "Darwin" ]]; then
   source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
   unalias ls
 fi
+
+# for the archlinux machines
+if [[ -f "/etc/arch-release" ]]; then
+  if [[ -d "/nix" ]]; then
+     export PATH=$PATH:~/.nix-profile/bin
+  fi
+fi
