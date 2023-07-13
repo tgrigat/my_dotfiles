@@ -20,5 +20,6 @@ fi
 if [[ -f "/etc/arch-release" ]]; then
   if [[ -d "/nix" ]]; then
      export PATH=$PATH:~/.nix-profile/bin
+     export NIX_PATH=$NIX_PATH:~/.nix-defexpr/channels/
   fi
 fi
