@@ -46,6 +46,11 @@ keymap.set("n", "<leader>c", "<Cmd>call VSCodeNotify('workbench.action.closeActi
 keymap.set("n", "gcc", "<Cmd>call VSCodeNotify('editor.action.commentLine')<CR>")
 keymap.set("v", "gc", "<Cmd>call VSCodeNotifyVisual('editor.action.commentLine', 0)<CR>")
 
+-- keymap.set("v", ">", "<Cmd>call VSCodeNotifyVisual('editor.action.indentLines',1 )<CR>")
+keymap.set("v", ">", ">gv")
+keymap.set("v", "<", "<gv")
+-- keymap.set("v", "<", "<Cmd>call VSCodeNotifyVisual('editor.action.reindentselectedlines', 1)<CR>")
+
 
 -- keymap.set("n", "j", "jzz")
 -- keymap.set("n", "k", "kzz")
