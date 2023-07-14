@@ -22,8 +22,8 @@ keymap.set("n", "<S-h>", "<Cmd>call VSCodeNotify('workbench.action.previousEdito
 
 keymap.set("n", "<S-l>", "<Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>")
 
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
+-- keymap.set("n", "<C-d>", "<C-d>zz")
+-- keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- keymap.set("n", "<C-\>", "<Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>")
 
@@ -49,6 +49,8 @@ keymap.set("v", "gc", "<Cmd>call VSCodeNotifyVisual('editor.action.commentLine',
 -- keymap.set("v", ">", "<Cmd>call VSCodeNotifyVisual('editor.action.indentLines',1 )<CR>")
 keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
+
+keymap.set("n", "<leader>lf", "<Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>")
 -- keymap.set("v", "<", "<Cmd>call VSCodeNotifyVisual('editor.action.reindentselectedlines', 1)<CR>")
 
 

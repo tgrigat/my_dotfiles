@@ -38,3 +38,4 @@ zsh: ~/.config/zsh
 # ankisync: ~/.local/bin/ankisync
 .zshenv: ~/.zshenv
 nixpkgs: ~/.config/nixpkgs
+code-flags.conf: ~/.config/code-flags.conf
