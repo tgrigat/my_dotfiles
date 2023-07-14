@@ -22,6 +22,9 @@ keymap.set("n", "<S-h>", "<Cmd>call VSCodeNotify('workbench.action.previousEdito
 
 keymap.set("n", "<S-l>", "<Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>")
 
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- keymap.set("n", "<C-\>", "<Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>")
 
 keymap.set("n", "<leader>w", "<Cmd>call VSCodeNotify('workbench.action.files.save')<CR>")
@@ -31,6 +34,17 @@ keymap.set("n", "<leader>f", "<Cmd>call VSCodeNotify('workbench.action.showComma
 keymap.set("n", "<leader>e", "<Cmd>call VSCodeNotify('workbench.files.action.focusFilesExplorer')<CR>")
 
 keymap.set("n", "<leader>c", "<Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>")
+
+-- function vscodeCommentary(line1, line2)
+--     if not line1 or not line2 then
+--         vim.o.operatorfunc = vim.fn.matchstr(vim.fn.expand('<sfile>'), '[^. ]*')
+--         return 'g@'
+--     end
+--     vim.api.nvim_call_function('VSCodeCallRange', {'editor.action.commentLine', line1, line2, 0})
+-- end
+
+keymap.set("n", "gcc", "<Cmd>call VSCodeNotify('editor.action.commentLine')<CR>")
+keymap.set("v", "gc", "<Cmd>call VSCodeNotifyVisual('editor.action.commentLine', 0)<CR>")
 
 
 -- keymap.set("n", "j", "jzz")
