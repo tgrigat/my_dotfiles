@@ -1,12 +1,16 @@
 {
+  "catalogs_to_be_synced": {
+    "__class__": "set",
+    "__value__": []
+  },
   "choose library location": "/home/yang/Documents/Synology_Library/books/calibre-syncing",
   "notified-version-updates": {
     "__class__": "set",
     "__value__": [
-      "6.13",
-      "6.21",
       "6.19",
-      "6.7"
+      "6.7",
+      "6.13",
+      "6.21"
     ]
   },
   "sort_history": [

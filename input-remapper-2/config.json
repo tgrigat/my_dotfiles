@@ -1,0 +1,7 @@
+{
+    "version": "2.0.0",
+    "autoload": {
+        "Keychron Keychron K7": "new preset",
+        "Keychron K7": "daily"
+    }
+}
