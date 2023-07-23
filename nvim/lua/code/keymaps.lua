@@ -12,6 +12,8 @@ keymap.set("n", "<leader>z", "<Cmd>call VSCodeNotifyVisual('workbench.action.tog
 
 keymap.set("n", "<C-w>gd", "<Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>")
 
+keymap.set("n", "K", "<Cmd>call VSCodeNotify('editor.action.revealDefinitionAside')<CR>")
+
 keymap.set("n", "?", "<Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>")
 
 keymap.set("n", "<C-h>", "<Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>")
@@ -51,6 +53,10 @@ keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
 
 keymap.set("n", "<leader>lf", "<Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>")
+
+keymap.set("n", "<leader>w", "<Cmd>call VSCodeNotify('workbench.action.files.save')<CR>")
+
+keymap.set("n", "<leader>lx<CR>", "<Cmd>call VSCodeNotify('autoDocstring.generateDocstring')<CR>")
 -- keymap.set("v", "<", "<Cmd>call VSCodeNotifyVisual('editor.action.reindentselectedlines', 1)<CR>")
 
 

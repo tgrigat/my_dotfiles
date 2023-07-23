@@ -163,28 +163,28 @@ lvim.plugins = {
       })
     end
   },
-  -- {
-  --   "epwalsh/obsidian.nvim",
-  --   config = function()
-  --     require("obsidian").setup({
-  --       dir = "~/obsidian",
-  --       use_advanced_uri = true,
-  --       disable_frontmatter = true,
-  --       completion = {
-  --         nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-  --       },
-  --       daily_notes = {
-  --         folder = "Days",
-  --       },
-  --     })
-  --     require("nvim-treesitter.configs").setup({
-  --       highlight = {
-  --         enable = true,
-  --         additional_vim_regex_highlighting = { "markdown" },
-  --       },
-  --     })
-  --   end
-  -- },
+  {
+    "epwalsh/obsidian.nvim",
+    config = function()
+      require("obsidian").setup({
+        dir = "~/obsidian",
+        use_advanced_uri = true,
+        disable_frontmatter = true,
+        completion = {
+          nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+        },
+        daily_notes = {
+          folder = "Days",
+        },
+      })
+      require("nvim-treesitter.configs").setup({
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = { "markdown" },
+        },
+      })
+    end
+  },
   { "simrat39/rust-tools.nvim" },
   -- { 'echasnovski/mini.animate', config = function()
   --   require('mini.animate').setup(

@@ -39,3 +39,4 @@ zsh: ~/.config/zsh
 .zshenv: ~/.zshenv
 nixpkgs: ~/.config/nixpkgs
 code-flags.conf: ~/.config/code-flags.conf
+libvirt.conf: ~/.config/libvirt/libvirt.conf
