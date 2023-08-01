@@ -28,3 +28,4 @@ export MOZ_ENABLE_WAYLAND=1
 # export http_proxy=http://127.0.0.1:1089
 # export https_proxy=http://127.0.0.1:1089
 # export ALL_PROXY=socks5://127.0.0.1:1089
+dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=KDE XDG_SESSION_TYPE DISPLAY XAUTHORITY WAYLAND_DISPLAY

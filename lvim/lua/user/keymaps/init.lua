@@ -17,6 +17,8 @@ lvim.builtin.which_key.mappings["="] = {
   s = { "<cmd>source ~/.config/lvim/config.lua<cr>", "Source Setting" },
   w = { "<cmd>set wrap<cr>", "Wrap" },
   W = { "<cmd>set nowrap<cr>", "Unwrap" },
+  c = { "<cmd>Copilot disable<cr>", "Disable Copilot" },
+  C = { "<cmd>Copilot enable<cr>", "Enable Copilot" },
   p = {
     name = "Plugins",
     i = { "<cmd>Lazy install<cr>", "Install" },

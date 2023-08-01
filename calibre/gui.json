@@ -302,28 +302,28 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1131,
-      "width": 1920,
-      "x": 0,
-      "y": 0
+      "height": 1411,
+      "width": 2560,
+      "x": 2560,
+      "y": 120
     },
     "full_screened": false,
     "geometry": {
-      "height": 1131,
-      "width": 1920,
-      "x": 0,
-      "y": 0
+      "height": 1411,
+      "width": 2560,
+      "x": 2560,
+      "y": 120
     },
     "maximized": true,
     "normal_geometry": {
-      "height": 1051,
+      "height": 1131,
       "width": 1920,
-      "x": 0,
-      "y": 0
+      "x": 320,
+      "y": 154
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAARqAAAAAAAAAAAAAAd/AAAEGgAAAAACAAAAB4AAAAAAAAAAAAAAB38AAARq"
+      "__value__": "AdnQywADAAAAAAoAAAAAeAAAE/8AAAX6AAABQAAAAJoAAAi/AAAFBAAAAAACAAAAB4AAAAoAAAAAeAAAE/8AAAX6"
     },
     "screen": {
       "depth": 32,
@@ -331,8 +331,8 @@
       "geometry_in_logical_pixels": {
         "height": 1200,
         "width": 1920,
-        "x": 0,
-        "y": 0
+        "x": 2560,
+        "y": 120
       },
       "index_in_screens_list": 0,
       "manufacturer": "AU Optronics",
@@ -344,8 +344,8 @@
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 1200,
-        "width": 1920,
+        "height": 1440,
+        "width": 4480,
         "x": 0,
         "y": 0
       }
@@ -511,7 +511,7 @@
   },
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 30
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 32
   },
   "memory_view books view state": {
     "column_alignment": {

@@ -87,22 +87,22 @@ config.keys = {
   },
   {
     key = "h",
-    mods = "ALT",
+    mods = "CTRL|SHIFT",
     action = wezterm.action.ActivatePaneDirection "Left",
   },
   {
     key = "j",
-    mods = "ALT",
+    mods = "CTRL|SHIFT",
     action = wezterm.action.ActivatePaneDirection "Down",
   },
   {
     key = "k",
-    mods = "ALT",
+    mods = "CTRL|SHIFT",
     action = wezterm.action.ActivatePaneDirection "Up",
   },
   {
     key = "l",
-    mods = "ALT",
+    mods = "CTRL|SHIFT",
     action = wezterm.action.ActivatePaneDirection "Right",
   },
   {
