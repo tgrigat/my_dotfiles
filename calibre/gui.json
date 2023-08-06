@@ -1,7 +1,7 @@
 {
   "basic_metadata_widget_splitter_state": {
     "__class__": "bytearray",
-    "__value__": "AAAA/wAAAAEAAAADAAAA4AAAAUoAAAEKAf////8BAAAAAQA="
+    "__value__": "AAAA/wAAAAEAAAADAAAA4AAAAWMAAAEKAf////8BAAAAAQA="
   },
   "book_details_splitter_horizontal_state": [
     true,
@@ -302,50 +302,50 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1411,
-      "width": 2560,
-      "x": 2560,
-      "y": 120
+      "height": 1051,
+      "width": 960,
+      "x": 0,
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1411,
-      "width": 2560,
-      "x": 2560,
-      "y": 120
+      "height": 1051,
+      "width": 960,
+      "x": 0,
+      "y": 0
     },
-    "maximized": true,
+    "maximized": false,
     "normal_geometry": {
-      "height": 1131,
-      "width": 1920,
-      "x": 320,
-      "y": 154
+      "height": 1051,
+      "width": 960,
+      "x": 0,
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAoAAAAAeAAAE/8AAAX6AAABQAAAAJoAAAi/AAAFBAAAAAACAAAAB4AAAAoAAAAAeAAAE/8AAAX6"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAA78AAAQaAAAAAAAAAAAAAAO/AAAEGgAAAAEAAAAAB4AAAAAAAAAAAAAAA78AAAQa"
     },
     "screen": {
       "depth": 32,
-      "device_pixel_ratio": 2.0,
+      "device_pixel_ratio": 1.0,
       "geometry_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920,
-        "x": 2560,
-        "y": 120
+        "x": 1920,
+        "y": 60
       },
-      "index_in_screens_list": 0,
-      "manufacturer": "AU Optronics",
-      "model": "eDP-1-unknown",
-      "name": "eDP-1",
+      "index_in_screens_list": 1,
+      "manufacturer": "HP Inc.",
+      "model": "OMEN by HP 25/3CQ0011QZX",
+      "name": "HDMI-A-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 1440,
-        "width": 4480,
+        "height": 1200,
+        "width": 3840,
         "x": 0,
         "y": 0
       }
@@ -453,6 +453,57 @@
       }
     }
   },
+  "geometry-of-metasingle_window_geometry3": {
+    "frame_geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 1920,
+      "y": 60
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 1920,
+      "y": 60
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1030,
+      "width": 1850,
+      "x": 1920,
+      "y": 60
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAeAAAAAPAAADrkAAARBAAAHgAAAADwAAA65AAAEQQAAAAEAAAAAB4AAAAeAAAAAPAAADrkAAARB"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920,
+        "x": 1920,
+        "y": 60
+      },
+      "index_in_screens_list": 1,
+      "manufacturer": "HP Inc.",
+      "model": "OMEN by HP 25/3CQ0011QZX",
+      "name": "HDMI-A-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1080,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 3840,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
   "geometry-of-preferences dialog geometry": {
     "frame_geometry": {
       "height": 720,
@@ -511,7 +562,7 @@
   },
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 32
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 36
   },
   "memory_view books view state": {
     "column_alignment": {

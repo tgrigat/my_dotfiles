@@ -157,6 +157,26 @@ function man() {
 }
 
 function ln-ccjson() {
-  ln -s build/compile_commands.json compile_commands.json
-  echo 'Link performed, please ensure that you run this command at the project root'
+  # Get the current directory
+  local current_dir=$(pwd)
+
+  # Get the base name of the current directory
+  local base_name=$(basename $current_dir)
+
+  # Check if the base name is 'build'
+  if [[ $base_name == 'build' ]]; then
+    # Get the project root path
+    local project_root=$(dirname $current_dir)
+
+    # Check if compile_commands.json exists in the current directory
+    if [[ -f "$current_dir/compile_commands.json" ]]; then
+      # Create a soft link to the project root
+      ln -s "$current_dir/compile_commands.json" "$project_root/compile_commands.json"
+      echo "Soft link created successfully."
+    else
+      echo "Error: compile_commands.json does not exist in the current directory."
+    fi
+  else
+    echo "Error: The base name of the current directory is not 'build'. You should use this alias in the build folder"
+  fi
 }

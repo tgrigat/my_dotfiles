@@ -70,6 +70,7 @@ LayoutName=informative
 ShowDesktopMode=1
 
 [TabBoxAlternative]
+DesktopMode=0
 LayoutName=thumbnail_grid
 
 [Tiling]
