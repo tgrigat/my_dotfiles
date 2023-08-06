@@ -107,6 +107,10 @@ if (which vdirsyncer > /dev/null); then
   alias vsync="vdirsyncer sync"
 fi
 
+if (which zellij > /dev/null); then
+  alias zj="zellij"
+fi
+
 if (which lvim > /dev/null); then
   alias vim="lvim "
 fi
