@@ -23,6 +23,25 @@ function rbt2win() {
 
 }
 
+function copy-pdf-to-ob() {
+    if [ "$#" -ne 1 ]; then
+        echo "Error: This function requires one argument only."
+        return 1
+    fi
+
+    if [ ! -f "$1" ]; then
+        echo "Error: The specified file does not exist."
+        return 1
+    fi
+
+    if [[ "$1" != *.pdf ]]; then
+        echo "Error: The file is not a PDF."
+        return 1
+    fi
+
+    cp "$1" ~/obsidian/attachments/PDF
+}
+
 function run_autostart_apps() {
   autostart_dir="${HOME}/.config/autostart"
   
