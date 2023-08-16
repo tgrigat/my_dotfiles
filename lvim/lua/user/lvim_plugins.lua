@@ -94,11 +94,26 @@ lvim.plugins = {
       }
     end
   },
+  -- {
+  --   "petertriho/nvim-scrollbar",
+  --   config = function()
+  --     require("scrollbar").setup()
+  --   end
+  -- },
   {
-    "petertriho/nvim-scrollbar",
+    "dstein64/nvim-scrollview",
     config = function()
-      require("scrollbar").setup()
+      require('scrollview').setup({
+        excluded_filetypes = { 'nerdtree' },
+        current_only = true,
+        winblend = 75,
+        base = 'buffer',
+        column = 80,
+        signs_on_startup = { 'all' },
+        diagnostics_severities = { vim.diagnostic.severity.ERROR }
+      })
     end
+
   },
   -- notify with pop up
   { 'rcarriga/nvim-notify' },

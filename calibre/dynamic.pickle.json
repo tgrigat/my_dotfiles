@@ -7,9 +7,9 @@
   "notified-version-updates": {
     "__class__": "set",
     "__value__": [
-      "6.21",
       "6.13",
       "6.19",
+      "6.21",
       "6.7"
     ]
   },
