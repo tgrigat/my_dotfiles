@@ -44,3 +44,4 @@ zellij: ~/.config/zellij
 okular/local: ~/.local/share/kxmlgui5/okular
 okular/okularpartrc: ~/.config/okularpartrc
 # okular/okularrc: ~/.config/okularrc
+lunarvide: ~/.local/bin/lunarvide
