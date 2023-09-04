@@ -16,7 +16,7 @@ done
 # get eget
 curl -o eget.sh https://zyedidia.github.io/eget.sh
 bash eget.sh
-sudo mv eget ~/.local/bin/
+mv eget ~/.local/bin/
 
 # eget
 eget sharkdp/fd --asset ^musl --to ~/.local/bin
