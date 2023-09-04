@@ -20,8 +20,17 @@ RUN touch ~/.bashrc && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.
 RUN export NEOVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz" && \
 	export NVIM_ASSET=$(basename "$NEOVIM_URL") && \
 	curl -OL $NEOVIM_URL && \
-	tar xf $NVIM_ASSET --strip-components=1 -C ~/.local
+	tar xvf $NVIM_ASSET --strip-components=1 -C ~/.local
 
 RUN bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) --no-install-dependencies
+
+
+## Followings should be added to the 
+
+FROM scratch
+
+COPY --from=lvim /root/.local ~/
+
+COPY --from=lvim /root/.nvm ~/
 
 
