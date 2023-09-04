@@ -13,6 +13,12 @@ function gui() {
   fi
 }
 
+function download_eget() {
+	curl -o eget.sh https://zyedidia.github.io/eget.sh && \
+	bash eget.sh && \
+	mv eget ~/.local/bin
+}
+
 function rbt2win() {
     if [[ -f /usr/bin/grub-reboot ]]; then
         sudo grub-reboot "$(grep -i windows /boot/grub/grub.cfg|cut -d"'" -f2)" 
