@@ -10,3 +10,4 @@ eget sharkdp/fd --asset ^musl --to ~/.local/bin
 eget BurntSushi/ripgrep --to ~/.local/bin
 eget jesseduffield/lazygit --to ~/.local/bin
 eget zellij-org/zellij --to ~/.local/bin
+eget jesvedberg/tpix --to ~/.local/bin
