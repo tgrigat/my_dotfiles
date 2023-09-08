@@ -68,4 +68,3 @@
   "vim-illuminate": { "branch": "master", "commit": "76f28e858f1caae87bfa45fb4fd09e4b053fc45b" },
   "vimtex": { "branch": "master", "commit": "ad17583ce399b6830b4c2888ef2a12d52c5eb607" },
   "which-key.nvim": { "branch": "main", "commit": "7ccf476ebe0445a741b64e36c78a682c1c6118b7" }
-}

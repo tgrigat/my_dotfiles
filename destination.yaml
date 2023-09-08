@@ -47,3 +47,4 @@ okular/okularpartrc: ~/.config/okularpartrc
 lunarvide: ~/.local/bin/lunarvide
 arch.png: ~/.local/share/icons/arch.png
 eget.toml: ~/.eget.toml
+lunarvide: ~/.local/bin/lvide

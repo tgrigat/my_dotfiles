@@ -133,6 +133,7 @@ config.keys = {
 }
 
 config.color_scheme = 'nord'
+config.enable_kitty_graphics = true
 -- config.color_scheme = 'nord'
 
 -- and finally, return the configuration to wezterm

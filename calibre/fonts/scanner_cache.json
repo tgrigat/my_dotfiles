@@ -18253,7 +18253,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/fonts/kanjistrokeorders/KanjiStrokeOrders.ttf||17133976:1688476575.0": {
+    "/usr/share/fonts/kanjistrokeorders/KanjiStrokeOrders.ttf||17133976:1693087580.0": {
       "family_name": "KanjiStrokeOrders",
       "font-family": "KanjiStrokeOrders",
       "font-stretch": "normal",
@@ -40537,7 +40537,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/rnote/fonts/GrapeNuts-Regular.ttf||120556:1692104849.0": {
+    "/usr/share/fonts/rnote-fonts/GrapeNuts-Regular.ttf||120556:1693110737.0": {
       "family_name": "Grape Nuts",
       "font-family": "Grape Nuts",
       "font-stretch": "normal",
@@ -40564,7 +40564,7 @@
         0,
         0
       ],
-      "path": "/usr/share/rnote/fonts/GrapeNuts-Regular.ttf",
+      "path": "/usr/share/fonts/rnote-fonts/GrapeNuts-Regular.ttf",
       "preferred_family_name": null,
       "preferred_subfamily_name": null,
       "subfamily_name": "Regular",
@@ -40573,7 +40573,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/rnote/fonts/OpenDyslexic-Regular.ttf||216136:1692104849.0": {
+    "/usr/share/fonts/rnote-fonts/OpenDyslexic-Regular.ttf||216136:1693110737.0": {
       "family_name": "OpenDyslexic",
       "font-family": "OpenDyslexic",
       "font-stretch": "normal",
@@ -40600,7 +40600,7 @@
         0,
         0
       ],
-      "path": "/usr/share/rnote/fonts/OpenDyslexic-Regular.ttf",
+      "path": "/usr/share/fonts/rnote-fonts/OpenDyslexic-Regular.ttf",
       "preferred_family_name": null,
       "preferred_subfamily_name": null,
       "subfamily_name": "Regular",
@@ -40609,7 +40609,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/rnote/fonts/TT2020Base-Regular.ttf||163056:1692104849.0": {
+    "/usr/share/fonts/rnote-fonts/TT2020Base-Regular.ttf||163056:1693110737.0": {
       "family_name": "TT2020Base",
       "font-family": "TT2020Base",
       "font-stretch": "normal",
@@ -40636,7 +40636,7 @@
         0,
         4
       ],
-      "path": "/usr/share/rnote/fonts/TT2020Base-Regular.ttf",
+      "path": "/usr/share/fonts/rnote-fonts/TT2020Base-Regular.ttf",
       "preferred_family_name": null,
       "preferred_subfamily_name": null,
       "subfamily_name": "Regular",
@@ -40645,7 +40645,7 @@
       "wws_family_name": null,
       "wws_subfamily_name": null
     },
-    "/usr/share/rnote/fonts/Virgil.ttf||80720:1692104849.0": {
+    "/usr/share/fonts/rnote-fonts/Virgil.ttf||80720:1693110737.0": {
       "family_name": "Virgil 3 YOFF",
       "font-family": "Virgil 3 YOFF",
       "font-stretch": "normal",
@@ -40672,7 +40672,7 @@
         0,
         3
       ],
-      "path": "/usr/share/rnote/fonts/Virgil.ttf",
+      "path": "/usr/share/fonts/rnote-fonts/Virgil.ttf",
       "preferred_family_name": null,
       "preferred_subfamily_name": null,
       "subfamily_name": "Regular",
