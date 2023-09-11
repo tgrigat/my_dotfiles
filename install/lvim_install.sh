@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 
 function eget_install() {
   # get eget
@@ -31,7 +30,7 @@ else
 fi
 
 # Check for git, python, curl and pip3
-for cmd in git python curl pip3
+for cmd in git python3 curl pip3
 do
   if ! command -v $cmd &> /dev/null
   then
