@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 
 function eget_install() {
   # get eget
