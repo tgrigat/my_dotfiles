@@ -29,7 +29,7 @@ git clone https://github.com/LumenYoung/dotfiles
 cd dotfiles
 python3 propogate_dotfiles.py
 cd ..
-bash $(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a
+bash <$(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a
 ```
 
 ## ZSH
