@@ -71,6 +71,30 @@ lvim.builtin.which_key.mappings['p'] = {
 
 vim.diagnostic.disable()
 
+Diagnostic_config = {
+  signs = {
+    active = true,
+    values = {
+      { name = "DiagnosticSignError", text = lvim.icons.diagnostics.Error },
+      { name = "DiagnosticSignWarn",  text = lvim.icons.diagnostics.Warning },
+      -- { name = "DiagnosticSignHint",  text = lvim.icons.diagnostics.Hint },
+      -- { name = "DiagnosticSignInfo",  text = lvim.icons.diagnostics.Information },
+    },
+  },
+  virtual_text = false,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = true,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
+}
+
 -- doc here: https://neovim.io/doc/user/diagnostic.html#diagnostic-api
 lvim.builtin.which_key.mappings['lV'] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", "VirtualText Off" }
 lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", "VirtualText On" }
@@ -78,7 +102,7 @@ lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtu
 lvim.builtin.which_key.mappings['lp'] = { "<cmd>Copilot panel<cr>", "Open Copilot Panel" }
 
 lvim.builtin.which_key.mappings['lC'] = { "<cmd>lua vim.diagnostic.disable()<cr>", "Disable Diagnostics" }
-lvim.builtin.which_key.mappings['lc'] = { "<cmd>lua vim.diagnostic.enable()<cr>", "Enable Diagnostics" }
+lvim.builtin.which_key.mappings['lc'] = { "<cmd>lua vim.diagnostic.enable() ; vim.diagnostic.config(Diagnostic_config) <cr>", "Enable Diagnostics" }
 
 lvim.builtin.which_key.mappings['lx'] = { "<cmd>DogeGenerate<cr>", "Generate Docstring" }
 
