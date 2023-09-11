@@ -18,7 +18,7 @@ Best to run it on home directory:
 git clone https://github.com/LumenYoung/dotfiles
 bash $(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) # use -a to install all dependencies
 cd dotfiles
-ln -s "$(pwd)/lvim" ~/.config/lvim
+ln -sf "$(pwd)/lvim" ~/.config/lvim
 cd ..
 ```
 
