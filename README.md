@@ -16,20 +16,20 @@ Best to run it on home directory:
 
 ```
 git clone https://github.com/LumenYoung/dotfiles
+bash $(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) # use -a to install all dependencies
 cd dotfiles
 ln -s "$(pwd)/lvim" ~/.config/lvim
 cd ..
-bash $(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) # use -a to install all dependencies
 ```
 
 ## Quick setup (for all)
 
 ```
 git clone https://github.com/LumenYoung/dotfiles
+bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a
 cd dotfiles
 python3 propogate_dotfiles.py
 cd ..
-bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a
 ```
 
 ## ZSH
