@@ -302,49 +302,49 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1171,
+      "height": 1052,
       "width": 1920,
-      "x": 480,
-      "y": 74
+      "x": 0,
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1171,
+      "height": 1052,
       "width": 1920,
-      "x": 480,
-      "y": 74
+      "x": 0,
+      "y": 0
     },
     "maximized": true,
     "normal_geometry": {
-      "height": 1163,
-      "width": 535,
-      "x": 480,
-      "y": 74
+      "height": 1080,
+      "width": 1920,
+      "x": 0,
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAHgAAAASgAACV8AAATcAAAB4AAAAEoAAAP2AAAE1AAAAAACAAAAB4AAAAHgAAAASgAACV8AAATc"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAAQbAAAAAAAAAAAAAAd/AAAENwAAAAACAAAAB4AAAAAAAAAAAAAAB38AAAQb"
     },
     "screen": {
       "depth": 32,
-      "device_pixel_ratio": 2.0,
+      "device_pixel_ratio": 1.0,
       "geometry_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920,
         "x": 0,
         "y": 0
       },
       "index_in_screens_list": 0,
-      "manufacturer": "AU Optronics",
-      "model": "eDP-1-unknown",
-      "name": "eDP-1",
+      "manufacturer": "HP Inc.",
+      "model": "OMEN by HP 25/3CQ0011QZX",
+      "name": "HDMI-A-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920,
         "x": 0,
         "y": 0
@@ -613,7 +613,7 @@
   },
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 40
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 42
   },
   "memory_view books view state": {
     "column_alignment": {
