@@ -38,6 +38,7 @@ keybinds clear-defaults=true {
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
         bind "a" { EditScrollback; }
+        bind "m" { TogglePaneFrames; }
     }
     move {
         bind "Ctrl n" { SwitchToMode "Normal"; }
