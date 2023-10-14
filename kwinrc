@@ -25,7 +25,7 @@ Color=128,255,255
 BorderActivateAll=9
 
 [Effect-windowview]
-BorderActivateAll=2
+BorderActivateAll=9
 
 [ModifierOnlyShortcuts]
 Meta=org.kde.krunner,/App,,toggleDisplay
@@ -113,7 +113,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.40273437500000003},{"width":0.5972656249999999}]}
 
 [Tiling][7916a0f3-37c2-566e-8ca0-70809ec5c4e7]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.6104166666666666},{"width":0.3895833333333334}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.6104166666666666},{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.3895833333333334}]}
 
 [Tiling][7a9dbff3-2b6d-571c-8fd9-2262b977fd6b]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
@@ -140,13 +140,13 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][b3e5e6a9-6374-5450-b61e-60fb93794d79]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5791666666666667},{"width":0.4208333333333333}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5791666666666667},{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.4208333333333333}]}
 
 [Tiling][bcf3cd49-e7f1-510b-8014-4e0e8e7278ec]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][bd455426-91b5-5aa4-b78c-9e21c3c810ab]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.7505208333333333},{"width":0.2494791666666667}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.64375},{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.35624999999999996}]}
 
 [Tiling][beec67b5-50a7-5fcb-bcdf-84a717c804fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.43398437500000014},{"width":0.5660156249999995}]}
@@ -156,6 +156,15 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][e3991eb1-739c-5139-b089-3e9de64f0d16]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.37968750000000023},{"width":0.6203124999999998}]}
+
+[Tiling][ed973bfd-ca72-5739-a0bb-d18dee6deeb9]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][ef334693-7837-51a4-b9d1-8db73c72f2a4]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][f9dba937-7272-5026-9700-5249bf89cb93]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
@@ -169,7 +178,7 @@ SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize
 
 [Xwayland]
-Scale=1.5
+Scale=1
 
 [org.kde.kdecoration2]
 ButtonsOnRight=FIAX
