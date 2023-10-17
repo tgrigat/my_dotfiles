@@ -91,6 +91,11 @@ config.keys = {
     action = wezterm.action.ActivatePaneDirection "Left",
   },
   {
+    key = 'i',
+    mods = 'CTRL',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  {
     key = "j",
     mods = "CTRL|SHIFT",
     action = wezterm.action.ActivatePaneDirection "Down",
