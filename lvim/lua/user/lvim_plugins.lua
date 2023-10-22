@@ -3,11 +3,18 @@
 -------------------------------------------------------------------------
 lvim.plugins = {
   {
+    "jpalardy/vim-slime",
+    config = function()
+      vim.g.slime_target = "zellij"
+      vim.g.slime_bracketed_paste = 1
+    end
+  },
+  {
     "navarasu/onedark.nvim"
   },
   {
     'ojroques/nvim-osc52'
- },
+  },
   {
     'projekt0n/github-nvim-theme',
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme

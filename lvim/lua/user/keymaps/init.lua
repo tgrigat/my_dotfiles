@@ -33,6 +33,17 @@ lvim.builtin.which_key.mappings["="] = {
   P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins" }
 }
 
+lvim.builtin.which_key.mappings["r"] = {
+  name = "REPL",
+  r = { "<cmd>normal <C-c><C-c><cr>", "Run" },
+  c = { "<cmd>SlimeConfig<cr>", "Config" },
+}
+lvim.builtin.which_key.vmappings["r"] = {
+  name = "REPL",
+  r = { "<cmd>normal <C-c><C-c><cr>", "Run" },
+}
+
+
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>quitall<cr>", "Quit all" }
 
 lvim.builtin.which_key.mappings["o"] = {
