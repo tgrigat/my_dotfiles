@@ -1,6 +1,6 @@
 #!/usr/bin/bash
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
+# export GTK_IM_MODULE=fcitx
+# export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre
 # setting environmental variables under wayland
