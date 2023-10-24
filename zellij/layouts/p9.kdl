@@ -1,0 +1,39 @@
+layout {
+
+  tab_template name="default_tab" split_direction="horizontal" {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+
+  pane_template name="default_pane" split_direction="vertical"  {
+    borderless false
+  }
+  
+  default_tab name="main" split_direction="vertical"  {
+    default_pane {
+      cwd "/export/home/yang/git/thesis_experiment_repo/"
+      command "lvim"
+      focus true
+    }
+    default_pane
+  }
+
+  default_tab name="LLM server" split_direction="vertical" {
+    default_pane 
+    default_pane 
+  }
+
+  default_tab name="inspect" split_direction="vertical" {
+    default_pane name="htop" {
+      command "htop"
+    }
+    default_pane name="nvtop" {
+      command "nvtop"
+    }
+  }
+}
