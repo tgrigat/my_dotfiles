@@ -14,21 +14,29 @@ layout {
     borderless false
   }
   
-  default_tab name="main" split_direction="vertical"  {
-    default_pane {
+  default_tab name="main ws" split_direction="vertical"  {
+    cwd "/export/home/yang/git/thesis_experiment_repo/"
+
+    default_pane name="repo" {
       cwd "/export/home/yang/git/thesis_experiment_repo/"
       command "lvim"
       focus true
     }
-    default_pane
+    default_pane name="commands" {
+    }
   }
 
-  default_tab name="LLM server" split_direction="vertical" {
-    default_pane 
-    default_pane 
+  default_tab name="llm server" split_direction="vertical" {
+    cwd "/export/home/yang/git/thesis_experiment_repo/"
+    default_pane name="llm server" 
+    default_pane name="repo" {
+      cwd "/export/home/yang/git/thesis_experiment_repo/"
+      command "lvim"
+    }
   }
 
   default_tab name="inspect" split_direction="vertical" {
+    cwd "/export/home/yang/git/thesis_experiment_repo/"
     default_pane name="htop" {
       command "htop"
     }
