@@ -140,7 +140,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][b3e5e6a9-6374-5450-b61e-60fb93794d79]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5791666666666667},{"layoutDirection":"vertical","tiles":[{"height":0.5},{"height":0.5}],"width":0.4208333333333333}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5791666666666667},{"layoutDirection":"vertical","tiles":[{"height":0.8383333333333333},{"height":0.16166666666666674}],"width":0.4208333333333333}]}
 
 [Tiling][bcf3cd49-e7f1-510b-8014-4e0e8e7278ec]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
@@ -178,7 +178,7 @@ SeparateScreenFocus=true
 TitlebarDoubleClickCommand=Minimize
 
 [Xwayland]
-Scale=1
+Scale=1.5
 
 [org.kde.kdecoration2]
 ButtonsOnRight=FIAX

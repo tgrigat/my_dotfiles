@@ -139,6 +139,7 @@ config.keys = {
 
 config.color_scheme = 'nord'
 config.enable_kitty_graphics = true
+config.font_size = 11.0
 -- config.color_scheme = 'nord'
 
 -- and finally, return the configuration to wezterm
