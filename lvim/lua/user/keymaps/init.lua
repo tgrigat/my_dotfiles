@@ -115,7 +115,7 @@ lvim.builtin.which_key.mappings['lp'] = { "<cmd>Copilot panel<cr>", "Open Copilo
 lvim.builtin.which_key.mappings['lC'] = { "<cmd>lua vim.diagnostic.disable()<cr>", "Disable Diagnostics" }
 lvim.builtin.which_key.mappings['lc'] = { "<cmd>lua vim.diagnostic.enable() ; vim.diagnostic.config(Diagnostic_config) <cr>", "Enable Diagnostics" }
 
-lvim.builtin.which_key.mappings['lx'] = { "<cmd>DogeGenerate<cr>", "Generate Docstring" }
+lvim.builtin.which_key.mappings['lx'] = { "<cmd>Neogen<cr>", "Generate Docstring" }
 
 lvim.builtin.which_key.mappings["lo"] = { "<cmd>AerialToggle right<cr>", "Saga Outline" }
 lvim.builtin.which_key.mappings["lf"] = {
