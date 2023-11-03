@@ -194,12 +194,23 @@ lvim.plugins = {
   { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
   -- { 'kkoomen/vim-doge',              build = ':call doge#install()' },
   {
-    "danymat/neogen", 
-    dependencies = "nvim-treesitter/nvim-treesitter", 
-    config = true,
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("neogen").setup {
+        enabled = true,
+        languages = {
+          python = {
+            template = {
+              annotation_convention = "numpydoc",
+            },
+          },
+        },
+      }
+    end,
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*"
-  }
+  },
   {
     'mrjones2014/legendary.nvim'
     -- sqlite is only needed if you want to use frecency sorting
