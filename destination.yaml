@@ -50,3 +50,4 @@ eget.toml: ~/.eget.toml
 lunarvide: ~/.local/bin/lvide
 code-oss-settings.json: "~/.config/Code - OSS/User/settings.json"
 code-oss-keybindings.json: "~/.config/Code - OSS/User/keybindings.json"
+inputrc: ~/.config/inputrc
