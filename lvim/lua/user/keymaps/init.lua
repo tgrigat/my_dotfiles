@@ -80,7 +80,7 @@ lvim.builtin.which_key.mappings['p'] = {
   o = { "<cmd>Legendary commands<cr>", "Command palette" }
 }
 
-vim.diagnostic.disable()
+-- vim.diagnostic.disable()
 
 Diagnostic_config = {
   signs = {
