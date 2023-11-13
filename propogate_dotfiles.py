@@ -72,6 +72,12 @@ def create_link(
             os.symlink(join(config_dir, cfg), target_dir_expanded)
         except FileExistsError:
             print(f"Warning: {cfg} already exists at {target_dir_expanded}")
+        except FileNotFoundError:
+            os.makedirs(target_dir_expanded)
+            print(
+                f"Warning: {cfg} not found in {config_dir}, created for now. "
+                "Please rerun to make it happen!"
+            )
         print(f"Link {cfg} to target")
 
 
