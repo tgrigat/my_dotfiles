@@ -302,50 +302,50 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1052,
-      "width": 1920,
+      "height": 1172,
+      "width": 960,
       "x": 0,
-      "y": 0
+      "y": 74
     },
     "full_screened": false,
     "geometry": {
-      "height": 1052,
-      "width": 1920,
+      "height": 1172,
+      "width": 960,
       "x": 0,
-      "y": 0
+      "y": 74
     },
-    "maximized": true,
+    "maximized": false,
     "normal_geometry": {
-      "height": 1080,
-      "width": 1920,
+      "height": 1172,
+      "width": 960,
       "x": 0,
-      "y": 0
+      "y": 74
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAAAAAAB38AAAQbAAAAAAAAAAAAAAd/AAAENwAAAAACAAAAB4AAAAAAAAAAAAAAB38AAAQb"
+      "__value__": "AdnQywADAAAAAAAAAAAASgAAA78AAATdAAAAAAAAAEoAAAO/AAAE3QAAAAEAAAAAB4AAAAAAAAAASgAAA78AAATd"
     },
     "screen": {
       "depth": 32,
       "device_pixel_ratio": 1.0,
       "geometry_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920,
         "x": 0,
         "y": 0
       },
-      "index_in_screens_list": 0,
-      "manufacturer": "HP Inc.",
-      "model": "OMEN by HP 25/3CQ0011QZX",
+      "index_in_screens_list": 1,
+      "manufacturer": "Samsung Electric Company",
+      "model": "SMS24A450/HVMBA01925",
       "name": "HDMI-A-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1080,
+        "height": 1200,
         "width": 1920
       },
       "virtual_geometry": {
-        "height": 1080,
-        "width": 1920,
+        "height": 1200,
+        "width": 3840,
         "x": 0,
         "y": 0
       }
@@ -613,7 +613,7 @@
   },
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 42
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 44
   },
   "memory_view books view state": {
     "column_alignment": {

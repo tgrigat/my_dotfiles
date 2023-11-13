@@ -7,7 +7,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 -- let g:rustfmt_autosave = 1
 
-vim.g.rustfmt_autosave = 1
+-- vim.g.rustfmt_autosave = 1
 
 -- local formatters = require "lvim.lsp.null-ls.formatters"
 -- formatters.setup {
