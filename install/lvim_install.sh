@@ -1,3 +1,12 @@
+function check_term() {
+  if [ "$TERM" != "xterm-256color" ]; then
+    if [ "$SHELL" = "/bin/bash" ]; then
+      echo 'export TERM="xterm-256color"' >> ~/.bashrc
+    elif [ "$SHELL" = "/bin/zsh" ]; then
+      echo 'export TERM="xterm-256color"' >> ~/.zshrc
+    fi
+  fi
+}
 
 function eget_install() {
   # get eget
@@ -42,6 +51,7 @@ done
 
 # Check if '-a' flag is passed
 if [[ "$1" == "-a" ]]; then
+  check_term
   eget_install
   nvm_install
 fi
