@@ -15,11 +15,7 @@ python3 propogate_dotfiles.py
 Best to run it on home directory:
 
 ```
-git clone https://github.com/LumenYoung/dotfiles
-bash $(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) # use -a to install all dependencies
-cd dotfiles
-ln -sf "$(pwd)/lvim" ~/.config/lvim
-cd ..
+bash $(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a # use -a to install all dependencies
 ```
 
 ## Quick setup (for all)

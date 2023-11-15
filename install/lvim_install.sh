@@ -64,5 +64,16 @@ fi
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
 
+
+# clone my dotfiles
+
+git clone https://github.com/LumenYoung/dotfiles
+
 # Install lunarvim
+cd dotfiles
+
 bash <(curl -s https://raw.githubusercontent.com/Lunarvim/Lunarvim/master/utils/installer/install.sh) --no-install-dependencies
+
+mkdir ~/.config
+ln -sf "$(pwd)/lvim" ~/.config/lvim
+cd ..
