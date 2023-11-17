@@ -1,3 +1,69 @@
+function create_py_dev_cfgs() {
+    # Create pyrightconfig.json
+    if [ ! -f pyrightconfig.json ]; then
+        cat > pyrightconfig.json << EOF
+{
+  "typeCheckingMode": "basic",
+  "pythonPlatform": "Linux",
+  "reportMissingImports": false,
+  "useLibraryCodeForTypes": true,
+  "reportMissingTypeStubs": false,
+  "reportGeneralTypeIssues": false,
+  "reportPrivateImportUsage": "information",
+  "exclude": ["pdb_history.py"],
+  "ignore": ["pdb_history.py"]
+}
+EOF
+    fi
+
+    # Create .flake8
+    if [ ! -f .flake8 ]; then
+        cat > .flake8 << EOF
+[flake8]
+ignore = E501, E203, E402
+exclude =
+    pdb_history.py,
+    # yet_another_file.py
+EOF
+    fi
+
+    # Create .ruff.toml
+    if [ ! -f .ruff.toml ]; then
+        cat > .ruff.toml << EOF
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "pdb_history.py"
+]
+
+[tool.ruff.lint]
+# Enable Pyflakes (F) and a subset of the pycodestyle (E)  codes by default.
+# select = ["E4", "E7", "E9", "F"]
+ignore = ["E266",]
+EOF
+    fi
+}
 
 function gui() {
   if [[ $1 = "x" ]]; then
