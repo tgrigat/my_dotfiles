@@ -43,6 +43,12 @@ lvim.builtin.which_key.vmappings["r"] = {
   r = { "<cmd>normal <C-c><C-c><cr>", "Run" },
 }
 
+lvim.builtin.which_key.mappings["y"] = {
+  name = "Yank",
+  y = { "<cmd>let @+=expand('%:p') . ':' . line('.')<cr>", "Absolute Path w/ LN" },
+  f = { "<cmd>let @+=expand('%:p')<cr>", "Absolute Path" },
+}
+
 
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>quitall<cr>", "Quit all" }
 
@@ -113,7 +119,8 @@ lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtu
 lvim.builtin.which_key.mappings['lp'] = { "<cmd>Copilot panel<cr>", "Open Copilot Panel" }
 
 lvim.builtin.which_key.mappings['lC'] = { "<cmd>lua vim.diagnostic.disable()<cr>", "Disable Diagnostics" }
-lvim.builtin.which_key.mappings['lc'] = { "<cmd>lua vim.diagnostic.enable() ; vim.diagnostic.config(Diagnostic_config) <cr>", "Enable Diagnostics" }
+lvim.builtin.which_key.mappings['lc'] = {
+  "<cmd>lua vim.diagnostic.enable() ; vim.diagnostic.config(Diagnostic_config) <cr>", "Enable Diagnostics" }
 
 lvim.builtin.which_key.mappings['lx'] = { "<cmd>Neogen<cr>", "Generate Docstring" }
 
