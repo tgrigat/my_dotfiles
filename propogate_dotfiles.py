@@ -1,5 +1,6 @@
 # pylint: disable=invalid-name, line-too-long, missing-docstring, redefined-outer-name
-"""Propogate my dotfiles in the repo, they are symlinked to destinations defined in destinations.yaml"""
+"""Propogate my dotfiles in the repo, 
+they are symlinked to destinations defined in destinations.yaml"""
 
 import os
 from typing import Dict, List, Any
