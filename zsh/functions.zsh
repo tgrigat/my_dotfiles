@@ -65,6 +65,11 @@ EOF
     fi
 }
 
+function lvim_clearn_sessions() {
+  rm ~/.local/share/lvim/sessions/*
+  echo "Cleared sessions at ~/.local/share/lvim/sessions"
+}
+
 function gui() {
   if [[ $1 = "x" ]]; then
     # todo fix this
