@@ -119,6 +119,9 @@ lvim.plugins = {
         "Toggle Flash Search"
       },
     },
+    config = function()
+      require("flash").toggle()
+    end
   },
   "savq/melange",
   { "p00f/clangd_extensions.nvim" },
