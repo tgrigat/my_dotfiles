@@ -111,9 +111,9 @@ if (which zellij > /dev/null); then
   alias zj="zellij"
 fi
 
-if (which lvim > /dev/null); then
-  alias vim="lvim "
-fi
+# if (which lvim > /dev/null); then
+#   alias vim="lvim "
+# fi
 
 if (which distrobox > /dev/null); then
   alias dsb="distrobox "
