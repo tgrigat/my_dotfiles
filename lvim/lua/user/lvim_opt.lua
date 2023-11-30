@@ -95,3 +95,15 @@ local diagnostic_config = {
 }
 
 vim.diagnostic.config(diagnostic_config)
+
+vim.opt.shell = "/bin/bash"
+
+lvim.builtin.terminal.shell = function ()
+  if vim.fn.executable('zsh') == 1 then
+    return 'zsh'
+  elseif vim.fn.executable('bash') == 1 then
+    return 'bash'
+  else
+    return 'sh'
+  end
+end
