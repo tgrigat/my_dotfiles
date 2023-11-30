@@ -97,7 +97,6 @@ lvim.plugins = {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    ---@type Flash.Config
     opts = {},
     -- stylua: ignore
     keys = {
@@ -339,10 +338,10 @@ lvim.plugins = {
             })
           end,
         },
-        dap = {
-          -- adapter= codelldb_adapter,
-          adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
+        -- dap = {
+        --   -- adapter= codelldb_adapter,
+        --   adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+        -- },
         server = {
           on_attach = function(client, bufnr)
             require("lvim.lsp").common_on_attach(client, bufnr)
