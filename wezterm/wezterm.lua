@@ -137,7 +137,11 @@ config.keys = {
   },
 }
 
-config.color_scheme = 'nord'
+-- config.color_scheme = 'ayu'
+-- config.color_scheme = 'nord'
+-- config.color_scheme = 'Ayu Mirage'
+config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'MaterialDark'
 config.enable_kitty_graphics = true
 config.font_size = 11.0
 -- config.color_scheme = 'nord'

@@ -318,65 +318,68 @@ themes {
     cyan 136 192 208 // #88C0D0
     white 229 233 240 // #E5E9F0
     orange 208 135 112 // #D08770
-  }
-  tokyo-night {
-    fg 169 177 214
-    bg 26 27 38
-    black 56 62 90
-    red 249 51 87
-    green 158 206 106
-    yellow 224 175 104
-    blue 122 162 247
-    magenta 187 154 247
-    cyan 42 195 222
-    white 192 202 245
-    orange 255 158 100
-  }
-  tokyo-night-dark {
-    fg 169 177 214
-    bg 26 27 38
-    black 56 62 90
-    red 249 51 87
-    green 158 206 106
-    yellow 224 175 104
-    blue 122 162 247
-    magenta 187 154 247
-    cyan 42 195 222
-    white 192 202 245
-    orange 255 158 100
-  }
-  pencil-light {
-    fg "#005F87"
-    bg "#f1f1f1"
-    black "#f1f1f1"
-    red "#B6D6FD"
-    green "#10A778"
-    yellow "#A89C14"
-    blue "#008EC4"
-    magenta "#B6D6FD"
-    cyan "#20A5BA"
-    white "#424242"
-    orange "#D75F5F"
-  }
-  solarized-dark {
-    fg 253 246 227
-    bg 0 43 54
-    black 7 54 66
-    red 220 50 47
-    green 133 153 0
-    yellow 181 137 0
-    blue 38 139 210
-    magenta 211 54 130
-    cyan 42 161 152
-    white 238 232 213
-    orange 203 75 22
-  }
+}
+    cyber-noir {
+        bg "#0b0e1a" // Dark Blue
+        fg "#91f3e4" // Teal
+        red "#ff578d" // Hot Pink
+        green "#00ff00" // Neon Green
+        blue "#3377ff" // Electric Blue
+        yellow "#ffd700" // Cyber Yellow
+        magenta "#ff00ff" // Neon Purple
+        orange "#ff7f50" // Cyber Orange
+        cyan "#00e5e5" // Cyan
+        black "#000000" // Black
+        white "#91f3e4" // Teal
+    }
+
+    blade-runner {
+        bg "#1a1a1a" // Dark Gray
+        fg "#2bbff4" // Neon Blue
+        red "#ff355e" // Neon Pink
+        green "#00ff00" // Neon Green
+        blue "#00d9e3" // Electric Blue
+        yellow "#ffe600" // Neon Yellow
+        magenta "#ff00ff" // Neon Purple
+        orange "#ff8c0d" // Cyber Orange
+        cyan "#00e5e5" // Cyan
+        black "#000000" // Black
+        white "#ffffff" // White
+    }
+
+    retro-wave {
+        bg "#1a1a1a" // Dark Gray
+        fg "#ff9900" // Retro Orange
+        red "#ff355e" // Neon Pink
+        green "#00ff00" // Neon Green
+        blue "#00d9e3" // Electric Blue
+        yellow "#ffe600" // Neon Yellow
+        magenta "#ff00ff" // Neon Purple
+        orange "#ff6611" // Retro Red
+        cyan "#00e5e5" // Cyan
+        black "#000000" // Black
+        white "#ffffff" // White
+    }
+    tokyo-night-dark {
+        fg 169 177 214
+        bg 26 27 38
+        black 56 62 90
+        red 249 51 87
+        green 158 206 106
+        yellow 224 175 104
+        blue 122 162 247
+        magenta 187 154 247
+        cyan 42 195 222
+        white 192 202 245
+        orange 255 158 100
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "tokyo-night-dark"
+theme "cyber-noir"
+theme "blade-runner"
 
 // The name of the default layout to load on startup
 // Default: "default"
