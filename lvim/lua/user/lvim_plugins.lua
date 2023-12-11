@@ -295,6 +295,14 @@ lvim.plugins = {
         daily_notes = {
           folder = "Days",
         },
+        mappings = {
+          ["kkl"] = {
+            action = function()
+              return require("obsidian").util.gf_passthrough()
+            end,
+            opts = { noremap = false, expr = true, buffer = true },
+          },
+        }
       })
       require("nvim-treesitter.configs").setup({
         highlight = {
