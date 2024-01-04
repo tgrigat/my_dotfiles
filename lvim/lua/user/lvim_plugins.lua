@@ -2,6 +2,7 @@
 ----------------------- Additional Plugins ------------------------------
 -------------------------------------------------------------------------
 lvim.plugins = {
+  { "lambdalisue/suda.vim" },
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -285,6 +286,7 @@ lvim.plugins = {
   {
     "epwalsh/obsidian.nvim",
     config = function()
+      vim.opt_local.conceallevel = 2
       require("obsidian").setup({
         dir = "~/obsidian",
         use_advanced_uri = true,
