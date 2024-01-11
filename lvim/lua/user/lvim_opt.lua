@@ -107,3 +107,6 @@ lvim.builtin.terminal.shell = function ()
     return 'sh'
   end
 end
+
+-- Set command for setting filetypes
+vim.cmd('command! Md set filetype=markdown')
