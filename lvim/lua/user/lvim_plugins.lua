@@ -2,6 +2,17 @@
 ----------------------- Additional Plugins ------------------------------
 -------------------------------------------------------------------------
 lvim.plugins = {
+  {
+    "ixru/nvim-markdown"
+  },
+  {
+    "subnut/nvim-ghost.nvim",
+    config = function()
+      vim.api.nvim_command('augroup nvim_ghost_user_autocommands')
+      vim.api.nvim_command(
+        'autocmd nvim_ghost_user_autocommands User chat.introspector.ink,ai.lumeny.io,www.reddit.com,www.github.com,memos.lumeny.io setfiletype markdown')
+    end
+  },
   { "lambdalisue/suda.vim" },
   {
     "folke/noice.nvim",
