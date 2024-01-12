@@ -277,3 +277,4 @@ nvim/lua/lvim
 BreakTimer
 zsh/alias.zsh.zwc
 zsh/.p10k.zsh
+ranger/plugins/__pycache__
