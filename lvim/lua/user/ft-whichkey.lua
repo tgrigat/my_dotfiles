@@ -3,12 +3,22 @@ if not status_ok then
   return
 end
 -- local bufNo = vim.fn.bufnr('%') -- this function is not available now.
-local bufNo = vim.api.nvim_get_current_buf() -- this function is not available now.
 
 
 -------------------- Python Buffer Key Bindings ------------------------------
+--
+---- Get current buffer number
+local bufNo = vim.api.nvim_get_current_buf()
 
-vim.cmd('autocmd FileType python lua WhichKeyPython(' .. bufNo .. ')')
+-- Create the autocommand
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  callback = function(ev)
+    if vim.bo.filetype == 'python' then
+      vim.cmd("lua WhichKeyPython(" .. ev.buf .. ")")
+    end
+  end
+})
+
 function WhichKeyPython(bufNumber)
   wk.register({
     ["<leader>j"] = {
@@ -30,7 +40,6 @@ function WhichKeyPython(bufNumber)
     },
   }, { buffer = bufNumber })
 end
-
 
 -------------------- Tex Buffer Key Bindings ------------------------------
 
