@@ -1,0 +1,3 @@
+[submodule "ranger/plugins/oscyank"]
+	path = ranger/plugins/oscyank
+	url = https://github.com/laggardkernel/ranger-oscyank.git
