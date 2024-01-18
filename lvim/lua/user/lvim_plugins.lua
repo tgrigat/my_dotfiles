@@ -11,6 +11,8 @@ lvim.plugins = {
       vim.api.nvim_command('augroup nvim_ghost_user_autocommands')
       vim.api.nvim_command(
         'autocmd nvim_ghost_user_autocommands User chat.introspector.ink,ai.lumeny.io,www.reddit.com,www.github.com,memos.lumeny.io setfiletype markdown')
+      vim.api.nvim_command(
+        'autocmd nvim_ghost_user_autocommands User leetcode.com setfiletype cpp')
     end,
     cond = function()
       local hostname = io.popen("uname -n"):read('*a')

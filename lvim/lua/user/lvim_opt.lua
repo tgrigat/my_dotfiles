@@ -111,3 +111,5 @@ end
 
 -- Set command for setting filetypes
 vim.cmd('command! Md set filetype=markdown')
+vim.cmd('command! Ftpy set filetype=python')
+vim.cmd('command! Ftcpp set filetype=cpp')
