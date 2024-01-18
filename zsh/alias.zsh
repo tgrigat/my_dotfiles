@@ -67,6 +67,7 @@ alias pxy="export http_proxy=http://127.0.0.1:1089;export https_proxy=http://127
 # for unproxy
 alias unpxy='unset all_proxy; unset http_proxy; unset https_proxy'
 
+alias zjc="zellij options --simplified-ui true --pane-frames false"
 
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
