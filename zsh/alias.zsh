@@ -109,7 +109,10 @@ fi
 
 if (which zellij > /dev/null); then
   alias zj="zellij"
-  alias zjc="zellij options --simplified-ui true --pane-frames false"
+  function zjc() {
+    local hostname=$(hostname)
+    zellij options --simplified-ui true --pane-frames false --session-name $hostname
+  }
 fi
 
 # if (which lvim > /dev/null); then
