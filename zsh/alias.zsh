@@ -116,7 +116,14 @@ if (which zellij > /dev/null); then
 fi
 
 if (which yazi > /dev/null); then
-  alias yz="yazi"
+  function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+  }
 fi
 
 # if (which lvim > /dev/null); then
