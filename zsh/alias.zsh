@@ -115,6 +115,10 @@ if (which zellij > /dev/null); then
   }
 fi
 
+if (which yazi > /dev/null); then
+  alias yz="yazi"
+fi
+
 # if (which lvim > /dev/null); then
 #   alias vim="lvim "
 # fi
