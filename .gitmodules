@@ -1,3 +1,6 @@
 [submodule "ranger/plugins/oscyank"]
 	path = ranger/plugins/oscyank
 	url = https://github.com/laggardkernel/ranger-oscyank.git
+[submodule "tmux"]
+	path = tmux
+	url = https://github.com/gpakosz/.tmux.git
