@@ -53,3 +53,4 @@ code-oss-keybindings.json: "~/.config/Code - OSS/User/keybindings.json"
 inputrc: ~/.config/inputrc
 vim_wrapper.sh: ~/.local/bin/vim
 yazi: ~/.config/yazi
+rio: ~/.config/rio

@@ -15,6 +15,7 @@ end
 -- For example, changing the color scheme:
 
 config.font = wezterm.font("Iosevka Term")
+-- config.term="wezterm"
 
 -- for i = 1, 8 do
 --   -- CTRL+ALT + number to activate that tab
