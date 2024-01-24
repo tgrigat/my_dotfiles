@@ -79,6 +79,15 @@ lvim.plugins = {
     -- Ensure that it runs first to minimize delay when opening file from terminal
     lazy = false,
     priority = 1001,
+    "Selyss/mind.nvim",
+    branch = 'v2.2',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- optional, used for icons
+    },
+    opts = {
+      -- your configuration comes here
+    }
   },
   {
     "subnut/nvim-ghost.nvim",

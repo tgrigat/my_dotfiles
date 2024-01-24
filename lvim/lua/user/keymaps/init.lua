@@ -33,6 +33,13 @@ lvim.builtin.which_key.mappings["="] = {
   P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins" }
 }
 
+lvim.builtin.which_key.mappings["n"] = {
+  name = "Note",
+  c = { "<cmd>MindClose<cr>", "Close Note Pane" },
+  m = { "<cmd>MindOpenMain<cr>", "Open Main" },
+  n = { "<cmd>MindOpenSmart<cr>", "Open Project" },
+}
+
 lvim.builtin.which_key.mappings["r"] = {
   name = "REPL",
   r = { "<cmd>normal <C-c><C-c><cr>", "Run" },
