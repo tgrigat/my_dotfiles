@@ -6,6 +6,27 @@ lvim.plugins = {
     "ixru/nvim-markdown"
   },
   {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    -- tag = "*",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = {      -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
+  {
     "willothy/flatten.nvim",
     config = true,
     -- or pass configuration with
@@ -79,17 +100,6 @@ lvim.plugins = {
     -- Ensure that it runs first to minimize delay when opening file from terminal
     lazy = false,
     priority = 1001,
-  },
-  {
-    "Selyss/mind.nvim",
-    branch = 'v2.2',
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, used for icons
-    },
-    opts = {
-      -- your configuration comes here
-    }
   },
   {
     "subnut/nvim-ghost.nvim",
