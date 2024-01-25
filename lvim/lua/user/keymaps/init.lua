@@ -76,9 +76,12 @@ lvim.builtin.which_key.mappings["o"] = {
   name = "Obsidian",
   ['t'] = { "<cmd>ObsidianToday<cr>", "Daily note" },
   ['y'] = { "<cmd>ObsidianYesterday<cr>", "Yesterday's note" },
-  ['s'] = { "<cmd>ObsidianSearch<cr>", "Search notes" },
+  ['f'] = { "<cmd>ObsidianSearch<cr>", "Search notes" },
   ['g'] = { "<cmd>ObsidianFollowLink<cr>", "Goto link" },
-  ['o'] = { "<cmd>ObsidianOpen<cr>", "Open Obsidian" }
+  ['o'] = { "<cmd>ObsidianOpen<cr>", "Open Obsidian" },
+  ['c'] = { function()
+    return require("obsidian").util.toggle_checkbox()
+  end, "Open Obsidian" }
 }
 
 lvim.builtin.which_key.mappings["a"] = {

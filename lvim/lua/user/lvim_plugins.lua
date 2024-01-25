@@ -3,7 +3,10 @@
 -------------------------------------------------------------------------
 lvim.plugins = {
   {
-    "ixru/nvim-markdown"
+    "ixru/nvim-markdown",
+    config = function()
+      vim.g.vim_markdown_conceal = 1
+    end
   },
   {
     "nvim-neorg/neorg",
@@ -416,7 +419,7 @@ lvim.plugins = {
       require("obsidian").setup({
         dir = "~/obsidian",
         use_advanced_uri = true,
-        disable_frontmatter = true,
+        disable_frontmatter = false,
         completion = {
           nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
         },
@@ -424,12 +427,20 @@ lvim.plugins = {
           folder = "Days",
         },
         mappings = {
-          ["kkl"] = {
+          -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+          ["gf"] = {
             action = function()
               return require("obsidian").util.gf_passthrough()
             end,
             opts = { noremap = false, expr = true, buffer = true },
           },
+          -- Toggle check-boxes.
+          -- ["<leader>oc"] = {
+          --   action = function()
+          --     return require("obsidian").util.toggle_checkbox()
+          --   end,
+          --   opts = { buffer = true },
+          -- },
         }
       })
       require("nvim-treesitter.configs").setup({
