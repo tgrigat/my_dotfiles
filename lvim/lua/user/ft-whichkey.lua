@@ -102,14 +102,15 @@ function WhichKeyNorg(bufNumber)
       l = { "<cmd>Neorg mode traverse-link<cr>", "Links" },
     },
     ["<localleader>e"] = { "<cmd>Neorg keybind all core.looking-glass.magnify-code-block<cr>", "Edit Code" },
-    ["<localleader>t"] = { name= "Task",
-      d = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_done<cr>", "Done" },
-      u = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_undone<cr>", "Undone" },
-      p = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_pending<cr>", "Pending" },
-      h = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_on_hold<cr>", "On Hold" },
-      c = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_cancelled<cr>", "Cancelled" },
-      r = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_recurring<cr>", "Recurring" },
-      i = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_important<cr>", "Important" },
+    ["<localleader>t"] = {
+      name = "Task",
+      d = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_done<cr>", "Done" },
+      u = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_undone<cr>", "Undone" },
+      p = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_pending<cr>", "Pending" },
+      h = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_on_hold<cr>", "On Hold" },
+      c = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_cancelled<cr>", "Cancelled" },
+      r = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_recurring<cr>", "Recurring" },
+      i = { "<cmd>Neorg keybind core.qol.todo_items.todo.task_important<cr>", "Important" },
     },
 
     -- ["<leader>d"] = {

@@ -35,6 +35,7 @@ lvim.plugins = {
           ["core.export.markdown"] = {},
         },
       }
+      table.insert(lvim.builtin.cmp.sources, { name = "neorg" })
     end,
   },
   {
