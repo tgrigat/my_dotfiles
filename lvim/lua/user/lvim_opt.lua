@@ -99,7 +99,7 @@ vim.diagnostic.config(diagnostic_config)
 
 vim.opt.shell = "/bin/bash"
 
-lvim.builtin.terminal.shell = function ()
+lvim.builtin.terminal.shell = function()
   if vim.fn.executable('zsh') == 1 then
     return 'zsh'
   elseif vim.fn.executable('bash') == 1 then
@@ -113,3 +113,6 @@ end
 vim.cmd('command! Md set filetype=markdown')
 vim.cmd('command! Ftpy set filetype=python')
 vim.cmd('command! Ftcpp set filetype=cpp')
+
+-- Set the localloader to ; , used by neorg
+vim.g.maplocalleader = ";"

@@ -35,9 +35,22 @@ lvim.builtin.which_key.mappings["="] = {
 
 lvim.builtin.which_key.mappings["n"] = {
   name = "Note",
-  c = { "<cmd>MindClose<cr>", "Close Note Pane" },
-  m = { "<cmd>MindOpenMain<cr>", "Open Main" },
-  n = { "<cmd>MindOpenSmart<cr>", "Open Project" },
+  i = { "<cmd>Neorg index<cr>", "Open Neorg index" },
+  r = { "<cmd>Neorg return<cr>", "Return" },
+  h = { "<cmd>help norg<cr>", "Help" },
+  w = {
+    name = "Workspaces",
+    m = { "<cmd>Neorg workspace main<cr>", "Main" }
+  },
+  k = { "<cmd>Neorg keybind all<cr>", "Keybinds" },
+  j = {
+    name = "Journal",
+    t = { "<cmd>Neorg journal today<cr>", "Today" },
+    n = { "<cmd>Neorg journal tomorrow<cr>", "Tomorrow" },
+  },
+  -- r = { "<cmd>Neorg return<cr>", "Return" },
+  -- m = { "<cmd>MindOpenMain<cr>", "Open Main" },
+  -- n = { "<cmd>MindOpenSmart<cr>", "Open Project" },
 }
 
 lvim.builtin.which_key.mappings["r"] = {

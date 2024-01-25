@@ -9,7 +9,7 @@ lvim.plugins = {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     -- tag = "*",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
     config = function()
       require("neorg").setup {
         load = {
@@ -24,17 +24,15 @@ lvim.plugins = {
             },
           },
           ["core.promo"] = {},
-          ["core.keybinds"] = {
-            config = {
-              neogen_leader = ","
-            }
-          },
+          ["core.keybinds"] = {},
           ["core.itero"] = {},
           ["core.completion"] = {
             config = {
               engine = "nvim-cmp"
             }
           },
+          ["core.summary"] = {},
+          ["core.export.markdown"] = {},
         },
       }
     end,
@@ -594,7 +592,11 @@ lvim.plugins = {
             position = "bottom", -- | top | left | right
             ratio = 0.3
           },
+        },
+        filetypes = {
+          norg = false
         }
+
       })
     end,
   },
