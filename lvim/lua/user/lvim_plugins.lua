@@ -2,12 +2,12 @@
 ----------------------- Additional Plugins ------------------------------
 -------------------------------------------------------------------------
 lvim.plugins = {
-  {
-    "ixru/nvim-markdown",
-    config = function()
-      vim.g.vim_markdown_conceal = 1
-    end
-  },
+  -- {
+  --   "ixru/nvim-markdown",
+  --   config = function()
+  --     vim.g.vim_markdown_conceal = 1
+  --   end
+  -- },
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
@@ -441,7 +441,25 @@ lvim.plugins = {
           --   end,
           --   opts = { buffer = true },
           -- },
-        }
+        },
+        note_frontmatter_func = function(note)
+          -- This is equivalent to the default frontmatter function.
+          local out = { id = note.id, tags = note.tags }
+          -- `note.metadata` contains any manually added fields in the frontmatter.
+          -- So here we just make sure those fields are kept in the frontmatter.
+          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+            for k, v in pairs(note.metadata) do
+              out[k] = v
+            end
+          end
+          return out
+        end,
+        finder_mappings = {
+          -- Create a new note from your query with `:ObsidianSearch` and `:ObsidianQuickSwitch`.
+          -- Currently only telescope supports this.
+          new = "<C-x>",
+        },
+
       })
       require("nvim-treesitter.configs").setup({
         highlight = {
