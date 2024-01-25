@@ -89,15 +89,29 @@ function WhichKeyNorg(bufNumber)
     ["<localleader>i"] = {
       name = "Inject",
       m = { "<cmd>Neorg inject-metadata<CR>", "Inject Metadata" },
-      s = { "<cmd>Neorg inject-metadata<CR>", "Inject Summary" },
+      s = { "<cmd>Neorg generate-workspace-summary<CR>", "Inject Summary" },
+      l = { "<cmd>Telescope neorg insert_file_link<CR>", "Insert Link" },
     },
-    ["<localleader>k"] = { "<cmd>Neorg keybind norgm<cr>"},
+    ["<localleader>l"] = { "<cmd>Telescope neorg insert_file_link<CR>", "Insert Link" },
+    ["<localleader>f"] = { "<cmd>Telescope neorg find_linkable<CR>", "Find Element" },
+    ["<localleader>k"] = { "<cmd>Neorg keybind norg<cr>", "Neorg keybindings" },
     ["<localleader>m"] = {
       name = "Mode",
       n = { "<cmd>Neorg mode norg<cr>", "Normal" },
       h = { "<cmd>Neorg mode traverse-heading<cr>", "Headings" },
       l = { "<cmd>Neorg mode traverse-link<cr>", "Links" },
-    }
+    },
+    ["<localleader>e"] = { "<cmd>Neorg keybind all core.looking-glass.magnify-code-block<cr>", "Edit Code" },
+    ["<localleader>t"] = { name= "Task",
+      d = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_done<cr>", "Done" },
+      u = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_undone<cr>", "Undone" },
+      p = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_pending<cr>", "Pending" },
+      h = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_on_hold<cr>", "On Hold" },
+      c = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_cancelled<cr>", "Cancelled" },
+      r = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_recurring<cr>", "Recurring" },
+      i = {"<cmd>Neorg keybind core.qol.todo_items.todo.task_important<cr>", "Important" },
+    },
+
     -- ["<leader>d"] = {
     --   name = "Debug",
     --   s = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
