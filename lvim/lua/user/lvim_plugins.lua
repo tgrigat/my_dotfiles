@@ -18,9 +18,22 @@ lvim.plugins = {
           ["core.dirman"] = {      -- Manages Neorg workspaces
             config = {
               workspaces = {
-                notes = "~/notes",
+                main = "~/notes/main",
               },
+              default_workspace = "main",
             },
+          },
+          ["core.promo"] = {},
+          ["core.keybinds"] = {
+            config = {
+              neogen_leader = ","
+            }
+          },
+          ["core.itero"] = {},
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp"
+            }
           },
         },
       }
