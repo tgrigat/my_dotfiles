@@ -121,3 +121,24 @@ function WhichKeyNorg(bufNumber)
     -- },
   }, { buffer = bufNumber })
 end
+
+-------------------- Obsidian Markdown Buffer Key Bindings ------------------------------
+
+local obsidian_dir = vim.fn.expand('~/obsidian')
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  callback = function(ev)
+    local current_dir = vim.fn.expand('%:p:h')
+    if vim.bo.filetype == 'markdown' and string.find(current_dir, '^'.. obsidian_dir) then
+      vim.cmd("lua WhichKeyObMarkdown(" .. ev.buf .. ")")
+    end
+  end
+})
+
+function WhichKeyObMarkdown(bufNumber)
+  wk.register({
+    ["<localleader>s"] = { "<cmd>ObsidianSearch<cr>", "Search notes" },
+    ["<localleader>t"] = { "<cmd>ObsidianToday<cr>", "Daily note" },
+    ['gl'] = { "<cmd>ObsidianFollowLink<cr>", "Goto link" },
+  }, { buffer = bufNumber })
+end
