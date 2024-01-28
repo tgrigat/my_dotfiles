@@ -42,6 +42,7 @@ lvim.builtin.which_key.mappings["n"] = {
     name = "Workspaces",
     m = { "<cmd>Neorg workspace main<cr>", "Main" }
   },
+  t = { "<cmd>Neorg journal today<cr>", "Today" },
   k = { "<cmd>Neorg keybind all<cr>", "Keybinds" },
   j = {
     name = "Journal",
@@ -71,6 +72,7 @@ lvim.builtin.which_key.mappings["y"] = {
 
 
 lvim.builtin.which_key.mappings["Q"] = { "<cmd>quitall<cr>", "Quit all" }
+lvim.builtin.which_key.mappings[";"] = nil
 
 lvim.builtin.which_key.mappings["o"] = {
   name = "Obsidian",
@@ -155,6 +157,8 @@ lvim.builtin.which_key.mappings["lf"] = {
   "Format" }
 
 local keymap = vim.keymap.set
+
+lvim.builtin.which_key.mappings["sf"] = { "<cmd>Telescope find_files recurse_submodules=true<cr>", "Find Files (include Submodule)" }
 
 keymap("n", "<C-p>", "<cmd>Legendary commands<CR>", { silent = true })
 
