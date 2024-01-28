@@ -29,6 +29,7 @@ lvim.builtin.which_key.mappings["="] = {
     p = { "<cmd>Lazy profile<cr>", "Profile" },
     l = { "<cmd>Lazy log<cr>", "Log" },
     d = { "<cmd>Lazy debug<cr>", "Debug" },
+    r = { "<cmd>Lazy restore<cr>", "Restore (as Lockfile)" },
   },
   P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins" }
 }
