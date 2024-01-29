@@ -87,15 +87,15 @@ lvim.builtin.which_key.mappings["o"] = {
   end, "Open Obsidian" }
 }
 
-lvim.builtin.which_key.mappings["a"] = {
-  name = "ChatGPT",
-  ['i'] = { "<cmd>ChatGPT<cr>", "Chat" },
-  ['o'] = { "<cmd>ChatGPTActAs<cr>", "Act as" },
-}
+-- lvim.builtin.which_key.mappings["a"] = {
+--   name = "ChatGPT",
+--   ['i'] = { "<cmd>ChatGPT<cr>", "Chat" },
+--   ['o'] = { "<cmd>ChatGPTActAs<cr>", "Act as" },
+-- }
 
-lvim.builtin.which_key.vmappings["a"] = {
-  ['i'] = { "<cmd>ChatGPTEditWithInstructions<cr>" }
-}
+-- lvim.builtin.which_key.vmappings["a"] = {
+--   ['i'] = { "<cmd>ChatGPTEditWithInstructions<cr>" }
+-- }
 
 lvim.builtin.which_key.mappings['P'] = {
   name = "Project",
