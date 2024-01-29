@@ -27,8 +27,10 @@ ranger: ~/.config/ranger
 sioyek: ~/.config/sioyek
 # svim: ~/.config/svim
 tabletprofilesrc: ~/.config/tabletprofilesrc
-tmux : ~/.config/tmux
-.tmux.conf: ~/.tmux.conf
+# tmux/.tmux.conf : ~/.tmux.conf
+# tmux/.tmux.conf.local : ~/.tmux.conf.local
+tmux: ~/.config/tmux
+# .tmux.conf: ~/.tmux.conf
 vifm: ~/.config/vifm
 vs_setting.json: ~/.config/vs_setting.json
 wezterm: ~/.config/wezterm
