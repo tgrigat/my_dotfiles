@@ -159,7 +159,7 @@ lvim.builtin.which_key.mappings["lf"] = {
 
 local keymap = vim.keymap.set
 
-lvim.builtin.which_key.mappings["sf"] = { "<cmd>Telescope find_files recurse_submodules=true<cr>", "Find Files (include Submodule)" }
+lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files recurse_submodules=true<cr>", "Find Files (include Submodule)" }
 
 keymap("n", "<C-p>", "<cmd>Legendary commands<CR>", { silent = true })
 
