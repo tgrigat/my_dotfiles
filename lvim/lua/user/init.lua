@@ -17,6 +17,7 @@ reload("user.lvim_opt")
 reload("user.terminal")
 reload("user.neovide")
 reload("user.osc52_lvim")
+reload("user.autocmds")
 
 -------------------------------------------------------------------------
 ----------------------- Basic setups  -----------------------------------
