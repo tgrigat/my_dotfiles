@@ -87,12 +87,39 @@ lvim.builtin.which_key.mappings["o"] = {
   end, "Open Obsidian" }
 }
 
--- lvim.builtin.which_key.mappings["a"] = {
---   name = "ChatGPT",
---   ['i'] = { "<cmd>ChatGPT<cr>", "Chat" },
---   ['o'] = { "<cmd>ChatGPTActAs<cr>", "Act as" },
--- }
+lvim.builtin.which_key.mappings["a"] = {
+  name = "Chat",
+  ['t'] = {
+    name = "Toggle",
+    ['v'] = { "<cmd>GpChatToggle vsplit<cr>", "Toggle Vsplit" },
+    ['s'] = { "<cmd>GpChatToggle split<cr>", "Toggle Split" },
+    ['t'] = { "<cmd>GpChatToggle tabnew<cr>", "Toggle New Tab" },
+    ['p'] = { "<cmd>GpChatToggle popup<cr>", "Toggle Popup" },
+  },
+  ['v'] = { "<cmd>GpChatToggle vsplit<cr>", "Toggle Vsplit" },
+  ['f'] = { "<cmd>GpChatFinder<cr>", "Search History" },
+  ['d'] = { "<cmd>GpChatDelete<cr>", "Delete Current" },
+}
 
+lvim.builtin.which_key.vmappings["a"] = {
+  name = "Chat",
+  ['t'] = {
+    name = "To",
+    ['v'] = { "<cmd>'<,'>GpChatPaste vsplit<cr>", "Vsplit" },
+    ['s'] = { "<cmd>'<,'>GpChatPaste split<cr>", "Split" },
+    ['t'] = { "<cmd>'<,'>GpChatPaste tabnew<cr>", "New Tab" },
+    ['p'] = { "<cmd>'<,'>GpChatPaste popup<cr>", "Popup" },
+  },
+  ['v'] = { "<cmd>'<,'>GpChatPaste vsplit<cr>", "Send to Vsplit" },
+  ['r'] = {
+    name = "Write",
+    ['a'] = { "<cmd>'<,'>GpAppend<cr>", "Append Answer" },
+    ['p'] = { "<cmd>'<,'>GpPrepend<cr>", "Prepend Answer" },
+    ['r'] = { "<cmd>'<,'>GpRewrite<cr>", "Rewrite selection" },
+    ['i'] = { "<cmd>'<,'>GpImplement<cr>", "Implement From Comment" },
+  },
+  ['c'] = { "<cmd>'<,'>GpContext vsplit<cr>", "Add Context" },
+}
 -- lvim.builtin.which_key.vmappings["a"] = {
 --   ['i'] = { "<cmd>ChatGPTEditWithInstructions<cr>" }
 -- }
@@ -159,7 +186,8 @@ lvim.builtin.which_key.mappings["lf"] = {
 
 local keymap = vim.keymap.set
 
-lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files recurse_submodules=true<cr>", "Find Files (include Submodule)" }
+lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files recurse_submodules=true<cr>",
+  "Find Files (include Submodule)" }
 
 keymap("n", "<C-p>", "<cmd>Legendary commands<CR>", { silent = true })
 
