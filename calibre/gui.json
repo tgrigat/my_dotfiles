@@ -302,45 +302,45 @@
   },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1172,
-      "width": 960,
-      "x": 0,
-      "y": 74
+      "height": 1052,
+      "width": 1920,
+      "x": 1920,
+      "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1172,
-      "width": 960,
-      "x": 0,
-      "y": 74
+      "height": 1052,
+      "width": 1920,
+      "x": 1920,
+      "y": 0
     },
-    "maximized": false,
+    "maximized": true,
     "normal_geometry": {
       "height": 1172,
-      "width": 960,
+      "width": 1920,
       "x": 0,
-      "y": 74
+      "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAAAAAAASgAAA78AAATdAAAAAAAAAEoAAAO/AAAE3QAAAAEAAAAAB4AAAAAAAAAASgAAA78AAATd"
+      "__value__": "AdnQywADAAAAAAeAAAAAAAAADv8AAAQbAAAAAAAAAAAAAAd/AAAEkwAAAAECAAAAB4AAAAeAAAAAAAAADv8AAAQb"
     },
     "screen": {
       "depth": 32,
       "device_pixel_ratio": 1.0,
       "geometry_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920,
-        "x": 0,
+        "x": 1920,
         "y": 0
       },
       "index_in_screens_list": 1,
-      "manufacturer": "Samsung Electric Company",
-      "model": "SMS24A450/HVMBA01925",
+      "manufacturer": "HP Inc.",
+      "model": "OMEN by HP 25/3CQ0011QZX",
       "name": "HDMI-A-1",
       "serial": "",
       "size_in_logical_pixels": {
-        "height": 1200,
+        "height": 1080,
         "width": 1920
       },
       "virtual_geometry": {
@@ -613,7 +613,7 @@
   },
   "library_usage_stats": {
     "/home/yang/Documents/Library/books/calibre-syncing": 22,
-    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 44
+    "/home/yang/Documents/Synology_Library/books/calibre-syncing": 54
   },
   "memory_view books view state": {
     "column_alignment": {
