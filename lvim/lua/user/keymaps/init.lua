@@ -99,6 +99,7 @@ lvim.builtin.which_key.mappings["a"] = {
   ['v'] = { "<cmd>GpChatToggle vsplit<cr>", "Toggle Vsplit" },
   ['f'] = { "<cmd>GpChatFinder<cr>", "Search History" },
   ['d'] = { "<cmd>GpChatDelete<cr>", "Delete Current" },
+  ['n'] = { "<cmd>GpChatNew<cr>", "New Chat" },
 }
 
 lvim.builtin.which_key.vmappings["a"] = {

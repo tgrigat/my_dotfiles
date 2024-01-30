@@ -124,20 +124,30 @@ end
 
 -------------------- Obsidian Markdown Buffer Key Bindings ------------------------------
 
+
 local obsidian_dir = vim.fn.expand('~/obsidian')
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  callback = function(ev)
-    local current_dir = vim.fn.expand('%:p:h')
-    if vim.bo.filetype == 'markdown' and string.find(current_dir, '^'.. obsidian_dir) then
-      vim.cmd("lua WhichKeyObMarkdown(" .. ev.buf .. ")")
-    end
+local function setup_whichkey_markdown()
+  local current_dir = vim.fn.expand('%:p:h')
+  if vim.bo.filetype == 'markdown' and string.find(current_dir, '^' .. obsidian_dir) then
+    WhichKeyObMarkdown(vim.api.nvim_get_current_buf())
   end
+end
+
+-- Create the FileType autocmd as before
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  callback = setup_whichkey_markdown
+})
+
+-- Add a new autocmd for BufEnter
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "*.md",
+  callback = setup_whichkey_markdown
 })
 
 function WhichKeyObMarkdown(bufNumber)
   wk.register({
-    ["<localleader>s"] = { "<cmd>ObsidianSearch<cr>", "Search notes" },
+    ["<localleader>f"] = { "<cmd>ObsidianSearch<cr>", "Find notes" },
     ["<localleader>t"] = { "<cmd>ObsidianToday<cr>", "Daily note" },
     ['gl'] = { "<cmd>ObsidianFollowLink<cr>", "Goto link" },
   }, { buffer = bufNumber })
