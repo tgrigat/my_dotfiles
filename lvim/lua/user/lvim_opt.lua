@@ -27,7 +27,7 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.view.width = 60
+-- lvim.builtin.nvimtree.setup.view.width = 60
 
 lvim.builtin.project.manual_mode = true
 
@@ -115,4 +115,4 @@ vim.cmd('command! Ftpy set filetype=python')
 vim.cmd('command! Ftcpp set filetype=cpp')
 
 -- Set the localloader to ; , used by neorg
-vim.g.maplocalleader = ";"
+vim.g.maplocalleader = '\\'
