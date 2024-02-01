@@ -123,3 +123,6 @@ require('onedark').setup  {
         background = true,    -- use background color for virtual text
     },
 }
+
+-- vim.cmd("tnoremap <C-v> <C-\\><C-n>")
+vim.api.nvim_set_keymap('t', '<C-v>', '<C-\\><C-n>', {noremap = true})
