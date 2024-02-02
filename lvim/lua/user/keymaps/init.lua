@@ -61,8 +61,9 @@ lvim.builtin.which_key.mappings["r"] = {
   c = { "<cmd>SlimeConfig<cr>", "Config" },
 }
 lvim.builtin.which_key.vmappings["r"] = {
-  name = "REPL",
-  r = { "<cmd>normal <C-c><C-c><cr>", "Run" },
+  -- name = "REPL",
+  -- r = { "<cmd>normal <C-c><C-c><cr>", "Run" },
+  "<cmd>normal <C-c><C-c><cr>", "Run REPL"
 }
 
 lvim.builtin.which_key.mappings["y"] = {
@@ -113,6 +114,7 @@ lvim.builtin.which_key.vmappings["a"] = {
     ['p'] = { "<cmd>'<,'>GpChatPaste popup<cr>", "Popup" },
   },
   ['v'] = { "<cmd>'<,'>GpChatPaste vsplit<cr>", "Send to Vsplit" },
+  ['p'] = { "<cmd>'<,'>GpChatPaste<cr>", "Send to Last" },
   ['r'] = {
     name = "Write",
     ['a'] = { "<cmd>'<,'>GpAppend<cr>", "Append Answer" },
@@ -170,6 +172,7 @@ Diagnostic_config = {
 -- doc here: https://neovim.io/doc/user/diagnostic.html#diagnostic-api
 lvim.builtin.which_key.mappings['lV'] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", "VirtualText Off" }
 lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", "VirtualText On" }
+lvim.builtin.which_key.mappings['ss'] = { "<cmd>lua require('telescope.builtin').treesitter()<cr>", "VirtualText On" }
 
 lvim.builtin.which_key.mappings['lp'] = { "<cmd>Copilot panel<cr>", "Open Copilot Panel" }
 
