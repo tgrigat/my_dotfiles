@@ -278,3 +278,11 @@ BreakTimer
 zsh/alias.zsh.zwc
 zsh/.p10k.zsh
 ranger/plugins/__pycache__
+zsh/.zcompdump
+zsh/.zshrc.zwc
+zsh/device.zsh.zwc
+zsh/functions.zsh.zwc
+zsh/keys.zsh.zwc
+zsh/plugins.zsh.zwc
+zsh/source.zsh.zwc
+zsh/zoxide.zsh.zwc
