@@ -13,6 +13,7 @@ local keymap = vim.keymap
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "ruff", filetypes = { "python" } },
+  { name = "flake8", filetypes = { "python" }, args = {"--ignore=E501"}},
 }
 
 -- Setup dap for python
