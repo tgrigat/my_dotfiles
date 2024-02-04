@@ -12,7 +12,7 @@ else
     ln -s ~/.local/share/fzf/bin/fzf ~/.local/bin/fzf
     echo "fzf will be available for next shell instance"
 fi
-eval bindkey '^R' fzf-history-widget
+eval bindkey '^F' fzf-history-widget
 
 
 #----------------------------------------------------------------------------------------------------
