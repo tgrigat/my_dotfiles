@@ -15,4 +15,3 @@ path=(
     ~/.local/bin
     $path
 )
-
