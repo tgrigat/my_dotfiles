@@ -32,8 +32,8 @@ function nvm_install() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   nvm install node
 
-  # Check if the previous command (nvm install node) was successful
-  npm install -g neovim tree-sitter-cli
+  # Try to run npm install
+  npm install neovim tree-sitter-cli || echo "npm install failed, but script continues"
 }
 
 
