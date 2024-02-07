@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
 function check_term() {
   if [ "$TERM" != "xterm-256color" ]; then
     if [ "$SHELL" = "/bin/bash" ]; then
