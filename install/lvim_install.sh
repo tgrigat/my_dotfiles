@@ -31,8 +31,15 @@ function nvm_install() {
   export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   nvm install node
-  npm install neovim tree-sitter-cli
+
+  # Check if the previous command (nvm install node) was successful
+  if [ $? -eq 0 ]; then
+    npm install neovim tree-sitter-cli
+  else
+    echo "nvm install node failed, skipping npm install neovim tree-sitter-cli"
+  fi
 }
+
 
 # Update PATH
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
