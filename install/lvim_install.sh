@@ -56,16 +56,16 @@ for cmd in git python3 curl pip3 make
 do
   if ! command -v $cmd &> /dev/null
   then
-    echo "Error: $cmd is not installed."
     exit 1
+    echo "Error: $cmd is not installed."
   fi
 done
 
 # Check if '-a' flag is passed
 if [[ "\$1" == "-a" ]]; then
   check_term
-  eget_install
   nvm_install
+  eget_install
 fi
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
