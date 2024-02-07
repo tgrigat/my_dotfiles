@@ -63,16 +63,12 @@ do
   fi
 done
 
-# Check if '-a' flag is passed
-# if [[ "\$1" == "-a" ]]; then
-
 echo "Start check_term"
 check_term
 echo "Start nvm_install"
 nvm_install
 echo "Start eget_install"
 eget_install
-# fi
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
 
