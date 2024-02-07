@@ -473,6 +473,9 @@ lvim.plugins = {
   },
   {
     "epwalsh/obsidian.nvim",
+    enabled = function()
+      return vim.fn.executable('obsidian') == 1
+    end,
     config = function()
       vim.opt_local.conceallevel = 2
       require("obsidian").setup({
