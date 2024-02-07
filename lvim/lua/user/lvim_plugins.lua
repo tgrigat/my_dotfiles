@@ -23,7 +23,7 @@ lvim.plugins = {
       "rcarriga/nvim-notify",
       "nvim-tree/nvim-web-devicons",
     },
-    enable = function()
+    enabled = function()
       return vim.fn.executable('cc') == 1 or
           vim.fn.executable('gcc') == 1 or
           vim.fn.executable('clang') == 1 or
@@ -688,7 +688,7 @@ lvim.plugins = {
 
       })
     end,
-    enable = function()
+    enabled = function()
       if vim.fn.executable('node') == 1 then
         return 1
       else
