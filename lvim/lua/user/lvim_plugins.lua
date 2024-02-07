@@ -23,7 +23,7 @@ lvim.plugins = {
       "rcarriga/nvim-notify",
       "nvim-tree/nvim-web-devicons",
     },
-    cond = function()
+    enable = function()
       return vim.fn.executable('cc') == 1 or
           vim.fn.executable('gcc') == 1 or
           vim.fn.executable('clang') == 1 or
@@ -257,10 +257,8 @@ lvim.plugins = {
       -- Only setup the plugin if OPENAI_API_KEY environment variable exists
       if vim.fn.getenv('OPENAI_API_KEY') ~= vim.NIL then
         require("gp").setup()
-
         -- or setup with your own config (see Install > Configuration in Readme)
         -- require("gp").setup(config)
-
         -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
       end
     end,
@@ -690,6 +688,13 @@ lvim.plugins = {
 
       })
     end,
+    enable = function()
+      if vim.fn.executable('node') == 1 then
+        return 1
+      else
+        return 0
+      end
+    end
   },
   {
     "zbirenbaum/copilot-cmp",
