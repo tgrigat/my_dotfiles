@@ -87,6 +87,7 @@ if [[ -d ~/.config/lvim ]]; then
 fi
 
 ln -sf "$(pwd)/lvim" ~/.config/lvim
+ln -sf "$(pwd)/vim_wrapper.sh" ~/.local/bin/vim
 
 cd ..
 
