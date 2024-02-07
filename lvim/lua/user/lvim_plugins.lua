@@ -12,7 +12,12 @@ lvim.plugins = {
   {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
-    lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
+    lazy = "leetcode.nvim" ~= vim.fn.argv()[1] and
+        (vim.fn.executable('cc') == 1 or
+          vim.fn.executable('gcc') == 1 or
+          vim.fn.executable('clang') == 1 or
+          vim.fn.executable('cl') == 1 or
+          vim.fn.executable('zig') == 1),
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim", -- required by telescope
@@ -247,12 +252,15 @@ lvim.plugins = {
   {
     "robitx/gp.nvim",
     config = function()
-      require("gp").setup()
+      -- Only setup the plugin if OPENAI_API_KEY environment variable exists
+      if vim.fn.getenv('OPENAI_API_KEY') ~= vim.NIL then
+        require("gp").setup()
 
-      -- or setup with your own config (see Install > Configuration in Readme)
-      -- require("gp").setup(config)
+        -- or setup with your own config (see Install > Configuration in Readme)
+        -- require("gp").setup(config)
 
-      -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
+        -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
+      end
     end,
   },
   -- {
