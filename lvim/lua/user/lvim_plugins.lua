@@ -28,6 +28,13 @@ lvim.plugins = {
       "rcarriga/nvim-notify",
       "nvim-tree/nvim-web-devicons",
     },
+    cond = function()
+      return vim.fn.executable('cc') == 1 or
+          vim.fn.executable('gcc') == 1 or
+          vim.fn.executable('clang') == 1 or
+          vim.fn.executable('cl') == 1 or
+          vim.fn.executable('zig') == 1
+    end,
     opts = {
       -- configuration goes here
     },
