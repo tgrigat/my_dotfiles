@@ -3,6 +3,7 @@
 important_info=()
 
 function check_term() {
+  echo "enter check_term"
   if [ "$TERM" != "xterm-256color" ]; then
     if [ "$SHELL" = "/bin/bash" ]; then
       echo 'export TERM="xterm-256color"' >> ~/.bashrc
@@ -14,6 +15,7 @@ function check_term() {
 
 function eget_install() {
   # get eget
+  echo "enter eget_install"
   curl -o eget.sh https://zyedidia.github.io/eget.sh
   bash eget.sh
   mkdir -p ~/.local/bin
@@ -29,6 +31,7 @@ function eget_install() {
 
 function nvm_install() {
   # nvm and then install node
+  echo "enter nvm_install"
   touch ~/.bashrc
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
   export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -61,11 +64,15 @@ do
 done
 
 # Check if '-a' flag is passed
-if [[ "\$1" == "-a" ]]; then
-  check_term
-  nvm_install
-  eget_install
-fi
+# if [[ "\$1" == "-a" ]]; then
+
+echo "Start check_term"
+check_term
+echo "Start nvm_install"
+nvm_install
+echo "Start eget_install"
+eget_install
+# fi
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
 
