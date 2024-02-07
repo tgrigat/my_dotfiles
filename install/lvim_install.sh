@@ -20,6 +20,8 @@ function eget_install() {
   mkdir -p ~/.local/bin
   mv eget ~/.local/bin/
 
+  export PATH=~/.local/bin:$PATH
+
   # eget
   eget sharkdp/fd --asset ^musl --to ~/.local/bin
   eget BurntSushi/ripgrep --to ~/.local/bin
@@ -77,7 +79,13 @@ cd ~/dotfiles
 bash <(curl -s https://raw.githubusercontent.com/Lunarvim/Lunarvim/master/utils/installer/install.sh) --no-install-dependencies
 
 mkdir -p ~/.config
+
+if [[ -d ~/.config/lvim ]]; then
+  rm -rf ~/.config/lvim
+fi
+
 ln -sf "$(pwd)/lvim" ~/.config/lvim
+
 cd ..
 
 # Print important information at the end
