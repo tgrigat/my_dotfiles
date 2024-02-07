@@ -12,12 +12,7 @@ lvim.plugins = {
   {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
-    lazy = "leetcode.nvim" ~= vim.fn.argv()[1] and
-        (vim.fn.executable('cc') == 1 or
-          vim.fn.executable('gcc') == 1 or
-          vim.fn.executable('clang') == 1 or
-          vim.fn.executable('cl') == 1 or
-          vim.fn.executable('zig') == 1),
+    lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim", -- required by telescope
