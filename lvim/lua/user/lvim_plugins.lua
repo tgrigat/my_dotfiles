@@ -690,9 +690,9 @@ lvim.plugins = {
     end,
     enabled = function()
       if vim.fn.executable('node') == 1 then
-        return 1
+        return true
       else
-        return 0
+        return false
       end
     end
   },
@@ -701,6 +701,13 @@ lvim.plugins = {
     dependencies = { "copilot.lua", "nvim-cmp" },
     config = function()
       require("copilot_cmp").setup()
+    end,
+    enabled = function()
+      if vim.fn.executable('node') == 1 then
+        return true
+      else
+        return false
+      end
     end
   },
   {
