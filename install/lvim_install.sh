@@ -54,7 +54,7 @@ else
 fi
 
 # Check for git, python, curl and pip3
-for cmd in git python3 curl pip3 make
+for cmd in git curl make
 do
   if ! command -v $cmd &> /dev/null
   then
