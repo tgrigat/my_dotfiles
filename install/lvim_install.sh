@@ -33,11 +33,7 @@ function nvm_install() {
   nvm install node
 
   # Check if the previous command (nvm install node) was successful
-  if [ $? -eq 0 ]; then
-    npm install neovim tree-sitter-cli
-  else
-    echo "nvm install node failed, skipping npm install neovim tree-sitter-cli"
-  fi
+  npm install -g neovim tree-sitter-cli
 }
 
 
