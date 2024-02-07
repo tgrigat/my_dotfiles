@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+important_info=()
+
 function check_term() {
   if [ "$TERM" != "xterm-256color" ]; then
     if [ "$SHELL" = "/bin/bash" ]; then
@@ -33,21 +35,22 @@ function nvm_install() {
   nvm install node
 
   # Try to run npm install
-  npm install neovim tree-sitter-cli || echo "npm install failed, but script continues"
+  if ! npm install -g neovim tree-sitter-cli; then
+    important_info+=("npm install failed, but script continues")
+    important_info+=("npm install -g neovim tree-sitter-cli")
+  fi  
 }
-
 
 # Update PATH
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-  echo "~/.local/bin is not in the PATH, Make sure to add it to your config:"
-  echo "export PATH="~/.local/bin:$PATH""
-  export PATH="~/.local/bin:${PATH}"
+  important_info+=("~/.local/bin is not in the PATH. Make sure to add it to your config: export PATH=~/.local/bin:\$PATH")
+  important_info+=("echo 'export PATH=~/.local/bin:\$PATH' >> ~/.bashrc")
 else
   echo "~/.local/bin is in the PATH"
 fi
 
 # Check for git, python, curl and pip3
-for cmd in git python3 curl pip3
+for cmd in git python3 curl pip3 make
 do
   if ! command -v $cmd &> /dev/null
   then
@@ -57,30 +60,31 @@ do
 done
 
 # Check if '-a' flag is passed
-if [[ "$1" == "-a" ]]; then
+if [[ "\$1" == "-a" ]]; then
   check_term
   eget_install
   nvm_install
 fi
 
-# get and install neovim
-# export NEOVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
-# export NVIM_ASSET=$(basename "$NEOVIM_URL")
-# curl -OL $NEOVIM_URL
-# tar xf $NVIM_ASSET --strip-components=1 -C ~/.local
-
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
 
-
 # clone my dotfiles
-
-git clone https://github.com/LumenYoung/dotfiles
+git clone https://github.com/LumenYoung/dotfiles ~/dotfiles
 
 # Install lunarvim
-cd dotfiles
+cd ~/dotfiles
 
 bash <(curl -s https://raw.githubusercontent.com/Lunarvim/Lunarvim/master/utils/installer/install.sh) --no-install-dependencies
 
-mkdir ~/.config
+mkdir -p ~/.config
 ln -sf "$(pwd)/lvim" ~/.config/lvim
 cd ..
+
+# Print important information at the end
+if [ ${#important_info[@]} -ne 0 ]; then
+  echo "IMPORTANT INFORMATION:"
+  for info in "${important_info[@]}"; do
+    echo "$info"
+  done
+fi
+
