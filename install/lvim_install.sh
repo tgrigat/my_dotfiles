@@ -15,6 +15,7 @@ function eget_install() {
   # get eget
   curl -o eget.sh https://zyedidia.github.io/eget.sh
   bash eget.sh
+  mkdir -p ~/.local/bin
   mv eget ~/.local/bin/
 
   # eget
