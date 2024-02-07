@@ -15,15 +15,14 @@ python3 propogate_dotfiles.py
 Best to run it on home directory:
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a # use -a to install all dependencies
+bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh)
 ```
 
 ## Quick setup (for all)
 
 ```
-git clone https://github.com/LumenYoung/dotfiles
-bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh) -a
-cd dotfiles
+bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh)
+cd ~/dotfiles
 python3 propogate_dotfiles.py
 cd ..
 ```
