@@ -116,3 +116,6 @@ vim.cmd('command! Ftcpp set filetype=cpp')
 
 -- Set the localloader to ; , used by neorg
 vim.g.maplocalleader = '\\'
+
+table.insert(lvim.lsp.installer.setup.ensure_installed, "beautysh")
+table.insert(lvim.lsp.installer.setup.ensure_installed, "shellcheck")
