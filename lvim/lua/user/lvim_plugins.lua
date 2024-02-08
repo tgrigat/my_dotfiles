@@ -477,7 +477,6 @@ lvim.plugins = {
       return vim.fn.executable('obsidian') == 1
     end,
     config = function()
-      vim.opt_local.conceallevel = 2
       require("obsidian").setup({
         dir = "~/obsidian",
         use_advanced_uri = true,
@@ -529,7 +528,7 @@ lvim.plugins = {
           additional_vim_regex_highlighting = { "markdown" },
         },
       })
-    end
+    end,
   },
   {
     "simrat39/rust-tools.nvim",
