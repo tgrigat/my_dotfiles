@@ -691,7 +691,7 @@ lvim.plugins = {
 
       })
     end,
-    enabled = function()
+    cond = function()
       if vim.fn.executable('node') == 1 then
         return true
       else
@@ -705,7 +705,7 @@ lvim.plugins = {
     config = function()
       require("copilot_cmp").setup()
     end,
-    enabled = function()
+    cond = function()
       if vim.fn.executable('node') == 1 then
         return true
       else
