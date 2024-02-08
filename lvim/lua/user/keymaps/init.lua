@@ -124,9 +124,11 @@ lvim.builtin.which_key.vmappings["a"] = {
   },
   ['c'] = { "<cmd>'<,'>GpContext vsplit<cr>", "Add Context" },
 }
--- lvim.builtin.which_key.vmappings["a"] = {
---   ['i'] = { "<cmd>ChatGPTEditWithInstructions<cr>" }
--- }
+lvim.builtin.which_key.vmappings["t"] = { function()
+  local trim_spaces = true
+  require("toggleterm").send_lines_to_terminal("visual_selection", trim_spaces, { args = vim.v.count })
+end, "Send Section to Terminal" }
+lvim.builtin.which_key.mappings["t"] = { "<cmd>ToggleTermSendCurrentLine<cr>", "Send Line to Terminal" }
 
 lvim.builtin.which_key.mappings['P'] = {
   name = "Project",
