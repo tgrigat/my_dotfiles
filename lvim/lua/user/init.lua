@@ -16,7 +16,7 @@ reload("user.indent_blankline")
 reload("user.lvim_opt")
 reload("user.terminal")
 reload("user.neovide")
-reload("user.osc52_lvim")
+-- reload("user.osc52_lvim")
 reload("user.autocmds")
 
 -------------------------------------------------------------------------
