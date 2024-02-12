@@ -288,7 +288,7 @@ lvim.plugins = {
     end,
     cond = function()
       -- disable when running in konsole since no support for OSC52
-      if vim.fn.getenv("KONSOLE_DBUS_SERVICE") ~= nil or vim.fn.getenv("KONSOLE_DBUS_SESSION") ~= nil or vim.fn.getenv("KONSOLE_VERSION") ~= nil then
+      if vim.fn.getenv("KONSOLE_DBUS_SERVICE") ~= vim.NIL or vim.fn.getenv("KONSOLE_DBUS_SESSION") ~= vim.NIL or vim.fn.getenv("KONSOLE_VERSION") ~= vim.NIL then
         return false
       end
 
