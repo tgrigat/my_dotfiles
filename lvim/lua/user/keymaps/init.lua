@@ -145,6 +145,11 @@ lvim.builtin.which_key.mappings['p'] = {
   o = { "<cmd>Legendary commands<cr>", "Command palette" }
 }
 
+lvim.builtin.which_key.mappings['H'] = {  function()
+  local harpoon = require('harpoon')
+  harpoon:list():append()
+end, "Harpoon" }
+
 -- vim.diagnostic.disable()
 
 Diagnostic_config = {
