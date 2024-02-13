@@ -179,7 +179,7 @@ Diagnostic_config = {
 -- doc here: https://neovim.io/doc/user/diagnostic.html#diagnostic-api
 lvim.builtin.which_key.mappings['lV'] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", "VirtualText Off" }
 lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", "VirtualText On" }
-lvim.builtin.which_key.mappings['ss'] = { "<cmd>lua require('telescope.builtin').treesitter()<cr>", "VirtualText On" }
+lvim.builtin.which_key.mappings['ss'] = { "<cmd>lua require('telescope.builtin').treesitter()<cr>", "Treesitter Symbol" }
 
 lvim.builtin.which_key.mappings['lp'] = { "<cmd>Copilot panel<cr>", "Open Copilot Panel" }
 
