@@ -458,7 +458,7 @@ lvim.plugins = {
   },
 
   -- You can run blocks of code like jupyter notebook.
-  { "dccsillag/magma-nvim",          build = ':UpdateRemotePlugins' },
+  { "dccsillag/magma-nvim", build = ':UpdateRemotePlugins' },
   -- {
   --   "glepnir/lspsaga.nvim",
   --   branch = "main",
@@ -467,7 +467,13 @@ lvim.plugins = {
   --   end
   -- },
   -- outline for languages
-  { 'simrat39/symbols-outline.nvim', config = function() require("user.outline") end },
+  {
+    "hedyhli/outline.nvim",
+    config = function()
+      -- Example mapping to toggle outline
+      require("outline").setup()
+    end,
+  },
   -- { 'kkoomen/vim-doge',              build = ':call doge#install()' },
   {
     "danymat/neogen",
