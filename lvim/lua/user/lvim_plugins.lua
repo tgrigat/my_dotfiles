@@ -786,5 +786,7 @@ lvim.plugins = {
       -- or setup({ use_treesitter = true })
     end,
     ft = "tex",
-  }
+  },
+  { "NoahTheDuke/vim-just" }
+
 }
