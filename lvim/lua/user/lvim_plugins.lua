@@ -387,6 +387,7 @@ lvim.plugins = {
   -- "AckslD/swenv.nvim",
   "mfussenegger/nvim-dap-python",
   'sainnhe/everforest',
+  "imsnif/kdl.vim",
   -- {
   --   -- You can generate docstrings automatically.
   --   "danymat/neogen",
