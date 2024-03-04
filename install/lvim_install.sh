@@ -58,8 +58,8 @@ for cmd in git curl make
 do
   if ! command -v $cmd &> /dev/null
   then
-    exit 1
     echo "Error: $cmd is not installed."
+    exit 1
   fi
 done
 
