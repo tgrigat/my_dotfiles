@@ -10,7 +10,6 @@ kcookiejarrc: ~/.config/kcookiejarrc
 kde_local_share_backup.txt: ~/.config/kde_local_share_backup.txt
 kitty: ~/.config/kitty
 korganizerrc: ~/.config/korganizerrc
-ksplashrc: ~/.config/ksplashrc
 ktimerrc: ~/.config/ktimerrc
 # kwinrc: ~/.config/kwinrc
 # kwinrulesrc: ~/.config/kwinrulesrc
