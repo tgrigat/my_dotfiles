@@ -12,7 +12,7 @@ kitty: ~/.config/kitty
 korganizerrc: ~/.config/korganizerrc
 ksplashrc: ~/.config/ksplashrc
 ktimerrc: ~/.config/ktimerrc
-kwinrc: ~/.config/kwinrc
+# kwinrc: ~/.config/kwinrc
 # kwinrulesrc: ~/.config/kwinrulesrc
 krunnerrc: ~/.config/krunnerrc
 lazygit: ~/.config/lazygit
