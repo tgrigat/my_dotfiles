@@ -13,7 +13,7 @@ korganizerrc: ~/.config/korganizerrc
 ksplashrc: ~/.config/ksplashrc
 ktimerrc: ~/.config/ktimerrc
 kwinrc: ~/.config/kwinrc
-kwinrulesrc: ~/.config/kwinrulesrc
+# kwinrulesrc: ~/.config/kwinrulesrc
 krunnerrc: ~/.config/krunnerrc
 lazygit: ~/.config/lazygit
 lvim: ~/.config/lvim
