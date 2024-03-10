@@ -12,4 +12,7 @@ eget jesseduffield/lazygit --to ~/.local/bin
 eget zellij-org/zellij --to ~/.local/bin
 eget jesvedberg/tpix --to ~/.local/bin
 eget hackerb9/lsix --to ~/.local/bin
+eget ajeetdsouza/zoxide --to ~/.local/bin
+eget junegunn/fzf --to ~/.local/bin
+
 
