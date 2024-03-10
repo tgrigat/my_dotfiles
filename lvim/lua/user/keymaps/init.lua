@@ -130,6 +130,8 @@ lvim.builtin.which_key.vmappings["t"] = { function()
 end, "Send Section to Terminal" }
 lvim.builtin.which_key.mappings["t"] = { "<cmd>ToggleTermSendCurrentLine<cr>", "Send Line to Terminal" }
 
+lvim.builtin.which_key.mappings["j"] = { "<cmd>Telescope jumplist<cr>", "Jumplist" }
+
 lvim.builtin.which_key.mappings['P'] = {
   name = "Project",
   M = { "<cmd>lua lvim.builtin.project.manual_mode=true<cr>", "Manual CWD" },
@@ -145,7 +147,7 @@ lvim.builtin.which_key.mappings['p'] = {
   o = { "<cmd>Legendary commands<cr>", "Command palette" }
 }
 
-lvim.builtin.which_key.mappings['H'] = {  function()
+lvim.builtin.which_key.mappings['H'] = { function()
   local harpoon = require('harpoon')
   harpoon:list():append()
 end, "Harpoon" }
