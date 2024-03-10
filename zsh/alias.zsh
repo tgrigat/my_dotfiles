@@ -2,6 +2,7 @@
 # cd and ls
 c() { builtin cd "$@" && ls; }
 
+alias lvim-clean-sessions="rm ~/.local/share/lvim/sessions/ -rf"
 
 refresh-build() {
   if [ "$(basename "$(pwd)")" != "build" ]; then
