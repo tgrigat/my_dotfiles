@@ -9,6 +9,7 @@ lvim.plugins = {
   --     vim.g.vim_markdown_conceal = 1
   --   end
   -- },
+  { "jbyuki/one-small-step-for-vimkind" },
   {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
@@ -385,7 +386,15 @@ lvim.plugins = {
   --   -- end
   -- },
   -- "AckslD/swenv.nvim",
-  "mfussenegger/nvim-dap-python",
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    config = function(_, opts)
+      local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+
+      require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+    end
+  },
   'sainnhe/everforest',
   "imsnif/kdl.vim",
   -- {
@@ -459,7 +468,7 @@ lvim.plugins = {
   },
 
   -- You can run blocks of code like jupyter notebook.
-  { "dccsillag/magma-nvim", build = ':UpdateRemotePlugins' },
+  { "dccsillag/magma-nvim",  build = ':UpdateRemotePlugins' },
   -- {
   --   "glepnir/lspsaga.nvim",
   --   branch = "main",
