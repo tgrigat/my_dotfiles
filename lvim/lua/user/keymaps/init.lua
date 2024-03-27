@@ -152,6 +152,22 @@ lvim.builtin.which_key.mappings['H'] = { function()
   harpoon:list():append()
 end, "Harpoon" }
 
+lvim.builtin.which_key.mappings['dP'] = {
+  function()
+    local status_ok, dap_vsc = pcall(require, "dap.ext.vscode")
+
+    if not status_ok then
+      vim.notify("loaded dap failed")
+      return
+    end
+
+    dap_vsc.load_launchjs()
+
+    vim.notify("loaded dap")
+  end,
+  "Load Launch.json"
+}
+
 -- vim.diagnostic.disable()
 
 Diagnostic_config = {

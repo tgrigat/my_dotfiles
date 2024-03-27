@@ -20,6 +20,7 @@ reload("user.neovide")
 -- reload("user.osc52_lvim")
 reload("user.autocmds")
 reload("user.dap")
+reload("user.telescope")
 
 
 -------------------------------------------------------------------------
