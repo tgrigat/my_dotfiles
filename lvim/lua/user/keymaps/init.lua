@@ -166,6 +166,30 @@ lvim.builtin.which_key.mappings['dP'] = {
   "Load Launch.json"
 }
 
+lvim.builtin.which_key.mappings['dl'] = {
+  function()
+    local project_dap_config = require("user.dap.project_wise").search_project_config()
+    local status_ok, dap = pcall(require, "dap")
+    if not status_ok then
+      vim.notify("[nvim-dap-project] Fail to load DAP")
+      return
+    else
+      vim.notify("[nvim-dap-project] DAP loaded")
+    end
+
+    if project_dap_config == nil then
+      vim.notify("[nvim-dap-project] empty project configuration found")
+      return
+    end
+
+    for filetype, config in pairs(project_dap_config) do
+      dap.configurations[filetype] = config
+    end
+  end,
+  "Load nvim-dap.lua"
+}
+
+
 lvim.builtin.which_key.mappings["dw"] = {
   function()
     require('telescope').extensions.dap.configurations()
