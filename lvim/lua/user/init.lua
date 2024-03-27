@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------
 ----------------------- Additional requires -----------------------------
 -------------------------------------------------------------------------
+lvim.builtin.breadcrumbs.active = true
 lvim.log.level = "warn"
 lvim.format_on_save = false
 -- lvim.colorscheme = "github_dark"
@@ -18,6 +19,8 @@ reload("user.terminal")
 reload("user.neovide")
 -- reload("user.osc52_lvim")
 reload("user.autocmds")
+reload("user.dap")
+
 
 -------------------------------------------------------------------------
 ----------------------- Basic setups  -----------------------------------
