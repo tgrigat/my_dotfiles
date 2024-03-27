@@ -126,3 +126,14 @@ require('onedark').setup  {
 
 -- vim.cmd("tnoremap <C-v> <C-\\><C-n>")
 vim.api.nvim_set_keymap('t', '<C-v>', '<C-\\><C-n>', {noremap = true})
+-- Toggleterm show the terminal number
+
+if lvim.builtin.lualine.extensions == nil then
+  lvim.builtin.lualine.extensions = {}
+end
+
+local toggleterm_ext = {
+  sections = { lualine_a = { "b:toggle_number" } }, filetypes = { "toggleterm" }
+}
+
+table.insert(lvim.builtin.lualine.extensions, toggleterm_ext)
