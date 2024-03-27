@@ -160,12 +160,17 @@ lvim.builtin.which_key.mappings['dP'] = {
       vim.notify("loaded dap failed")
       return
     end
-
     dap_vsc.load_launchjs()
-
-    vim.notify("loaded dap")
+    vim.notify("loaded Launch.json")
   end,
   "Load Launch.json"
+}
+
+lvim.builtin.which_key.mappings["dw"] = {
+  function()
+    require('telescope').extensions.dap.configurations()
+  end,
+  "Configurations"
 }
 
 -- vim.diagnostic.disable()

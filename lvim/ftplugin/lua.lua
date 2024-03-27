@@ -55,7 +55,7 @@ local function include_rtpaths(fname, ext)
 end
 
 -- Global function that searches the path for the required file
-function find_required_path(module)
+function Find_required_path(module)
   -- Look at package.config for directory separator string (it's the first line)
   local sep = string.match(package.config, "^[^\n]")
   -- Properly change '.' to separator (probably '/' on *nix and '\' on Windows)
@@ -83,6 +83,20 @@ function find_required_path(module)
   end
 end
 
+local dap = require "dap"
+
+dap.configurations.lua = {
+  {
+    type = 'nlua',
+    request = 'attach',
+    name = "Attach to running Neovim instance",
+  }
+}
+
+dap.adapters.nlua = function(callback, config)
+  callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+end
+
 -- Set options to open require with gf
 vim.opt_local.include = [=[\v<((do|load)file|require)\s*\(?['"]\zs[^'"]+\ze['"]]=]
-vim.opt_local.includeexpr = "v:lua.find_required_path(v:fname)"
+vim.opt_local.includeexpr = "v:lua.Find_required_path(v:fname)"
