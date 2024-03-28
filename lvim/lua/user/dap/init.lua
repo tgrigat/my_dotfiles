@@ -15,8 +15,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
       return
     end
 
-    for filetype, config in pairs(project_dap_config) do
-      dap.configurations[filetype] = config
+    for key, config in pairs(project_dap_config) do
+      if key == "adapters" then
+        for language, adapter in pairs(config) do
+          dap.adapters[language] = adapter
+        end
+      else
+        dap.configurations[key] = config
+      end
     end
   end,
 })
