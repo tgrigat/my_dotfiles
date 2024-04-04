@@ -13,8 +13,14 @@ local keymap = vim.keymap
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "ruff", filetypes = { "python" } },
-  { name = "flake8", filetypes = { "python" }, args = {"--ignore=E501"}},
+  { name = "flake8",  filetypes = { "python" }, args = { "--ignore=E501" } },
 }
+
+local formatter = require "lvim.lsp.null-ls.formatters"
+
+formatter.setup(
+  { { name = "ruff" }, }
+)
 
 -- Setup dap for python
 -- lvim.builtin.dap.active = true
