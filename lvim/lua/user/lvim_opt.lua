@@ -62,6 +62,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.context_commentstring = nil
 
 lvim.builtin.cmp.experimental.ghost_text = true
 
