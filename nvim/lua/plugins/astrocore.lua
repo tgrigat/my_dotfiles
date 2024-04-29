@@ -1,3 +1,5 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -60,8 +62,60 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+        ["<Leader>bj"] = {
+          function()
+            require("astroui.status.heirline").buffer_picker(function(bufnr) vim.api.nvim_win_set_buf(0, bufnr) end)
+          end,
+          desc = "Jump",
+        },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+        -- Section Search
+        ["<Leader>s"] = {
+          name = "Search",
+          ["m"] = { function() require("telescope.builtin").marks { initial_mode = "normal" } end, "Marks" },
+          ["s"] = { "<cmd>lua require('telescope.builtin').treesitter()<cr>", "Treesitter Symbol" },
+          ["w"] = {
+            function() require("telescope.builtin").current_buffer_fuzzy_find() end,
+            "Words in current buffer",
+          },
+          ["t"] = {
+            function()
+              require("telescope.builtin").live_grep {
+                additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
+              }
+            end,
+            "Text",
+          },
+          ["r"] = { function() require("telescope.builtin").registers() end, "Registers" },
+          ["k"] = { function() require("telescope.builtin").keymaps() end, "Keymaps" },
+          ["o"] = { function() require("telescope.builtin").oldfiles() end, "History" },
+          ["M"] = { function() require("telescope.builtin").man_pages() end, "Man" },
+          ["n"] = { function() require("telescope").extensions.notify.notify() end, "Notifications" },
+          ["h"] = { function() require("telescope.builtin").help_tags() end, "Help" },
+          ["C"] = { function() require("telescope.builtin").commands() end, "Commands" },
+          ["T"] = {
+            function() require("telescope.builtin").colorscheme { enable_preview = true } end,
+            "Themes",
+          },
+          ["a"] = {
+            function()
+              require("telescope.builtin").find_files {
+                prompt_title = "Config Files",
+                cwd = vim.fn.stdpath "config",
+                follow = true,
+              }
+            end,
+            "AstroNvim config files",
+          },
+          ["<CR>"] = { function() require("telescope.builtin").resume() end, "Resume previous search" },
+          ["f"] = { function() require("telescope.builtin").find_files() end, "Files" },
+        },
+
+        ["<Leader>lV"] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", desc = "VirtualText Off" },
+        ["<Leader>lv"] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", desc = "VirtualText On" },
+        ["<Leader>f"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
       },
       t = {
         -- setting a mapping to false will disable it
