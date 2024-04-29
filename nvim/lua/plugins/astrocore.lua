@@ -68,6 +68,16 @@ return {
           end,
           desc = "Jump",
         },
+        ["<Leader>bf"] = {
+          function()
+            require("telescope.builtin").buffers {
+              show_all_buffers = true,
+              sort_lastused = true,
+              ignore_current_buffer = true,
+            }
+          end,
+          desc = "Buffers",
+        },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
@@ -111,6 +121,16 @@ return {
           },
           ["<CR>"] = { function() require("telescope.builtin").resume() end, "Resume previous search" },
           ["f"] = { function() require("telescope.builtin").find_files() end, "Files" },
+          ["b"] = {
+            function()
+              require("telescope.builtin").buffers {
+                show_all_buffers = true,
+                sort_lastused = true,
+                ignore_current_buffer = true,
+              }
+            end,
+            "Buffers",
+          },
         },
 
         ["<Leader>lV"] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", desc = "VirtualText Off" },
