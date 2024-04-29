@@ -30,6 +30,11 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.setup.sync_root_with_cwd = false
 -- lvim.builtin.nvimtree.setup.view.width = 60
 
+
+-- Telescope theme
+
+-- lvim.builtin.telescope.theme = "center"
+
 lvim.builtin.project.manual_mode = true
 
 lvim.builtin.project.patterns = { ".is_project_root", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile",

@@ -34,6 +34,13 @@ lvim.builtin.which_key.mappings["="] = {
   P = { "<cmd>vs ~/.config/lvim/lua/user/lvim_plugins.lua<cr>", "Open Lvim Plugins" }
 }
 
+lvim.builtin.which_key.mappings['e'] = {
+  function()
+    require("yazi").yazi()
+  end,
+  "Open Yazi"
+}
+
 lvim.builtin.which_key.mappings["n"] = {
   name = "Note",
   i = { "<cmd>Neorg index<cr>", "Open Neorg index" },
@@ -232,7 +239,11 @@ Diagnostic_config = {
 -- doc here: https://neovim.io/doc/user/diagnostic.html#diagnostic-api
 lvim.builtin.which_key.mappings['lV'] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", "VirtualText Off" }
 lvim.builtin.which_key.mappings['lv'] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", "VirtualText On" }
+
 lvim.builtin.which_key.mappings['ss'] = { "<cmd>lua require('telescope.builtin').treesitter()<cr>", "Treesitter Symbol" }
+lvim.builtin.which_key.mappings['sm'] = { function()
+  require('telescope.builtin').marks { initial_mode = 'normal' }
+end, "Marks" }
 
 lvim.builtin.which_key.mappings['lp'] = { "<cmd>Copilot panel<cr>", "Open Copilot Panel" }
 
