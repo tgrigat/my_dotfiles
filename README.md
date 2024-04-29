@@ -15,7 +15,7 @@ python3 propogate_dotfiles.py
 Best to run it on home directory:
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh)
+bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/nvim_install.sh)
 ```
 
 ## Quick setup (for all)
