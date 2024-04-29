@@ -136,10 +136,17 @@ return {
         ["<Leader>lV"] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", desc = "VirtualText Off" },
         ["<Leader>lv"] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", desc = "VirtualText On" },
         ["<Leader>f"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+        ["<Leader>=w"] = { "<cmd>set wrap<cr>", desc = "Wrap" },
+        ["<Leader>=W"] = { "<cmd>set nowrap<cr>", desc = "Unwrap" },
+        ["<C-\\>"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+        -- ["<C-v>"] = "<C-\\><C-n>",
+        ["<C-v>"] = { -- do keep in mind, hotkeys with modifiers, like this one, have to be capitalized (<leader> nope, <Leader> yep)
+          "<C-\\><C-n>",
+        },
       },
     },
   },
