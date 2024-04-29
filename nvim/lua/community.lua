@@ -14,6 +14,9 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.just" },
+  { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.recipes.neovide" },
+  { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   -- import/override with your plugins folder
 }
