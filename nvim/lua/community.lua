@@ -21,5 +21,7 @@ return {
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+
   -- import/override with your plugins folder
 }
