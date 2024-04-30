@@ -139,6 +139,35 @@ return {
         ["<Leader>=w"] = { "<cmd>set wrap<cr>", desc = "Wrap" },
         ["<Leader>=W"] = { "<cmd>set nowrap<cr>", desc = "Unwrap" },
         ["<C-\\>"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" },
+
+        -- disable default mappings
+        ["<Leader>f'"] = false,
+        ["<Leader>f/"] = false,
+        ["<Leader>f<CR>"] = false,
+        ["<Leader>fa"] = false,
+        ["<Leader>fb"] = false,
+        ["<Leader>fc"] = false,
+        ["<Leader>fC"] = false,
+        ["<Leader>ff"] = false,
+        ["<Leader>fF"] = false,
+        ["<Leader>fh"] = false,
+        ["<Leader>fk"] = false,
+        ["<Leader>fm"] = false,
+        ["<Leader>fn"] = false,
+        ["<Leader>fo"] = false,
+        ["<Leader>fr"] = false,
+        ["<Leader>ft"] = false,
+        ["<Leader>fw"] = false,
+        ["<Leader>fW"] = false,
+        ["<Leader>fT"] = false, -- TODO config here: https://github.com/AstroNvim/AstroNvim/blob/b505f4ff41f851fa4a008586995f79408daf72bc/lua/astronvim/plugins/todo-comments.lua#L12
+
+        -- dap telescope, related shortcuts are here: https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/debugging/telescope-dap-nvim/init.lua
+        ["<Leader>fdc"] = false,
+        ["<Leader>fdf"] = false,
+        ["<Leader>fdg"] = false,
+        ["<Leader>fdl"] = false,
+        ["<Leader>fdv"] = false,
+        -- ["<Leader>ft"] = false,
       },
       t = {
         -- setting a mapping to false will disable it
