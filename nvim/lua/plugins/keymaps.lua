@@ -1,6 +1,6 @@
 return {
   "AstroNvim/astrocore",
-  ---@type AstroCoreOpts
+  ---@param opts AstroCoreOpts
   opts = function(_, opts)
     local nmaps = opts.mappings.n
     -- Section Search
