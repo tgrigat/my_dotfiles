@@ -4,7 +4,7 @@ return {
   opts = function(_, opts)
     local nmaps = opts.mappings.n
     -- Section Search
-    nmaps["<Leader>s"] = {
+    local leaders_tbl = {
       name = "Search",
       ["m"] = { function() require("telescope.builtin").marks { initial_mode = "normal" } end, "Marks" },
       ["s"] = { "<cmd>lua require('telescope.builtin').treesitter()<cr>", "Treesitter Symbol" },
@@ -54,6 +54,12 @@ return {
         "Buffers",
       },
     }
+
+    if not nmaps["<Leader>s"] then
+      nmaps["<Leader>s"] = leaders_tbl
+    else
+      nmaps["<Leader>s"] = vim.tbl_deep_extend("force", nmaps["<Leader>s"], leaders_tbl)
+    end
 
     nmaps["<Leader>lV"] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", desc = "VirtualText Off" }
     nmaps["<Leader>lv"] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", desc = "VirtualText On" }
