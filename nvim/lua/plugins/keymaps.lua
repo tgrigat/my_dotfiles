@@ -3,6 +3,12 @@ return {
   ---@param opts AstroCoreOpts
   opts = function(_, opts)
     local nmaps = opts.mappings.n
+    -- Dap telescope
+    nmaps["<Leader>dw"] = {
+      function() require("telescope").extensions.dap.configurations() end,
+      desc = "Configurations",
+    }
+
     -- Section Search
     local leaders_tbl = {
       name = "Search",
