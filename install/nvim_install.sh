@@ -27,7 +27,7 @@ function eget_install() {
 	eget sharkdp/fd --asset ^musl --to ~/.local/bin
 	eget BurntSushi/ripgrep --to ~/.local/bin
 	eget jesseduffield/lazygit --to ~/.local/bin
-	eget sxyazi/yazi --to ~/.local/bin
+	eget sxyazi/yazi --asset musl --to ~/.local/bin
 }
 
 function nvm_install() {
