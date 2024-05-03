@@ -21,7 +21,7 @@ bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/inst
 ## Quick setup (for all)
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/lvim_install.sh)
+bash <(curl -s https://raw.githubusercontent.com/LumenYoung/dotfiles/master/install/nvim_install.sh)
 cd ~/dotfiles
 python3 propogate_dotfiles.py
 cd ..
