@@ -22,6 +22,6 @@ return {
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-
+  { import = "astrocommunity.color.transparent-nvim" },
   -- import/override with your plugins folder
 }
