@@ -14,5 +14,6 @@ eget jesvedberg/tpix --to ~/.local/bin
 eget hackerb9/lsix --to ~/.local/bin
 eget ajeetdsouza/zoxide --to ~/.local/bin
 eget junegunn/fzf --to ~/.local/bin
+eget casey/just --asset x86_64-unknown-linux --to ~/.local/bin
 
 
