@@ -6,6 +6,7 @@
 
 ---@type LazySpec
 return {
+  -- { dir = "/home/yang/Documents/git/astrocommunity" },
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.completion.copilot-lua" },
@@ -23,6 +24,7 @@ return {
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.color.transparent-nvim" },
+  -- { import = "astrocommunity.utility.toggleterm-manager" },
   { import = "astrocommunity.motion.marks-nvim" },
   -- import/override with your plugins folder
 }
