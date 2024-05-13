@@ -23,5 +23,6 @@ return {
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.motion.marks-nvim" },
   -- import/override with your plugins folder
 }
