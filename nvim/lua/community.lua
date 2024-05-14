@@ -26,5 +26,6 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   -- { import = "astrocommunity.utility.toggleterm-manager" },
   { import = "astrocommunity.motion.marks-nvim" },
+  { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   -- import/override with your plugins folder
 }
