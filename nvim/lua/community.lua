@@ -27,5 +27,9 @@ return {
   -- { import = "astrocommunity.utility.toggleterm-manager" },
   { import = "astrocommunity.motion.marks-nvim" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
+  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.recipes.heirline-clock-statusline" },
+
   -- import/override with your plugins folder
 }
