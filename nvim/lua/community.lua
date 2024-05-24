@@ -1,5 +1,4 @@
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
@@ -24,14 +23,15 @@ return {
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.color.transparent-nvim" },
-  -- { import = "astrocommunity.utility.toggleterm-manager" },
+  { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
   { import = "astrocommunity.motion.marks-nvim" },
+  -- { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
   { import = "astrocommunity.workflow.hardtime-nvim" },
-  { import = "astrocommunity.workflow.precognition-nvim" },
+  -- { import = "astrocommunity.workflow.precognition-nvim" },
 
   -- import/override with your plugins folder
 }
