@@ -25,7 +25,7 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
   { import = "astrocommunity.motion.marks-nvim" },
-  -- { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
