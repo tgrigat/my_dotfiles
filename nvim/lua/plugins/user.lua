@@ -105,12 +105,12 @@ return {
         "    ██   ████   ████   ██ ██      ██",
       }
       opts.section.buttons.val = {
+        dashboard.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
         dashboard.button("LDR n  ", get_icon("FileNew", 2, true) .. "New File  "),
         dashboard.button("LDR f  ", get_icon("Search", 2, true) .. "Find File  "),
         dashboard.button("LDR s o", get_icon("DefaultFile", 2, true) .. "Recents  "),
         dashboard.button("LDR s t", get_icon("WordFile", 2, true) .. "Find Text"),
         dashboard.button("LDR s m", get_icon("Bookmarks", 2, true) .. "Bookmarks  "),
-        dashboard.button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
       }
       return opts
     end,
