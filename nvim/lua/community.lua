@@ -32,6 +32,7 @@ return {
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
   { import = "astrocommunity.workflow.hardtime-nvim" },
+  { import = "astrocommunity.markdown-and-latex.vimtex" },
   -- { import = "astrocommunity.workflow.precognition-nvim" },
 
   -- import/override with your plugins folder
