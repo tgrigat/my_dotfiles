@@ -61,10 +61,12 @@ return {
       },
     }
 
+    require("astrocore").extend_tbl(nmaps["<Leader>s"], leaders_tbl)
+
     if not nmaps["<Leader>s"] then
       nmaps["<Leader>s"] = leaders_tbl
     else
-      nmaps["<Leader>s"] = vim.tbl_deep_extend("force", nmaps["<Leader>s"], leaders_tbl)
+      nmaps["<Leader>s"] = require("astrocore").extend_tbl(nmaps["<Leader>s"], leaders_tbl)
     end
 
     nmaps["<Leader>lV"] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", desc = "VirtualText Off" }
