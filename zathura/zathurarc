@@ -1,6 +1,9 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
+set highlight-active-color "#ffffff"
+set highlight-transparency 0
+
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
@@ -17,7 +20,7 @@ map p print
 map H zoom in
 map L zoom out
 set synctex true
-set synctex-editor-command "nvr --remote-silent %f -c %l"
+# set synctex-editor-command "nvr --remote-silent %f -c %l"
 
 
 # Dracula color theme for Zathura
