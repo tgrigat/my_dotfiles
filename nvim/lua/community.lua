@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.just" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
@@ -34,6 +35,7 @@ return {
   { import = "astrocommunity.workflow.hardtime-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.syntax.vim-easy-align" },
+  { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- { import = "astrocommunity.workflow.precognition-nvim" },
 
   -- import/override with your plugins folder
