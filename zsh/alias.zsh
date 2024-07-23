@@ -80,8 +80,14 @@ alias reload='sudo systemctl reload'
 alias vf="vfcd . " 
 
 # alias ls="exa "
-alias ls="ls --color --hyperlink=auto "
-alias ll="ls -la "
+
+if (which eza > /dev/null); then
+  alias ls="eza "
+  alias ll="eza -l "
+else
+  alias ls="ls --color=auto "
+  alias ll="ls -l "
+fi
 
 alias zshconf="vim ~/.zshrc"
 alias conf="cd ~/.config && vim"
