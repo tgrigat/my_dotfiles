@@ -35,6 +35,7 @@ return {
     nmaps["<Leader>lv"] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", desc = "VirtualText On" }
     nmaps["<Leader>=w"] = { "<cmd>set wrap<cr>", desc = "Wrap" }
     nmaps["<Leader>=W"] = { "<cmd>set nowrap<cr>", desc = "Unwrap" }
+    nmaps["<Leader>=t"] = { "<cmd>Hardtime toggle<cr>", desc = "Toggle Hardtime" }
     nmaps["<C-\\>"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm float" }
 
     -- -- Example: disable default leader-f mappings
