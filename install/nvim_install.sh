@@ -73,23 +73,22 @@ eget_install
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
 
 # clone my dotfiles
-git clone https://github.com/LumenYoung/dotfiles ~/dotfiles
 
-# Install lunarvim
-cd ~/dotfiles
+# if ~/dotfiles not exists, clone repo https://github.com/LumenYoung/dotfiles
 
-# bash <(curl -s https://raw.githubusercontent.com/Lunarvim/Lunarvim/master/utils/installer/install.sh) --no-install-dependencies
-
-mkdir -p ~/.config
-
-if [[ -d ~/.config/lvim ]]; then
-	rm -rf ~/.config/lvim
+if [[ ! -d ~/dotfiles ]]; then
+	git clone https://github.com/LumenYoung/dotfiles ~/dotfiles
 fi
 
-ln -sf "$(pwd)/nvim" ~/.config/nvim
-ln -sf "$(pwd)/vim_wrapper.sh" ~/.local/bin/vim
+# Install lunarvim
+if [[ -d ~/dotfiles ]]; then
+	cd ~/dotfiles || exit
+	mkdir -p ~/.config
+	ln -sf "$(pwd)/nvim" ~/.config/nvim
+	ln -sf "$(pwd)/vim_wrapper.sh" ~/.local/bin/vim
+fi
 
-cd ..
+# bash <(curl -s https://raw.githubusercontent.com/Lunarvim/Lunarvim/master/utils/installer/install.sh) --no-install-dependencies
 
 # Print important information at the end
 if [ ${#important_info[@]} -ne 0 ]; then
