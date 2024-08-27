@@ -29,6 +29,8 @@ return {
       "Trouble",
       "trouble",
       "lspinfo",
+      "tex",
+      "markdown"
     },
   },
 }
