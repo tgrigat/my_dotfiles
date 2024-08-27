@@ -12,5 +12,10 @@ return {
       "vim",
       -- add more arguments for adding more treesitter parsers
     })
+    opts.highlight = require("astrocore").list_insert_unique(opts.highlight, {
+      enable = true,
+      disable = { "markdown" },
+      -- add more arguments for configuring the highlight table
+    })
   end,
 }
