@@ -15,7 +15,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.just" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.markdown" },
+  -- { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
