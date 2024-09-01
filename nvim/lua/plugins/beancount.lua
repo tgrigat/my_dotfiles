@@ -1,67 +1,25 @@
 -- return {} if not on hostname node
--- if true then return {} end
+if vim.fn.hostname() ~= "node" then return {} end
 
--- if vim.fn.hostname() ~= "node" then return {} end
-
-local formatter = require "customformatter"
+local beancount_fn = "/home/yang/Documents/git/finance/beans/main.bean"
 
 return {
-  "crispgm/cmp-beancount",
-  config = function(_, opts)
-    local lspconfig = require "lspconfig"
-    lspconfig.beancount.setup = {
-      init_options = {
-        journal_file = "/home/yang/Documents/git/finance/beans/main.bean",
+  "AstroNvim/astrolsp",
+  -- we need to use the function notation to get access to the `lspconfig` module
+  ---@param opts AstroLSPOpts
+  opts = function(plugin, opts)
+    -- insert `beancount` into our list of servers
+    opts.servers = opts.servers or {}
+    table.insert(opts.servers, "beancount")
+
+    -- extend our configuration table to include `beancount`
+    opts.config = require("astrocore").extend_tbl(opts.config or {}, {
+      -- Beancount LSP configuration
+      beancount = {
+        init_options = {
+          journal_file = beancount_fn,
+        },
       },
-    }
-    -- local cmpbeancount = require "cmp-beancount"
-    --
-    -- cmpbeancount.setup(opts)
+    })
   end,
-  dependencies = {
-    "AstroNvim/astrocore",
-    ---@type AstroCoreOpts
-    opts = {
-      autocmds = {
-        formatter_options = {
-          {
-            -- Trigger the autocmd on the "BufWritePost" event
-            event = "BufWritePost",
-            -- Specify the patterns for the filetypes
-            pattern = { "*.bean", "*.beancount" },
-            -- Description for the autocmd
-            desc = "Format bean files on save",
-            -- Add the autocmd to the "formatter_options" augroup
-            group = "formatter_options",
-            -- The callback function to format bean files
-            callback = formatter.bean_format,
-          },
-          {
-            -- Trigger the autocmd on the "BufWritePost" event
-            event = "BufWritePost",
-            -- Specify the patterns for the filetypes
-            pattern = { "*.bean", "*.beancount" },
-            -- Description for the autocmd
-            desc = "Run bean-check on save",
-            -- Add the autocmd to the "formatter_options" augroup
-            group = "formatter_options",
-            -- The callback function to run bean-check
-            callback = function() vim.cmd "!bean-check %" end,
-          },
-        },
-      },
-    },
-  },
-  spec = {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "crispgm/cmp-beancount" },
-    opts = {
-      sources = {
-        name = "beancount",
-        option = {
-          account = "/home/yang/Documents/git/finance/beans/main.bean",
-        },
-      },
-    },
-  },
 }

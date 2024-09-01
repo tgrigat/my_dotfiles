@@ -30,7 +30,8 @@ return {
       "trouble",
       "lspinfo",
       "tex",
-      "markdown"
+      "markdown",
+      "beancount"
     },
   },
 }
