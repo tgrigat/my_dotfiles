@@ -286,3 +286,5 @@ zsh/keys.zsh.zwc
 zsh/plugins.zsh.zwc
 zsh/source.zsh.zwc
 zsh/zoxide.zsh.zwc
+install/eget
+install/eget.sh
