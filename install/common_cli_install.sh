@@ -15,5 +15,5 @@ eget hackerb9/lsix --to ~/.local/bin
 eget ajeetdsouza/zoxide --to ~/.local/bin
 eget junegunn/fzf --to ~/.local/bin
 eget casey/just --asset x86_64-unknown-linux --to ~/.local/bin
-eget eza-community/eza --asset musl.tar
-eget sxyazi/yazi --asset linux-musl
+eget eza-community/eza --asset musl.tar --to ~/.local/bin
+eget sxyazi/yazi --asset linux-musl --to ~/.local/bin
