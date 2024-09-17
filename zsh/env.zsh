@@ -1,0 +1,2 @@
+export AIDER_DARK_MODE=1
+export AIDER_AUTO_COMMITS=0

@@ -211,7 +211,7 @@ auto_source $ZDOTDIR/keys.zsh
 auto_source $ZDOTDIR/alias.zsh
 auto_source $ZDOTDIR/functions.zsh
 auto_source $ZDOTDIR/device.zsh
-auto_source $ZDOTDIR/source.zsh
+auto_source $ZDOTDIR/env.zsh
 
 if command -v zoxide &> /dev/null ; then
   auto_source $ZDOTDIR/zoxide.zsh
