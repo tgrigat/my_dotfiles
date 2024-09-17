@@ -1,2 +1,6 @@
-export AIDER_DARK_MODE=1
-export AIDER_AUTO_COMMITS=0
+# aider specific settings
+
+export AIDER_DARK_MODE=true
+export AIDER_AUTO_COMMITS=false
+export AIDER_GITIGNORE=false
+export AIDER_VIM=true
