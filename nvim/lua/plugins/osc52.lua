@@ -1,28 +1,29 @@
-return {
-  {
-    "ojroques/nvim-osc52",
-    config = function()
-      local function copy(lines, _) require("osc52").copy(table.concat(lines, "\n")) end
-
-      local function paste() return { vim.fn.split(vim.fn.getreg "", "\n"), vim.fn.getregtype "" } end
-
-      vim.g.clipboard = {
-        name = "osc52",
-        copy = { ["+"] = copy, ["*"] = copy },
-        paste = { ["+"] = paste, ["*"] = paste },
+-- Check if conditions are met for OSC 52
+if
+  vim.fn.getenv "KONSOLE_DBUS_SERVICE" == vim.NIL
+  and vim.fn.getenv "KONSOLE_DBUS_SESSION" == vim.NIL
+  and vim.fn.getenv "KONSOLE_VERSION" == vim.NIL
+then
+  return {
+    "AstroNvim/astrocore",
+    opts = function(_, opts)
+      opts.options = opts.options or {}
+      opts.options.g = opts.options.g or {}
+      opts.options.g.clipboard = {
+        name = "OSC 52",
+        copy = {
+          ["+"] = require("vim.ui.clipboard.osc52").copy "+",
+          ["*"] = require("vim.ui.clipboard.osc52").copy "*",
+        },
+        paste = {
+          ["+"] = require("vim.ui.clipboard.osc52").paste "+",
+          ["*"] = require("vim.ui.clipboard.osc52").paste "*",
+        },
       }
+      return opts
     end,
-    cond = function()
-      -- disable when running in konsole since no support for OSC52
-      if
-        vim.fn.getenv "KONSOLE_DBUS_SERVICE" ~= vim.NIL
-        or vim.fn.getenv "KONSOLE_DBUS_SESSION" ~= vim.NIL
-        or vim.fn.getenv "KONSOLE_VERSION" ~= vim.NIL
-      then
-        return false
-      end
+  }
+end
 
-      return true
-    end,
-  },
-}
+-- Return an empty table if conditions are not met
+return {}
