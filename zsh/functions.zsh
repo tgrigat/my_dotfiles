@@ -1,3 +1,33 @@
+function add-pyrightconfig() {
+     local config_content='{
+      "reportImplicitOverride": "information",
+      "reportUnknownParameterType": "information",
+      "reportMissingParameterType": "information",
+      "reportMissingTypeStubs": "information",
+      "reportUnknownMemberType": false,
+      "reportUnknownArgumentType": false,
+      "reportArgumentType": "warning",
+      "typeCheckingMode": "basic",
+ }'
+     if [[ ! -d .git ]]; then
+         echo "Warning: Current directory is not a git repository root."
+         read -q "REPLY?Do you really want to add pyrightconfig.json here? (y/N) "
+         echo
+         if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+             echo "Operation cancelled."
+             return 1
+         fi
+     fi
+     if [[ -f pyrightconfig.json ]]; then
+         echo "pyrightconfig.json already exists in the current directory."
+         echo "Here's the content we would have injected:"
+         echo "$config_content"
+     else
+         echo "$config_content" > pyrightconfig.json
+         echo "pyrightconfig.json has been created in the current directory."
+     fi
+ }
+
 function create_py_dev_cfgs() {
     # Create pyrightconfig.json
     if [ ! -f pyrightconfig.json ]; then
