@@ -1,4 +1,6 @@
 -- Check if conditions are met for OSC 52
+if true then return {} end
+
 if
   vim.fn.getenv "KONSOLE_DBUS_SERVICE" == vim.NIL
   and vim.fn.getenv "KONSOLE_DBUS_SESSION" == vim.NIL
@@ -26,4 +28,3 @@ then
 end
 
 -- Return an empty table if conditions are not met
-return {}

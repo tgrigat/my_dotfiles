@@ -19,6 +19,21 @@ return {
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
+    autocmds = {
+      text_yank_post = {
+        {
+          event = "TextYankPost",
+          desc = "Highlight yanked text and copy to clipboard using OSC52",
+          callback = function()
+            vim.highlight.on_yank()
+            local copy_to_unnamedplus = require('vim.ui.clipboard.osc52').copy('+')
+            copy_to_unnamedplus(vim.v.event.regcontents)
+            local copy_to_unnamed = require('vim.ui.clipboard.osc52').copy('*')
+            copy_to_unnamed(vim.v.event.regcontents)
+          end,
+        },
+      },
+    },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
@@ -31,7 +46,7 @@ return {
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-        wrap = false, -- sets vim.opt.wrap
+        wrap = true, -- sets vim.opt.wrap
         swapfile = false,
       },
       g = { -- vim.g.<key>
