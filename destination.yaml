@@ -15,7 +15,6 @@ ktimerrc: ~/.config/ktimerrc
 # kwinrulesrc: ~/.config/kwinrulesrc
 krunnerrc: ~/.config/krunnerrc
 lazygit: ~/.config/lazygit
-lvim: ~/.config/lvim
 nvim: ~/.config/nvim
 # nvim.b: ~/.config/nvim.b
 paru: ~/.config/paru
