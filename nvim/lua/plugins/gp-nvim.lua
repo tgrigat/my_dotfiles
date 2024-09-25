@@ -67,7 +67,7 @@ return {
       opts = {
         mappings = {
           n = {
-            ["<Leader>a"] = { name = "Chat" },
+            ["<Leader>a"] = { name = "AI Chat" },
             ["<Leader>at"] = { name = "Toggle" },
             ["<Leader>atv"] = { "<cmd>GpChatToggle vsplit<cr>", desc = "Toggle Vsplit" },
             ["<Leader>ats"] = { "<cmd>GpChatToggle split<cr>", desc = "Toggle Split" },
@@ -80,7 +80,7 @@ return {
             ["<Leader>aa"] = { "<cmd>GpChatRespond<cr>", desc = "Response" },
           },
           v = {
-            ["<Leader>a"] = { name = "Chat" },
+            ["<Leader>a"] = { name = "AI Chat" },
             ["<Leader>at"] = { name = "To" },
             ["<Leader>atv"] = { "<cmd>'<,'>GpChatPaste vsplit<cr>", desc = "Vsplit" },
             ["<Leader>ats"] = { "<cmd>'<,'>GpChatPaste split<cr>", desc = "Split" },

@@ -8,9 +8,9 @@ local aider = Terminal:new {
   },
   on_open = function(term)
     vim.cmd("startinsert!")
-    vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", "<C-\\><C-n>", {noremap = true, silent = true})
     vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-v>", "<C-\\><C-n>", {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-h>", "<cmd>lua _G.AIDER_TOGGLE()<CR>", {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-\\>", "<cmd>lua _G.AIDER_TOGGLE()<CR>", {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-a>", "<cmd>lua _G.AIDER_TOGGLE()<CR>", {noremap = true, silent = true})
   end,
 }
 
@@ -27,6 +27,7 @@ return {
       mappings = {
         n = {
           ["<leader>ta"] = { "<cmd>lua _G.AIDER_TOGGLE()<CR>", desc = "Toggle Aider" },
+          ["<C-a>"] = { "<cmd>lua _G.AIDER_TOGGLE()<CR>", desc = "Toggle Aider" },
         },
       },
     },
