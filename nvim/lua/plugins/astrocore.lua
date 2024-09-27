@@ -26,10 +26,29 @@ return {
           desc = "Highlight yanked text and copy to clipboard using OSC52",
           callback = function()
             vim.highlight.on_yank()
-            local copy_to_unnamedplus = require('vim.ui.clipboard.osc52').copy('+')
+            local copy_to_unnamedplus = require("vim.ui.clipboard.osc52").copy "+"
             copy_to_unnamedplus(vim.v.event.regcontents)
-            local copy_to_unnamed = require('vim.ui.clipboard.osc52').copy('*')
+            local copy_to_unnamed = require("vim.ui.clipboard.osc52").copy "*"
             copy_to_unnamed(vim.v.event.regcontents)
+          end,
+        },
+      },
+      buf_read_acwrite = {
+        {
+          event = "BufRead",
+          desc = "Set modifiable for acwrite buffers",
+          pattern = "*",
+          callback = function()
+            if vim.bo.buftype == "acwrite" then vim.bo.modifiable = true end
+          end,
+        },
+      },
+      focus_gained = {
+        {
+          event = "FocusGained",
+          desc = "Check for external changes on focus gain",
+          callback = function()
+            if vim.fn.has "nvim" == 1 or not vim.fn.has "gui_running" then vim.cmd "checktime" end
           end,
         },
       },
@@ -48,6 +67,7 @@ return {
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = true, -- sets vim.opt.wrap
         swapfile = false,
+        autoread = true, -- sets vim.opt.autoread
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
