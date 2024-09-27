@@ -1,4 +1,3 @@
-
 #!/usr/bin/bash
 # get eget
 curl -o eget.sh https://zyedidia.github.io/eget.sh
@@ -16,4 +15,4 @@ eget ajeetdsouza/zoxide --to ~/.local/bin
 eget junegunn/fzf --to ~/.local/bin
 eget casey/just --asset x86_64-unknown-linux --to ~/.local/bin
 eget eza-community/eza --asset musl.tar --to ~/.local/bin
-eget sxyazi/yazi --asset linux-musl --to ~/.local/bin
+eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file ya yazi
