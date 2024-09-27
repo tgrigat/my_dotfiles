@@ -3,8 +3,9 @@ return {
   "rcarriga/nvim-notify",
   event = "VeryLazy",
   opts = {
-    render = "minimal",
+    render = "compact",
     stages = "static",
-    top_down = false,
+    top_down = true,
+    timeout = 1000
   },
 }
