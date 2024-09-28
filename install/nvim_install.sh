@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 
 important_info=()
+install_nvm=false
+
+# Parse command line arguments
+for arg in "$@"
+do
+    case $arg in
+        --nvm)
+        install_nvm=true
+        shift # Remove --nvm from processing
+        ;;
+    esac
+done
 
 function check_term() {
 	echo "enter check_term"
@@ -65,10 +77,13 @@ done
 
 echo "Start check_term"
 check_term
-echo "Start nvm_install"
-nvm_install
-echo "Start eget_install"
-eget_install
+
+if $install_nvm; then
+    echo "Start nvm_install"
+    nvm_install
+else
+    echo "Skipping nvm installation (use --nvm flag to install)"
+fi
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install-neovim-from-release)
 
@@ -80,15 +95,13 @@ if [[ ! -d ~/dotfiles ]]; then
 	git clone https://github.com/LumenYoung/dotfiles ~/dotfiles
 fi
 
-# Install lunarvim
+# Link my config
 if [[ -d ~/dotfiles ]]; then
 	cd ~/dotfiles || exit
 	mkdir -p ~/.config
 	ln -sf "$(pwd)/nvim" ~/.config/nvim
 	ln -sf "$(pwd)/vim_wrapper.sh" ~/.local/bin/vim
 fi
-
-# bash <(curl -s https://raw.githubusercontent.com/Lunarvim/Lunarvim/master/utils/installer/install.sh) --no-install-dependencies
 
 # Print important information at the end
 if [ ${#important_info[@]} -ne 0 ]; then
