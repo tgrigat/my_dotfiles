@@ -37,16 +37,16 @@ return {
     nmaps["<Leader>=W"] = { "<cmd>set nowrap<cr>", desc = "Unwrap" }
     nmaps["<Leader>=t"] = { "<cmd>Hardtime toggle<cr>", desc = "Toggle Hardtime" }
     -- Preserve <number><C-\> functionality while adding float toggle
-    nmaps["<C-\\>"] = {
-      function()
-        if vim.v.count == 0 then
-          vim.cmd "ToggleTerm direction=float"
-        else
-          vim.cmd(vim.v.count .. "ToggleTerm")
-        end
-      end,
-      desc = "ToggleTerm (float if no count)",
-    }
+    -- nmaps["<C-\\>"] = {
+    --   function()
+    --     if vim.v.count == 0 then
+    --       vim.cmd "ToggleTerm direction=float"
+    --     else
+    --       vim.cmd(vim.v.count .. "ToggleTerm")
+    --     end
+    --   end,
+    --   desc = "ToggleTerm (float if no count)",
+    -- }
 
     -- -- Example: disable default leader-f mappings
     -- for lhs, _ in pairs(nmaps) do
