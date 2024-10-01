@@ -12,6 +12,7 @@ return {
         cmd = "aider",
         hidden = true,
         direction = "float",
+        count = 99,
         float_opts = {
           border = "double",
         },
