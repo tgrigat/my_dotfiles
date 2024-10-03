@@ -77,6 +77,8 @@ alias enable='sudo systemctl enable'
 alias disable='sudo systemctl disable'
 alias reload='sudo systemctl reload'
 
+alias config-git-user='git config user.name "Lumen Yang" && git config user.email "lumen.yang@lumeny.io"'
+
 alias vf="vfcd . " 
 
 # alias ls="exa "
