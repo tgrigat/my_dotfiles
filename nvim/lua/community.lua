@@ -37,6 +37,7 @@ return {
   { import = "astrocommunity.syntax.vim-easy-align" },
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   { import = "astrocommunity.editing-support.suda-vim" },
+  { import = "astrocommunity.code-runner.overseer-nvim"}
   -- { import = "astrocommunity.workflow.precognition-nvim" },
 
   -- import/override with your plugins folder
