@@ -21,6 +21,10 @@ return {
     --     pythonPath = function()
     --       return "/usr/bin/python"
     --     end,
+    --     connect = {
+    --      host = "localhost",
+    --      port = 5678,
+    --     }
     --   },
     -- },
   },
