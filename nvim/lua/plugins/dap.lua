@@ -1,3 +1,32 @@
+local dap_config_template = [[
+return {
+  adapters = {
+    -- Add your adapters here
+    -- Example:
+    -- python = {
+    --   type = "executable",
+    --   command = "path/to/debugpy/python",
+    --   args = { "-m", "debugpy.adapter" },
+    -- },
+  },
+  configurations = {
+    -- Add your configurations here
+    -- Example:
+    -- python = {
+    --   {
+    --     type = "python",
+    --     request = "launch",
+    --     name = "Launch file",
+    --     program = "${file}",
+    --     pythonPath = function()
+    --       return "/usr/bin/python"
+    --     end,
+    --   },
+    -- },
+  },
+}
+]]
+
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
@@ -39,34 +68,7 @@ return {
           local file_path = ".nvim-dap.lua"
           local file = io.open(file_path, "w")
           if file then
-            file:write [[
-return {
-  adapters = {
-    -- Add your adapters here
-    -- Example:
-    -- python = {
-    --   type = "executable",
-    --   command = "path/to/debugpy/python",
-    --   args = { "-m", "debugpy.adapter" },
-    -- },
-  },
-  configurations = {
-    -- Add your configurations here
-    -- Example:
-    -- python = {
-    --   {
-    --     type = "python",
-    --     request = "launch",
-    --     name = "Launch file",
-    --     program = "${file}",
-    --     pythonPath = function()
-    --       return "/usr/bin/python"
-    --     end,
-    --   },
-    -- },
-  },
-}
-]]
+            file:write(dap_config_template)
             file:close()
             vim.notify("Created .nvim-dap.lua file", vim.log.levels.INFO)
           else
