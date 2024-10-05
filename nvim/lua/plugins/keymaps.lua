@@ -33,6 +33,7 @@ return {
 
     nmaps["<Leader>lV"] = { "<cmd>lua vim.diagnostic.config({virtual_text = false})<cr>", desc = "VirtualText Off" }
     nmaps["<Leader>lv"] = { "<cmd>lua vim.diagnostic.config({virtual_text = true})<cr>", desc = "VirtualText On" }
+    nmaps["<Leader>="] = { desc = "Custom Keys" }
     nmaps["<Leader>=w"] = { "<cmd>set wrap<cr>", desc = "Wrap" }
     nmaps["<Leader>=W"] = { "<cmd>set nowrap<cr>", desc = "Unwrap" }
     nmaps["<Leader>=t"] = { "<cmd>Hardtime toggle<cr>", desc = "Toggle Hardtime" }
