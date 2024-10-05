@@ -33,35 +33,54 @@ return {
           end
         end,
       },
+      CreateDapConfig = {
+        desc = "Create a basic .nvim-dap.lua file",
+        function()
+          local file_path = ".nvim-dap.lua"
+          local file = io.open(file_path, "w")
+          if file then
+            file:write [[
+return {
+  adapters = {
+    -- Add your adapters here
+    -- Example:
+    -- python = {
+    --   type = "executable",
+    --   command = "path/to/debugpy/python",
+    --   args = { "-m", "debugpy.adapter" },
+    -- },
+  },
+  configurations = {
+    -- Add your configurations here
+    -- Example:
+    -- python = {
+    --   {
+    --     type = "python",
+    --     request = "launch",
+    --     name = "Launch file",
+    --     program = "${file}",
+    --     pythonPath = function()
+    --       return "/usr/bin/python"
+    --     end,
+    --   },
+    -- },
+  },
+}
+]]
+            file:close()
+            vim.notify("Created .nvim-dap.lua file", vim.log.levels.INFO)
+          else
+            vim.notify("Failed to create .nvim-dap.lua file", vim.log.levels.ERROR)
+          end
+        end,
+      },
     },
     autocmds = {
       custom_dap = {
         {
           event = "VimEnter",
           desc = "Project-wise DAP",
-          callback = function()
-            local project_dap_config = require("user.project-dap").search_project_config()
-            local status_ok, dap = pcall(require, "dap")
-            if not status_ok then
-              vim.notify "[nvim-dap-project] Fail to load DAP"
-              return
-            end
-
-            if project_dap_config == nil then
-              vim.notify "[nvim-dap-project] empty project configuration found"
-              return
-            end
-
-            for key, config in pairs(project_dap_config) do
-              if key == "adapters" then
-                for language, adapter in pairs(config) do
-                  dap.adapters[language] = adapter
-                end
-              else
-                dap.configurations[key] = config
-              end
-            end
-          end,
+          callback = function() require("user.project-dap").load_and_apply_config() end,
         },
       },
     },
@@ -69,31 +88,7 @@ return {
       n = {
         ["<Leader>dl"] = {
           desc = "Load nvim-dap.lua",
-          function()
-            local project_dap_config = require("user.project-dap").search_project_config()
-            local status_ok, dap = pcall(require, "dap")
-            if not status_ok then
-              vim.notify "[nvim-dap-project] Fail to load DAP"
-              return
-            else
-              vim.notify "[nvim-dap-project] DAP loaded"
-            end
-
-            if project_dap_config == nil then
-              vim.notify "[nvim-dap-project] empty project configuration found"
-              return
-            end
-
-            for key, config in pairs(project_dap_config) do
-              if key == "adapters" then
-                for language, adapter in pairs(config) do
-                  dap.adapters[language] = adapter
-                end
-              else
-                dap.configurations[key] = config
-              end
-            end
-          end,
+          function() require("user.project-dap").load_and_apply_config() end,
         },
       },
     },

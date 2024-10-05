@@ -19,7 +19,45 @@ function M.search_project_config()
   if status then
     return result
   else
-    print("Error loading configuration file: " .. project_config)
+    vim.notify("Error loading configuration file: " .. project_config, vim.log.levels.ERROR)
+  end
+end
+
+function M.load_and_apply_config()
+  local project_dap_config = M.search_project_config()
+  local status_ok, dap = pcall(require, "dap")
+  if not status_ok then
+    vim.notify("[nvim-dap-project] Failed to load DAP", vim.log.levels.ERROR)
+    return
+  end
+
+  if project_dap_config == nil then
+    vim.notify("[nvim-dap-project] No project configuration found", vim.log.levels.WARN)
+    return
+  end
+
+  local config_applied = false
+
+  -- Handle adapters
+  if type(project_dap_config.adapters) == "table" then
+    for language, adapter in pairs(project_dap_config.adapters) do
+      dap.adapters[language] = adapter
+      config_applied = true
+    end
+  end
+
+  -- Handle configurations
+  if type(project_dap_config.configurations) == "table" then
+    for language, configs in pairs(project_dap_config.configurations) do
+      dap.configurations[language] = configs
+      config_applied = true
+    end
+  end
+
+  if config_applied then
+    vim.notify("[nvim-dap-project] DAP configuration applied successfully", vim.log.levels.INFO)
+  else
+    vim.notify("[nvim-dap-project] No valid configurations found in project file", vim.log.levels.WARN)
   end
 end
 
