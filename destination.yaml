@@ -1,3 +1,4 @@
+btop: ~/.config/btop
 alacritty: ~/.config/alacritty
 calibre: ~/.config/calibre
 # confsync: ~/confsync
