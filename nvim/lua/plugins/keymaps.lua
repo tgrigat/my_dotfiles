@@ -68,5 +68,17 @@ return {
       end,
       desc = "Buffers",
     }
+
+    -- Yank current buffer's full path and line number
+    nmaps["<Leader>yp"] = {
+      function()
+        local path = vim.fn.expand("%:p")
+        local line_number = vim.fn.line(".")
+        local yank_text = path .. ":" .. line_number
+        vim.fn.setreg("+", yank_text)
+        vim.notify("Yanked: " .. yank_text, vim.log.levels.INFO)
+      end,
+      desc = "Yank file path and line number",
+    }
   end,
 }
