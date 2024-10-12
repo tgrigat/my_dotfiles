@@ -15,6 +15,10 @@ return {
         neovide_cursor_animation_length = 0.07,
         neovide_cursor_trail_size = 0.6,
         neovide_cursor_smooth_blink = true,
+        neovide_scroll_animation_length = 0.2,
+        neovide_input_ime = true,
+        neovide_transparency = 0.95,
+        neovide_cursor_vfx_mode = "railgun"
       },
       -- g = { clipboard = "unnamedplus" },
     },
