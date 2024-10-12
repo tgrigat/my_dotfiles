@@ -6,7 +6,7 @@ from pathlib import Path
 
 def start_nvim(path, port):
     return subprocess.Popen(
-        ["nvim", "--headless", "--listen", f"localhost:{port}", "."], cwd=str(path)
+        ["nvim", "--listen", f"localhost:{port}", "."], cwd=str(path)
     )
 
 
