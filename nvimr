@@ -36,7 +36,7 @@ def main():
 
     # Command to start the remote nvim-server with SSH port forwarding
     remote_nvim_command = (
-        f"ssh -L {port}:localhost:{port} {server} 'zsh -ic \"nvim-server {path} {port}\"'"
+        f"ssh -L {port}:localhost:{port} {server} 'PATH=$HOME/.local/bin:$PATH nvim-server {path} {port}'"
     )
 
     if args.debug:
