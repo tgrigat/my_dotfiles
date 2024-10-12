@@ -56,3 +56,4 @@ vim_wrapper.sh: ~/.local/bin/vim
 yazi: ~/.config/yazi
 rio: ~/.config/rio
 chromium-flags.conf: "~/.config/chromium-flags.conf"
+neovide: ~/.config/neovide
