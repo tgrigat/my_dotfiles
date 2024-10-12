@@ -11,24 +11,67 @@ return {
         guifont = "Iosevka Nerd Font Mono:h12",
         -- neovide_input_ime = true
       },
+      g = {
+        neovide_cursor_animation_length = 0.07,
+        neovide_cursor_trail_size = 0.6,
+        neovide_cursor_smooth_blink = true,
+      },
       -- g = { clipboard = "unnamedplus" },
     },
     mappings = {
       n = {
-        ["<C-S-V>"] = { 'l"+P', desc = "Paste from clipboard left of cursor" },
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (normal mode)",
+        },
       },
-      -- v = {
-      --   ["<Shift-Ctrl-c>"] = { '"+y', desc = "Copy to clipboard" },
-      --   ["<Shift-Ctrl-v>"] = { '"+P', desc = "Paste from clipboard replacing selection" },
-      -- },
-      c = {
-        ["<S-C-V>"] = { '<C-o>l<C-o>"+<C-o>P<C-o>l', desc = "Paste from clipboard in command mode" },
+      v = {
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (visual mode)",
+        },
+      },
+      s = {
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (select mode)",
+        },
+      },
+      x = {
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (visual block mode)",
+        },
+      },
+      o = {
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (operator-pending mode)",
+        },
       },
       i = {
-        ["<C-S-V>"] = { '<ESC>l"+Pli', desc = "Paste from clipboard in insert mode" },
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (insert mode)",
+        },
+      },
+      l = {
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (language-specific mode)",
+        },
+      },
+      c = {
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (command-line mode)",
+        },
       },
       t = {
-        ["<C-S-V>"] = { '<C-\\><C-n>"+Pi', desc = "Paste from clipboard in terminal mode" },
+        ["<C-S-V>"] = {
+          function() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end,
+          desc = "Paste from clipboard (terminal mode)",
+        },
       },
     },
   },
