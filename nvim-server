@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+import subprocess
+import sys
+from pathlib import Path
+
+
+def start_nvim(path, port):
+    return subprocess.Popen(
+        ["nvim", "--headless", "--listen", f"localhost:{port}", "."], cwd=str(path)
+    )
+
+
+def main():
+    if len(sys.argv) != 3:
+        print("[SERVER] Usage: nvim-server <path> <port>")
+        sys.exit(1)
+
+    path = Path(sys.argv[1]).resolve()
+    port = int(sys.argv[2])
+
+    if not path.exists():
+        print(f"[SERVER] Error: Path {path} does not exist")
+        sys.exit(1)
+
+    print(f"[SERVER] Starting Neovim server in directory: {path}")
+    print(f"[SERVER] Listening on port: {port}")
+
+    while True:
+        nvim_process = start_nvim(path, port)
+        print("[SERVER] Neovim instance started")
+
+        # Wait for the process to terminate
+        nvim_process.wait()
+
+        print("[SERVER] Neovim instance terminated. Restarting...")
+
+
+if __name__ == "__main__":
+    main()

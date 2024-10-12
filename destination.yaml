@@ -57,3 +57,5 @@ yazi: ~/.config/yazi
 rio: ~/.config/rio
 chromium-flags.conf: "~/.config/chromium-flags.conf"
 neovide: ~/.config/neovide
+nvimr: ~/.local/bin/nvimr
+nvim-server: ~/.local/bin/nvim-server
