@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os
+import signal
 import subprocess
 import sys
 from pathlib import Path
@@ -6,7 +8,9 @@ from pathlib import Path
 
 def start_nvim(path, port):
     return subprocess.Popen(
-        ["nvim", "--listen", f"localhost:{port}", "."], cwd=str(path)
+        ["nvim", "--listen", f"localhost:{port}", "."],
+        cwd=str(path),
+        preexec_fn=os.setsid,  # This creates a new process group
     )
 
 
@@ -25,12 +29,24 @@ def main():
     print(f"[SERVER] Starting Neovim server in directory: {path}")
     print(f"[SERVER] Listening on port: {port}")
 
+    def signal_handler(signum, frame):
+        print("[SERVER] Received termination signal. Shutting down...")
+        sys.exit(0)
+
+    signal.signal(signal.SIGTERM, signal_handler)
+
     while True:
         nvim_process = start_nvim(path, port)
         print("[SERVER] Neovim instance started")
 
-        # Wait for the process to terminate
-        nvim_process.wait()
+        try:
+            nvim_process.wait()
+        except KeyboardInterrupt:
+            print("[SERVER] Keyboard interrupt received. Shutting down...")
+            break
+        finally:
+            # Terminate the entire process group
+            os.killpg(os.getpgid(nvim_process.pid), signal.SIGTERM)
 
         print("[SERVER] Neovim instance terminated. Restarting...")
 

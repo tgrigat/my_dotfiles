@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
+import os
+import signal
 import random
-import subprocess
 import socket
 import argparse
-import time
+import asyncio
 
 
 def is_port_free(port):
@@ -27,7 +28,68 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def main():
+async def wait_for_neovim_server(port, max_attempts=10, debug=False):
+    for attempt in range(max_attempts):
+        try:
+            if debug:
+                print(
+                    f"[CLIENT] Attempting to connect to Neovim server on port {port} (attempt {attempt + 1})"
+                )
+            _, writer = await asyncio.wait_for(
+                asyncio.open_connection("localhost", port), timeout=5.0
+            )
+            writer.close()
+            await writer.wait_closed()
+            if debug:
+                print(f"[CLIENT] Neovim server is ready after {attempt + 1} attempts")
+            return True
+        except asyncio.TimeoutError:
+            if debug:
+                print(f"[CLIENT] Attempt {attempt + 1} timed out, retrying...")
+        except Exception as e:
+            if debug:
+                print(f"[CLIENT] Attempt {attempt + 1} failed: {str(e)}, retrying...")
+        await asyncio.sleep(
+            2**attempt * 0.1
+        )  # Exponential backoff with shorter initial waits
+    print("[CLIENT] Neovim server didn't start in time")
+    return False
+
+
+async def run_neovide(port, debug=False):
+    while True:
+        try:
+            process = await asyncio.create_subprocess_exec(
+                "neovide",
+                f"--server=localhost:{port}",
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+            _, stderr = await process.communicate()
+            error_output = stderr.decode()
+
+            if "Neovide requires nvim version 0.10.0 or higher" in error_output:
+                print("[CLIENT] Error: Neovide Connect Error. Retrying...")
+                await asyncio.sleep(1)  # Add a small delay before retrying
+                continue
+            elif process.returncode == 0:
+                print("[CLIENT] Neovide exited normally. Terminating.")
+                break
+            elif process.returncode == 1:
+                if debug:
+                    print("[CLIENT] Restarting Neovide...")
+            else:
+                print(f"[CLIENT] Neovide exited with code: {process.returncode}")
+                if debug:
+                    print(f"[CLIENT] Error output: {error_output}")
+                print("[CLIENT] Terminating due to unexpected error.")
+                break
+        except Exception as e:
+            print(f"[CLIENT] An error occurred while running Neovide: {e}")
+            break
+
+
+async def main():
     args = parse_arguments()
     server, path = args.server_path.split(":", 1)
     port = find_free_port()
@@ -35,9 +97,7 @@ def main():
     print(f"[CLIENT] Using local port {port} for SSH forwarding")
 
     # Command to start the remote nvim-server with SSH port forwarding
-    remote_nvim_command = (
-        f"ssh -L {port}:localhost:{port} {server} 'PATH=$HOME/.local/bin:$PATH nvim-server {path} {port}'"
-    )
+    remote_nvim_command = f"ssh -L {port}:localhost:{port} {server} 'PATH=$HOME/.local/bin:$PATH nvim-server {path} {port}'"
 
     if args.debug:
         print("[CLIENT] Debug: Remote nvim-server command:")
@@ -45,59 +105,46 @@ def main():
 
     try:
         # Start remote Neovim server with SSH port forwarding
-        ssh_process = subprocess.Popen(remote_nvim_command, shell=True)
+        ssh_process = await asyncio.create_subprocess_shell(
+            remote_nvim_command,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+            preexec_fn=os.setsid,  # This creates a new process group
+        )
 
         if args.debug:
-            print("[CLIENT] Waiting for Neovim to be ready...")
+            print("[CLIENT] SSH process started. Waiting for Neovim to be ready...")
 
-        # Simple wait for Neovim to be ready
-        time.sleep(0.8)
+        # Start a task to read SSH process output
+        asyncio.create_task(log_ssh_output(ssh_process, args.debug))
 
-        if args.debug:
-            print("[CLIENT] Neovim is ready. Starting Neovide...")
+        # Wait for Neovim server to be ready
+        if await wait_for_neovim_server(port, debug=args.debug):
+            if args.debug:
+                print("[CLIENT] Neovim is ready. Starting Neovide...")
+            await run_neovide(port, debug=args.debug)
+        else:
+            print("[CLIENT] Failed to connect to Neovim server. Exiting...")
 
-        while True:
-            try:
-                # Start Neovide locally and connect to the forwarded port
-                result = subprocess.run(
-                    ["neovide", f"--server=localhost:{port}"],
-                    check=False,
-                    capture_output=True,
-                    text=True
-                )
-                error_output = result.stderr
-
-                if "Neovide requires nvim version 0.10.0 or higher" in error_output:
-                    print("[CLIENT] Error: Neovide Connect Error. Retrying...")
-                    time.sleep(1)  # Add a small delay before retrying
-                    continue
-                elif result.returncode == 0:
-                    print("[CLIENT] Neovide exited normally. Terminating.")
-                    break
-                elif result.returncode == 1:
-                    if args.debug:
-                        print("[CLIENT] Restarting Neovide...")
-                else:
-                    print(f"[CLIENT] Neovide exited with code: {result.returncode}")
-                    if args.debug:
-                        print(f"[CLIENT] Error output: {error_output}")
-                    print("[CLIENT] Terminating due to unexpected error.")
-                    break
-            except Exception as e:
-                print(f"[CLIENT] An error occurred while running Neovide: {e}")
-                break
-
-    except KeyboardInterrupt:
-        print("[CLIENT] Keyboard interrupt received. Exiting...")
-    except subprocess.CalledProcessError as e:
-        print(f"[CLIENT] Error running remote nvim-server: {e}")
+    except asyncio.CancelledError:
+        print("[CLIENT] Async operation cancelled. Exiting...")
     except Exception as e:
         print(f"[CLIENT] An error occurred: {e}")
     finally:
-        print("[CLIENT] Terminating SSH connection...")
-        ssh_process.terminate()
-        ssh_process.wait()
+        print("[CLIENT] Terminating SSH connection and remote processes...")
+        # Send SIGTERM to the entire process group
+        os.killpg(os.getpgid(ssh_process.pid), signal.SIGTERM)
+        await ssh_process.wait()
+
+
+async def log_ssh_output(process, debug):
+    while True:
+        line = await process.stdout.readline()
+        if not line:
+            break
+        if debug:
+            print(f"[SSH] {line.decode().strip()}")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
