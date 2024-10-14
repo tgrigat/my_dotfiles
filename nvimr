@@ -141,6 +141,7 @@ async def main():
     def signal_handler(signum, frame):
         print("[CLIENT] Received termination signal. Shutting down...")
         os.killpg(os.getpgid(ssh_process.pid), signal.SIGTERM)
+        os.killpg(os.getpgid(ssh_process.pid), signal.SIGUSR1)  # Send SIGUSR1 to nvim-server
         sys.exit(0)
 
     signal.signal(signal.SIGINT, signal_handler)

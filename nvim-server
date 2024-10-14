@@ -8,6 +8,12 @@ import shutil  # Import shutil to use shutil.which
 
 nvim_process = None
 
+NVIM_SCRIPT_TEMPLATE = """#!/bin/bash
+exec {zsh_path} << EOF
+exec nvim --headless --listen localhost:{port} .
+EOF
+"""
+
 
 def start_nvim(path, port):
     global nvim_process
@@ -16,11 +22,16 @@ def start_nvim(path, port):
         print("[SERVER] Error: zsh executable not found")
         sys.exit(1)
 
-    command = f"nvim --headless --listen localhost:{port} ."
+    # Create a shell script to execute zsh and then start Neovim
+    script = NVIM_SCRIPT_TEMPLATE.format(zsh_path=zsh_path, port=port)
+    script_path = os.path.join(path, "start_nvim.sh")
+    with open(script_path, "w") as f:
+        f.write(script)
+    os.chmod(script_path, 0o755)  # Make the script executable
+
     nvim_process = subprocess.Popen(
-        command,
+        script_path,
         shell=True,
-        executable=zsh_path,  # Specify the shell as zsh
         cwd=str(path),
         preexec_fn=os.setsid,  # This creates a new process group
     )
@@ -38,6 +49,11 @@ def terminate_nvim():
             print("[SERVER] Neovim didn't terminate gracefully. Forcing termination...")
             os.killpg(os.getpgid(nvim_process.pid), signal.SIGKILL)
         nvim_process = None
+
+    # Clean up the temporary script file
+    script_path = os.path.join(Path(sys.argv[1]).resolve(), "start_nvim.sh")
+    if os.path.exists(script_path):
+        os.remove(script_path)
 
 
 def signal_handler(signum, frame):
@@ -69,6 +85,7 @@ def main():
     signal.signal(signal.SIGTERM, signal_handler)
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGHUP, signal_handler)
+    signal.signal(signal.SIGUSR1, signal_handler)  # Add handler for SIGUSR1
 
     try:
         while True:
