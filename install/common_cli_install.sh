@@ -1,4 +1,10 @@
 #!/usr/bin/bash
+
+# Check if ~/.local/bin is in PATH, if not add it
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # get eget
 curl -o eget.sh https://zyedidia.github.io/eget.sh
 bash eget.sh
