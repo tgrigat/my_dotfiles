@@ -46,6 +46,8 @@ def signal_handler(signum, frame):
     else:
         print("[SERVER] Received termination signal. Shutting down...")
     terminate_nvim()
+    if nvim_process:
+        os.killpg(os.getpgid(nvim_process.pid), signal.SIGTERM)
     sys.exit(0)
 
 
@@ -83,6 +85,8 @@ def main():
 
             print("[SERVER] Neovim instance terminated. Restarting...")
     finally:
+        if nvim_process:
+            os.killpg(os.getpgid(nvim_process.pid), signal.SIGTERM)
         terminate_nvim()
 
 

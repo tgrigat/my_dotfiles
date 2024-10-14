@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 import os
 import signal
 import random
@@ -135,6 +136,15 @@ async def main():
         # Send SIGTERM to the entire process group
         os.killpg(os.getpgid(ssh_process.pid), signal.SIGTERM)
         await ssh_process.wait()
+
+    # Handle termination signals
+    def signal_handler(signum, frame):
+        print("[CLIENT] Received termination signal. Shutting down...")
+        os.killpg(os.getpgid(ssh_process.pid), signal.SIGTERM)
+        sys.exit(0)
+
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.signal(signal.SIGTERM, signal_handler)
 
 
 async def log_ssh_output(process, debug):
