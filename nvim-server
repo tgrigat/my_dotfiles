@@ -8,13 +8,6 @@ import shutil  # Import shutil to use shutil.which
 
 nvim_process = None
 
-NVIM_SCRIPT_TEMPLATE = """#!/bin/bash
-exec {zsh_path} << EOF
-exec nvim --headless --listen localhost:{port} .
-EOF
-"""
-
-
 def start_nvim(path, port):
     global nvim_process
     zsh_path = shutil.which("zsh")  # Get the full path to zsh
@@ -22,16 +15,10 @@ def start_nvim(path, port):
         print("[SERVER] Error: zsh executable not found")
         sys.exit(1)
 
-    # Create a shell script to execute zsh and then start Neovim
-    script = NVIM_SCRIPT_TEMPLATE.format(zsh_path=zsh_path, port=port)
-    script_path = os.path.join(path, "start_nvim.sh")
-    with open(script_path, "w") as f:
-        f.write(script)
-    os.chmod(script_path, 0o755)  # Make the script executable
-
+    # Start Neovim in an interactive zsh environment
+    nvim_command = f"nvim --headless --listen localhost:{port} ."
     nvim_process = subprocess.Popen(
-        script_path,
-        shell=True,
+        [zsh_path, "-i", "-c", nvim_command],
         cwd=str(path),
         preexec_fn=os.setsid,  # This creates a new process group
     )
