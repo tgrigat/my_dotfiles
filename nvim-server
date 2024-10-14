@@ -4,14 +4,23 @@ import signal
 import subprocess
 import sys
 from pathlib import Path
+import shutil  # Import shutil to use shutil.which
 
 nvim_process = None
 
 
 def start_nvim(path, port):
     global nvim_process
+    zsh_path = shutil.which("zsh")  # Get the full path to zsh
+    if not zsh_path:
+        print("[SERVER] Error: zsh executable not found")
+        sys.exit(1)
+
+    command = f"nvim --headless --listen localhost:{port} ."
     nvim_process = subprocess.Popen(
-        ["nvim", "--headless", "--listen", f"localhost:{port}", "."],
+        command,
+        shell=True,
+        executable=zsh_path,  # Specify the shell as zsh
         cwd=str(path),
         preexec_fn=os.setsid,  # This creates a new process group
     )
