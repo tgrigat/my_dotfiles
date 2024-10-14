@@ -5,13 +5,39 @@ import subprocess
 import sys
 from pathlib import Path
 
+nvim_process = None
+
 
 def start_nvim(path, port):
-    return subprocess.Popen(
-        ["nvim", "--listen", f"localhost:{port}", "."],
+    global nvim_process
+    nvim_process = subprocess.Popen(
+        ["nvim", "--headless", "--listen", f"localhost:{port}", "."],
         cwd=str(path),
         preexec_fn=os.setsid,  # This creates a new process group
     )
+    return nvim_process
+
+
+def terminate_nvim():
+    global nvim_process
+    if nvim_process:
+        print("[SERVER] Terminating Neovim instance...")
+        try:
+            os.killpg(os.getpgid(nvim_process.pid), signal.SIGTERM)
+            nvim_process.wait(timeout=5)  # Wait up to 5 seconds for termination
+        except subprocess.TimeoutExpired:
+            print("[SERVER] Neovim didn't terminate gracefully. Forcing termination...")
+            os.killpg(os.getpgid(nvim_process.pid), signal.SIGKILL)
+        nvim_process = None
+
+
+def signal_handler(signum, frame):
+    if signum == signal.SIGHUP:
+        print("[SERVER] Received SIGHUP. Shutting down...")
+    else:
+        print("[SERVER] Received termination signal. Shutting down...")
+    terminate_nvim()
+    sys.exit(0)
 
 
 def main():
@@ -29,26 +55,26 @@ def main():
     print(f"[SERVER] Starting Neovim server in directory: {path}")
     print(f"[SERVER] Listening on port: {port}")
 
-    def signal_handler(signum, frame):
-        print("[SERVER] Received termination signal. Shutting down...")
-        sys.exit(0)
-
     signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.signal(signal.SIGHUP, signal_handler)
 
-    while True:
-        nvim_process = start_nvim(path, port)
-        print("[SERVER] Neovim instance started")
+    try:
+        while True:
+            nvim_process = start_nvim(path, port)
+            print("[SERVER] Neovim instance started")
 
-        try:
-            nvim_process.wait()
-        except KeyboardInterrupt:
-            print("[SERVER] Keyboard interrupt received. Shutting down...")
-            break
-        finally:
-            # Terminate the entire process group
-            os.killpg(os.getpgid(nvim_process.pid), signal.SIGTERM)
+            try:
+                nvim_process.wait()
+            except KeyboardInterrupt:
+                print("[SERVER] Keyboard interrupt received. Shutting down...")
+                break
+            finally:
+                terminate_nvim()
 
-        print("[SERVER] Neovim instance terminated. Restarting...")
+            print("[SERVER] Neovim instance terminated. Restarting...")
+    finally:
+        terminate_nvim()
 
 
 if __name__ == "__main__":
