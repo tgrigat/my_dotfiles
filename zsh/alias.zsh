@@ -101,15 +101,6 @@ alias cppcourse="cd /home/yang/Desktop/CPP && vf "
 # for helping zotero get rid of enforced dark theme 
 alias zotero="GTK_THEME=Default zotero "
 
-if [[ -d ~/obsidian ]]; then
-  alias note='cd ~/obsidian && vim '
-fi
-
-# where I put my note at mac
-if [[ -d ~/Documents/obsidian ]]; then
-  alias note='cd ~/Documents/obsidian && vim '
-fi
-
 if [[ "${SHELL##*/}" = "zsh" ]]; then
   alias refresh-fzf="rm ~/.local/bin/fzf && exec zsh"
 fi
@@ -210,3 +201,36 @@ function ln-ccjson() {
     echo "Error: The base name of the current directory is not 'build'. You should use this alias in the build folder"
   fi
 }
+
+function create_justfile_template() {
+  cat <<EOF > justfile
+# Example justfile
+# Defines common tasks
+
+# Define variables
+build_dir := "build"
+
+# Compile the project
+compile:
+    @echo "Compiling the project..."
+    cd $build_dir && cmake .. && make
+
+# Clean build artifacts
+clean:
+    @echo "Cleaning up..."
+    rm -rf $build_dir
+
+# Run the project
+run: compile
+    @echo "Running the project..."
+    ./build/output
+
+# Default task
+default: compile
+EOF
+
+  echo "Template justfile created in the current directory."
+}
+
+# Make the function a command by creating an alias
+alias createjust="create_justfile_template"
