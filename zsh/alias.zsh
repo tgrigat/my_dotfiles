@@ -213,7 +213,7 @@ build_dir := "build"
 # Compile the project
 build:
     @echo "Compiling the project..."
-    mkdir build && cd build && cmake .. && make
+    mkdir -p build && cd build && cmake .. && make
 
 # Clean build artifacts
 clean:
