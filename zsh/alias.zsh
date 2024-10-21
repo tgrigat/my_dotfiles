@@ -211,9 +211,9 @@ function create_justfile_template() {
 build_dir := "build"
 
 # Compile the project
-compile:
+build:
     @echo "Compiling the project..."
-    cd $build_dir && cmake .. && make
+    mkdir build && cd build && cmake .. && make
 
 # Clean build artifacts
 clean:
