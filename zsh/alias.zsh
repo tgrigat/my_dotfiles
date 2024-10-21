@@ -203,7 +203,7 @@ function ln-ccjson() {
 }
 
 function create_justfile_template() {
-  cat <<EOF > justfile
+  cat <<'EOF' > justfile
 # Example justfile
 # Defines common tasks
 
@@ -213,7 +213,7 @@ build_dir := "build"
 # Compile the project
 compile:
     @echo "Compiling the project..."
-    cd $build_dir && cmake .. && make
+    gcc -o $build_dir/output main.c
 
 # Clean build artifacts
 clean:
