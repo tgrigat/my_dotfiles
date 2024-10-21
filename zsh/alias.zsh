@@ -221,12 +221,12 @@ clean:
     rm -rf $build_dir
 
 # Run the project
-run: compile
+run: build
     @echo "Running the project..."
     ./build/output
 
 # Default task
-default: compile
+default: build
 EOF
 
   echo "Template justfile created in the current directory."
