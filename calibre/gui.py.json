@@ -60,7 +60,7 @@
     "__value__": "AdnQywADAAAAAAVKAAAALgAAB38AAAQ1AAAFTgAAADIAAAd7AAAEMQAAAAAAAAAAB4AAAAVOAAAAMgAAB3sAAAQx"
   },
   "match_tags_type": "any",
-  "new_version_notification": true,
+  "new_version_notification": false,
   "oldest_news": 60,
   "overwrite_author_title_metadata": true,
   "plugin_search_history": [],
