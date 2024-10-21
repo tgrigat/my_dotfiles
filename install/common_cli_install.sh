@@ -24,3 +24,6 @@ eget eza-community/eza --asset tar --to ~/.local/bin
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file yazi
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file ya
 eget aristocratos/btop --to ~/.local/bin
+# eget atuinsh/atuin --to ~/.local/bin
+eget denisidoro/navi --to ~/.local/bin
+eget jpillora/chisel --to ~/.local/bin
