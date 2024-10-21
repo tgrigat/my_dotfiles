@@ -213,7 +213,7 @@ build_dir := "build"
 # Compile the project
 compile:
     @echo "Compiling the project..."
-    gcc -o $build_dir/output main.c
+    cd $build_dir && cmake .. && make
 
 # Clean build artifacts
 clean:
