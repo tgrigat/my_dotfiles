@@ -18,7 +18,7 @@ return {
   -- { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.utility.noice-nvim" },
-  -- { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
@@ -35,7 +35,7 @@ return {
   { import = "astrocommunity.workflow.hardtime-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.syntax.vim-easy-align" },
-  { import = "astrocommunity.note-taking.obsidian-nvim" },
+  -- { import = "astrocommunity.note-taking.obsidian-nvim" },
   { import = "astrocommunity.editing-support.suda-vim" },
   { import = "astrocommunity.code-runner.overseer-nvim"}
   -- { import = "astrocommunity.workflow.precognition-nvim" },
