@@ -112,8 +112,13 @@ fi
 if (which zellij > /dev/null); then
   alias zj="zellij"
   function zjc() {
-    local hostname=$(hostname)
-    zellij options --simplified-ui true --pane-frames false --session-name $hostname "$@"
+    local session_name
+    if [ -z "$1" ]; then
+      session_name=$(hostname)
+    else
+      session_name=$1
+    fi
+    zellij options --simplified-ui true --pane-frames false --session-name $session_name
   }
 fi
 
