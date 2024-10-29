@@ -1,6 +1,7 @@
 return {
   "m4xshen/hardtime.nvim",
   -- event = "User AstroFile",
+  cond = false,
   opts = {
     disabled_filetypes = {
       "NvimTree",
