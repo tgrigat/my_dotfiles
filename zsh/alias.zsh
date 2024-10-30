@@ -120,6 +120,7 @@ if (which zellij > /dev/null); then
     fi
     zellij options --simplified-ui true --pane-frames false --session-name $session_name
   }
+  alias zjd="zellij delete-session "
 fi
 
 if (which yazi > /dev/null); then
