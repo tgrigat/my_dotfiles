@@ -27,3 +27,4 @@ eget aristocratos/btop --to ~/.local/bin
 # eget atuinsh/atuin --to ~/.local/bin
 eget denisidoro/navi --to ~/.local/bin
 eget jpillora/chisel --to ~/.local/bin
+eget orf/gping --to ~/.local/bin
