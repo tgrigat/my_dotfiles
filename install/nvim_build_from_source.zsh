@@ -5,6 +5,9 @@
 # Check if neovim directory exists, if not clone the repo
 if [ ! -d "neovim" ]; then
     git clone --depth 1 https://github.com/neovim/neovim
+else
+    git pull
+    echo "neovim directory exists, pulling latest changes"
 fi
 
 cd neovim
