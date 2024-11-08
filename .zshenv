@@ -1,7 +1,6 @@
 export ZDOTDIR=$HOME/.config/zsh
 export EDITOR=nvim
 export VISUAL=nvim
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export PATH=~/.local/bin:$PATH
 
 # export LESSHISTFILE=-
