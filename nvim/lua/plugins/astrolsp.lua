@@ -39,11 +39,47 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "basedpyright",
     },
-    -- customize language server configuration options passed to `lspconfig`
+    -- customize language server configuration options passed to lspconfig
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      -- pyright = {
+      --   single_file_support = true,
+      --   settings = {
+      --     pyright = {
+      --       disableLanguageServices = false,
+      --       disableOrganizeImports = true,
+      --     },
+      --     python = {
+      --       analysis = {
+      --         autoImportCompletions = true,
+      --         autoSearchPaths = true,
+      --         diagnosticMode = "openFilesOnly", -- openFilesOnly, workspace
+      --         indexing = true,
+      --         useLibraryCodeForTypes = true,
+      --         ignore = { "*" }, -- Using Ruff
+      --         typeCheckingMode = "off", -- Using mypy
+      --       },
+      --     },
+      --   },
+      -- },
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            disableOrganizeImports = true,
+            disableLanguageServices = false,
+            analysis = {
+              ignore = { "*" },
+              autoImportCompletions = true,
+              autoSearchPaths = true,
+              diagnosticMode = "openFilesOnly",
+              useLibraryCodeForTypes = true,
+              typeCheckingMode = "standard",
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
