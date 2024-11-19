@@ -66,6 +66,37 @@ return {
     },
     new_notes_location = "current_dir",
     disable_frontmatter = false,
+    callbacks = {
+      -- Runs right before writing the buffer for a note.
+      ---@param client obsidian.Client
+      ---@param note obsidian.Note
+      ---@diagnostic disable-next-line: unused-local
+      pre_write_note = function(client, note) note:add_field("modified", os.date("%Y-%m-%d")) end,
+    },
+    note_frontmatter_func = function(note)
+      -- Add the title of the note as an alias.
+      if note.title then note:add_alias(note.title) end
+
+      local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+
+      -- Add creation date if it doesn't exist and the note has a path
+      if not note.metadata.date and note.path and note.path.filename then
+        local stat = vim.loop.fs_stat(note.path.filename)
+        if stat then
+          out.date = os.date("%Y-%m-%d", stat.birthtime.sec)
+        end
+      end
+
+      -- `note.metadata` contains any manually added fields in the frontmatter.
+      -- So here we just make sure those fields are kept in the frontmatter.
+      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        for k, v in pairs(note.metadata) do
+          out[k] = v
+        end
+      end
+
+      return out
+    end,
     workspaces = workspaces,
     open_app_foreground = true,
     -- Either 'wiki' or 'markdown'.
