@@ -240,3 +240,5 @@ EOF
 
 # Make the function a command by creating an alias
 alias createjust="create_justfile_template"
+
+alias update-aider="pip3 install --upgrade aider-chat"
