@@ -120,7 +120,19 @@ if (which zellij > /dev/null); then
     fi
     zellij options --simplified-ui true --pane-frames false --session-name $session_name
   }
-  alias zjd="zellij delete-session "
+  zjd() {
+    local session_name="$1"
+    if [ -z "$session_name" ]; then
+      echo "Please provide a session name."
+      return 1
+    fi
+    zellij delete-session "$session_name"
+    read -q "REPLY?Session deleted. Create a new session with the same name? (Y/n) "
+    echo
+    if [[ $REPLY =~ ^[Yy]$ || $REPLY == "" ]]; then
+      zjc "$session_name"
+    fi
+  }
 fi
 
 if (which yazi > /dev/null); then
