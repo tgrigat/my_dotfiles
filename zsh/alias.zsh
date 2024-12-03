@@ -118,7 +118,21 @@ if (which zellij > /dev/null); then
     else
       session_name=$1
     fi
-    zellij options --simplified-ui true --pane-frames false --session-name $session_name
+    
+    if zellij list-sessions | grep -q "$session_name"; then
+      echo "Session with name \"$session_name\" already exists."
+      read -q "REPLY?Do you want to delete the existing session and create a new one? (Y/n) "
+      echo
+      if [[ $REPLY =~ ^[Yy]$ || $REPLY == "" ]]; then
+        zellij delete-session $session_name
+        zellij options --simplified-ui true --pane-frames false --session-name $session_name
+      else
+        echo "Operation cancelled."
+        zellij attach $session_name
+      fi
+    else
+      zellij options --simplified-ui true --pane-frames false --session-name $session_name
+    fi
   }
   zjd() {
     local session_name="$1"
