@@ -62,7 +62,7 @@ function nvm_install() {
 # Update PATH
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
 	important_info+=("~/.local/bin is not in the PATH. Make sure to add it to your config: export PATH=~/.local/bin:\$PATH")
-	important_info+=("echo 'export PATH=~/.local/bin:\$PATH' >> ~/.bashrc")
+	important_info+=("echo -e '\e[32mecho \"export PATH=~/.local/bin:\$PATH\" >> ~/.bashrc\e[0m'")
 else
 	echo "~/.local/bin is in the PATH"
 fi
