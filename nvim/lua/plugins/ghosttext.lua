@@ -1,7 +1,5 @@
 local allowed_hostnames = {
-  "hostname1",
-  "hostname2",
-  "hostname3",
+  "node",
   -- Add more hostnames as needed
 }
 
