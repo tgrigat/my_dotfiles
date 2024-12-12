@@ -1,5 +1,3 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -49,6 +47,18 @@ return {
           desc = "Check for external changes on focus gain",
           callback = function()
             if vim.fn.has "nvim" == 1 or not vim.fn.has "gui_running" then vim.cmd "checktime" end
+          end,
+        },
+      },
+      cpp_settings = {
+        {
+          event = "FileType",
+          pattern = "cpp",
+          desc = "Set C++ specific settings",
+          callback = function()
+            vim.bo.tabstop = 2
+            vim.bo.shiftwidth = 2
+            vim.bo.expandtab = true
           end,
         },
       },
