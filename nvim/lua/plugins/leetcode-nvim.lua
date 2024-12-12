@@ -54,6 +54,25 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
+    {
+      "AstroNvim/astrocore",
+      opts = {
+        autocmds = {
+          leetcode_settings = {
+            {
+              event = "FileType",
+              pattern = "leetcode.nvim",
+              callback = function()
+                vim.wo.wrap = true
+                if vim.fn.exists(":Copilot") == 2 then
+                  vim.cmd("Copilot disable")
+                end
+              end,
+            },
+          },
+        },
+      },
+    },
   },
   opts = {
     -- Configuration options
@@ -81,7 +100,7 @@ return {
     },
     description = {
       position = "left",
-      width = "40%",
+      width = "50%",
       show_stats = true,
     },
     image_support = true,
