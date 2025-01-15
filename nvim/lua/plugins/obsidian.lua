@@ -1,5 +1,6 @@
 local workspaces = {
   { name = "public", path = "~/Documents/git/Notes/content", strict = true },
+  { name = "public", path = "~/Documents/Silverbullet", strict = true },
   { name = "private", path = "~/obsidian/" },
 }
 
