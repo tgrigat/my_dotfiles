@@ -1,3 +1,20 @@
+local allowed_hosts = {
+  "node",
+  "mainframe",
+}
+
+local hostname = vim.fn.systemlist("hostname")[1]
+local host_allowed = false
+
+for _, host in ipairs(allowed_hosts) do
+  if hostname == host then
+    host_allowed = true
+    break
+  end
+end
+
+if not host_allowed then return {} end
+
 return {
   "3rd/image.nvim",
   ft = { "markdown", "vimwiki", "norg", "typst" },
