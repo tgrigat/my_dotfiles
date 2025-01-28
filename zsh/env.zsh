@@ -1,6 +1,6 @@
 # Configuration
 PROXY_PORT=12334
-ENABLE_PROXY=true
+ENABLE_PROXY=false
 
 # Function to check if a command exists
 command_exists() {
