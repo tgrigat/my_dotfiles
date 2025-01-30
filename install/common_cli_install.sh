@@ -20,12 +20,12 @@ eget jesvedberg/tpix --to ~/.local/bin
 eget hackerb9/lsix --to ~/.local/bin
 eget ajeetdsouza/zoxide --to ~/.local/bin
 eget junegunn/fzf --to ~/.local/bin
-eget casey/just --asset unknown-linux --to ~/.local/bin
+eget casey/just --asset linux-musl --to ~/.local/bin
 eget eza-community/eza --asset tar --to ~/.local/bin
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file yazi
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file ya
 eget aristocratos/btop --to ~/.local/bin
 # eget atuinsh/atuin --to ~/.local/bin
-eget denisidoro/navi --to ~/.local/bin
-eget jpillora/chisel --to ~/.local/bin
-eget orf/gping --to ~/.local/bin
+# eget denisidoro/navi --to ~/.local/bin
+eget jpillora/chisel --asset deb --to ~/.local/bin
+# eget orf/gping --to ~/.local/bin
