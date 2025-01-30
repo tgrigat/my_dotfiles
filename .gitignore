@@ -288,3 +288,4 @@ zsh/source.zsh.zwc
 zsh/zoxide.zsh.zwc
 install/eget
 install/eget.sh
+*.zwc
