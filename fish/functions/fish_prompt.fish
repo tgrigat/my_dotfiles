@@ -16,6 +16,11 @@ function fish_prompt
     printf '%s' (prompt_pwd)
     set_color normal
 
+    # SSH status
+    if set -q SSH_TTY
+    set -g fish_color_host brred
+    end
+
     # Line 2
     echo
     if test -n "$VIRTUAL_ENV"
