@@ -2,7 +2,6 @@
 # export GTK_IM_MODULE=fcitx
 # export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre
 # setting environmental variables under wayland
 if [[ "$XDG_SESSION_TYPE" = "wayland" ]]; then
     export MOZ_ENABLE_WAYLAND=1
@@ -13,7 +12,6 @@ else
     unset QT_QPA_PLATFORM
 fi
 setxkbmap -option caps:escape_shifted_capslock
-
 
 export PATH=~/.local/bin:$PATH
 
