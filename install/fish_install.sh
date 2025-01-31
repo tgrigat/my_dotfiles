@@ -30,12 +30,12 @@ fi
 # exit on error
 set -e
 
-FISH_SHELL_VERSION=3.5.1
+FISH_SHELL_VERSION=3.7.1
 
 # create our directories
 BUILD_TEMP_DIR=/tmp/build_fish_shell
 LOCAL_DIR=$HOME/.local
-mkdir -p $LOCAL_DIR $BUILD_TEMP_DIR
+mkdir -p "$LOCAL_DIR" $BUILD_TEMP_DIR
 cd $BUILD_TEMP_DIR
 
 # download source files for Fish Shell
@@ -45,6 +45,6 @@ wget https://github.com/fish-shell/fish-shell/releases/download/${FISH_SHELL_VER
 
 tar xvJf fish-${FISH_SHELL_VERSION}.tar.xz
 cd fish-${FISH_SHELL_VERSION}
-cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME/.local -DBUILD_SHARED_LIBS=OFF .
+cmake -DCMAKE_INSTALL_PREFIX:PATH="$HOME/.local" -DBUILD_SHARED_LIBS=OFF .
 make
 make install
