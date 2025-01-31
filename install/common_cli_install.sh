@@ -18,7 +18,7 @@ eget zellij-org/zellij --to ~/.local/bin
 eget ajeetdsouza/zoxide --to ~/.local/bin
 eget junegunn/fzf --to ~/.local/bin
 eget casey/just --asset linux-musl --to ~/.local/bin
-eget eza-community/eza --asset tar --to ~/.local/bin
+eget eza-community/eza --asset tar --asset linux-musl --to ~/.local/bin
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file yazi
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file ya
 eget aristocratos/btop --to ~/.local/bin
