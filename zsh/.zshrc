@@ -13,6 +13,18 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
+# Switch to Fish only in interactive mode
+if command -v fish &>/dev/null; then
+    if [[ -o interactive ]] && [[ "$SHELL" != *"fish"* ]] && [[ $(ps -p $$ -ocomm=) != "fish" ]]
+    then
+        # Check if it's a login shell
+        [[ -o login ]] && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+        
+        # Execute Fish
+        exec fish $LOGIN_OPTION
+    fi
+fi
+
 ##############################################################################
 # Laptop configurations
 ##############################################################################
@@ -235,15 +247,6 @@ if [[ -f ~/.local.zsh ]]; then
       source ~/.local.zsh
 fi
 
-# Switch to Fish only in interactive mode
-if [[ -o interactive ]] && [[ "$SHELL" != *"fish"* ]] && [[ $(ps -p $$ -ocomm=) != "fish" ]]
-then
-    # Check if it's a login shell
-    [[ -o login ]] && LOGIN_OPTION='--login' || LOGIN_OPTION=''
-    
-    # Execute Fish
-    exec fish $LOGIN_OPTION
-fi
 
 # More Zsh configurations...
 
