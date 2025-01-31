@@ -1,3 +1,8 @@
+if status is-login
+    exec bash -c "test -e /etc/profile && source /etc/profile;\
+    exec fish"
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     if command -v zoxide >/dev/null
@@ -8,4 +13,6 @@ if status is-interactive
         source ~/.local.fish
     end
     set -g fish_key_bindings fish_vi_key_bindings
+
 end
+
