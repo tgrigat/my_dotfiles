@@ -14,8 +14,13 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 
 # Switch to Fish only in interactive mode
+
+if [[ -f ~/.local.zsh ]]; then
+      source ~/.local.zsh
+fi
+
 if command -v fish &>/dev/null; then
-    if [[ -o interactive ]] && [[ "$SHELL" != *"fish"* ]] && [[ $(ps -p $$ -ocomm=) != "fish" ]]
+    if [[ -o interactive ]] && [[ "$SHELL" != *"fish"* ]] && [[ $(ps -p $$ -ocomm=) != "fish" ]] && [[ -z "$NO_FISH" ]]
     then
         # Check if it's a login shell
         [[ -o login ]] && LOGIN_OPTION='--login' || LOGIN_OPTION=''
@@ -242,11 +247,6 @@ alias mba="micromamba"
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
-
-if [[ -f ~/.local.zsh ]]; then
-      source ~/.local.zsh
-fi
-
 
 # More Zsh configurations...
 
