@@ -235,5 +235,17 @@ if [[ -f ~/.local.zsh ]]; then
       source ~/.local.zsh
 fi
 
+# Switch to Fish only in interactive mode
+if [[ -o interactive ]] && [[ "$SHELL" != *"fish"* ]] && [[ $(ps -p $$ -ocomm=) != "fish" ]]
+then
+    # Check if it's a login shell
+    [[ -o login ]] && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+    
+    # Execute Fish
+    exec fish $LOGIN_OPTION
+fi
+
+# More Zsh configurations...
+
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
