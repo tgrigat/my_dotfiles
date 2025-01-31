@@ -1,6 +1,5 @@
 btop: ~/.config/btop
 alacritty: ~/.config/alacritty
-calibre: ~/.config/calibre
 # confsync: ~/confsync
 electron-flags.conf: ~/.config/electron-flags.conf
 eventviewsrc: ~/.config/eventviewsrc
