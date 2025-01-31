@@ -289,3 +289,4 @@ zsh/zoxide.zsh.zwc
 install/eget
 install/eget.sh
 *.zwc
+kitty/Wallpapers/*.png
