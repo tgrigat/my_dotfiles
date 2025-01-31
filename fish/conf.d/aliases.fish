@@ -26,12 +26,7 @@ function uvsh
   set venv_name (string replace -a / '' -- "$venv_name")
   set venv_name (string replace -a \\ '' -- "$venv_name")
 
-  set -l venv_bin
-  if test -n "$WINDIR"
-    set venv_bin 'Scripts/activate'
-  else
-    set venv_bin 'bin/activate'
-  end
+  set -l venv_bin 'bin/activate.fish'
 
   set -l activator "$venv_name/$venv_bin"
   echo "[INFO] Activate Python venv: $venv_name (via $activator)"
