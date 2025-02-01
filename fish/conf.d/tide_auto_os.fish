@@ -9,12 +9,16 @@ function tide_auto_os
                 switch $os_id
                     case ubuntu
                         echo '' # Ubuntu icon
-                    # case debian
-                    #     echo '' # Debian icon
+                    case debian
+                        echo '' # Debian icon
                     case arch
                         echo '' # Arch icon
+                    case alpine
+                        echo "" # Alpine icon
+                    case raspbian
+                        echo '' # Raspbian icon
                     case '*'
-                        echo '' # Generic Linux icon
+                        echo ' ' # Generic Linux icon
                 end
             else
                 echo '' # Generic Linux icon
