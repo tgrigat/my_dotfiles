@@ -1,7 +1,7 @@
 function tide_auto_os
     switch (uname)
         case Darwin
-            echo '' # Apple icon
+            echo '' # Apple icon
         case Linux
             # Check for specific Linux distributions
             if test -f /etc/os-release
@@ -21,10 +21,10 @@ function tide_auto_os
                         echo ' ' # Generic Linux icon
                 end
             else
-                echo '' # Generic Linux icon
+                echo '' # Generic Linux icon
             end
         case '*'
-            echo '' # Generic OS icon
+            echo '?' # Generic OS icon
     end
 end
 
