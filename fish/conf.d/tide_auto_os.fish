@@ -18,7 +18,7 @@ function tide_auto_os
                     case raspbian
                         echo '' # Raspbian icon
                     case '*'
-                        echo ' ' # Generic Linux icon
+                        echo '' # Generic Linux icon
                 end
             else
                 echo '' # Generic Linux icon
