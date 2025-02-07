@@ -23,6 +23,7 @@ eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file yazi
 eget sxyazi/yazi --asset linux-musl --to ~/.local/bin --file ya
 eget aristocratos/btop --to ~/.local/bin
 eget sharkdp/bat --asset linux-musl --to ~/.local/bin
+eget neovim/neovim --to ~/.local/bin/nvim
 # eget jpillora/chisel --asset deb --to ~/.local/bin
 
 # eget atuinsh/atuin --to ~/.local/bin
