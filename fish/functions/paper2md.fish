@@ -25,6 +25,12 @@ function paper2md
         mv -v "$tmp_output/$base_name/$base_name_meta.json" "$md_output/"
         echo "Files moved to $md_output"
         rm -rfv "$tmp_output/$base_name"
+
+        if functions -q paper-upload
+            paper-upload
+        else
+            echo "paper-upload function not found"
+        end
     else
         echo "Conversion failed - no markdown file found"
     end
