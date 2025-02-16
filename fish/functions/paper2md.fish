@@ -1,6 +1,6 @@
 function paper2md
-    # Select PDF via fzf
-    set -l pdf_file (fd -e pdf | fzf --height 40% --reverse --query="Zotero/storage/")
+    # Select PDF via fzf from Zotero directory
+    set -l pdf_file (fd -e pdf . ~/Zotero | fzf --height 40%)
     if test -z "$pdf_file"
         echo "No file selected"
         return
