@@ -24,7 +24,7 @@ function paper2md
         mv -v "$tmp_output/$base_name/$base_name.md" "$md_output/"
         mv -v "$tmp_output/$base_name/$base_name_meta.json" "$md_output/"
         echo "Files moved to $md_output"
-        rm -rfv "$tmp_output/$base_name"
+        rm -rf "$tmp_output/$base_name"
 
         if functions -q paper-upload
             paper-upload
