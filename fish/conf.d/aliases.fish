@@ -44,19 +44,13 @@ if command -q zellij
   function zjc
     set -l session_name (count $argv > /dev/null && echo $argv[1] || echo (hostname))
     
-    # Check if session exists
+    # Check if session exists and delete it
     if zellij list-sessions | string match -q "$session_name"
-      # Try to attach first
-      if not zellij attach "$session_name" 2>/dev/null
-        # If attach fails, delete the dead session without prompting
-        zellij delete-session "$session_name" 2>/dev/null
-        # Create new session
-        zellij options --simplified-ui true --pane-frames false --session-name "$session_name"
-      end
-    else
-      # Create new session if it doesn't exist
-      zellij options --simplified-ui true --pane-frames false --session-name "$session_name"
+      zellij delete-session "$session_name" 2>/dev/null
     end
+    
+    # Create new session
+    zellij options --simplified-ui true --pane-frames false --session-name "$session_name"
   end
 end
 
