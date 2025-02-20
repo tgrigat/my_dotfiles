@@ -46,18 +46,20 @@ if command -q zellij
     
     # Check if session exists
     if zellij list-sessions | string match -q "$session_name"
-      # Try to attach first
-      if zellij attach "$session_name" 2>/dev/null
-        return 0
-      end
-      # If attach fails, session is dead - ask to delete and recreate
-      read -P "Session \"$session_name\" exists but is dead. Delete and recreate? (Y/n) " -l answer
-      if string match -qi 'y*' -- "$answer" || test -z "$answer"
-        zellij delete-session "$session_name"
-        zellij options --simplified-ui true --pane-frames false --session-name "$session_name"
-      else
-        echo "Please specify a different session name or delete the existing session manually."
-        return 1
+      # Try to attach to existing session
+      zellij attach "$session_name"
+      set -l attach_status $status
+      
+      if test $attach_status -ne 0
+        # Session exists but attach failed (likely dead)
+        read -P "Session \"$session_name\" exists but is dead. Delete and recreate? (Y/n) " -l answer
+        if string match -qi 'y*' -- "$answer" || test -z "$answer"
+          zellij delete-session "$session_name"
+          zellij options --simplified-ui true --pane-frames false --session-name "$session_name"
+        else
+          echo "Please specify a different session name or delete the existing session manually."
+          return 1
+        end
       end
     else
       # Create new session if it doesn't exist
