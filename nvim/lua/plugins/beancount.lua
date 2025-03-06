@@ -5,6 +5,20 @@ local beancount_fn = "/home/yang/Documents/git/finance/beans/main.bean"
 
 return {
   {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "crispgm/cmp-beancount",
+    },
+    opts = {
+      sources = {
+        name = "beancount",
+        option = {
+          account = beancount_fn,
+        },
+      },
+    },
+  },
+  {
     "AstroNvim/astrolsp",
     -- we need to use the function notation to get access to the `lspconfig` module
     ---@param opts AstroLSPOpts
