@@ -9,4 +9,5 @@ set -x AIDER_VIM true
 set -x AIDER_SUGGEST_SHELL_COMMANDS false
 set -x AIDER_SHOW_RELEASE_NOTES false
 set -x AIDER_MODEL openrouter/anthropic/claude-3.7-sonnet
+set -x AIDER_CACHE_PROMPTS true
 # alias aider="aider --model openrouter/anthropic/claude-3.5-sonnet"
