@@ -41,6 +41,8 @@ end
 
 if command -q zellij
   abbr zj 'zellij'
+  abbr zjd 'zellij delete-session'
+  abbr zjl 'zellij list-sessions'
   function zjc
     set -l session_name (count $argv > /dev/null && echo $argv[1] || echo (hostname))
     
