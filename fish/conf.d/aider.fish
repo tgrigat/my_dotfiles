@@ -13,3 +13,5 @@ set -x AIDER_MODEL openrouter/deepseek/deepseek-r1
 set -x AIDER_EDITOR_MODEL openrouter/anthropic/claude-3.5-sonnet
 set -x AIDER_CACHE_PROMPTS true
 # alias aider="aider --model openrouter/anthropic/claude-3.5-sonnet"
+
+abbr aiderm 'aider -m "'
