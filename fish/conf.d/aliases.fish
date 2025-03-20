@@ -129,3 +129,5 @@ function ln-ccjson
 end
 
 abbr update-aider 'pip3 install --upgrade aider-chat'
+
+abbr ma "micromamba activate"
