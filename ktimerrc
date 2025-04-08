@@ -5,5 +5,12 @@ Loop=false
 OneInstance=true
 State=0
 
+[Job1]
+Consecutive=false
+Delay=100
+Loop=false
+OneInstance=true
+State=0
+
 [Jobs]
-Number=1
+Number=2
