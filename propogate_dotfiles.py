@@ -3,6 +3,7 @@
 they are symlinked to destinations defined in destinations.yaml"""
 
 import os
+import argparse
 from typing import Dict, List, Any
 from os.path import join, isdir, isfile, islink
 import shutil
@@ -90,13 +91,35 @@ def create_link(
 #             )
 
 
-for config in all_configs:
-    target_dir = destinations.get(config)
-    if target_dir:
-        create_link(repo, target_dir, [config], safe_mode=False)
+def main():
+    parser = argparse.ArgumentParser(description='Propagate dotfiles from repo to destinations')
+    parser.add_argument('configs', nargs='*', help='Specific configs to propagate (leave empty for all)')
+    args = parser.parse_args()
+
+    if args.configs:
+        # Only propagate specified configs
+        configs_to_propagate = []
+        for config in args.configs:
+            if config in destinations:
+                configs_to_propagate.append(config)
+            else:
+                print(f"Warning: {config} not found in destination.yaml, skipping")
+        
+        if not configs_to_propagate:
+            print("No valid configs specified, nothing to do")
+            return
     else:
-        print(f"Warning: {config} not found in destination.yaml")
+        # Propagate all configs (original behavior)
+        configs_to_propagate = all_configs
 
-# scan_for_unknown(dot_config, all_configs)
+    for config in configs_to_propagate:
+        target_dir = destinations.get(config)
+        if target_dir:
+            create_link(repo, target_dir, [config], safe_mode=False)
+        else:
+            print(f"Warning: {config} not found in destination.yaml")
 
-print("finished the linking process")
+    print("Finished the linking process")
+
+if __name__ == "__main__":
+    main()
