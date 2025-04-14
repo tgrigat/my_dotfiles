@@ -16,7 +16,7 @@ function sync-zotero
 
     # Define source and destination paths
     set source_path ~/Zotero/
-    set dest_path ~/Zotero/
+    set dest_path Zotero/
 
     if not set -q _flag_force
         # Normal sync - will check timestamps and size
