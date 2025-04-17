@@ -8,9 +8,9 @@ set -x AIDER_VIM true
 # set -x AIDER_DEEPSEEK true
 set -x AIDER_SUGGEST_SHELL_COMMANDS false
 set -x AIDER_SHOW_RELEASE_NOTES false
-set -x AIDER_ARCHITECT true
-set -x AIDER_MODEL openrouter/deepseek/deepseek-chat-v3-0324
-set -x AIDER_EDITOR_MODEL openrouter/deepseek/deepseek-chat-v3-0324
+set -x AIDER_ARCHITECT false
+set -x AIDER_MODEL openrouter/google/gemini-2.5-pro-preview-03-25
+# set -x AIDER_EDITOR_MODEL openrouter/deepseek/deepseek-chat-v3-0324
 set -x AIDER_CACHE_PROMPTS true
 # alias aider="aider --model openrouter/anthropic/claude-3.5-sonnet"
 
