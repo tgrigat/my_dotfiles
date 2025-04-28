@@ -1,7 +1,6 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    image = { enabled = false },
     dashboard = {
       width = 60,
       row = nil,
@@ -30,7 +29,6 @@ return {
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
         header = [[
-
 ██      ██    ██ ███    ███ ███████ ███    ██ ███████
 ██      ██    ██ ████  ████ ██      ████   ██ ██     
 ██      ██    ██ ██ ████ ██ █████   ██ ██  ██ ███████
@@ -47,7 +45,7 @@ return {
       -- item field formatters
       formats = {
         footer = { "%s", align = "center" },
-        header = { "%s", align = "center" },
+        header = { "%s", align = "left" },
         file = function(item, ctx)
           local fname = vim.fn.fnamemodify(item.file, ":~")
           fname = ctx.width and #fname > ctx.width and vim.fn.pathshorten(fname) or fname
