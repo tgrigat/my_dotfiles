@@ -4,10 +4,11 @@ return {
   opts = function(_, opts)
     local nmaps = opts.mappings.n
     -- Dap telescope
-    nmaps["<Leader>dw"] = {
-      function() require("telescope").extensions.dap.configurations() end,
-      desc = "Configurations",
-    }
+    -- nmaps["<Leader>dw"] = {
+    --   function() require("telescope").extensions.dap.configurations() end,
+    --   desc = "Configurations",
+    -- }
+    local Snacks = require "snacks"
 
     for lhs, key in pairs(nmaps) do
       local new_lhs, matches = lhs:gsub("^<Leader>f", "<Leader>s")
@@ -16,18 +17,9 @@ return {
         nmaps[new_lhs] = key
       end
     end
-    -- Section Search
-    nmaps["<Leader>sT"] = {
-      function() require("telescope.builtin").colorscheme { enable_preview = true } end,
-      desc = "Themes",
-    }
 
     nmaps["<Leader>st"] = {
-      function()
-        require("telescope.builtin").live_grep {
-          additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
-        }
-      end,
+      function() Snacks.picker.grep() end,
       desc = "Text",
     }
 
@@ -54,9 +46,7 @@ return {
     --   if lhs:match "^<Leader>f" then nmaps[lhs] = nil end
     -- end
 
-    nmaps["<Leader>f"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" }
-    -- TODO config here: https://github.com/AstroNvim/AstroNvim/blob/b505f4ff41f851fa4a008586995f79408daf72bc/lua/astronvim/plugins/todo-comments.lua#L12
-    -- dap telescope, related shortcuts are here: https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/debugging/telescope-dap-nvim/init.lua
+    nmaps["<Leader>f"] = { function() Snacks.picker.files() end, desc = "Find files" }
 
     nmaps["<Leader>bf"] = {
       function()
@@ -72,8 +62,8 @@ return {
     -- Yank current buffer's full path and line number
     nmaps["<Leader>yp"] = {
       function()
-        local path = vim.fn.expand("%:p")
-        local line_number = vim.fn.line(".")
+        local path = vim.fn.expand "%:p"
+        local line_number = vim.fn.line "."
         local yank_text = path .. ":" .. line_number
         vim.fn.setreg("+", yank_text)
         vim.notify("Yanked: " .. yank_text, vim.log.levels.INFO)
