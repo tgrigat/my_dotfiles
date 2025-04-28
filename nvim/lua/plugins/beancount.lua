@@ -1,20 +1,28 @@
 -- return {} if not on hostname node
 if vim.fn.hostname() ~= "node" then return {} end
 
-local beancount_fn = "/home/yang/Documents/git/finance/beans/main.bean"
+local beancount_file = "/home/yang/Documents/git/finance/beans/main.bean"
 
 return {
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "crispgm/cmp-beancount",
-    },
+    "saghen/blink.compat",
+    -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+    version = "*",
+    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+    lazy = true,
+    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
     opts = {
       sources = {
-        name = "beancount",
-        option = {
-          account = beancount_fn,
-        },
+        default = {"breacount"},
+        providers = {
+          beancount = {
+            name = "beancount",
+            module = "blink.compat.source",
+            option = {
+              account = beancount_file,
+            }
+          }
+        }
       },
     },
   },
@@ -40,7 +48,7 @@ return {
         -- Beancount LSP configuration
         beancount = {
           init_options = {
-            journal_file = beancount_fn,
+            journal_file = beancount_file,
           },
           filetypes = { "beancount" },
           capabilities = capabilities,
