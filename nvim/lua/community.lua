@@ -11,6 +11,7 @@ return {
     -- { dir = "/home/yang/Documents/git/astrocommunity" },
   -- { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.colorscheme.everforest"},
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
