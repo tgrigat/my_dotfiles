@@ -81,7 +81,7 @@ alias config-git-user='git config user.name "Lumen Yang" && git config user.emai
 
 alias vf="vfcd . " 
 
-alias btop="btop --utf-force"
+alias btop="btop --force-utf"
 
 # alias ls="exa "
 

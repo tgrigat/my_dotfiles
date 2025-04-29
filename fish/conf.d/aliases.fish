@@ -10,7 +10,7 @@ abbr enable 'sudo systemctl enable'
 abbr disable 'sudo systemctl disable'
 
 if command -q btop
-  abbr btop 'btop --utf-force'
+  abbr btop 'btop --force-utf'
 end
 
 if command -q eza
