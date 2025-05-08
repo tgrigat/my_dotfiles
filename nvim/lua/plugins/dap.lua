@@ -1,17 +1,19 @@
-
 local dap_config_template = [[
 return {
 	adapters = {
 		-- python_just = {
 		-- 	type = "server", -- We will connect to a server (debugpy)
 		-- 	host = "127.0.0.1", -- The host where debugpy will be listening
-		-- 	port = 5678,  -- The port debugpy will be listening on (must match your justfile)
+		-- 	port = 5678,     -- The port debugpy will be listening on (must match your justfile)
 		--
 		-- 	-- This 'executable' block tells nvim-dap how to start the server process
 		-- 	-- In this case, the "server process" is initiated by 'just start-debug'
 		-- 	executable = {
 		-- 		command = "just",     -- The command to run
 		-- 		args = { "start-debug" }, -- Arguments for the command
+		-- 		env = {
+		-- 			PYDEVD_DISABLE_FILE_VALIDATION = 1,
+		-- 		},
 		-- 		-- detached = true,               -- Optional: nvim-dap usually manages this well for server types
 		-- 		-- cwd = '${workspaceFolder}',    -- Optional: if 'just' needs to be run from a specific CWD
 		-- 	},
@@ -19,9 +21,11 @@ return {
 	},
 	configurations = {
 		-- python = {
-		-- 	name = "Launch with Just",
-		-- 	type = "python_just",
-		-- 	request = "attach",
+		-- 	{
+		-- 		name = "Attach to Just",
+		-- 		type = "python_just",
+		-- 		request = "attach",
+		-- 	},
 		-- },
 	},
 }
@@ -93,6 +97,10 @@ return {
             desc = "Load nvim-dap.lua",
             function() require("user.project-dap").load_and_apply_config() end,
           },
+          ["<Leader>dm"] = {
+            desc = "Debugmaster Mode Toggle",
+            function() require("debugmaster").mode.toggle() end,
+          },
         },
       },
     },
@@ -109,5 +117,8 @@ return {
       dap.listeners.before.event_terminated.dapui_config = nil
       dap.listeners.before.event_exited.dapui_config = nil
     end,
+  },
+  {
+    "miroshQa/debugmaster.nvim",
   },
 }
