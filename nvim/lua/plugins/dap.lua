@@ -31,6 +31,8 @@ return {
 }
 ]]
 
+local debug_mode = false
+
 return {
   {
     "AstroNvim/astrocore",
@@ -99,7 +101,18 @@ return {
           },
           ["<Leader>dm"] = {
             desc = "Debugmaster Mode Toggle",
-            function() require("debugmaster").mode.toggle() end,
+            function()
+              local dm_mode = require("debugmaster").mode
+              dm_mode.toggle() -- Toggle the mode
+              debug_mode = not debug_mode
+              local current_status_message
+              if debug_mode then -- Check the new state
+                current_status_message = "Debug Mode: ON"
+              else
+                current_status_message = "Debug Mode: OFF"
+              end
+              vim.notify(current_status_message, vim.log.levels.INFO)
+            end,
           },
         },
       },
