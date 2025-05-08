@@ -41,8 +41,7 @@ function M.load_and_apply_config()
   -- Handle adapters
   if type(project_dap_config.adapters) == "table" then
     for language, adapter in pairs(project_dap_config.adapters) do
-      if not dap.adapters[language] then dap.adapters[language] = {} end
-      require("astrocore").extend_tbl(dap.adapters[language], adapter)
+      dap.adapters[language] = adapter
       config_applied = true
     end
   end
@@ -51,7 +50,15 @@ function M.load_and_apply_config()
   if type(project_dap_config.configurations) == "table" then
     for language, configs in pairs(project_dap_config.configurations) do
       if not dap.configurations[language] then dap.configurations[language] = {} end
-      require("astrocore").list_insert_unique(dap.configurations[language], configs)
+      -- If configs is a table with numeric indices, it's an array of configurations
+      if type(configs) == "table" and configs[1] ~= nil then
+        for _, config in ipairs(configs) do
+          table.insert(dap.configurations[language], config)
+        end
+      else
+        -- Single configuration object
+        table.insert(dap.configurations[language], configs)
+      end
       config_applied = true
     end
   end
