@@ -110,9 +110,81 @@ return {
               vim.notify(current_status_message, vim.log.levels.INFO)
             end,
           },
+          ["<Leader>ds"] = {
+            desc = "Show Dap Log",
+            function()
+              local log = require "dap.log"
+              log.create_logger "dap.log"
+              for _, logger in pairs(log._loggers) do
+                -- Read log file contents
+                local lines = {}
+                local file = io.open(logger._path, "r")
+                if file then
+                  for line in file:lines() do
+                    table.insert(lines, line)
+                  end
+                  file:close()
+                end
+                -- Create a floating window
+                local width = math.min(120, vim.o.columns - 4)
+                local height = math.min(30, vim.o.lines - 4)
+                local buf = vim.api.nvim_create_buf(false, true)
+                -- Set buffer options before setting lines
+                vim.bo[buf].buftype = "nofile"
+                vim.bo[buf].swapfile = false
+                -- Set buffer name with a unique identifier to avoid conflicts
+                local log_name = "dap-log-" .. os.time() .. "-" .. logger._fname
+                pcall(vim.api.nvim_buf_set_name, buf, log_name)
+                -- Set lines and then make non-modifiable
+                vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+                vim.bo[buf].modifiable = false
+                -- Calculate position
+                local col = math.floor((vim.o.columns - width) / 2)
+                local row = math.floor((vim.o.lines - height) / 2)
+                -- Open the floating window
+                local win = vim.api.nvim_open_win(buf, true, {
+                  relative = "editor",
+                  width = width,
+                  height = height,
+                  col = col,
+                  row = row,
+                  border = "rounded",
+                  style = "minimal",
+                })
+                -- Add buffer-local mappings for easier navigation
+                vim.api.nvim_buf_set_keymap(buf, "n", "q", ":close<CR>", { noremap = true, silent = true })
+              end
+            end,
+          },
         },
       },
     },
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, hl_opts)
+      local status_util = require "astroui.status.utils"
+      local config = assert(require("astroui").config.status)
+      local provider = require "astroui.status.provider"
+      local component_builder = require("astroui.status.component").builder
+
+      ---@class astroui.status.provider
+      provider.debugmode = function(opts)
+        local extend_tbl = require("astrocore").extend_tbl
+        opts = extend_tbl(vim.tbl_get(config, "providers", "debugmode"), opts)
+
+        return function()
+          local text = ""
+          if require("debugmaster.debug.mode").is_active() then text = "DEBUG" end
+
+          status_util.stylize(text, opts)
+        end
+      end
+
+      local component = component_builder(status_util.setup_providers({ debugmode = {} }, { "debugmode" }))
+
+      hl_opts.statusline = require("astrocore").extend_tbl(hl_opts.statusline, { component })
+    end,
   },
   {
     "rcarriga/nvim-dap-ui",
