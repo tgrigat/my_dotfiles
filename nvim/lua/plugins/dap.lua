@@ -128,48 +128,13 @@ return {
             function()
               local log = require "dap.log"
               log.create_logger "dap.log"
-
-              -- Store current tab
-              local current_tab = vim.api.nvim_get_current_tabpage()
-
-              -- Create a new tab without switching to it yet
-              vim.cmd "tabnew"
-              local log_tab = vim.api.nvim_get_current_tabpage()
-
-              local opened_any = false
               for _, logger in pairs(log._loggers) do
-                if vim.fn.filereadable(logger._path) == 1 then
-                  -- If this is the first log file, use the current buffer
-                  -- Otherwise create a new split
-                  if opened_any then vim.cmd "vsplit" end
-
-                  -- Edit the log file in this window
-                  vim.cmd("edit " .. vim.fn.fnameescape(logger._path))
-
-                  -- Set buffer options
-                  vim.bo.buftype = "nofile"
-                  vim.bo.modifiable = false
-                  vim.bo.swapfile = false
-
-                  -- Add buffer-local mappings
-                  vim.api.nvim_buf_set_keymap(0, "n", "q", ":tabclose<CR>", { noremap = true, silent = true })
-
-                  opened_any = true
-                end
+                -- Use split or vsplit instead of tabnew
+                vim.cmd.split(logger._path)
+                vim.bo.modifiable = false
+                -- Add a buffer-local keymap to quit with 'q'
+                vim.api.nvim_buf_set_keymap(0, 'n', 'q', ':q<CR>', { noremap = true, silent = true })
               end
-
-              -- If no log files were found or readable
-              if not opened_any then
-                vim.notify("No DAP log files found or readable", vim.log.levels.WARN)
-                vim.cmd "tabclose"
-                return
-              end
-
-              -- Return to the original tab
-              vim.api.nvim_set_current_tabpage(current_tab)
-
-              -- Notify user about the new tab
-              vim.notify("DAP logs opened in new tab (press 'q' to close)", vim.log.levels.INFO)
             end,
           },
         },
