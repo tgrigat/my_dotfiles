@@ -128,45 +128,48 @@ return {
             function()
               local log = require "dap.log"
               log.create_logger "dap.log"
+
+              -- Store current tab
+              local current_tab = vim.api.nvim_get_current_tabpage()
+
+              -- Create a new tab without switching to it yet
+              vim.cmd "tabnew"
+              local log_tab = vim.api.nvim_get_current_tabpage()
+
+              local opened_any = false
               for _, logger in pairs(log._loggers) do
-                -- Read log file contents
-                local lines = {}
-                local file = io.open(logger._path, "r")
-                if file then
-                  for line in file:lines() do
-                    table.insert(lines, line)
-                  end
-                  file:close()
+                if vim.fn.filereadable(logger._path) == 1 then
+                  -- If this is the first log file, use the current buffer
+                  -- Otherwise create a new split
+                  if opened_any then vim.cmd "vsplit" end
+
+                  -- Edit the log file in this window
+                  vim.cmd("edit " .. vim.fn.fnameescape(logger._path))
+
+                  -- Set buffer options
+                  vim.bo.buftype = "nofile"
+                  vim.bo.modifiable = false
+                  vim.bo.swapfile = false
+
+                  -- Add buffer-local mappings
+                  vim.api.nvim_buf_set_keymap(0, "n", "q", ":tabclose<CR>", { noremap = true, silent = true })
+
+                  opened_any = true
                 end
-                -- Create a floating window
-                local width = math.min(120, vim.o.columns - 4)
-                local height = math.min(30, vim.o.lines - 4)
-                local buf = vim.api.nvim_create_buf(false, true)
-                -- Set buffer options before setting lines
-                vim.bo[buf].buftype = "nofile"
-                vim.bo[buf].swapfile = false
-                -- Set buffer name with a unique identifier to avoid conflicts
-                local log_name = "dap-log-" .. os.time() .. "-" .. logger._fname
-                pcall(vim.api.nvim_buf_set_name, buf, log_name)
-                -- Set lines and then make non-modifiable
-                vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-                vim.bo[buf].modifiable = false
-                -- Calculate position
-                local col = math.floor((vim.o.columns - width) / 2)
-                local row = math.floor((vim.o.lines - height) / 2)
-                -- Open the floating window
-                local win = vim.api.nvim_open_win(buf, true, {
-                  relative = "editor",
-                  width = width,
-                  height = height,
-                  col = col,
-                  row = row,
-                  border = "rounded",
-                  style = "minimal",
-                })
-                -- Add buffer-local mappings for easier navigation
-                vim.api.nvim_buf_set_keymap(buf, "n", "q", ":close<CR>", { noremap = true, silent = true })
               end
+
+              -- If no log files were found or readable
+              if not opened_any then
+                vim.notify("No DAP log files found or readable", vim.log.levels.WARN)
+                vim.cmd "tabclose"
+                return
+              end
+
+              -- Return to the original tab
+              vim.api.nvim_set_current_tabpage(current_tab)
+
+              -- Notify user about the new tab
+              vim.notify("DAP logs opened in new tab (press 'q' to close)", vim.log.levels.INFO)
             end,
           },
         },
