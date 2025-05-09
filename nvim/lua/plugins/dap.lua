@@ -89,7 +89,7 @@ return {
             desc = "Load nvim-dap.lua",
             function() require("user.project-dap").load_and_apply_config() end,
           },
-          ["<Leader>m"] = {
+          ["<Leader>`"] = {
             desc = "Debugmaster Mode Toggle",
             function()
               require("debugmaster").mode.toggle()
