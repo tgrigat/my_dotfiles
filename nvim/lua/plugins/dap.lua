@@ -220,19 +220,17 @@ return {
     "mfussenegger/nvim-dap",
     config = function(opts)
       local dap = require "dap"
-      dap:set_log_level "TRACE"
+      dap.set_log_level "TRACE"
       dap.adapters.python_ext = function(cb, config)
         local parts = split_string(config.command_str, " ")
         local command = table.remove(parts, 1)
         local args = parts
 
         if config.request == "attach" then
-          ---@diagnostic disable-next-line: undefined-field
           local port = config.port or 5678
-          ---@diagnostic disable-next-line: undefined-field
           local host = config.host or "127.0.0.1"
 
-          local adapter = {
+          cb {
             type = "server",
             host = host,
             port = port,
@@ -244,9 +242,8 @@ return {
               source_filetype = "python",
             },
           }
-          cb(adapter)
         else
-          vim.notify "No launch request implemented for the `python_ext` adapter yet."
+          vim.notify("No launch request implemented for the `python_ext` adapter yet.", vim.log.levels.ERROR)
         end
       end
     end,
