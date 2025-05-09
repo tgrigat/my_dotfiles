@@ -218,8 +218,9 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    config = function()
+    config = function(opts)
       local dap = require "dap"
+      dap:set_log_level "TRACE"
       dap.adapters.python_ext = function(cb, config)
         local parts = split_string(config.command_str, " ")
         local command = table.remove(parts, 1)
