@@ -117,7 +117,7 @@ return {
           },
           ["<Leader>ds"] = {
             desc = "show dap log",
-              function()
+            function()
               local log = require "dap.log"
               log.create_logger "dap.log"
               local current_tab = vim.fn.tabpagenr()
@@ -180,7 +180,8 @@ return {
 
       local component = component_builder(status_util.setup_providers({ debugmode = {} }, { "debugmode" }))
 
-      hl_opts.statusline = require("astrocore").extend_tbl(hl_opts.statusline, { component })
+      -- TODO: fix this component. Currently it directly breaks the first mode component.
+      hl_opts.statusline = require("astrocore").extend_tbl(hl_opts.statusline, {})
     end,
   },
   {
