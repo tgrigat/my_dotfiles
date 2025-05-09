@@ -97,6 +97,19 @@ return {
             desc = "Load nvim-dap.lua",
             function() require("user.project-dap").load_and_apply_config() end,
           },
+          ["<Leader>m"] = {
+            desc = "Debugmaster Mode Toggle",
+            function()
+              require("debugmaster").mode.toggle()
+              local current_status_message
+              if require("debugmaster.debug.mode").is_active() then -- Check the new state
+                current_status_message = "Debug Mode: ON"
+              else
+                current_status_message = "Debug Mode: OFF"
+              end
+              vim.notify(current_status_message, vim.log.levels.INFO)
+            end,
+          },
           ["<Leader>dd"] = {
             desc = "Debugmaster Mode Toggle",
             function()
