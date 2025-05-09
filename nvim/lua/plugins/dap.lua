@@ -1,3 +1,12 @@
+local function split_string(inputstr, sep)
+  if sep == nil then sep = "%s" end
+  local t = {}
+  for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+    table.insert(t, str)
+  end
+  return t
+end
+
 local dap_config_template = [[
 return {
 	adapters = {
@@ -206,5 +215,39 @@ return {
   },
   {
     "miroshQa/debugmaster.nvim",
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require "dap"
+      dap.adapters.python_ext = function(cb, config)
+        local parts = split_string(config.command_str, " ")
+        local command = table.remove(parts, 1)
+        local args = parts
+
+        if config.request == "attach" then
+          ---@diagnostic disable-next-line: undefined-field
+          local port = (config.connect or config).port
+          ---@diagnostic disable-next-line: undefined-field
+          local host = (config.connect or config).host or "127.0.0.1"
+
+          local adapter = {
+            type = "server",
+            host = host,
+            port = port,
+            executable = {
+              command = command,
+              args = args,
+            },
+            options = {
+              source_filetype = "python",
+            },
+          }
+          cb(adapter)
+        else
+          vim.notify "No launch request implemented for the `python_ext` adapter yet."
+        end
+      end
+    end,
   },
 }
