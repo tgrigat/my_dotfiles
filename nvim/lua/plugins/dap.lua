@@ -9,31 +9,14 @@ end
 
 local dap_config_template = [[
 return {
-	adapters = {
-		-- python_just = {
-		-- 	type = "server", -- We will connect to a server (debugpy)
-		-- 	host = "127.0.0.1", -- The host where debugpy will be listening
-		-- 	port = 5678,     -- The port debugpy will be listening on (must match your justfile)
-		--
-		-- 	-- This 'executable' block tells nvim-dap how to start the server process
-		-- 	-- In this case, the "server process" is initiated by 'just start-debug'
-		-- 	executable = {
-		-- 		command = "just",     -- The command to run
-		-- 		args = { "start-debug" }, -- Arguments for the command
-		-- 		env = {
-		-- 			PYDEVD_DISABLE_FILE_VALIDATION = 1,
-		-- 		},
-		-- 		-- detached = true,               -- Optional: nvim-dap usually manages this well for server types
-		-- 		-- cwd = '${workspaceFolder}',    -- Optional: if 'just' needs to be run from a specific CWD
-		-- 	},
-		-- },
-	},
 	configurations = {
 		-- python = {
 		-- 	{
-		-- 		name = "Attach to Just",
-		-- 		type = "python_just",
+		-- 		name = "Attach to Command",
+		-- 		type = "python_tex",
 		-- 		request = "attach",
+		-- 		command_str ="python3 -m debugpy --listen localhost:5678 hello.py"
+		-- 		port = 5678
 		-- 	},
 		-- },
 	},
@@ -133,8 +116,8 @@ return {
             end,
           },
           ["<Leader>ds"] = {
-            desc = "Show Dap Log",
-            function()
+            desc = "show dap log",
+              function()
               local log = require "dap.log"
               log.create_logger "dap.log"
               local current_tab = vim.fn.tabpagenr()
@@ -164,7 +147,7 @@ return {
                 end
 
                 -- Switch back to the original tab
-                -- vim.cmd("tabnext " .. current_tab)
+                vim.cmd("tabnext " .. current_tab)
               else
                 vim.notify("No DAP log files found", vim.log.levels.INFO)
               end
