@@ -129,15 +129,36 @@ return {
               local log = require "dap.log"
               log.create_logger "dap.log"
               local current_tab = vim.fn.tabpagenr()
-              vim.cmd.tabnew()
+
+              -- Get the first logger to use for the initial tab creation
+              local first_logger = nil
               for _, logger in pairs(log._loggers) do
-                vim.cmd.split(logger._path)
-                vim.bo.modifiable = false
-                -- Add a buffer-local keymap to quit with 'q'
-                vim.api.nvim_buf_set_keymap(0, "n", "q", ":q<CR>", { noremap = true, silent = true })
+                first_logger = logger
+                break
               end
-              -- Switch back to the original tab
-              -- vim.cmd("tabnext " .. current_tab)
+
+              if first_logger then
+                -- Create new tab with the first log file
+                vim.cmd("tabnew " .. first_logger._path)
+                vim.bo.modifiable = false
+                vim.api.nvim_buf_set_keymap(0, "n", "q", ":q<CR>", { noremap = true, silent = true })
+
+                -- Add the rest of the log files as splits
+                local is_first = true
+                for _, logger in pairs(log._loggers) do
+                  if not is_first then
+                    vim.cmd.split(logger._path)
+                    vim.bo.modifiable = false
+                    vim.api.nvim_buf_set_keymap(0, "n", "q", ":q<CR>", { noremap = true, silent = true })
+                  end
+                  is_first = false
+                end
+
+                -- Switch back to the original tab
+                -- vim.cmd("tabnext " .. current_tab)
+              else
+                vim.notify("No DAP log files found", vim.log.levels.INFO)
+              end
             end,
           },
         },
