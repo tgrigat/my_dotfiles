@@ -39,6 +39,16 @@ return {
   dependencies = {
     "echasnovski/mini.nvim", -- Optional: Needed for line highlighting
     "ibhagwan/fzf-lua", -- Optional: If you want to use the :SearchDebugPrints command with fzf-lua
+    {
+      "AstroNvim/astrocore",
+      opts = {
+        mappings = {
+          n = {
+            ["g?"] = { desc = "Debug Prints" },
+          },
+        },
+      },
+    },
   },
 
   lazy = false, -- Required to make line highlighting work before debugprint is first used
