@@ -128,13 +128,16 @@ return {
             function()
               local log = require "dap.log"
               log.create_logger "dap.log"
+              local current_tab = vim.fn.tabpagenr()
+              vim.cmd.tabnew()
               for _, logger in pairs(log._loggers) do
-                -- Use split or vsplit instead of tabnew
                 vim.cmd.split(logger._path)
                 vim.bo.modifiable = false
                 -- Add a buffer-local keymap to quit with 'q'
-                vim.api.nvim_buf_set_keymap(0, 'n', 'q', ':q<CR>', { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(0, "n", "q", ":q<CR>", { noremap = true, silent = true })
               end
+              -- Switch back to the original tab
+              -- vim.cmd("tabnext " .. current_tab)
             end,
           },
         },
