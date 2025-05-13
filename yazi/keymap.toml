@@ -11,4 +11,4 @@ desc = "Jump to a directory via zoxide"
 [[manager.prepend_keymap]]
 on   = "Z"
 run  = "plugin fzf"
-desc = "Jump to a file/directory via fzf"esc = "Enter the child directory, or open the file"
+desc = "Jump to a file/directory via fzf"
