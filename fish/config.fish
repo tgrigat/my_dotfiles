@@ -3,6 +3,9 @@ if status is-login
     exec fish"
 end
 
+set sponge_delay 20
+set sponge_purge_only_on_exit true
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     if command -v zoxide >/dev/null
