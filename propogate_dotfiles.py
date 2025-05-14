@@ -1,5 +1,5 @@
 # pylint: disable=invalid-name, line-too-long, missing-docstring, redefined-outer-name
-"""Propogate my dotfiles in the repo, 
+"""Propogate my dotfiles in the repo,
 they are symlinked to destinations defined in destinations.yaml"""
 
 import os
@@ -28,6 +28,9 @@ to_ignore = [
     "kde_backup.py",
     ".gitconfig",
 ]
+
+# Core configs that will be propagated with --core flag
+core_configs = ["nvim", "zellij", "fish", "btop", "yazi", "lazygit"]
 
 
 # Read the destinations from the destination.yaml file
@@ -92,11 +95,21 @@ def create_link(
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Propagate dotfiles from repo to destinations')
-    parser.add_argument('configs', nargs='*', help='Specific configs to propagate (leave empty for all)')
+    parser = argparse.ArgumentParser(
+        description="Propagate dotfiles from repo to destinations"
+    )
+    parser.add_argument(
+        "configs", nargs="*", help="Specific configs to propagate (leave empty for all)"
+    )
+    parser.add_argument(
+        "--core", action="store_true", help="Propagate only core configs"
+    )
     args = parser.parse_args()
 
-    if args.configs:
+    if args.core:
+        # Propagate only core configs
+        configs_to_propagate = core_configs
+    elif args.configs:
         # Only propagate specified configs
         configs_to_propagate = []
         for config in args.configs:
@@ -104,7 +117,7 @@ def main():
                 configs_to_propagate.append(config)
             else:
                 print(f"Warning: {config} not found in destination.yaml, skipping")
-        
+
         if not configs_to_propagate:
             print("No valid configs specified, nothing to do")
             return
@@ -120,6 +133,7 @@ def main():
             print(f"Warning: {config} not found in destination.yaml")
 
     print("Finished the linking process")
+
 
 if __name__ == "__main__":
     main()
