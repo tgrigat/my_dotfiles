@@ -13,9 +13,9 @@ return {
 		-- python = {
 		-- 	{
 		-- 		name = "Attach to Command",
-		-- 		type = "python_tex",
+		-- 		type = "python_ext",
 		-- 		request = "attach",
-		-- 		command_str ="python3 -m debugpy --listen localhost:5678 hello.py"
+		-- 		command_str ="python3 -m debugpy --listen localhost:5678 hello.py",
 		-- 		port = 5678
 		-- 	},
 		-- },
