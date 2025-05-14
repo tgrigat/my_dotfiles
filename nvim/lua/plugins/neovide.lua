@@ -17,8 +17,10 @@ return {
                 vim.g.neovide_cursor_smooth_blink = true
                 vim.g.neovide_scroll_animation_length = 0.2
                 vim.g.neovide_input_ime = true
-                vim.g.neovide_transparency = 0.98
                 vim.g.neovide_cursor_vfx_mode = "railgun"
+                vim.g.neovide_opacity = 0.8
+                vim.g.neovide_normal_opacity = 0.8
+
 
                 -- Keymaps
                 local function paste_from_clipboard() vim.api.nvim_paste(vim.fn.getreg "+", true, -1) end
