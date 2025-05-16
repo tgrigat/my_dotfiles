@@ -16,16 +16,8 @@ mkdir -p ~/.fonts
 
 # Download Iosevka font archive
 echo "Downloading Iosevka Nerd Font..."
-eget ryanoasis/nerd-fonts --asset Iosevka.tar.xz --to .
+eget ryanoasis/nerd-fonts --asset Iosevka.tar.xz --to ~/.fonts --all --file *.ttf
 
-# Extract the font to ~/.fonts and remove the archive
-echo "Extracting Iosevka.tar.xz to ~/.fonts/..."
-tar -xf Iosevka.tar.xz -C ~/.fonts/
-echo "Removing Iosevka.tar.xz..."
-rm Iosevka.tar.xz
-
-# Refresh font cache
-echo "Refreshing font cache..."
 fc-cache -f -v
-
+ 
 echo "Nerd Font installation complete."
