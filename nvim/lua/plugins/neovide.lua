@@ -18,8 +18,8 @@ return {
                 vim.g.neovide_scroll_animation_length = 0.2
                 vim.g.neovide_input_ime = true
                 vim.g.neovide_cursor_vfx_mode = "railgun"
-                vim.g.neovide_opacity = 0.8
-                vim.g.neovide_normal_opacity = 0.8
+                vim.g.neovide_opacity = 0.9
+                vim.g.neovide_normal_opacity = 0.9
 
 
                 -- Keymaps
