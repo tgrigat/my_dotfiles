@@ -30,7 +30,7 @@ fi
 # exit on error
 set -e
 
-FISH_SHELL_VERSION=3.7.1
+FISH_SHELL_VERSION=4.0.2
 
 # create our directories
 BUILD_TEMP_DIR=/tmp/build_fish_shell
