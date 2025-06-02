@@ -61,9 +61,9 @@ function __sync_notes_perform_initial_sync
 end
 
 function __sync_notes_start_polling_loop
-    # Initialize git timing variables (in seconds since epoch)
-    set -g LAST_GIT_TIME 0
-    set -g GIT_INTERVAL 1200  # 20 minutes in seconds
+    # Initialize git debounce variables (in seconds since epoch)
+    set -g LAST_CHANGE_TIME 0
+    set -g GIT_DEBOUNCE_INTERVAL 300  # 5 minutes in seconds
     
     echo "Starting polling watcher (checking every 5 seconds)..."
     
@@ -76,8 +76,10 @@ function __sync_notes_start_polling_loop
         
         if __sync_notes_check_for_changes
             __sync_notes_perform_sync; or continue
-            __sync_notes_handle_git_operations
         end
+        
+        # Always check for git operations, regardless of new changes
+        __sync_notes_handle_git_operations
     end
 end
 
@@ -88,8 +90,9 @@ function __sync_notes_check_for_changes
 end
 
 function __sync_notes_perform_sync
-    # Update timestamp file
+    # Update timestamp file and record change time
     touch /tmp/sync_notes_timestamp
+    set -g LAST_CHANGE_TIME (date +%s)
     echo "Changes detected, syncing..."
     
     rsync -av --delete --include="*.md" --include="*/" --exclude="*" "$SOURCE_DIR" "$DEST_DIR"
@@ -115,17 +118,31 @@ function __sync_notes_handle_git_operations
 end
 
 function __sync_notes_should_run_git_operation
+    # Only run git operation if no changes have occurred for the debounce period
+    if test $LAST_CHANGE_TIME -eq 0
+        return 1  # No changes have occurred yet
+    end
+    
     set CURRENT_TIME (date +%s)
-    set TIME_DIFF (math $CURRENT_TIME - $LAST_GIT_TIME)
-    test $TIME_DIFF -ge $GIT_INTERVAL
+    set TIME_SINCE_LAST_CHANGE (math $CURRENT_TIME - $LAST_CHANGE_TIME)
+    test $TIME_SINCE_LAST_CHANGE -ge $GIT_DEBOUNCE_INTERVAL
 end
 
 function __sync_notes_show_git_wait_time
+    if test $LAST_CHANGE_TIME -eq 0
+        return  # Don't log anything when waiting for first change
+    end
+    
     set CURRENT_TIME (date +%s)
-    set TIME_DIFF (math $CURRENT_TIME - $LAST_GIT_TIME)
-    set REMAINING_TIME (math $GIT_INTERVAL - $TIME_DIFF)
+    set TIME_SINCE_LAST_CHANGE (math $CURRENT_TIME - $LAST_CHANGE_TIME)
+    set REMAINING_TIME (math $GIT_DEBOUNCE_INTERVAL - $TIME_SINCE_LAST_CHANGE)
     set REMAINING_MINUTES (math $REMAINING_TIME / 60)
-    echo "Git operation skipped (next check in ~$REMAINING_MINUTES minutes)"
+    
+    # Only log when we cross a new minute boundary
+    set PREV_REMAINING_MINUTES (math ($REMAINING_TIME + 5) / 60)
+    if test $REMAINING_MINUTES -lt $PREV_REMAINING_MINUTES
+        echo "Git operation waiting: $REMAINING_MINUTES minutes remaining"
+    end
 end
 
 function __sync_notes_git_commit_and_push
@@ -147,6 +164,8 @@ function __sync_notes_git_commit_and_push
         
         if test $status -eq 0
             echo "Git commit successful"
+            # Reset change time after successful commit
+            set -g LAST_CHANGE_TIME 0
             
             echo "Pushing to remote..."
             git push
