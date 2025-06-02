@@ -57,10 +57,10 @@ def create_link(
     config_dir: str, target_dir: str, configs: List[str], safe_mode: Any = True
 ) -> Dict[str, List[str]]:
     """Returns a dict with 'success', 'warnings', 'errors' keys containing lists of messages"""
-    results = {'success': [], 'warnings': [], 'errors': []}
-    
+    results = {"success": [], "warnings": [], "errors": []}
+
     config_dir = Path(config_dir)
-    
+
     for cfg in configs:
         target_path = Path(target_dir).expanduser()
         source_path = config_dir / cfg
@@ -68,30 +68,32 @@ def create_link(
         try:
             # Check if target already exists
             if target_path.is_symlink():
-                results['warnings'].append(f"{cfg}: already linked at {target_path}")
+                results["warnings"].append(f"{cfg}: already linked at {target_path}")
                 continue
             elif target_path.is_dir() or target_path.is_file():
                 if safe_mode:
-                    results['errors'].append(f"{cfg}: target exists at {target_path}")
+                    results["errors"].append(f"{cfg}: target exists at {target_path}")
                     continue
                 else:
                     remove(target_path)
-                    results['warnings'].append(f"{cfg}: removed existing file/dir at {target_path}")
+                    results["warnings"].append(
+                        f"{cfg}: removed existing file/dir at {target_path}"
+                    )
 
             # Create parent directory if needed
             parent_dir = target_path.parent
             if not parent_dir.exists():
                 parent_dir.mkdir(parents=True, exist_ok=True)
-                results['warnings'].append(f"Created parent directory: {parent_dir}")
+                results["warnings"].append(f"Created parent directory: {parent_dir}")
 
             # Create the symlink
             target_path.symlink_to(source_path)
-            results['success'].append(f"{cfg} → {target_path}")
+            results["success"].append(f"{cfg} → {target_path}")
 
         except FileExistsError:
-            results['warnings'].append(f"{cfg}: already exists at {target_path}")
+            results["warnings"].append(f"{cfg}: already exists at {target_path}")
         except Exception as e:
-            results['errors'].append(f"{cfg}: failed to link - {str(e)}")
+            results["errors"].append(f"{cfg}: failed to link - {str(e)}")
 
     return results
 
@@ -107,33 +109,33 @@ def create_link(
 
 def print_summary(all_results: List[Dict[str, List[str]]]):
     """Print a clean summary of all operations"""
-    total_success = sum(len(r['success']) for r in all_results)
-    total_warnings = sum(len(r['warnings']) for r in all_results)
-    total_errors = sum(len(r['errors']) for r in all_results)
-    
-    print("\n" + "="*50)
+    total_success = sum(len(r["success"]) for r in all_results)
+    total_warnings = sum(len(r["warnings"]) for r in all_results)
+    total_errors = sum(len(r["errors"]) for r in all_results)
+
+    print("\n" + "=" * 50)
     print("PROPAGATION SUMMARY")
-    print("="*50)
-    
+    print("=" * 50)
+
     if total_success > 0:
         print(f"✅ Successfully linked: {total_success} configs")
-        
+
     if total_warnings > 0:
         print(f"⚠️  Warnings: {total_warnings}")
         for results in all_results:
-            for warning in results['warnings']:
+            for warning in results["warnings"]:
                 print(f"   • {warning}")
-                
+
     if total_errors > 0:
         print(f"❌ Errors: {total_errors}")
         for results in all_results:
-            for error in results['errors']:
+            for error in results["errors"]:
                 print(f"   • {error}")
-    
+
     if total_errors == 0:
         print("🎉 All configurations propagated successfully!")
-    
-    print("="*50)
+
+    print("=" * 50)
 
 
 def main():
@@ -168,7 +170,7 @@ def main():
         configs_to_propagate = all_configs
 
     all_results = []
-    
+
     for config in configs_to_propagate:
         target_dir = destinations.get(config)
         if target_dir:
@@ -176,12 +178,14 @@ def main():
             all_results.append(results)
         else:
             # Handle missing destination
-            all_results.append({
-                'success': [],
-                'warnings': [],
-                'errors': [f"{config}: not found in destination.yaml"]
-            })
-    
+            all_results.append(
+                {
+                    "success": [],
+                    "warnings": [],
+                    "errors": [f"{config}: not found in destination.yaml"],
+                }
+            )
+
     print_summary(all_results)
 
 
