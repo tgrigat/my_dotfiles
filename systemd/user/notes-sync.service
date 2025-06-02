@@ -4,7 +4,7 @@ After=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/fish --command 'sync_notes \"%h/Documents/Silverbullet/Publish\" \"%h/Documents/git/Notes/content\"'
+ExecStart=/usr/bin/fish --command 'sync_notes \"%h/docker-com/sliverbullet/space/Publish\" \"%h/git/Notes/content\"'
 Restart=always
 RestartSec=10
 
