@@ -1,19 +1,27 @@
 function sync_notes --description 'Synchronize markdown files from source to destination directory with git auto-commit'
-    # Check if we have the required arguments
+    __sync_notes_validate_args $argv; or return 1
+    __sync_notes_setup_directories $argv[1] $argv[2]; or return 1
+    __sync_notes_perform_initial_sync; or return 1
+    __sync_notes_start_polling_loop
+end
+
+function __sync_notes_validate_args
     if test (count $argv) -lt 2
         echo "Usage: sync_notes <source_dir> <dest_dir>"
         return 1
     end
-    
-    set SOURCE_DIR $argv[1]
-    set DEST_DIR $argv[2]
+end
+
+function __sync_notes_setup_directories
+    set -g SOURCE_DIR $argv[1]
+    set -g DEST_DIR $argv[2]
     
     # Ensure directories end with /
     if not string match -q "*/" $SOURCE_DIR
-        set SOURCE_DIR "$SOURCE_DIR/"
+        set -g SOURCE_DIR "$SOURCE_DIR/"
     end
     if not string match -q "*/" $DEST_DIR
-        set DEST_DIR "$DEST_DIR/"
+        set -g DEST_DIR "$DEST_DIR/"
     end
     
     # Validate source directory exists
@@ -23,109 +31,136 @@ function sync_notes --description 'Synchronize markdown files from source to des
     end
     
     # Create destination directory if it doesn't exist
-        mkdir -p $DEST_DIR
+    mkdir -p $DEST_DIR
+    
+    # Determine git repo root (parent of content directory)
+    set -g GIT_ROOT (dirname $DEST_DIR)
+    
+    # Validate git repo
+    if not test -d "$GIT_ROOT/.git"
+        echo "Warning: '$GIT_ROOT' is not a git repository"
+        set -g GIT_ENABLED false
+    else
+        set -g GIT_ENABLED true
+        echo "Git repository detected at: $GIT_ROOT"
+    end
+end
+
+function __sync_notes_perform_initial_sync
+    echo "Starting sync from '$SOURCE_DIR' to '$DEST_DIR'"
+    echo "Performing initial sync..."
+    
+    rsync -av --delete --include="*.md" --include="*/" --exclude="*" "$SOURCE_DIR" "$DEST_DIR"
+    
+    if test $status -eq 0
+        echo "Initial sync completed successfully"
+    else
+        echo "Initial sync failed with status: $status"
+        return 1
+    end
+end
+
+function __sync_notes_start_polling_loop
+    # Initialize git timing variables (in seconds since epoch)
+    set -g LAST_GIT_TIME 0
+    set -g GIT_INTERVAL 1200  # 20 minutes in seconds
+    
+    echo "Starting polling watcher (checking every 5 seconds)..."
+    
+    # Create timestamp file for tracking changes
+    touch /tmp/sync_notes_timestamp
+    
+    # Polling loop
+    while true
+        sleep 5
         
-        # Determine git repo root (parent of content directory)
-        set GIT_ROOT (dirname $DEST_DIR)
-        
-        # Validate git repo
-        if not test -d "$GIT_ROOT/.git"
-                echo "Warning: '$GIT_ROOT' is not a git repository"
-                set GIT_ENABLED false
-        else
-                set GIT_ENABLED true
-                echo "Git repository detected at: $GIT_ROOT"
+        if __sync_notes_check_for_changes
+            __sync_notes_perform_sync; or continue
+            __sync_notes_handle_git_operations
         end
+    end
+end
+
+function __sync_notes_check_for_changes
+    # Check if source directory has been modified recently
+    set SOURCE_MODIFIED (find "$SOURCE_DIR" -name "*.md" -newer /tmp/sync_notes_timestamp 2>/dev/null | wc -l)
+    test $SOURCE_MODIFIED -gt 0
+end
+
+function __sync_notes_perform_sync
+    # Update timestamp file
+    touch /tmp/sync_notes_timestamp
+    echo "Changes detected, syncing..."
+    
+    rsync -av --delete --include="*.md" --include="*/" --exclude="*" "$SOURCE_DIR" "$DEST_DIR"
+    
+    if test $status -eq 0
+        echo "Sync completed successfully"
+    else
+        echo "Sync failed (status: $status)"
+        return 1
+    end
+end
+
+function __sync_notes_handle_git_operations
+    # Git operations (if enabled and enough time has passed)
+    if test "$GIT_ENABLED" = "true"
+        if __sync_notes_should_run_git_operation
+            __sync_notes_git_commit_and_push
+            set -g LAST_GIT_TIME (date +%s)
+        else
+            __sync_notes_show_git_wait_time
+        end
+    end
+end
+
+function __sync_notes_should_run_git_operation
+    set CURRENT_TIME (date +%s)
+    set TIME_DIFF (math $CURRENT_TIME - $LAST_GIT_TIME)
+    test $TIME_DIFF -ge $GIT_INTERVAL
+end
+
+function __sync_notes_show_git_wait_time
+    set CURRENT_TIME (date +%s)
+    set TIME_DIFF (math $CURRENT_TIME - $LAST_GIT_TIME)
+    set REMAINING_TIME (math $GIT_INTERVAL - $TIME_DIFF)
+    set REMAINING_MINUTES (math $REMAINING_TIME / 60)
+    echo "Git operation skipped (next check in ~$REMAINING_MINUTES minutes)"
+end
+
+function __sync_notes_git_commit_and_push
+    echo "Checking for git changes..."
+    
+    # Change to git repo directory
+    pushd "$GIT_ROOT" >/dev/null
+    
+    # Check if there are any changes
+    if git diff --quiet; and git diff --cached --quiet
+        echo "No git changes detected"
+    else
+        set COMMIT_DATE (date '+%Y-%m-%d %H:%M:%S')
+        set COMMIT_MSG "note: automatic commit at $COMMIT_DATE"
         
-        echo "Starting sync from '$SOURCE_DIR' to '$DEST_DIR'"
-        
-        # Initial sync
-        echo "Performing initial sync..."
-        rsync -av --delete --include="*.md" --include="*/" --exclude="*" "$SOURCE_DIR" "$DEST_DIR"
+        echo "Committing changes to git..."
+        git add .
+        git commit -m "$COMMIT_MSG"
         
         if test $status -eq 0
-                echo "Initial sync completed successfully"
+            echo "Git commit successful"
+            
+            echo "Pushing to remote..."
+            git push
+            
+            if test $status -eq 0
+                echo "Git push successful"
+            else
+                echo "Git push failed (status: $status)"
+            end
         else
-                echo "Initial sync failed with status: $status"
-                return 1
+            echo "Git commit failed (status: $status)"
         end
-        
-        # Initialize git timing variables (in seconds since epoch)
-        set LAST_GIT_TIME 0
-        set GIT_INTERVAL 1200  # 20 minutes in seconds
-        
-        echo "Starting file watcher..."
-        
-        # Watch for changes
-        inotifywait -m -r -e create,modify,delete,move "$SOURCE_DIR" --format '%w%f %e' 2>/dev/null | while read -l line
-                if test -z "$line"
-                        continue
-                end
-                
-                set file_event (string split ' ' $line)
-                set file $file_event[1]
-                set event $file_event[2]
-                
-                if string match -q "*.md" $file
-                        echo "Detected change: $file ($event)"
-                        rsync -av --delete --include="*.md" --include="*/" --exclude="*" "$SOURCE_DIR" "$DEST_DIR"
-                        
-                        if test $status -eq 0
-                                echo "Sync completed for: $file"
-                        else
-                                echo "Sync failed for: $file (status: $status)"
-                                continue
-                        end
-                        
-                        # Git operations (if enabled and enough time has passed)
-                        if test "$GIT_ENABLED" = "true"
-                                set CURRENT_TIME (date +%s)
-                                set TIME_DIFF (math $CURRENT_TIME - $LAST_GIT_TIME)
-                                
-                                if test $TIME_DIFF -ge $GIT_INTERVAL
-                                        echo "Checking for git changes..."
-                                        
-                                        # Change to git repo directory
-                                        pushd "$GIT_ROOT" >/dev/null
-                                        
-                                        # Check if there are any changes
-                                        if git diff --quiet; and git diff --cached --quiet
-                                                echo "No git changes detected"
-                                        else
-                                                set COMMIT_DATE (date '+%Y-%m-%d %H:%M:%S')
-                                                set COMMIT_MSG "note: automatic commit at $COMMIT_DATE"
-                                                
-                                                echo "Committing changes to git..."
-                                                git add .
-                                                git commit -m "$COMMIT_MSG"
-                                                
-                                                if test $status -eq 0
-                                                        echo "Git commit successful"
-                                                        
-                                                        echo "Pushing to remote..."
-                                                        git push
-                                                        
-                                                        if test $status -eq 0
-                                                                echo "Git push successful"
-                                                        else
-                                                                echo "Git push failed (status: $status)"
-                                                        end
-                                                else
-                                                        echo "Git commit failed (status: $status)"
-                                                end
-                                        end
-                                        
-                                        # Return to previous directory
-                                        popd >/dev/null
-                                        
-                                        # Update last git operation time
-                                        set LAST_GIT_TIME $CURRENT_TIME
-                                else
-                                        set REMAINING_TIME (math $GIT_INTERVAL - $TIME_DIFF)
-                                        set REMAINING_MINUTES (math $REMAINING_TIME / 60)
-                                        echo "Git operation skipped (next check in ~$REMAINING_MINUTES minutes)"
-                                end
-                        end
-                end
-        end
+    end
+    
+    # Return to previous directory
+    popd >/dev/null
 end
