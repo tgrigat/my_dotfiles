@@ -66,11 +66,10 @@ def create_link(
 
         try:
             # Check if target already exists
-            if isdir(target_path) or isfile(target_path):
-                if islink(target_path):
-                    results['warnings'].append(f"{cfg}: already linked at {target_dir_expanded}")
-                    continue
-
+            if islink(target_path):
+                results['warnings'].append(f"{cfg}: already linked at {target_dir_expanded}")
+                continue
+            elif isdir(target_path) or isfile(target_path):
                 if safe_mode:
                     results['errors'].append(f"{cfg}: target exists at {target_dir_expanded}")
                     continue
