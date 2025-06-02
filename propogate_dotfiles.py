@@ -2,19 +2,18 @@
 """Propogate my dotfiles in the repo,
 they are symlinked to destinations defined in destinations.yaml"""
 
-import os
 import argparse
 from typing import Dict, List, Any
-from os.path import join, isdir, isfile, islink
+from pathlib import Path
 import shutil
 import yaml
 
-wkdir = os.getcwd()
-user = os.environ.get("USER")
+wkdir = Path.cwd()
+user = Path.home().name
 
 repo = wkdir
-home = os.environ.get("HOME")
-dot_config = f"{home}/.config"
+home = Path.home()
+dot_config = home / ".config"
 
 to_ignore = [
     ".git",
@@ -41,13 +40,14 @@ def read_destinations(file: str) -> Dict[str, str]:
 
 destinations = read_destinations("destination.yaml")
 
-all_configs = [config for config in os.listdir(repo) if config not in to_ignore]
+all_configs = [config.name for config in repo.iterdir() if config.name not in to_ignore]
 
 
 def remove(path):
-    if os.path.isfile(path) or os.path.islink(path):
-        os.remove(path)
-    elif os.path.isdir(path):
+    path = Path(path)
+    if path.is_file() or path.is_symlink():
+        path.unlink()
+    elif path.is_dir():
         shutil.rmtree(path)
     else:
         raise ValueError(f"file {path} is not a file or dir.")
@@ -59,35 +59,37 @@ def create_link(
     """Returns a dict with 'success', 'warnings', 'errors' keys containing lists of messages"""
     results = {'success': [], 'warnings': [], 'errors': []}
     
+    config_dir = Path(config_dir)
+    
     for cfg in configs:
-        target_dir_expanded = os.path.expanduser(target_dir)
-        target_path = join(target_dir_expanded, cfg)
-        source_path = join(config_dir, cfg)
+        target_path = Path(target_dir).expanduser()
+        source_path = config_dir / cfg
 
         try:
             # Check if target already exists
-            if islink(target_path):
-                results['warnings'].append(f"{cfg}: already linked at {target_dir_expanded}")
+            if target_path.is_symlink():
+                results['warnings'].append(f"{cfg}: already linked at {target_path}")
                 continue
-            elif isdir(target_path) or isfile(target_path):
+            elif target_path.is_dir() or target_path.is_file():
                 if safe_mode:
-                    results['errors'].append(f"{cfg}: target exists at {target_dir_expanded}")
+                    results['errors'].append(f"{cfg}: target exists at {target_path}")
                     continue
                 else:
                     remove(target_path)
-                    results['warnings'].append(f"{cfg}: removed existing file/dir at {target_dir_expanded}")
+                    results['warnings'].append(f"{cfg}: removed existing file/dir at {target_path}")
 
-            # Create target directory if needed
-            if not os.path.exists(target_dir_expanded):
-                os.makedirs(target_dir_expanded)
-                results['warnings'].append(f"Created directory: {target_dir_expanded}")
+            # Create parent directory if needed
+            parent_dir = target_path.parent
+            if not parent_dir.exists():
+                parent_dir.mkdir(parents=True, exist_ok=True)
+                results['warnings'].append(f"Created parent directory: {parent_dir}")
 
             # Create the symlink
-            os.symlink(source_path, target_path)
-            results['success'].append(f"{cfg} → {target_dir_expanded}")
+            target_path.symlink_to(source_path)
+            results['success'].append(f"{cfg} → {target_path}")
 
         except FileExistsError:
-            results['warnings'].append(f"{cfg}: already exists at {target_dir_expanded}")
+            results['warnings'].append(f"{cfg}: already exists at {target_path}")
         except Exception as e:
             results['errors'].append(f"{cfg}: failed to link - {str(e)}")
 
@@ -95,10 +97,11 @@ def create_link(
 
 
 # def scan_for_unknown(config_dir: str, configs: List) -> None:
-#     for item in os.listdir(config_dir):
-#         if islink(join(config_dir, item)) and item not in configs:
+#     config_dir = Path(config_dir)
+#     for item in config_dir.iterdir():
+#         if item.is_symlink() and item.name not in configs:
 #             print(
-#                 f"Warning: {item} in ~/.config is a symlink but not in config file. Please check if this is a discarded config."
+#                 f"Warning: {item.name} in ~/.config is a symlink but not in config file. Please check if this is a discarded config."
 #             )
 
 
