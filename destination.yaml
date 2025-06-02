@@ -59,3 +59,4 @@ neovide: ~/.config/neovide
 nvimr: ~/.local/bin/nvimr
 nvim-server: ~/.local/bin/nvim-server
 fish: ~/.config/fish
+systemd: ~/.config/systemd
