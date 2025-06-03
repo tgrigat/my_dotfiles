@@ -1,4 +1,4 @@
-function wait-and-execute
+function wait_then_execute
     if test (count $argv) -eq 0
         echo "Usage: wait-and-execute <command>"
         return 1

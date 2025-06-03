@@ -1,4 +1,4 @@
-function sync-zotero
+function sync_zotero
     set -l options 'f/force'
     argparse $options -- $argv
     
