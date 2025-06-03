@@ -134,5 +134,5 @@ if command -q micromamba
   abbr ma "micromamba activate"
   abbr mda "micromamba deactivate"
   abbr mi "micromamba install"
-  abbr mc "micromamba create -n "
+  abbr mc "micromamba create -n"
 end
