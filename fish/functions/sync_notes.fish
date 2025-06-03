@@ -139,7 +139,7 @@ function __sync_notes_show_git_wait_time
     set REMAINING_MINUTES (math $REMAINING_TIME / 60)
     
     # Only log when we cross a new minute boundary
-    set PREV_REMAINING_MINUTES (math ($REMAINING_TIME + 5) / 60)
+    set PREV_REMAINING_MINUTES (math "($REMAINING_TIME + 5) / 60")
     if test $REMAINING_MINUTES -lt $PREV_REMAINING_MINUTES
         echo "Git operation waiting: $REMAINING_MINUTES minutes remaining"
     end
