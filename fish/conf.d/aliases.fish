@@ -132,3 +132,5 @@ abbr update-aider 'pip3 install --upgrade aider-chat'
 
 abbr ma "micromamba activate"
 abbr mda "micromamba deactivate"
+abbr mi "micromamba install"
+abbr mc "micromamba create -n "
