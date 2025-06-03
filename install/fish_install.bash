@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script for installing Fish Shell on systems without root access.
 # Fish Shell will be installed in $HOME/.local

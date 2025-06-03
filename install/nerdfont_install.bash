@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Check if ~/.local/bin is in PATH, if not add it
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
