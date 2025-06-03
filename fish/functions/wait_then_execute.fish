@@ -12,8 +12,22 @@ function wait_then_execute
         return 1
     end
     
-    set pid (string split -f1 ' ' $selected_process)
-    set process_name (string sub --start (math (string length $pid) + 2) $selected_process | string trim)
+    set pid (echo $selected_process | awk '{print $1}')
+    
+    # Validate PID is a number
+    if not string match -qr '^\d+$' $pid
+        echo "❌ Error: Invalid PID extracted: '$pid'"
+        echo "Debug: Full process line: '$selected_process'"
+        return 1
+    end
+    
+    # Check if process exists
+    if not kill -0 $pid 2>/dev/null
+        echo "❌ Error: Process with PID $pid does not exist or is not accessible"
+        return 1
+    end
+    
+    set process_name (echo $selected_process | awk '{$1=""; print $0}' | string trim)
     
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo "🎯 Selected process:"
