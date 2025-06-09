@@ -16,3 +16,14 @@ systemctl --user status notes-sync.service
 # View logs
 journalctl --user -u notes-sync.service -f
 ```
+
+## Debug
+
+Restart the server
+
+```
+# Reload systemd and start service
+systemctl --user daemon-reload
+systemctl --user restart notes-sync.service
+journalctl --user -u notes-sync.service -f
+```
