@@ -99,6 +99,10 @@ function __sync_notes_perform_sync
     
     if test $status -eq 0
         echo "Sync completed successfully"
+        if test "$GIT_ENABLED" = "true"
+            set DEBOUNCE_MINUTES (math $GIT_DEBOUNCE_INTERVAL / 60)
+            echo "Git commit will occur in $DEBOUNCE_MINUTES minutes if no further changes are made."
+        end
     else
         echo "Sync failed (status: $status)"
         return 1
@@ -110,9 +114,6 @@ function __sync_notes_handle_git_operations
     if test "$GIT_ENABLED" = "true"
         if __sync_notes_should_run_git_operation
             __sync_notes_git_commit_and_push
-            set -g LAST_GIT_TIME (date +%s)
-        else
-            __sync_notes_show_git_wait_time
         end
     end
 end
@@ -128,31 +129,14 @@ function __sync_notes_should_run_git_operation
     test $TIME_SINCE_LAST_CHANGE -ge $GIT_DEBOUNCE_INTERVAL
 end
 
-function __sync_notes_show_git_wait_time
-    if test $LAST_CHANGE_TIME -eq 0
-        return  # Don't log anything when waiting for first change
-    end
-    
-    set CURRENT_TIME (date +%s)
-    set TIME_SINCE_LAST_CHANGE (math $CURRENT_TIME - $LAST_CHANGE_TIME)
-    set REMAINING_TIME (math $GIT_DEBOUNCE_INTERVAL - $TIME_SINCE_LAST_CHANGE)
-    set REMAINING_MINUTES (math $REMAINING_TIME / 60)
-    
-    # Only log when we cross a new minute boundary
-    set PREV_REMAINING_MINUTES (math "($REMAINING_TIME + 5) / 60")
-    if test $REMAINING_MINUTES -lt $PREV_REMAINING_MINUTES
-        echo "Git operation waiting: $REMAINING_MINUTES minutes remaining"
-    end
-end
-
 function __sync_notes_git_commit_and_push
     echo "Checking for git changes..."
     
     # Change to git repo directory
     pushd "$GIT_ROOT" >/dev/null
     
-    # Check if there are any changes
-    if git diff --quiet; and git diff --cached --quiet
+    # Check if there are any changes (including untracked files)
+    if test -z (git status --porcelain)
         echo "No git changes detected"
         # Reset change time even when no changes are found
         set -g LAST_CHANGE_TIME 0
