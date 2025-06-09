@@ -154,6 +154,8 @@ function __sync_notes_git_commit_and_push
     # Check if there are any changes
     if git diff --quiet; and git diff --cached --quiet
         echo "No git changes detected"
+        # Reset change time even when no changes are found
+        set -g LAST_CHANGE_TIME 0
     else
         set COMMIT_DATE (date '+%Y-%m-%d %H:%M:%S')
         set COMMIT_MSG "note: automatic commit at $COMMIT_DATE"
