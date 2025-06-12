@@ -70,7 +70,6 @@ return {
             disableOrganizeImports = true,
             disableLanguageServices = false,
             analysis = {
-              ignore = { "*" },
               autoImportCompletions = true,
               autoSearchPaths = true,
               diagnosticMode = "openFilesOnly",
