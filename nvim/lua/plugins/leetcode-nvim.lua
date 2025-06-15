@@ -1,5 +1,5 @@
 local allowed_hostnames = {
-  "node",
+  "pocket",
   -- Add more hostnames as needed
 }
 
