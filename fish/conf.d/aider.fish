@@ -10,7 +10,7 @@ set -x AIDER_SUGGEST_SHELL_COMMANDS false
 set -x AIDER_SHOW_RELEASE_NOTES false
 set -x AIDER_ARCHITECT false
 # set -x AIDER_MODEL openrouter/google/gemini-2.5-pro
-set -x AIDER_MODEL openrouter/anthropic/claude-sonnet-4
+set -x AIDER_MODEL openai/claude-sonnet-4
 # set -x AIDER_MODEL openrouter/deepseek/deepseek-r1-0528
 set -x AIDER_EDIT_FORMAT diff-fenced
 # set -x AIDER_EDITOR_MODEL openrouter/deepseek/deepseek-chat-v3-0324
