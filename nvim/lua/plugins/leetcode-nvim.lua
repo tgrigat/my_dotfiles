@@ -1,5 +1,6 @@
 local allowed_hostnames = {
   "pocket",
+  "ar-lx0374.agile-robots.de"
   -- Add more hostnames as needed
 }
 
